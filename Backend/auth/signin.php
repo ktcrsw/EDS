@@ -11,7 +11,7 @@
     
 
 
-    $auth = "SELECT * FROM users WHERE username = '$username' AND pwd = '$password";
+    $auth = "SELECT * FROM users WHERE username = '$username' AND pwd = '$password'";
     $query = $db->query($auth);
     if($row = mysqli_fetch_array($query)){
         $_SESSION['UserID'] = $row['u_id'];
