@@ -8,11 +8,11 @@ EDS Project.
 
  - [EDR](http://udontech.appedr.com/edr/login.do)
 
-## Authors
+## Authors / Team
 
-- [@Kittichai](https://web.facebook.com/kittichai002/)
-- [@Bongkotpehtr](https://web.facebook.com/artz.artz.7798)
-- [@Teerasak](https://web.facebook.com/tee.teerasak.5015)
+- [@Kittichai](https://web.facebook.com/kittichai002/) - BackEnd
+- [@Bongkotpehtr](https://web.facebook.com/artz.artz.7798) - FrontEnd
+- [@Teerasak](https://web.facebook.com/tee.teerasak.5015) - Present / Docs
 
 
 ## Todo
