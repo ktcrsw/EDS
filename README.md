@@ -58,5 +58,4 @@ EDS Project.
   4 ..........<br>
   - ทำระบบ .htaccess กันการเข้าถึงหน้าผ่าน Path
   - เอาโปรเจ็คขึ้น Hosting
-  - Api
  
