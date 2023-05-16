@@ -37,7 +37,7 @@ EDS Project.
   
   
 - BackEnd<br>
-  - ทำระบบ Authentication (Login)
+  - ทำระบบ Authentication (Login) ✅
   - ระบบหลังบ้านสำหรับAdmin
   - ทำระบบจัดการข้อมูล
   - ทำระบบจัดการข้อมูลทั่วไป<br>
@@ -52,7 +52,7 @@ EDS Project.
   - ทำระบบป้องกันข้อมูลของผู้ใช้งาน (md5)
   - ทำระบบจัดการการเชื่อมต่อPageและหน้า 404.php
   - จัดการฐานข้อมูลของ<br>
-  1 User<br>
+  1 User<br>✅
   2 Student<br>
   3 Checked เช็คชื่อ<br>
   4 ..........<br>
