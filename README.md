@@ -37,7 +37,8 @@ EDS Project.
   
   
 - BackEnd<br>
-  - ทำระบบ Authentication
+  - ทำระบบ Authentication (OTP)
+  - Recaptcha 3.0
   - ทำระบบจัดการข้อมูล
   - ทำระบบจัดการข้อมูลทั่วไป<br>
   1 จัดการข้อมูลนักเรียน (รายละเอียดในCode Planner)<br>
@@ -56,4 +57,5 @@ EDS Project.
   3 Checked เช็คชื่อ<br>
   4 ..........<br>
   - ทำระบบ .htaccess กันการเข้าถึงหน้าผ่าน Path
+  - เอาโปรเจ็คขึ้น Hosting
  
