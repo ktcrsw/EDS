@@ -13,9 +13,20 @@
             while($std = $query->fetch_assoc()) {
                 echo "ID: " . $std["std_id"]  . " Name: " . $std["std_name"] . "<br>";
               }
+              
             echo $std;
 
         }
+
+
+        public function studentInsert(){
+
+           $insertData = "INSERT INTO `stdtbl`(`std_id`, `std_name`) VALUES ('','')";
+
+
+        }
+
+
     }
 
     class classRoom{
