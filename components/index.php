@@ -18,7 +18,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-    test
+    <a name="" id="" class="btn btn-primary" href="../Backend/auth/signout.php" role="button">LogOut</a>
   </main>
   <footer>
     <!-- place footer here -->
