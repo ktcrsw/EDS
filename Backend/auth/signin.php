@@ -1,5 +1,7 @@
 <?php 
     session_start();
+    error_reporting( error_reporting() & ~E_NOTICE );
+
     include("../../components/assets/header.php");
     include("../db/connect.db.php");
     
@@ -8,7 +10,6 @@
 
     $idcard = $_POST['idcard'];
     $password = $_POST['pwd'];
-    
 
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
