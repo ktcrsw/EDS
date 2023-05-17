@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    error_reporting( error_reporting() & ~E_NOTICE );
+    // error_reporting( error_reporting() & ~E_NOTICE );
 
     include("../../components/assets/header.php");
     include("../db/connect.db.php");
@@ -31,15 +31,10 @@
 
     if($idcard != $row['id_card']){
 
-        echo "<script>Swal.fire({
-            icon: 'error',
-            title: 'ขออภัย',
-            text: 'รหัสบัตรประชาชนหรือรหัสผ่านไม่ถูกต้อง'
-          })
-        </script>";
+
           
         header('refresh:2; url=../../components/users/login.php');
-
+          
 
     }
 
