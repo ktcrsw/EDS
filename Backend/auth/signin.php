@@ -1,6 +1,6 @@
 <?php 
     session_start();
-
+    include("../../components/assets/header.php");
     include("../db/connect.db.php");
     
     $users = "SELECT * FROM users";
@@ -30,8 +30,14 @@
 
     if($idcard != $row['id_card']){
 
-        echo "ข้อมูลไม่ถูกต้อง";
-        header('refresh:5; url=../../components/users/login.php');
+        echo "<script>Swal.fire({
+            icon: 'error',
+            title: 'ขออภัย',
+            text: 'รหัสบัตรประชาชนหรือรหัสผ่านไม่ถูกต้อง'
+          })
+        </script>";
+          
+        header('refresh:2; url=../../components/users/login.php');
 
 
     }
