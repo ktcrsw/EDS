@@ -86,7 +86,6 @@ html, body {
       <span class="fade-in" id="digit3">4</span>
     </h1>
     <h3 class="fadeIn">PAGE NOT FOUND</h3>
-    <button type="button" name="button">Return To Home</button>
   </div>
 </div><div class="flex-container">
   <div class="text-center">
