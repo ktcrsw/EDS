@@ -6,13 +6,11 @@
     $result = $db->query($sql);
 
 
-    isset($_REQUEST['idcard']) ? $idcard = $_REQUEST['idcard'] : $idcard = '';
-    isset($_REQUEST['username']) ? $username = $_REQUEST['username'] : $username = '';
-    isset($_REQUEST['password']) ? $password = $_REQUEST['password'] : $password = '';
+    isset($_REQUEST['id']) ? $id = $_REQUEST['id'] : $id = '';
 
 
 
-    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, permission) VALUES ('', '$idcard', '$username', '', '$password', '', '', '1')";
+    $data = "DELETE FROM users WHERE u_id = $id";
     $query = $db->query($data);
 
     if(mysqli_affected_rows($db)){

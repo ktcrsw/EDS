@@ -49,7 +49,9 @@ $result = $db->query($sql);
                         <td><?php echo $row['fname']; ?> </td>
                         <td><?php echo $row['lname']; ?> </td>
                         <td><?php echo $row['permission']; ?> </td>
-                        <td> <button class="btn btn-danger p-auto">ลบข้อมูล</button>
+                        <td><a href="del_user.php?=<?php echo $row['u_id'];?>"><button class="btn btn-danger p-auto">ลบข้อมูล</button></a> 
+                        <td><input name="id" id="id" placeholder="<?php echo $row['u_id'];?>"></td>
+
                         </td>
                     </tr>
                 <?php endwhile ?>
