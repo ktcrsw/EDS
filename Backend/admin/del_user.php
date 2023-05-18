@@ -17,7 +17,7 @@
         echo "<script>Swal.fire({
             icon: 'success',
             title: 'สำเร็จ',
-            text: 'เพิ่มข้อมูลสำเร็จ'
+            text: 'ลบข้อมูลสำเร็จ'
           })
         </script>";
         

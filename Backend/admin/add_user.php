@@ -16,17 +16,17 @@
     $query = $db->query($data);
 
     if(mysqli_affected_rows($db)){
-        echo "<script>Swal.fire({
-            icon: 'success',
-            title: 'สำเร็จ',
-            text: 'เพิ่มข้อมูลสำเร็จ'
-          })
+        echo "<script>Swal.fire(
+            'Good job!',
+            'You clicked the button!',
+            'success'
+          )
         </script>";
+        header('refresh:2; url=admin.php');
         
     } else {
         echo "Error";
     }
-    header('location:admin.php');
 
 
 ?>

@@ -1,1 +1,8 @@
-ErrorDocument 404 /404.php
+ErrorDocument 404 /404.php  
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L] 
+
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.html -f 
+RewriteRule ^(.*)$ $1.html [NC,L]

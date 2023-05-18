@@ -14,9 +14,10 @@
     height: 100vh;
     color: white;
     animation: colorSlide 15s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
-  
+  }
     .text-center {
       text-align: center;
+    }
       h1,
       h3 {
         margin: 10px;
@@ -31,11 +32,17 @@
         font-size: 8em;
         transition: font-size 200ms ease-in-out;
         border-bottom: 1px dashed white;
-  
-        span#digit1 { animation-delay: 200ms; }
-        span#digit2 { animation-delay: 300ms; }
-        span#digit3 { animation-delay: 400ms; }
       }
+        span#digit1 { 
+          animation-delay: 200ms; 
+        }
+        span#digit2 { 
+          animation-delay: 300ms;
+         }
+        span#digit3 { 
+          animation-delay: 400ms;
+         }
+      
       
       button {
         border: 1px solid white;
@@ -55,8 +62,6 @@
           cursor: pointer;
         }
       }
-    }
-  }
   
   @keyframes colorSlide {
     0% { background-color: #152a68; }
