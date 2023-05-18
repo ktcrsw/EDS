@@ -1,10 +1,9 @@
 <?php include "header.php"; ?>
 <link rel="stylesheet" href="admin.css">
-
 <body>
     <!-- Side-Nav -->
-    <div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
-        <ul class="nav flex-column text-white w-100">
+    <div class="side-navbar active-nav justify-content-between flex-wrap flex-column" id="sidebar">
+        <ul class="nav flex-column text-white w-10">
             <a href="#" class="nav-link h3 text-white my-2">
                 Admin </br>EDS - System
             </a>
@@ -13,12 +12,6 @@
                 <span class="mx-2">User Management</span>
             </li>
         </ul>
-
-        <span href="#" class="nav-link h4 w-100 mb-5">
-            <a href=""><i class="bx bxl-instagram-alt text-white"></i></a>
-            <a href=""><i class="bx bxl-twitter px-2 text-white"></i></a>
-            <a href=""><i class="bx bxl-facebook text-white"></i></a>
-        </span>
     </div>
 
     <!-- Main Wrapper -->

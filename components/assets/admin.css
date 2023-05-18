@@ -6,16 +6,7 @@
   
   body {
     min-height: 100vh;
-    background-color: #fff;
-  }
-  
-  .side-navbar {
-    width: 250px;
-    height: 100%;
-    position: fixed;
-    margin-left: -300px;
-    background-color: #100901;
-    transition: 0.5s;
+    background-color: #F20293;
   }
   
   .nav-link:active,
@@ -39,8 +30,7 @@
   
   #menu-btn {
     background-color: #100901;
-    color: #fff;
-    margin-left: -62px;
+
   }
   
-  
+    
