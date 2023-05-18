@@ -35,7 +35,7 @@ $result = $db->query($sql);
                     <th>Lastname</th>
                     <th>Permission</th>
                     <th>Delete</th>
-
+                    
                 </tr>
             </thead>
             <tbody>
@@ -49,8 +49,8 @@ $result = $db->query($sql);
                         <td><?php echo $row['fname']; ?> </td>
                         <td><?php echo $row['lname']; ?> </td>
                         <td><?php echo $row['permission']; ?> </td>
+                        <td><input name="id" id="id" placeholder="<?php echo $row['u_id'];?>" hidden></td>
                         <td><a href="del_user.php?=<?php echo $row['u_id'];?>"><button class="btn btn-danger p-auto">ลบข้อมูล</button></a> 
-                        <td><input name="id" id="id" placeholder="<?php echo $row['u_id'];?>"></td>
 
                         </td>
                     </tr>
