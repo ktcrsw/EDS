@@ -1,5 +1,5 @@
-<?php include "../db/connect.db.php";
-
+<?php 
+    include "../db/connect.db.php";
     include "../../components/assets/header.php";
 
     $sql = "SELECT * FROM users";
