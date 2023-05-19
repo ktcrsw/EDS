@@ -14,6 +14,10 @@
         <option><?php echo $row['subject_name']; ?> - <?php echo $row['subject_des']; ?></option>
         <?php endwhile ?>
     </select>
+    <!-- <label for="" class="form-label">ค้นหา</label>
+    <input type="text" name="search" id="seach">
+    <a name="" id="" class="btn btn-success" href="../../Backend/functions/search_subject.php" role="button">ค้นหา</a> -->
+
     <div class="mb-3">
         <label for="" class="form-label">เลือกวัน</label>
         <select class="form-select" name="" id="" style="width:25%;">
