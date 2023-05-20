@@ -23,22 +23,14 @@
         $_SESSION['Firstname'] = $row['fname'];
         $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['Permission'] = $row['permission'];
-        if($_SESSION['Permission'] == 1){
-            echo "<script>
-			setTimeout(function() {
-			swal({
-					title: 'ยินดีต้อนรับ',
-					text: 'ระบบกำลังพาคุณไป', 
-					type: 'success', 
-					timer: '3000', 
-					showConfirmButton: false 
-				}, function(){
-					window.location.href = '../../components/index.php'; 
-				});
-			});
-		</script>";
+        if($_SESSION['Permission'] == 0){
+            echo "Welcome back " . $row['username'];
+            header("location: ../../components/index.php");
         }
         
+        if($_SESSION['Permission'] == 1){
+            header("location: ../../components/teacher/index.php");
+        }
         
     }
 
