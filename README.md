@@ -38,7 +38,7 @@ EDS Project.
   
 - BackEnd<br>
   - Search
-  - ทำระบบ Authentication (Login) ✅
+  - ทำระบบ Auth (Login) ✅
   - ระบบหลังบ้านสำหรับAdmin
   - ทำระบบจัดการข้อมูล
   - ทำระบบจัดการข้อมูลทั่วไป<br>
