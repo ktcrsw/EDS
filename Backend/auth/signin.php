@@ -31,7 +31,12 @@
 
     if($idcard != $row['id_card']){
 
-
+        echo "<script>Swal.fire({
+            icon: 'error',
+            title: 'ขออภัย',
+            text: 'รหัสบัตรประชาชนหรือรหัสผ่านไม่ถูกต้อง'
+          })
+        </script>";
           
         header('refresh:2; url=../../components/users/login.php');
           

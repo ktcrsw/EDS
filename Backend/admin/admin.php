@@ -1,4 +1,4 @@
-<?php include "../../components/assets/header.php"; ?>
+<?php include "../../components/assets/header_bt.php"; ?>
 <?php include "../../components/assets/admin_nav.php"; ?>
 <?php include "../db/connect.db.php";
 
@@ -18,9 +18,9 @@ $result = $db->query($sql);
     </h3>
     <div class="container table-responsive">
         <form action="add_user.php" class="mb-1">
-            <input type="text" name="idcard" id="idcard">
-            <input type="text" name="username" id="username">
-            <input type="text" name="password" id="password">
+            <input class="border border-black" type="text" name="idcard" id="idcard" placeholder="ID Card">
+            <input class="border border-black" type="text" name="username" id="username" placeholder="Username">
+            <input class="border border-black" type="text" name="password" id="password" placeholder="Password">
             <button class="btn btn-primary p-auto">เพิ่มข้อมูล</button>
         </form>
         <table class="table table-bordered table-hover">
@@ -48,7 +48,20 @@ $result = $db->query($sql);
                         <td><?php echo $row['pwd']; ?> </td>
                         <td><?php echo $row['fname']; ?> </td>
                         <td><?php echo $row['lname']; ?> </td>
-                        <td><?php echo $row['permission']; ?> </td>
+                        <td><?php 
+                        
+                        
+                            if($row['permission'] == 0){
+                                echo "สถานศึกษา";
+                            }
+                            if($row['permission'] == 1){
+                                echo "ครู"; 
+                            }
+                            if($row['permission'] == 2){
+                                echo "นักเรียน";
+                            }
+                        
+                        ?> </td>
                         <td><input name="id" id="id" placeholder="<?php echo $row['u_id'];?>" hidden></td>
                         <td><a href="del_user.php?=<?php echo $row['u_id'];?>"><button class="btn btn-danger p-auto">ลบข้อมูล</button></a> 
 
