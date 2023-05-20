@@ -8,5 +8,6 @@
 
     $mind_score = $_POST['mind_score'];
     $remove = "Test";
+    $result
 
 ?>
