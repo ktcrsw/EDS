@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php include "../../components/assets/header_bt.php"; ?>
 <?php include "../../components/assets/admin_nav.php"; ?>
 <?php include "../db/connect.db.php";
