@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2023 at 02:56 PM
+-- Generation Time: May 21, 2023 at 05:29 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -43,18 +43,34 @@ CREATE TABLE `classtbl` (
 
 CREATE TABLE `stdtbl` (
   `std_id` varchar(20) NOT NULL,
-  `std_name` varchar(255) DEFAULT NULL
+  `std_name` varchar(255) DEFAULT NULL,
+  `std_mindscore` int(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `stdtbl`
 --
 
-INSERT INTO `stdtbl` (`std_id`, `std_name`) VALUES
-('64209010026', 'นายเตชสิทธิ์  แก้ววิเชียร'),
-('64209010027', 'นายคชาม์  สร้อยศรี'),
-('64209010028', 'นายทรงพล  คำภูมี'),
-('64209010030', 'นายกิตติชัย  รักษาวงค์');
+INSERT INTO `stdtbl` (`std_id`, `std_name`, `std_mindscore`) VALUES
+('64209010026', 'นายเตชสิทธิ์ แก้ววิเชียร', 100),
+('64209010027', 'นายคชาม์ สร้อยศรี', 100),
+('64209010028', 'นายทรงพล คำภูมี', 100),
+('64209010030', 'นายกิตติชัย รักษาวงค์', 100),
+('64209010031', 'นายสุทธิชัย ตะกรุดโฉม', 100),
+('64209010032', 'นายพัชรพล ธรเสนา', 100),
+('64209010033', 'นายบงกชเพชร ยอดกระโทก', 100),
+('64209010034', 'นายธีรศักดิ์ พลเมืองนิตย์', 100),
+('64209010036', 'นายภูชิต สายวิชัย', 100),
+('64209010037', 'นายธนาคิม สีหานาทัง', 100),
+('64209010038', 'นายชนากานต์ พงษ์สุทธิ์', 100),
+('64209010039', 'นางสาวภัคจิรา ญาติสังกัด', 100),
+('64209010042', 'นายศิวนาถ ธนทรัพย์อำไพ', 100),
+('64209010045', 'นายชนาธิป ปัทมวงศ์จริยา', 100),
+('64209010046', 'นางสาวอริสา ม่วงเมืองแสน', 100),
+('64209010047', 'นายศิริวัฒน์ อุทัยมาตย์', 100),
+('64209010048', 'นายพันธกร โพพะนา', 100),
+('64209010049', 'นายธนัตปรีชา มังคลานิมิตร', 100),
+('64209010050', 'นายธนกฤต แสนเมือง', 100);
 
 -- --------------------------------------------------------
 
@@ -127,10 +143,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `permission`) VALUES
-(1, '3626299495765', 'k.raksawong', 'k@gmail.com', '1234abc', 'Kittichai', 'Raksawong', 1),
-(26, '1011103382291', 't.teerasak', '', '123456', '', '', 1),
-(27, '1134095776622', 'c.chanakan', '', '1234', '', '', 1),
-(28, '1413818936484', 'b.bongkot', '', 'abc', '', '', 1);
+(1, '3626299495765', 'k.raksawong', 'k@gmail.com', '123', 'Kittichai', 'Raksawong', 1),
+(26, '1011103382291', 't.teerasak', 't@gmail.com', '123456', '', '', 1),
+(27, '1134095776622', 'c.chanakan', 'c@gmail.com', '1234', '', '', 1),
+(28, '1413818936484', 'b.bongkot', 'b@gmail.com', 'abc', 'Bongkotphetr', 'Lnwza007', 1),
+(29, '1413818936445', 'K.kacha', 'k2@gmail.com', '1233333', '', '', 1),
+(30, 'admin', 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', 2);
 
 --
 -- Indexes for dumped tables
@@ -168,7 +186,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
