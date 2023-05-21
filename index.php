@@ -1,3 +1,10 @@
+<?php
+
+
+  header("Location: components/login.php");
+
+
+?>
 <?php include"components/assets/header.php"; ?>
 
 <style>

@@ -1,3 +1,6 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
+
 <?php 
     session_start();
     // error_reporting( error_reporting() & ~E_NOTICE );
@@ -8,9 +11,14 @@
     $users = "SELECT * FROM users";
     $query = $db->query($users);
 
-    $idcard = $_POST['idcard'];
-    $password = $_POST['pwd'];
+    isset($_REQUEST['idcard']) ? $idcard = $_REQUEST['idcard'] : $idcard = '';
+    isset($_REQUEST['pwd']) ? $password = $_REQUEST['pwd'] : $password = '';
 
+    if(empty($idcard)){
+        echo '<script type="text/javascript">';
+        echo 'setTimeout(function () { swal("WOW!","Message!","success");';
+        echo '}, 1000);</script>';
+        }
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
     $query = $db->query($auth);
@@ -32,20 +40,6 @@
             header("location: ../../components/teacher/index.php");
         }
         
-    }
-
-    if($idcard != $row['id_card']){
-
-        echo "<script>Swal.fire({
-            icon: 'error',
-            title: 'ขออภัย',
-            text: 'รหัสบัตรประชาชนหรือรหัสผ่านไม่ถูกต้อง'
-          })
-        </script>";
-          
-        header('refresh:2; url=../../components/users/login.php');
-          
-
     }
 
 
