@@ -40,6 +40,10 @@
             header("location: ../../components/teacher/index.php");
         }
         
+        if($_SESSION['Permission'] == 2){
+            header("location: ../admin/admin.php");
+        }
+        
     }
 
 
