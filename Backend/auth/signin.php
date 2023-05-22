@@ -1,6 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.all.min.js"></script>
-
 <?php 
     session_start();
     // error_reporting( error_reporting() & ~E_NOTICE );
@@ -15,7 +12,7 @@
     isset($_REQUEST['pwd']) ? $password = $_REQUEST['pwd'] : $password = '';
 
     if(empty($idcard)){
-        echo "<script>alert('Empty idcard');</script>";
+        echo "";
         }
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
@@ -46,3 +43,4 @@
 
 
 ?>
+<script>Swal.fire('ss')</script>
