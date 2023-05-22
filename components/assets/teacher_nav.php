@@ -14,7 +14,7 @@
           <div class="flex items-center ml-3">
             <div>
               <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
-                <img class="w-8 h-8 rounded-full" src="https://i.scdn.co/image/ab67706c0000da84f41a29002cd53521bc5d3807" alt="user photo">
+                <img class="w-8 h-8 rounded-full" id="image" onclick="show()" src="https://i.scdn.co/image/ab67706c0000da84f41a29002cd53521bc5d3807" alt="user photo">
               </button>
             </div>
             <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">

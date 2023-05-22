@@ -15,9 +15,7 @@
     isset($_REQUEST['pwd']) ? $password = $_REQUEST['pwd'] : $password = '';
 
     if(empty($idcard)){
-        echo '<script type="text/javascript">';
-        echo 'setTimeout(function () { swal("WOW!","Message!","success");';
-        echo '}, 1000);</script>';
+        echo "<script>alert('Empty idcard');</script>";
         }
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
