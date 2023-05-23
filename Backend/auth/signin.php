@@ -12,7 +12,7 @@
     isset($_REQUEST['pwd']) ? $password = $_REQUEST['pwd'] : $password = '';
 
     if(empty($idcard)){
-        echo "";
+        echo "<script>Swal.fire('กรุณากรอหข้อมูล')</script>";
         }
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
@@ -43,4 +43,3 @@
 
 
 ?>
-<script>Swal.fire('ss')</script>
