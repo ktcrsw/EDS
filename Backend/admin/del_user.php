@@ -8,6 +8,4 @@
     $del = "DELETE FROM users WHERE u_id = '".$id."'";
     $query = $db->query($del);
     // header('location:admin.php');
-
-
 ?>
