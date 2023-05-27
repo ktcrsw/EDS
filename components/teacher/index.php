@@ -9,7 +9,7 @@
       <div class="flex p-4">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div id="Profile" class="">
-            <img src="/components/image/teacher.jpg" class="w-[162px] h-[162px] rounded-[50%]" alt="">
+            <img src="/components/image/ariel.png" class="w-[162px] h-[162px] rounded-[50%]" alt="">
            </div>
            <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
                   <span class="not-italic font-normal text-[28px] ">สายฝน ลำธาร</span>
