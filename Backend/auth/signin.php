@@ -28,7 +28,7 @@
         $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];
-            header("location: ../../components/index.php");
+            header("location: ../../components/users/index.php");
         }
         
         if($_SESSION['Permission'] == 1){
