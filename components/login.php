@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
-<body class="flex justify-center ">
+<body class="flex justify-center">
   <div class="flex w-600  h-600 bg-white 400 mt-24 drop-shadow-shadow-xlxl border rounded-round-40 ">
     <div class="w-571 h-772 bg-#0093FB shadow-blux border rounded-round-40 ">
       <img src="image/woman_student.png" alt="" class="w-187 h-519 absolute left-[188px] top-[139px]">
@@ -69,7 +69,7 @@
 
 
               <div class="flex items-center justify-between font-ibm-thai text-[24px]">
-                <input id="loginBtn" type="submit" class="bg-bg-login hover:bg-blue-700 font-normal text-red-50 w-[351px] h-[58px] rounded-[10px] focus:outline-none focus:shadow-outline mt-[37px]" type="button" value="เข้าระบบ">
+                <input id="loginBtn" type="submit" onlick="javascript:swal('test')" class="bg-bg-login hover:bg-blue-700 font-normal text-red-50 w-[351px] h-[58px] rounded-[10px] focus:outline-none focus:shadow-outline mt-[37px]" type="button" value="เข้าระบบ">
               </div>
           </form>
         </div>

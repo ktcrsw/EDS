@@ -1,6 +1,5 @@
 <?php 
     session_start();
-    // error_reporting( error_reporting() & ~E_NOTICE );
 
     include("../../components/assets/header.php");
     include("../db/connect.db.php");
@@ -12,7 +11,7 @@
     isset($_REQUEST['pwd']) ? $password = $_REQUEST['pwd'] : $password = '';
 
     if(empty($idcard)){
-        echo "<script>Swal.fire('กรุณากรอหข้อมูล')</script>";
+        echo "<script>Swal('กรุณากรอกข้อมูล')</script>";
         }
 
     $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
@@ -26,6 +25,7 @@
         $_SESSION['Firstname'] = $row['fname'];
         $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['Permission'] = $row['permission'];
+        $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];
             header("location: ../../components/index.php");

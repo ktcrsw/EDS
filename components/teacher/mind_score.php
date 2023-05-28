@@ -1,6 +1,8 @@
 <?php include"../../Backend/db/connect.db.php";?>
 <?php include"../assets/header.php";?>
 <?php 
+    include "../assets/teacher_nav.php";
+
 
     $subject = "SELECT * FROM stdtbl";
     $query = $db->query($subject);

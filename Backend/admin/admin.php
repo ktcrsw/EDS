@@ -27,10 +27,11 @@ $result = $db->query($sql);
             <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
                 <div class="grid grid-cols-3 gap-4 mb-4">
                     <div class="flex flex-row">
-                        <form action="add_user.php" class="mb-1">
+                        <form action="add_user.php" class="mb-1" enctype="multipart/form-data">
                             <input class="mr-20 border border-black" type="text" name="idcard" id="idcard" placeholder="ID Card">
                             <input class="mr-20 border border-black" type="text" name="username" id="username" placeholder="Username">
                             <input class="mr-20 border border-black" type="text" name="password" id="password" placeholder="Password">
+                            <input class="mr-20 border border-black" type="file" name="upload" id="upload" placeholder="Image" accept="image/*">
                             <button class="btn btn-primary p-auto">เพิ่มข้อมูล</button>
                         </form>
                         <table class="border-collapse border border-slate-500">
@@ -44,7 +45,7 @@ $result = $db->query($sql);
                                     <th class="border border-slate-600">Firstname</th>
                                     <th class="border border-slate-600">Lastname</th>
                                     <th class="border border-slate-600">Permission</th>
-                                    <th class="border border-slate-600">Delete</th>
+                                    <th class="border border-slate-600">Image</th>
 
                                 </tr>
                             </thead>
@@ -61,17 +62,19 @@ $result = $db->query($sql);
                                         <td class="border border-slate-600"><?php
 
 
-                                            if ($row['permission'] == 0) {
-                                                echo "สถานศึกษา";
-                                            }
-                                            if ($row['permission'] == 1) {
-                                                echo "ครู";
-                                            }
-                                            if ($row['permission'] == 2) {
-                                                echo "นักเรียน";
-                                            }
+                                                                            if ($row['permission'] == 0) {
+                                                                                echo "สถานศึกษา";
+                                                                            }
+                                                                            if ($row['permission'] == 1) {
+                                                                                echo "ครู";
+                                                                            }
+                                                                            if ($row['permission'] == 2) {
+                                                                                echo "นักเรียน";
+                                                                            }
+                                                                
+                                                                            ?> </td>
+                                        <td class="border border-slate-600"><img src="./img/<?php echo $row['img'] ?>" alt="" style="width:100px;height:100px;"> </td>
 
-                                            ?> </td>
                                         <td class="border border-slate-600"><input name="id" id="id" placeholder="<?php echo $row['u_id']; ?>" hidden></td>
                                         <td class="border border-slate-600"><a href="del_user.php?=<?php echo $row['u_id']; ?>"><button class="btn btn-danger p-auto">ลบข้อมูล</button></a>
 
