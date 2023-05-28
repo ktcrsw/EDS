@@ -33,5 +33,6 @@
         echo "Error";
     }
 
+    session_destroy();
 
 ?>
