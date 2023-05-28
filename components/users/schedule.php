@@ -27,7 +27,7 @@
        </div>
         <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
            <span class="not-italic font-bold text-[28px] text-[#0093fb]">100</span>
-           <label class="font-medium text-[20px] text-[#0093fb]">คะแนนจิตพิสัย</label>
+           <label class="font-medium text-[20px] text-[#0093fb]">คะแนน<br>จิตพิสัย</label>
        </div>
      
     </div>
