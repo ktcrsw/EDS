@@ -12,7 +12,7 @@
     isset($_REQUEST['password']) ? $password = $_REQUEST['password'] : $password = '';
     isset($_REQUEST['upload']) ? $filename = $_REQUEST['upload'] : $_FILES['upload']['name'];
      
-    if(move_uploaded_file($_FILES['upload']['tmp_name'], "../../components/image/". $_FILES['upload']['name'])){
+    if(move_uploaded_file($_FILES['upload']['tmp_name'], "./img/".$_FILES['upload']['name'])){
         echo "Complete";
     }
 
