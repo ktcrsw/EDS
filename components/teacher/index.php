@@ -5,8 +5,12 @@
       include "../assets/header.php";
       include "../assets/teacher_nav.php";
 
+
       $sql = "SELECT * FROM users";
       $query = $db->query($sql);
+
+
+      // if($_SESSION != $_SESSION['IdCard'])
 
 ?>
 <div class="w-screen h-screen bg-[#f1f4f9]">
