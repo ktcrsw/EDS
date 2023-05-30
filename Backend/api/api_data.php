@@ -17,29 +17,43 @@
             echo $std;
 
         }
+    }
 
 
-        public function studentInsert(){
+    class allSessions{
 
-           $insertData = "INSERT INTO `stdtbl`(`std_id`, `std_name`) VALUES ('','')";
+        public function dataSessions(){
 
+            include "../db/connect.db.php";
+            $std = "SELECT * FROM student";
+            $result = $db->query($std);
+            if($row = mysqli_fetch_array($result)){
+
+                $_SESSION['ID'] = $row["no_id"];
+                $_SESSION['StdID'] = $row["std_id"];
+                $_SESSION['Fullname'] = $row["fullname"];
+                $_SESSION['Address'] = $row["address"];
+                $_SESSION['Tel'] = $row["tel"];
+                $_SESSION['Department'] = $row["dep_id"];
+                $_SESSION['Group'] = $row["grp"];
+                
+                $id = $_SESSION['StdID'];
+
+                while($id = mysqli_fetch_assoc($result)){
+                    echo "<pre>";
+                    print_r($id);
+                    echo "</pre>";
+
+                }
+            }
 
         }
 
-
-    }
-
-    class classRoom{
-
-        public function classroomData(){}
-
     }
 
 
-
-
-    $api = new std();
-    $std = $api->studentData();
+    $api = new allSessions();
+    $std = $api->dataSessions();
 
 
 ?>
