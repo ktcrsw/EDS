@@ -27,12 +27,12 @@ $result = $db->query($sql);
             <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
                 <div class="grid grid-cols-3 gap-4 mb-4">
                     <div class="flex flex-row">
-                        <form action="add_user.php" class="mb-1" enctype="multipart/form-data">
+                        <form action="add_user.php" class="mb-1" enctype="multipart/form-data" method="post">
                             <input class="mr-20 border border-black" type="text" name="idcard" id="idcard" placeholder="ID Card">
                             <input class="mr-20 border border-black" type="text" name="username" id="username" placeholder="Username">
                             <input class="mr-20 border border-black" type="text" name="password" id="password" placeholder="Password">
                             <input class="mr-20 border border-black" type="file" name="upload" id="upload" placeholder="Image" accept="image/*">
-                            <button class="btn btn-primary p-auto">เพิ่มข้อมูล</button>
+                            <input type="submit" value="upload">
                         </form>
                         <table class="border-collapse border border-slate-500">
                             <thead>
