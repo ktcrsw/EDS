@@ -25,7 +25,7 @@
         public function dataSessions(){
 
             include "../db/connect.db.php";
-            $std = "SELECT * FROM student";
+            $std = "SELECT * FROM student WHERE dep_id = 11";
             $result = $db->query($std);
             if($row = mysqli_fetch_array($result)){
 
