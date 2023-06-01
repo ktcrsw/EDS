@@ -17,11 +17,9 @@
     $ext = explode(".",$_FILES['upload']['name']);
     $filename = $_SESSION['UserID'].".".$ext[1]."png";
 
-    echo $filename;
-
 
     if(move_uploaded_file($_FILES['upload']['tmp_name'], $targetDir . $filename)){
-        echo "Complete";
+        echo "";
     }
     
 
@@ -30,12 +28,11 @@
 
     if(mysqli_affected_rows($db)){
         echo "<script>Swal.fire(
-            'Good job!',
-            'You clicked the button!',
-            'success'
+            'สำเร็จ',
+            'เพิ่มข้อมูลสำเร็จ',
           )
         </script>";
-        // header('location: admin.php');
+        header('refresh:2; admin.php');
         
     } else {
         echo "Error";
