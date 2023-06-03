@@ -41,15 +41,21 @@ $query = $db->query($sql);
          <span class="p-[10px] flex text-[#817A7A] font-normal">กิจกรรมหน้าเสาธง</span>
 
 
-         
+
          <div class="flex flex-col ">
 
             <!-- เช็คชื่อหน้าเสาธง -->
-               
+
             <a href="">
-
-
-          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block">+25%</span>
+               <!-- Circle -->
+               <div x-data="scrollProgress" class="flex flex-col rounded-full ">
+                  <!-- Building a Progress Ring: https://css-tricks.com/building-progress-ring-quickly/ -->
+                  <svg class="w-20 h-20">
+                     <circle class="text-gray-300" stroke-width="5" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
+                     <circle class="text-blue-600" stroke-width="5" :stroke-dasharray="circumference" :stroke-dashoffset=" / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
+                  </svg>
+                  <span class="absolute text-xl text-blue-700" x-text="10"></span>
+               </div>
                <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
                   <div class="flex  items-center  h-[53px]">
                      <div class="flex items-center gap-[15px]">
