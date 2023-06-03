@@ -40,33 +40,16 @@ $query = $db->query($sql);
          <span class="p-[10px] flex text-[#817A7A] font-normal">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#0FB920]">1</p>จาก<p class="mx-1 text-[#D31D1D]">1</p></span>
          <span class="p-[10px] flex text-[#817A7A] font-normal">กิจกรรมหน้าเสาธง</span>
 
-         <div class="progress-bar mt-3 mb-3">
-            <progress value="<?php
 
-                              $sql = "SELECT * FROM checked";
-                              $checked_result = $db->query($sql);
-
-                              $result_checked = mysqli_num_rows($checked_result);
-
-                              echo $result_checked;
-
-
-                              ?>" min="75" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
-         </div>
-         <style>
-            .progress-bar {
-               width: 100px;
-               height: 100px;
-               border-radius: 50%;
-               background:
-                  radial-gradient(closest-side, white 79%, transparent 80% 100%),
-                  conic-gradient(skyblue 75, lightgrey 0);
-            }
-         </style>
+         
          <div class="flex flex-col ">
 
             <!-- เช็คชื่อหน้าเสาธง -->
+               
             <a href="">
+
+
+          <span class="ml-auto text-xl font-medium text-blue-600 hidden sm:block">+25%</span>
                <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
                   <div class="flex  items-center  h-[53px]">
                      <div class="flex items-center gap-[15px]">
