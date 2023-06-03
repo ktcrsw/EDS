@@ -13,7 +13,7 @@ $query = $db->query($sql);
 // if($_SESSION != $_SESSION['IdCard'])
 
 ?>
-<div class="w-screen h-screen bg-[#f1f4f9]">
+<div class="w-screen h-screen bg-[#f1f4f9] h-100">
    <div class="flex p-4">
       <div class="">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
@@ -37,8 +37,33 @@ $query = $db->query($sql);
 
             </div>
          </div>
+         <span class="p-[10px] flex text-[#817A7A] font-normal">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#0FB920]">1</p>จาก<p class="mx-1 text-[#D31D1D]">1</p></span>
+         <span class="p-[10px] flex text-[#817A7A] font-normal">กิจกรรมหน้าเสาธง</span>
+
+         <div class="progress-bar mt-3 mb-3">
+            <progress value="<?php
+
+                              $sql = "SELECT * FROM checked";
+                              $checked_result = $db->query($sql);
+
+                              $result_checked = mysqli_num_rows($checked_result);
+
+                              echo $result_checked;
+
+
+                              ?>" min="75" max="100" style="visibility:hidden;height:0;width:0;">75%</progress>
+         </div>
+         <style>
+            .progress-bar {
+               width: 100px;
+               height: 100px;
+               border-radius: 50%;
+               background:
+                  radial-gradient(closest-side, white 79%, transparent 80% 100%),
+                  conic-gradient(skyblue 75, lightgrey 0);
+            }
+         </style>
          <div class="flex flex-col ">
-            <span class="p-[10px] flex text-[#817A7A] font-normal">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#0FB920]">1</p>จาก<p class="mx-1 text-[#D31D1D]">1</p></span>
 
             <!-- เช็คชื่อหน้าเสาธง -->
             <a href="">
@@ -70,7 +95,7 @@ $query = $db->query($sql);
             </div>
             <div class="flex justify-center items-center gap-[13px]">
                <img src="/components/image/date.svg" class="w-[20.75px] h-[20.75px]" alt="">
-               <label for="Date" class="text-white"><?php echo "" . date("Y/m/d");?></label>
+               <label for="Date" class="text-white"><?php echo "" . date("Y/m/d"); ?></label>
             </div>
          </div>
          <div class="flex flex-col  gap-[10px] py-[17px] px-[92px]  w-full h-[185px]">
