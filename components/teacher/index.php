@@ -70,7 +70,7 @@ $query = $db->query($sql);
             </div>
             <div class="flex justify-center items-center gap-[13px]">
                <img src="/components/image/date.svg" class="w-[20.75px] h-[20.75px]" alt="">
-               <label for="Date" class="text-white">05/06/23</label>
+               <label for="Date" class="text-white"><?php echo "" . date("Y/m/d");?></label>
             </div>
          </div>
          <div class="flex flex-col  gap-[10px] py-[17px] px-[92px]  w-full h-[185px]">
