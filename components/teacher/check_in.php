@@ -80,22 +80,24 @@ $query = $db->query($sql);
         
 
 
-        <div id="Notify" class="w-full h-[275px] rounded-[20px] ml-[10px] bg-[#fff]">
+        <div id="Notify" class="w-full h-auto rounded-[20px] ml-[10px] bg-[#fff]">
             <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
                 
                 <div class="flex flex-row items-center p-0 gap-[17px]">
                     <img src="/components/image/notify.svg" class="w-[18.12px] h-[19.49px]" alt="">
                     <label for="" class="text-dark text-[24px] font-bold">เช็คชื่อนักศึกษา</label>
                 </div>
-                <div class="row">
+                
+                <div class=" items-center">
                     <?php while($row = mysqli_fetch_assoc($query)): ?>
                     <div class="col-md mb-3">
-                        <p class="text-darl text-[18]"><?php echo $row['ref_stdname'];?></p>
-                        <label for="" class="text-dark text-[18px] font-bold">มาเรียน</label>
+                        <p class="text-darl text-[18px] font-bold"><?php echo $row['ref_stdname'];?></p>
+                        <label for="" class="text-dark text-[16px]">มาเรียน</label>
                         <input type="checkbox" name="absent " id="absent " class="w-4 h-4">
-                        <label for="" class="text-dark text-[18px] font-bold">ขาดเรียน</label>
+                        <label for="" class="text-dark text-[16px] ">ขาดเรียน</label>
                         <input type="checkbox" name="present " id="present " class="w-4 h-4">
-                        <hr>
+                        <img src="../image/<?php echo $row['ref_stdImg']; ?>" class="d-flex justify-content-center img-fluid rounded-top rounded w-[128px] " alt="">
+                        <hr class="mt-3">
                     </div>
                     <?php endwhile; ?>
                 </div>
