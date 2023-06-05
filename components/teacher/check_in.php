@@ -9,6 +9,8 @@ include "../assets/teacher_nav.php";
 $sql = "SELECT * FROM enrolltbl";
 $query = $db->query($sql);
 
+#enrolltbl is saved list student 
+
 
 
 // if($_SESSION != $_SESSION['IdCard'])
