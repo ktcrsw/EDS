@@ -90,6 +90,7 @@ $query = $db->query($sql);
          <div class="flex flex-col  gap-[10px] py-[17px] px-[92px]  w-full h-[185px]">
             <label for="heading" class="text-white font-medium text-[24px]">คู่มือกำหนดคาบโฮมรูมและกิจกรรมอื่น</label>
             <p class="text-white">คู่มือกำหนดคาบโฮมรูมและกิจกรรมอื่น</p>
+            <div class="radial-progress " style="--value:70;">70%</div>
          </div>
       </div>
    </div>

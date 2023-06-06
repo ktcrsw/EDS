@@ -9,5 +9,8 @@ module.exports = {
     },
   },
   plugins: [require('prettier-plugin-tailwindcss')],
+  daisyui: {
+    themes: ["light"],
+  },
 }
 

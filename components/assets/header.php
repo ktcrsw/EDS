@@ -18,7 +18,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
 " rel="stylesheet">
-
+<link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
