@@ -10,7 +10,7 @@
         </a>
       </div>
       <div class="flex items-center">
-        <p class="dark:text-white"><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname'];?></b></p>
+        <p class="dark:text-white"><b><?php echo $_SESSION['Username'];?></b></p>
           <div class="flex items-center ml-3">
             <div>
               <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">

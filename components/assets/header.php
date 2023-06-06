@@ -1,3 +1,4 @@
+<html data-theme="cupcake"></html>
 <head>
   <title>EDS | แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</title>
   <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1056204540694757386/1107990375479644251/EDS.png">
@@ -18,7 +19,11 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js
 <link href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
 " rel="stylesheet">
-
+<link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
