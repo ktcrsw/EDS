@@ -25,7 +25,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
       type="text/css"
     />
 <script src="https://cdn.tailwindcss.com"></script>
-
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
 <style>
   
   *{

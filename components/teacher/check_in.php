@@ -51,14 +51,6 @@ $query = $db->query($sql);
 
                 <a href="">
                     <!-- Circle -->
-                    <div x-data="scrollProgress" class="flex flex-col rounded-full ">
-                        <!-- Building a Progress Ring: https://css-tricks.com/building-progress-ring-quickly/ -->
-                        <svg class="w-20 h-20">
-                            <circle class="text-gray-300" stroke-width="5" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
-                            <circle class="text-blue-600" stroke-width="5" :stroke-dasharray="circumference" :stroke-dashoffset=" / 100 * circumference" stroke-linecap="round" stroke="currentColor" fill="transparent" r="30" cx="40" cy="40" />
-                        </svg>
-                        <span class="absolute text-xl text-blue-700" x-text="10"></span>
-                    </div>
                     <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
                         <div class="flex  items-center  h-[53px]">
                             <div class="flex items-center gap-[15px]">
@@ -79,30 +71,39 @@ $query = $db->query($sql);
 
             </div>
         </div>
-        
+
 
 
         <div id="Notify" class="w-full h-auto rounded-[20px] ml-[10px] bg-[#fff]">
             <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
-                
+
                 <div class="flex flex-row items-center p-0 gap-[17px]">
                     <img src="/components/image/notify.svg" class="w-[18.12px] h-[19.49px]" alt="">
                     <label for="" class="text-dark text-[24px] font-bold">เช็คชื่อนักศึกษา</label>
                 </div>
-                
+
                 <div class=" items-center">
-                    <?php while($row = mysqli_fetch_assoc($query)): ?>
-                    <div class="col-md mb-3">
-                        <p class="text-darl text-[18px] font-bold"><?php echo $row['ref_stdname'];?></p>
-                        <label for="" class="text-dark text-[16px]">มาเรียน</label>
-                        <input type="checkbox" name="absent " id="absent " class="w-4 h-4">
-                        <label for="" class="text-dark text-[16px] ">ขาดเรียน</label>
-                        <input type="checkbox" name="present " id="present " class="w-4 h-4">
-                        <img src="../image/<?php echo $row['ref_stdImg']; ?>" class="d-flex justify-content-center img-fluid rounded-top rounded w-[128px] " alt="">
-                        <hr class="mt-3">
-                    </div>
-                    <?php endwhile; ?>
+                    <?php while ($row = mysqli_fetch_assoc($query)) : ?>
+                        <form action="../../Backend/functions/check_homeroom.php" method="post">
+                            <div class="col-md mb-3">
+                                <p class="text-darl text-[18px] font-bold"><?php echo $row['ref_stdname']; ?></p>
+                                <label for="" class="text-dark text-[16px]">มาเรียน</label>
+                                <input type="checkbox" name="absent " id="absent " class="w-4 h-4">
+                                <label for="" class="text-dark text-[16px] ">ขาดเรียน</label>
+                                <input type="checkbox" name="present " id="present " class="w-4 h-4">
+                                <img src="../image/<?php echo $row['ref_stdImg']; ?>" class="d-flex justify-content-center img-fluid rounded-top rounded w-[128px] " alt="">
+                                <hr class="mt-3">
+                            </div>
+                        <?php endwhile; ?>
+                        <input type="date" name="date" id="" class="mt-2 mb-3" style="border:solid 1px grey">
+                        <input type="submit" value="ยืนยันการเช็คชื่อ" class="btn btn-success" style="color:#fff;">
                 </div>
+                </form>
+                <div class="mx-auto w-3/5 overflow-hidden">
+                    <canvas data-te-chart="bar" data-te-dataset-label="Traffic" data-te-labels="['Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday ']" data-te-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]">
+                    </canvas>
+                </div>
+
+            </div>
         </div>
     </div>
-</div>
