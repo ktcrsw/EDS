@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2023 at 04:42 AM
+-- Generation Time: Jun 07, 2023 at 08:11 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `eds_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `checkin`
+--
+
+CREATE TABLE `checkin` (
+  `no` int(11) NOT NULL,
+  `ref_subjectID` int(11) DEFAULT NULL,
+  `ref_teacherID` int(11) DEFAULT NULL,
+  `ref_stdID` varchar(255) DEFAULT NULL,
+  `check_in_status` varchar(255) DEFAULT NULL,
+  `check_in_date` varchar(255) DEFAULT NULL,
+  `save_date` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
 
@@ -63,6 +79,28 @@ INSERT INTO `department` (`dep_id`, `dep_name`) VALUES
 (10, 'การจัดการโลจิสติกส์และซัพพลายเชน '),
 (11, 'ก่อสร้าง '),
 (12, 'โยธา');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enrolltbl`
+--
+
+CREATE TABLE `enrolltbl` (
+  `no` int(11) NOT NULL,
+  `ref_subjecttbl` int(13) DEFAULT NULL,
+  `ref_studenttbl` varchar(13) DEFAULT NULL,
+  `ref_stdname` varchar(255) NOT NULL,
+  `ref_stdImg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `enrolltbl`
+--
+
+INSERT INTO `enrolltbl` (`no`, `ref_subjecttbl`, `ref_studenttbl`, `ref_stdname`, `ref_stdImg`) VALUES
+(1, 1, '64209010026', 'นายเตชสิทธิ์ แก้ววิเชียร', '64209010026.jpg'),
+(2, 1, '64209010027', 'นายคชาม์ สร้อยศรี', '64209010027.jpg');
 
 -- --------------------------------------------------------
 
@@ -1351,45 +1389,46 @@ INSERT INTO `student` (`no_id`, `std_id`, `fullname`, `address`, `tel`, `dep_id`
 CREATE TABLE `subjecttbl` (
   `subject_id` int(11) NOT NULL,
   `subject_name` varchar(255) DEFAULT NULL,
-  `subject_des` varchar(255) NOT NULL
+  `subject_des` varchar(255) NOT NULL,
+  `teacherID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `subjecttbl`
 --
 
-INSERT INTO `subjecttbl` (`subject_id`, `subject_name`, `subject_des`) VALUES
-(1, 'คอมพิวเตอร์เบื้องต้น 1', 'ปวช.'),
-(2, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช.'),
-(3, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช.'),
-(4, 'หลักการออกแบบระบบ 1', 'ปวช.'),
-(5, 'หลักการออกแบบระบบ 2', 'ปวช.'),
-(6, 'หลักการออกแบบระบบ 3', 'ปวช.'),
-(7, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช.'),
-(8, 'ฐานข้อมูลเบื้องต้น 2', 'ปวช.'),
-(9, 'คณิตศาสตร์คอมพิวเตอร์ 1', 'ปวช.'),
-(10, 'คณิตศาสตร์คอมพิวเตอร์ 2', 'ปวส.'),
-(11, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช. / ปวส.'),
-(12, 'การเขียนโปรแกรมด้วยภาษา C และ C++', 'ปวช. / ปวส.'),
-(13, 'หลักการออกแบบระบบ 1', 'ปวช. / ปวส.'),
-(14, 'หลักการออกแบบระบบ 2', 'ปวช. / ปวส.'),
-(15, 'หลักการออกแบบระบบ 3', 'ปวช. / ปวส.'),
-(16, 'การสร้างฐานข้อมูลด้วยภาษา SQL', 'ปวช. / ปวส.'),
-(17, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวช. / ปวส.'),
-(18, 'การออกแบบกราฟิกและแอนิเมชั่น 2', 'ปวช. / ปวส.'),
-(19, 'การออกแบบกราฟิกและแอนิเมชั่น 3', 'ปวช. / ปวส.'),
-(20, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 1', 'ปวช. / ปวส.'),
-(21, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 2', 'ปวช. / ปวส.'),
-(22, 'ระบบเครือข่ายเบื้องต้น 1', 'ปวช. / ปวส.'),
-(23, 'ระบบเครือข่ายเบื้องต้น 2', 'ปวช. / ปวส.'),
-(24, 'การใช้โปรแกรมสำนักงานเบื้องต้น 1', 'ปวช. / ปวส.'),
-(25, 'การใช้โปรแกรมสำนักงานเบื้องต้น 2', 'ปวช. / ปวส.'),
-(26, 'การสร้างเกม 1', 'ปวช. / ปวส.'),
-(27, 'การสร้างเกม 2', 'ปวช. / ปวส.'),
-(28, 'ฝึกงาน', 'ปวช. / ปวส.'),
-(29, 'กิจกรรมสถานประกอบการ 1', 'ปวช. / ปวส.'),
-(30, 'กิจกรรมสถานประกอบการ 2', 'ปวช. / ปวส.'),
-(31, 'กิจกรรมสถานประกอบการ 3', 'ปวช.');
+INSERT INTO `subjecttbl` (`subject_id`, `subject_name`, `subject_des`, `teacherID`) VALUES
+(1, 'คอมพิวเตอร์เบื้องต้น 1', 'ปวช.', 0),
+(2, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช.', 0),
+(3, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช.', 0),
+(4, 'หลักการออกแบบระบบ 1', 'ปวช.', 0),
+(5, 'หลักการออกแบบระบบ 2', 'ปวช.', 0),
+(6, 'หลักการออกแบบระบบ 3', 'ปวช.', 0),
+(7, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช.', 0),
+(8, 'ฐานข้อมูลเบื้องต้น 2', 'ปวช.', 0),
+(9, 'คณิตศาสตร์คอมพิวเตอร์ 1', 'ปวช.', 0),
+(10, 'คณิตศาสตร์คอมพิวเตอร์ 2', 'ปวส.', 0),
+(11, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช. / ปวส.', 0),
+(12, 'การเขียนโปรแกรมด้วยภาษา C และ C++', 'ปวช. / ปวส.', 0),
+(13, 'หลักการออกแบบระบบ 1', 'ปวช. / ปวส.', 0),
+(14, 'หลักการออกแบบระบบ 2', 'ปวช. / ปวส.', 0),
+(15, 'หลักการออกแบบระบบ 3', 'ปวช. / ปวส.', 0),
+(16, 'การสร้างฐานข้อมูลด้วยภาษา SQL', 'ปวช. / ปวส.', 0),
+(17, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวช. / ปวส.', 0),
+(18, 'การออกแบบกราฟิกและแอนิเมชั่น 2', 'ปวช. / ปวส.', 0),
+(19, 'การออกแบบกราฟิกและแอนิเมชั่น 3', 'ปวช. / ปวส.', 0),
+(20, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 1', 'ปวช. / ปวส.', 0),
+(21, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 2', 'ปวช. / ปวส.', 0),
+(22, 'ระบบเครือข่ายเบื้องต้น 1', 'ปวช. / ปวส.', 0),
+(23, 'ระบบเครือข่ายเบื้องต้น 2', 'ปวช. / ปวส.', 0),
+(24, 'การใช้โปรแกรมสำนักงานเบื้องต้น 1', 'ปวช. / ปวส.', 0),
+(25, 'การใช้โปรแกรมสำนักงานเบื้องต้น 2', 'ปวช. / ปวส.', 0),
+(26, 'การสร้างเกม 1', 'ปวช. / ปวส.', 0),
+(27, 'การสร้างเกม 2', 'ปวช. / ปวส.', 0),
+(28, 'ฝึกงาน', 'ปวช. / ปวส.', 0),
+(29, 'กิจกรรมสถานประกอบการ 1', 'ปวช. / ปวส.', 0),
+(30, 'กิจกรรมสถานประกอบการ 2', 'ปวช. / ปวส.', 0),
+(31, 'กิจกรรมสถานประกอบการ 3', 'ปวช.', 0);
 
 -- --------------------------------------------------------
 
@@ -1421,11 +1460,24 @@ INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `ln
 (29, '1413818936445', 'K.kacha', 'k2@gmail.com', '1233333', 'Kacha', 'Julek', 1, ''),
 (30, 'admin', 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', 2, ''),
 (42, 'usr', 'k.kittichai', '64209010030@gmail.com', '1234', 'User', 'Demo', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
-(71, '1254363358912', 'Chanacum', '', '1234', '', '', 1, '30.jpg');
+(71, '1254363358912', 'Chanacum', '', '1234', '', '', 1, '30.jpg'),
+(72, '31231131', 'sdadadad', '1qdsadad', '213231', 'adsdasd', 'daddad', 1, 'dasdd.png\r\n');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `checkin`
+--
+ALTER TABLE `checkin`
+  ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `enrolltbl`
+--
+ALTER TABLE `enrolltbl`
+  ADD PRIMARY KEY (`no`);
 
 --
 -- Indexes for table `news`
@@ -1456,6 +1508,18 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `checkin`
+--
+ALTER TABLE `checkin`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `enrolltbl`
+--
+ALTER TABLE `enrolltbl`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `news`
 --
 ALTER TABLE `news`
@@ -1471,7 +1535,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
