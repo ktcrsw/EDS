@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
-
+<link rel="stylesheet" href="../../src/input.css">
 <style>
   
   *{
