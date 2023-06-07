@@ -10,6 +10,6 @@
     $absent = $_REQUEST['absent'];
     $present = $_REQUEST['present'];
 
-    echo "Hello" . $std_name . " " . $absent . " " . $present;
+    echo "Hello" . $_REQUEST['std_name'];
 
 ?>
