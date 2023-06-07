@@ -1,4 +1,4 @@
-<html data-theme="cupcake"></html>
+<html data-theme="light"></html>
 <head>
   <title>EDS | แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</title>
   <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1056204540694757386/1107990375479644251/EDS.png">
