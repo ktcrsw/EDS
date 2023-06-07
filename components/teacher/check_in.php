@@ -87,7 +87,7 @@ $query = $db->query($sql);
                         <form action="../../Backend/functions/check_homeroom.php" method="post" class="row">
                             <div class="row">
                                 <div class=""></div>
-                                <input type="text" placeholder="<?php echo $row['ref_stdname']; ?>" name="std_name" disabled value="<?php echo $row['ref_stdname']; ?>">
+                                <input type="text"  name="std_name"  value="<?php echo $row['ref_stdname']; ?>">
                                 <label for="" class="text-dark text-[16px]">มาเรียน</label>
                                 <input type="checkbox" name="absent " id="absent " class="w-4 h-4">
                                 <label for="" class="text-dark text-[16px] ">ขาดเรียน</label>
