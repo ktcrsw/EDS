@@ -1,19 +1,15 @@
 <?php 
 
-
+    session_start();
     include '../db/connect.db.php';
 
-    $sql = "SELECT * FROM stdtbl inner join checked ON stdtbl.std_id = checked.std_id";
+    $sql = "SELECT * FROM enrolltbl";
     $query = $db->query($sql);
 
-
-    $std_id = "";
+    isset($_REQUEST['std_name']) ? $std_name = $_REQUEST['std_name'] : $std_name = '';
+    isset($_REQUEST['absent']) ? $absent = $_REQUEST['absent'] : $absent = '';
+    isset($_REQUEST['present']) ? $present = $_REQUEST['present'] : $present = '';
     
-
-    if($row = mysqli_fetch_array($query)){
-        echo $row;
-    }
-
-
+    echo $std_name . " " . $absent . " " . $present;
 
 ?>

@@ -84,9 +84,10 @@ $query = $db->query($sql);
 
                 <div class=" items-center">
                     <?php while ($row = mysqli_fetch_assoc($query)) : ?>
-                        <form action="../../Backend/functions/check_homeroom.php" method="post">
-                            <div class="col-md mb-3">
-                                <p class="text-darl text-[18px] font-bold"><?php echo $row['ref_stdname']; ?></p>
+                        <form action="../../Backend/functions/check_homeroom.php" method="post" class="row">
+                            <div class="row">
+                                <div class=""></div>
+                                <input type="text" placeholder="<?php echo $row['ref_stdname']; ?>" name="std_name">
                                 <label for="" class="text-dark text-[16px]">มาเรียน</label>
                                 <input type="checkbox" name="absent " id="absent " class="w-4 h-4">
                                 <label for="" class="text-dark text-[16px] ">ขาดเรียน</label>
@@ -95,15 +96,10 @@ $query = $db->query($sql);
                                 <hr class="mt-3">
                             </div>
                         <?php endwhile; ?>
-                        <input type="date" name="date" id="" class="mt-2 mb-3" style="border:solid 1px grey">
-                        <input type="submit" value="ยืนยันการเช็คชื่อ" class="btn btn-success" style="color:#fff;">
-                </div>
+                    </div>
+                    <input type="submit" value="Enter" class="btn btn-success">
+                    <input type="date" name="date" id="" class="mt-2 mb-3" style="border:solid 1px grey">
                 </form>
-                <div class="mx-auto w-3/5 overflow-hidden">
-                    <canvas data-te-chart="bar" data-te-dataset-label="Traffic" data-te-labels="['Monday', 'Tuesday' , 'Wednesday' , 'Thursday' , 'Friday' , 'Saturday' , 'Sunday ']" data-te-dataset-data="[2112, 2343, 2545, 3423, 2365, 1985, 987]">
-                    </canvas>
-                </div>
-
             </div>
         </div>
     </div>
