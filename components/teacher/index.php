@@ -13,7 +13,7 @@ $query = $db->query($sql);
 
 
 ?>
-<div class="w-screen h-screen bg-[#f1f4f9] h-100">
+<div class="w-screen h-[1900px] bg-[#f1f4f9] h-100">
    <div class="flex p-4">
       <div class="">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
@@ -38,29 +38,13 @@ $query = $db->query($sql);
             </div>
          </div>
          <span class="p-[10px] flex text-[#817A7A] font-normal">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#0FB920]">1</p>จาก<p class="mx-1 text-[#D31D1D]">1</p></span>
-         <span class="p-[10px] flex text-[#817A7A] font-normal">กิจกรรมหน้าเสาธง</span>
-
+        
 
 
          <div class="flex flex-col ">
 
             <!-- เช็คชื่อหน้าเสาธง -->
 
-            <a href="">
-               <!-- Pregress Circle -->
-               <div class="radial-progress text-success" style="--value:<?php 
-            
-            $num = mysqli_num_rows($query);
-            
-            echo $num;
-            
-            ?>; --size:4rem; --color: #fff;"><?php 
-            
-            $num = mysqli_num_rows($query);
-            
-            echo $num;
-            
-            ?></div>
             test
                <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
                   <div class="flex  items-center  h-[53px]">
@@ -82,7 +66,8 @@ $query = $db->query($sql);
 
          </div>
       </div>
-      <div id="Notify" class="w-full h-[275px] rounded-[20px] ml-[10px] bg-[#0093fb]">
+    <div class="w-full">
+    <div id="Notify" class=" h-[275px] rounded-[20px] ml-[10px] bg-[#0093fb]">
          <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
             <div class="flex flex-row items-center p-0 gap-[17px]">
                <img src="/components/image/notify.svg" class="w-[18.12px] h-[19.49px]" alt="">
@@ -92,12 +77,90 @@ $query = $db->query($sql);
                <img src="/components/image/date.svg" class="w-[20.75px] h-[20.75px]" alt="">
                <label for="Date" class="text-white"><?php echo "" . date("Y/m/d"); ?></label>
             </div>
+   
          </div>
          <div class="flex flex-col  gap-[10px] py-[17px] px-[92px]  w-full h-[185px]">
             <label for="heading" class="text-white font-medium text-[24px]">คู่มือกำหนดคาบโฮมรูมและกิจกรรมอื่น</label>
             <p class="text-white">คู่มือกำหนดคาบโฮมรูมและกิจกรรมอื่น</p>
-            
          </div>
       </div>
+      <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">กิจกรรมหน้าเสาธง</span>
+      <div class="flex h-[327px] rounded-[20px] ml-[10px] bg-white justify-center items-center ">
+         <div class="flex flex-row gap-[18px] justify-center items-center w-[929px] h-[212px]">
+            <div class="flex flex-col justify-center itens-center gap-[18px] w-[167px] h-[208px]">
+               <span>กิจกรรมหน้าเสาธง</span>
+               <a href="">
+               <!-- Pregress Circle -->
+               <div class="radial-progress text-success" style="--value:<?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?>; --size:8rem; --color: #fff;"><?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?></div>
+            </div>
+            <div class="flex flex-col justify-center itens-center gap-[18px] w-[167px] h-[208px] ">
+               <span>เช็คชื่อโฮมรูม</span>
+               <a href="">
+               <!-- Pregress Circle -->
+               <div class="radial-progress text-success" style="--value:<?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?>; --size:8rem; --color: #fff;"><?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?></div>
+            </div>
+            <div class="flex flex-col justify-center itens-center gap-[18px] w-[167px] h-[208px] ">
+               <span>เช็คขื่อเข้าเรียน</span>
+               <a href="">
+               <!-- Pregress Circle -->
+               <div class="radial-progress text-success" style="--value:<?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?>; --size:8rem; --color: #fff;"><?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?></div>
+            </div>
+            <div class="flex flex-col justify-center itens-center gap-[18px] w-[167px] h-[208px] ">
+               <span class="text-[20spx] text-[817a7a] font-normal">บันทึกโฮมรูม</span>
+               <a href="">
+               <!-- Pregress Circle -->
+               <div class="radial-progress text-success" style="--value:<?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?>; --size:8rem; --color: #fff;"><?php 
+            
+            $num = mysqli_num_rows($query);
+            
+            echo $num;
+            
+            ?></div>
+            </div>
+         </div>
+      </div>
+    </div>
    </div>
 </div>
