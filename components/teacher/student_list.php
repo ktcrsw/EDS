@@ -17,6 +17,7 @@ $query = $db->query($sql);
 
 ?>
 <div class="overflow-x-auto m-3">
+    <a href=""><button class="btn btn-primary">เพิ่มข้อมูลนักเรียน</button></a>
   <table class="table">
     <!-- head -->
     <thead>
