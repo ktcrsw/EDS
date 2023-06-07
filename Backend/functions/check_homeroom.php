@@ -6,10 +6,10 @@
     $sql = "SELECT * FROM enrolltbl";
     $query = $db->query($sql);
 
-    $std_name = $_REQUEST['std_name'];
-    $absent = $_REQUEST['absent'];
-    $present = $_REQUEST['present'];
+    isset($_REQUEST['std_name']) ? $std_name = $_REQUEST['std_name'] : $std_name = '';
+    isset($_REQUEST['absent']) ? $absent = $_REQUEST['absent'] : $absent = '';
+    isset($_REQUEST['present']) ? $present = $_REQUEST['present'] : $present = '';
 
-    echo "Hello" . $_REQUEST['std_name'];
+    echo "Hello" . $std_name . " " . $absent . " " . $present;
 
 ?>
