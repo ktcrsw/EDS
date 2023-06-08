@@ -88,34 +88,33 @@ $query = $db->query($sql);
 
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:0;">0%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">กิจกรรมหน้าเสาธง</div>
-                  <div class="text-[50px] text-error font-bold">86%</div>
+                  <div class="text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:0;">0%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">เช็คกิจกรรมหน้าเสาธง</div>
-                  <div class="text-[50px] text-warning font-bold">86%</div>
+                  <div class="text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:0;">0%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
-                  <div class="text-[24px] text-gray-500  ">เช็คชื่อโฮมรูม</div>
-                  <div class="text-[50px] text-success
- font-bold">86%</div>
+                  <div class="text-[24px] text-gray-500 ">เช็คชื่อโฮมรูม</div>
+                  <div class="text-[50px] text-error font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:0;">0%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">บันทึกโฮมรูม</div>
-                  <div class="text-[50px] font-bold">86%</div>
+                  <div class="text-[50px] text-error font-bold ">70%</div>
                </div>
-          
+
 
             </div>
          </div>
