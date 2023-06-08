@@ -65,14 +65,23 @@ $query = $db->query($sql);
          </div>
       </div>
       <div class="w-full">
+
+         <!-- ประชาสัมพันธ์ -->
+
          <div id="Notify" class=" h-[275px] rounded-[20px] ml-[10px] bg-[#0093fb]">
             <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
                <div class="flex flex-row items-center p-0 gap-[17px]">
-                  <img src="/components/image/notify.svg" class="w-[18.12px] h-[19.49px]" alt="">
+                  <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M2.62522 7.50366C2.62522 5.71345 3.33638 3.99656 4.60225 2.73069C5.86812 1.46482 7.58501 0.753662 9.37522 0.753662C11.1654 0.753662 12.8823 1.46482 14.1482 2.73069C15.4141 3.99656 16.1252 5.71345 16.1252 7.50366V8.25366C16.1252 10.3767 16.9252 12.3107 18.2432 13.7737C18.3253 13.8647 18.3839 13.9744 18.4138 14.0932C18.4436 14.2121 18.4439 14.3364 18.4146 14.4554C18.3853 14.5744 18.3273 14.6845 18.2457 14.7758C18.164 14.8672 18.0612 14.9372 17.9462 14.9797C16.4022 15.5497 14.7862 15.9697 13.1152 16.2227C13.1528 16.7368 13.0841 17.2532 12.9131 17.7395C12.7422 18.2259 12.4729 18.6718 12.1219 19.0494C11.771 19.427 11.3459 19.7282 10.8733 19.9341C10.4007 20.1401 9.89073 20.2463 9.37522 20.2463C8.8597 20.2463 8.34972 20.1401 7.87713 19.9341C7.40454 19.7282 6.97948 19.427 6.62851 19.0494C6.27754 18.6718 6.00819 18.2259 5.83729 17.7395C5.66638 17.2532 5.59759 16.7368 5.63522 16.2227C3.98687 15.9729 2.36821 15.5561 0.804217 14.9787C0.689351 14.9363 0.586614 14.8664 0.504979 14.7751C0.423344 14.6839 0.365294 14.574 0.335898 14.4551C0.306503 14.3363 0.306657 14.212 0.336346 14.0932C0.366035 13.9744 0.424357 13.8647 0.506217 13.7737C1.87302 12.2603 2.6283 10.2929 2.62522 8.25366V7.50366ZM7.12722 16.4037C7.11442 16.7069 7.1631 17.0095 7.2703 17.2934C7.37751 17.5773 7.54103 17.8366 7.75104 18.0556C7.96105 18.2747 8.21319 18.449 8.49231 18.568C8.77143 18.6871 9.07176 18.7485 9.37522 18.7485C9.67868 18.7485 9.979 18.6871 10.2581 18.568C10.5372 18.449 10.7894 18.2747 10.9994 18.0556C11.2094 17.8366 11.3729 17.5773 11.4801 17.2934C11.5873 17.0095 11.636 16.7069 11.6232 16.4037C10.1276 16.5384 8.62286 16.5384 7.12722 16.4037Z" fill="white" />
+                  </svg>
+
                   <label for="" class="text-white text-[24px] font-bold">ประชาสัมพันธ์</label>
                </div>
                <div class="flex justify-center items-center gap-[13px]">
-                  <img src="/components/image/date.svg" class="w-[20.75px] h-[20.75px]" alt="">
+                  <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 0.125C5.48206 0.125 5.70462 0.217187 5.86872 0.381281C6.03281 0.545376 6.125 0.767936 6.125 1V2.75H16.625V1C16.625 0.767936 16.7172 0.545376 16.8813 0.381281C17.0454 0.217187 17.2679 0.125 17.5 0.125C17.7321 0.125 17.9546 0.217187 18.1187 0.381281C18.2828 0.545376 18.375 0.767936 18.375 1V2.75H19.25C20.1783 2.75 21.0685 3.11875 21.7249 3.77513C22.3813 4.4315 22.75 5.32174 22.75 6.25V19.375C22.75 20.3033 22.3813 21.1935 21.7249 21.8499C21.0685 22.5063 20.1783 22.875 19.25 22.875H3.5C2.57174 22.875 1.6815 22.5063 1.02513 21.8499C0.368749 21.1935 0 20.3033 0 19.375V6.25C0 5.32174 0.368749 4.4315 1.02513 3.77513C1.6815 3.11875 2.57174 2.75 3.5 2.75H4.375V1C4.375 0.767936 4.46719 0.545376 4.63128 0.381281C4.79538 0.217187 5.01794 0.125 5.25 0.125ZM21 10.625C21 10.1609 20.8156 9.71575 20.4874 9.38756C20.1592 9.05937 19.7141 8.875 19.25 8.875H3.5C3.03587 8.875 2.59075 9.05937 2.26256 9.38756C1.93437 9.71575 1.75 10.1609 1.75 10.625V19.375C1.75 19.8391 1.93437 20.2842 2.26256 20.6124C2.59075 20.9406 3.03587 21.125 3.5 21.125H19.25C19.7141 21.125 20.1592 20.9406 20.4874 20.6124C20.8156 20.2842 21 19.8391 21 19.375V10.625Z" fill="white" />
+                  </svg>
+
                   <label for="Date" class="text-white"><?php echo "" . date("Y/m/d"); ?></label>
                </div>
 
@@ -82,42 +91,116 @@ $query = $db->query($sql);
                <p class="text-white">คู่มือกำหนดคาบโฮมรูมและกิจกรรมอื่น</p>
             </div>
          </div>
-         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">กิจกรรมหน้าเสาธง</span>
-         <div class="flex   justify-center items-center ">
-            <div class="stats w-full ml-[10px] py-8 shadow">
+
+         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">ภาระงานวันนี้</span>
+
+
+
+         <!-- Radial Progress ภาพรวม -->
+
+         <div class="flex navhover  justify-center items-center ">
+            <div class="stats w-full ml-[10px]  py-8 shadow">
 
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">กิจกรรมหน้าเสาธง</div>
                   <div class="text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">เช็คกิจกรรมหน้าเสาธง</div>
                   <div class="text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500 ">เช็คชื่อโฮมรูม</div>
                   <div class="text-[50px] text-error font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-[24px] text-gray-500  ">บันทึกโฮมรูม</div>
                   <div class="text-[50px] text-error font-bold ">70%</div>
                </div>
-
-
             </div>
          </div>
+
+
+
+
+         <div class="flex gap-2 ml-[10px]">
+
+
+            <!-- เช็คชื่อโฮมรูม -->
+
+            <div class="w-[50%]">
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">เช็คชื่อโฮมรูม <p class="mx-1">1</p>จาก<p class="mx-1">1</p>
+                  <span class="flex ml-2 text-[#0093fb] font-medium">บันทึกโฮมรูม <p class="mx-1">1</p>จาก <p class="mx-1">1</p></span>
+               </span>
+               <div class=" h-[220px] bg-white rounded-[20px]">
+                  <!-- เนื้อหาส่วนซ้าย -->
+                  <div class="flex flex-col ml-3 gap-2 p-2 ">
+                     <div>
+                        <span class="text-[25px] font-medium">คาบโฮมรูม : คาบ 1 </span>
+                     </div>
+                     <span class="text-[16px]  tracking-wider text-[6b7280]">เทคโนโลยีสารสนเทศ ปวช.1/ชกว./2</span>
+                  </div>
+                  <div class="items-center justify-center flex">
+
+                     <div class="stats shadow mt-2 ">
+                        <a href="" class="hover:bg-[AEE2FF] duration-300  ">
+                           <div class="stat ">
+                              <div class="stat-figure text-seondary">
+                                 <svg width="49" height="49" viewBox="0 0 49 49" class="inline-block w-8 h-8 " fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 24.5C0 10.9685 10.9685 0 24.5 0C38.0315 0 49 10.9685 49 24.5C49 38.0315 38.0315 49 24.5 49C10.9685 49 0 38.0315 0 24.5ZM33.5713 19.9417C33.722 19.7408 33.8311 19.5118 33.8921 19.2682C33.9531 19.0245 33.9648 18.7711 33.9265 18.5229C33.8881 18.2747 33.8006 18.0366 33.6689 17.8227C33.5373 17.6088 33.3642 17.4233 33.1598 17.2773C32.9555 17.1312 32.724 17.0275 32.479 16.9722C32.234 16.9168 31.9804 16.9111 31.7331 16.9552C31.4858 16.9993 31.2498 17.0923 31.0391 17.2289C30.8283 17.3655 30.6469 17.5429 30.5056 17.7506L22.3742 29.1336L18.2933 25.0528C17.9361 24.7199 17.4635 24.5387 16.9753 24.5473C16.4871 24.5559 16.0212 24.7537 15.6759 25.099C15.3306 25.4443 15.1328 25.9101 15.1242 26.3984C15.1156 26.8866 15.2968 27.3591 15.6297 27.7164L21.2836 33.3703C21.4771 33.5636 21.7103 33.7125 21.967 33.8066C22.2238 33.9007 22.498 33.9378 22.7706 33.9154C23.0431 33.8929 23.3076 33.8114 23.5455 33.6764C23.7833 33.5415 23.989 33.3564 24.1482 33.1341L33.5713 19.9417Z" fill="#18BD14" />
+                                 </svg>
+                              </div>
+                              <div class="text-[20px] font-medium">เช็คชื่อโฮมรูม</div>
+                              <div class="text-[14px] font-medium mt-4 text-[#36d399]">เช็คชื่อแล้ว </div>
+                           </div>
+                        </a>
+
+                        <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
+                           <div class="stat  ">
+                              <div class="stat-figure text-secondary">
+                              <svg width="49" height="49" class="inline-block w-8 h-8 " fill="#FF0060" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 407.096 407.096" xml:space="preserve">
+                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                    <g id="SVGRepo_iconCarrier">
+                                       <g>
+                                          <g>
+                                             <path d="M402.115,84.008L323.088,4.981C319.899,1.792,315.574,0,311.063,0H17.005C7.613,0,0,7.614,0,17.005v373.086 c0,9.392,7.613,17.005,17.005,17.005h373.086c9.392,0,17.005-7.613,17.005-17.005V96.032 C407.096,91.523,405.305,87.197,402.115,84.008z M300.664,163.567H67.129V38.862h233.535V163.567z"></path>
+                                             <path d="M214.051,148.16h43.08c3.131,0,5.668-2.538,5.668-5.669V59.584c0-3.13-2.537-5.668-5.668-5.668h-43.08 c-3.131,0-5.668,2.538-5.668,5.668v82.907C208.383,145.622,210.92,148.16,214.051,148.16z"></path>
+                                          </g>
+                                       </g>
+                                    </g>
+                                 </svg>
+                              </div>
+                              <div class="text-[20px] font-medium">บันทึกโฮมรูม</div>
+                              <div class="text-[14px] font-medium mt-4 text-[red]">ยังไม่บันทึก </div>
+                           </div>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <!-- เช็คชื่อรายวิชา -->
+            <div class="w-[50%]">
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1">0</p>จาก<p class="mx-1">3</p>
+               </span>
+               <div class="h-[220px] bg-white rounded-[20px]">
+                  <!-- เนื้อหาส่วนขวา -->
+               </div>
+            </div>
+         </div>
+
       </div>
    </div>
-</div>
