@@ -17,7 +17,56 @@ $query = $db->query($sql);
 
 ?>
 <div class="overflow-x-auto m-3">
-    <a href="add_student.php"><button class="btn btn-primary">เพิ่มข้อมูลนักเรียน</button></a>
+    <a href=""><button class="btn btn-primary">เพิ่มข้อมูลนักเรียน</button></a>
+
+    <table class="table">
+        <!-- head -->
+        <thead>
+            <tr>
+                <th>
+                    <label>
+                        <input type="checkbox" class="checkbox" />
+                    </label>
+                </th>
+                <th>รหัสนักศึกษา - รูปประจำตัว</th>
+                <th>ชื่อ - สกุล</th>
+                <th>ห้อง</th>
+                <th>แก้ไชช้อมูล</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- row 1 -->
+            <tr>
+                <th>
+                    <label>
+                        <input type="checkbox" class="checkbox" />
+                    </label>
+                </th>
+                <td>
+                    <div class="flex items-center space-x-3">
+                        <div>
+                            <input type="file" class="file-input file-input-bordered w-full max-w-xs" />
+                        </div>
+                        <div>
+                            <div class="font-bold"><input type="text" placeholder="รหัสนักศึกษา" class="input input-bordered w-full max-w-xs" /></div>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <span class="badge badge-ghost badge-sm"><input type="text" placeholder="ชื่อสกุล" class="input input-bordered w-full max-w-xs" /></span>
+                </td>
+                <td>
+                    <input type="text" placeholder="ห้อง" class="input input-bordered w-full max-w-xs" />
+                </td>
+                <th>
+                    <button class="btn btn-ghost btn-xs">แก้ไขข้อมูล</button>
+                </th>
+            </tr>
+
+        </tbody>
+    </table>
+    <div class="overflow-x-auto">
   <table class="table">
     <!-- head -->
     <thead>
@@ -83,4 +132,6 @@ $query = $db->query($sql);
     </tfoot>
     
   </table>
+</div>
+
 </div>
