@@ -13,8 +13,8 @@ $query = $db->query($sql);
 
 
 ?>
-<div class="w-screen h-[1900px] bg-[#f1f4f9] h-100">
-   <div class="flex p-4">
+<div class="w-screen h-[1900px] bg-[#f1f4f9] h-100 ">
+   <div class="flex p-4"> 
       <div class="">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div id="Profile" class="">
