@@ -8,13 +8,16 @@ include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM user";
 $query = $db->query($sql);
+
+$sql1 = "SELECT * FROM checkin";
+$query1 = $db->query($sql1);
 
 
 ?>
 <div class="w-screen h-[1900px] bg-[#f1f4f9] h-100 ">
-   <div class="flex p-4"> 
+   <div class="flex p-4">
       <div class="">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div id="Profile" class="">
@@ -97,7 +100,11 @@ $query = $db->query($sql);
 
 
          <!-- Radial Progress ภาพรวม -->
+         <?php
 
+         $row = mysqli_num_rows($query1);
+
+         ?>
          <div class="flex navhover  justify-center items-center ">
             <div class="stats w-full ml-[10px]  py-8 shadow">
 
@@ -117,10 +124,10 @@ $query = $db->query($sql);
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
                   </div>
                   <div class="text-[24px] text-gray-500 ">เช็คชื่อโฮมรูม</div>
-                  <div class="text-[50px] text-error font-bold">70%</div>
+                  <div class="text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
@@ -140,7 +147,7 @@ $query = $db->query($sql);
 
             <!-- เช็คชื่อโฮมรูม -->
 
-            <div class="w-[50%]">
+            <div class="w-[50%] ">
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">เช็คชื่อโฮมรูม <p class="mx-1">1</p>จาก<p class="mx-1">1</p>
                   <span class="flex ml-2 text-[#0093fb] font-medium">บันทึกโฮมรูม <p class="mx-1">1</p>จาก <p class="mx-1">1</p></span>
                </span>
@@ -170,7 +177,7 @@ $query = $db->query($sql);
                         <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
                            <div class="stat  ">
                               <div class="stat-figure text-secondary">
-                              <svg width="49" height="49" class="inline-block w-8 h-8 " fill="#FF0060" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 407.096 407.096" xml:space="preserve">
+                                 <svg width="49" height="49" class="inline-block w-8 h-8 " fill="#FF0060" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 407.096 407.096" xml:space="preserve">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                                     <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                                     <g id="SVGRepo_iconCarrier">
