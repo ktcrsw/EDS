@@ -320,7 +320,7 @@ $query1 = $db->query($sql1);
             /*                               เช็คชื่อรายวิชา                              */
             /* -------------------------------------------------------------------------- */ -->
             <div class="w-[50%]">
-               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">0</p>จาก<p class="mx-1 text-[red] font-bold">2</p>
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">1</p>จาก<p class="mx-1 text-[red] font-bold">2</p>
                </span>
                <div class=" bg-white rounded-[20px] mb-2">
                   <!-- เนื้อหาส่วนขวา -->
@@ -346,7 +346,7 @@ $query1 = $db->query($sql1);
                      <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                         <label class="font-[500]">สถานะ :</label>
                         <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span>
-                        <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M28 1L9.4375 19L1 10.8182" stroke="#36D399" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
 
@@ -402,11 +402,8 @@ $query1 = $db->query($sql1);
 
                      <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                         <label class="font-[500]">สถานะ :</label>
-                        <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span>
-                        <svg width="29" height="20" viewBox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M28 1L9.4375 19L1 10.8182" stroke="#36D399" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-
+                        <span class="font-[500] text-[#f87272]">ยังไม่เช็คชื่อ</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#f87272" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                      </div>
                   </div>
 
