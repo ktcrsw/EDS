@@ -248,6 +248,11 @@ $query1 = $db->query($sql1);
                </div>
             </div>
 
+
+
+
+
+
             <!-- เช็คชื่อรายวิชา -->
             <div class="w-[50%]">
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">0</p>จาก<p class="mx-1 text-[red] font-bold">3</p>
@@ -311,7 +316,7 @@ $query1 = $db->query($sql1);
 
 
                </div>
-               
+
                <div class=" bg-white rounded-[20px] pb-4">
                   <div class="flex  items-start ml-4  p-2 gap-3">
                      <div class="flex justify-center items-center w-[50px] h-[50px] bg-[febb00] rounded-[50%]">
@@ -357,8 +362,8 @@ $query1 = $db->query($sql1);
                         <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
                      </div>
                   </div>
-
-
+                  
+                  
                </div>
             </div>
          </div>
