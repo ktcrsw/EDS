@@ -263,10 +263,26 @@ $query1 = $db->query($sql1);
                <!-- /* -------------------------------------------------------------------------- */
                /*                          เช็คชื่อเข้าเรียน ภาพรวม                          */
                /* -------------------------------------------------------------------------- */ -->
+               <?php
+               function DateThai($strDate)
+               {
+                  $strYear = date("Y", strtotime($strDate)) + 543;
+                  $strMonth = date("n", strtotime($strDate));
+                  $strDay = date("j", strtotime($strDate));
+                  $strHour = date("H", strtotime($strDate));
+                  $strMinute = date("i", strtotime($strDate));
+                  $strSeconds = date("s", strtotime($strDate));
+                  $strMonthCut = array("", "ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.");
+                  $strMonthThai = $strMonthCut[$strMonth];
+                  return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
+               }
+
+               $strDate = date("Y-m-d H:i:s",);
+               ?>
                <div class=" h-[280px] bg-white rounded-[20px]">
                   <div class="flex ml-3 gap-2 p-2 justify-center  ">
                      <div>
-                        <span class="text-[25px] font-medium text-gray-500">อังคาร 1 พฤษภาคม 2023</span>
+                        <span class="text-[25px] font-medium text-gray-500"><?php echo DateThai($strDate); ?></span>
                      </div>
                   </div>
                   <div class="flex justify-center items-center ">
