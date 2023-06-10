@@ -94,7 +94,7 @@ $query1 = $db->query($sql1);
                            <svg width="20" height="20" class="ml-4 " viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 0.125C5.48206 0.125 5.70462 0.217187 5.86872 0.381281C6.03281 0.545376 6.125 0.767936 6.125 1V2.75H16.625V1C16.625 0.767936 16.7172 0.545376 16.8813 0.381281C17.0454 0.217187 17.2679 0.125 17.5 0.125C17.7321 0.125 17.9546 0.217187 18.1187 0.381281C18.2828 0.545376 18.375 0.767936 18.375 1V2.75H19.25C20.1783 2.75 21.0685 3.11875 21.7249 3.77513C22.3813 4.4315 22.75 5.32174 22.75 6.25V19.375C22.75 20.3033 22.3813 21.1935 21.7249 21.8499C21.0685 22.5063 20.1783 22.875 19.25 22.875H3.5C2.57174 22.875 1.6815 22.5063 1.02513 21.8499C0.368749 21.1935 0 20.3033 0 19.375V6.25C0 5.32174 0.368749 4.4315 1.02513 3.77513C1.6815 3.11875 2.57174 2.75 3.5 2.75H4.375V1C4.375 0.767936 4.46719 0.545376 4.63128 0.381281C4.79538 0.217187 5.01794 0.125 5.25 0.125ZM21 10.625C21 10.1609 20.8156 9.71575 20.4874 9.38756C20.1592 9.05937 19.7141 8.875 19.25 8.875H3.5C3.03587 8.875 2.59075 9.05937 2.26256 9.38756C1.93437 9.71575 1.75 10.1609 1.75 10.625V19.375C1.75 19.8391 1.93437 20.2842 2.26256 20.6124C2.59075 20.9406 3.03587 21.125 3.5 21.125H19.25C19.7141 21.125 20.1592 20.9406 20.4874 20.6124C20.8156 20.2842 21 19.8391 21 19.375V10.625Z" fill="white" />
                            </svg>
-                           <label for="Date" class="text-white text-sm ml-2"><?php echo "" . date("Y/m/d"); ?></label>
+                           <label for="Date" class="text-white text-sm ml-2 mr-2">06/05/2023 - 10/07/2023</label>
                         </div>
                      </div>
                      <div class=" ml-4 mt-4 text-white font-light">งานกิจกรรมนักเรียน นักศึกษา ฝ่ายพัฒนากิจการนักเรียน นักศึกษา จึงกำหนดวัน เวลา และรายละเอียดในการซ่อมแก้กิจกรรม </div>
@@ -121,7 +121,7 @@ $query1 = $db->query($sql1);
                            <svg width="20" height="20" class="ml-4 " viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 0.125C5.48206 0.125 5.70462 0.217187 5.86872 0.381281C6.03281 0.545376 6.125 0.767936 6.125 1V2.75H16.625V1C16.625 0.767936 16.7172 0.545376 16.8813 0.381281C17.0454 0.217187 17.2679 0.125 17.5 0.125C17.7321 0.125 17.9546 0.217187 18.1187 0.381281C18.2828 0.545376 18.375 0.767936 18.375 1V2.75H19.25C20.1783 2.75 21.0685 3.11875 21.7249 3.77513C22.3813 4.4315 22.75 5.32174 22.75 6.25V19.375C22.75 20.3033 22.3813 21.1935 21.7249 21.8499C21.0685 22.5063 20.1783 22.875 19.25 22.875H3.5C2.57174 22.875 1.6815 22.5063 1.02513 21.8499C0.368749 21.1935 0 20.3033 0 19.375V6.25C0 5.32174 0.368749 4.4315 1.02513 3.77513C1.6815 3.11875 2.57174 2.75 3.5 2.75H4.375V1C4.375 0.767936 4.46719 0.545376 4.63128 0.381281C4.79538 0.217187 5.01794 0.125 5.25 0.125ZM21 10.625C21 10.1609 20.8156 9.71575 20.4874 9.38756C20.1592 9.05937 19.7141 8.875 19.25 8.875H3.5C3.03587 8.875 2.59075 9.05937 2.26256 9.38756C1.93437 9.71575 1.75 10.1609 1.75 10.625V19.375C1.75 19.8391 1.93437 20.2842 2.26256 20.6124C2.59075 20.9406 3.03587 21.125 3.5 21.125H19.25C19.7141 21.125 20.1592 20.9406 20.4874 20.6124C20.8156 20.2842 21 19.8391 21 19.375V10.625Z" fill="white" />
                            </svg>
-                           <label for="Date" class="text-white text-sm ml-2"><?php echo "" . date("Y/m/d"); ?></label>
+                           <label for="Date" class="text-white text-sm ml-2 mr-2">06/05/2023 - 10/07/2023</label>
                         </div>
                      </div>
                      <div class=" ml-4 mt-4 text-white font-light">This is the first item's accordion body.</div>
@@ -249,6 +249,66 @@ $query1 = $db->query($sql1);
                      </div>
                   </div>
                </div>
+
+
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-medium">เช็คชื่อเข้าเรียน แผนกเทคโนโลยีสารสนเทศ</span>
+
+               <!-- เช็คชื่อเข้าเรียน ภาพรวม -->
+               <div class=" h-[280px] bg-white rounded-[20px]">
+                  <div class="flex ml-3 gap-2 p-2 justify-center  ">
+                     <div>
+                        <span class="text-[25px] font-medium text-gray-500">อังคาร 1 พฤษภาคม 2023</span>
+                     </div>
+                  </div>
+                  <div class="flex justify-center items-center ">
+
+                     <div class="stat-figure text-secondary flex flex-col justify-center items-center ">
+                        <div class="stat-desc text-neutral pb-1 ">ดำเนินการ</div>
+                        <div class="radial-progress bg-base-200 text-accent-focus border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     </div>
+                  </div>
+                  <div class="flex justify-center mt-7">
+                     <div class="flex flex-row items-center gap-[100px]">
+                        <div class="flex flex-col items-ceter ">
+                           <label for="" class="text-[20px] text-gray-500 font-medium">ทั้งหมด</label>
+                           <span class="text-[18px]">
+                              <label for="" class="text-[#0093fb] font-[500]">3</label>
+                              <label class="text-[18px] text-gray-500">กลุ่ม</label>
+                           </span>
+                        </div>
+                        <div class="flex flex-col items-ceter">
+                           <label for="" class="text-[20px] text-gray-500 font-medium">เช็คชื่อแล้ว</label>
+                           <div class="flex justify-center items-center gap-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#36d399" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                 <circle cx="8.5" cy="7" r="4"></circle>
+                                 <polyline points="17 11 19 13 23 9"></polyline>
+                              </svg>
+                              <span class="text-[18px]">
+                                 <label for="" class="text-[#36d399] font-[500]">1</label>
+                                 <label class="text-[18px] text-gray-500">กลุ่ม</label>
+                              </span>
+                           </div>
+                        </div>
+                        <div class="flex flex-col items-ceter">
+                           <label for="" class="text-[20px] text-gray-500 font-medium">ยังไม่เช็ค</label>
+                           <div class="flex justify-center items-center gap-2">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#e51111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                 <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                 <circle cx="8.5" cy="7" r="4"></circle>
+                                 <line x1="18" y1="8" x2="23" y2="13"></line>
+                                 <line x1="23" y1="8" x2="18" y2="13"></line>
+                              </svg>
+                              <span class="text-[18px]">
+                                 <label for="" class="text-[#e51111] font-[500]">2</label>
+                                 <label class="text-[18px] text-gray-500">กลุ่ม</label>
+                              </span>
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
             </div>
 
 
@@ -318,8 +378,6 @@ $query1 = $db->query($sql1);
                         <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
                      </div>
                   </div>
-
-
                </div>
 
                <div class=" bg-white rounded-[20px] pb-4">
