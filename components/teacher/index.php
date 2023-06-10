@@ -8,7 +8,7 @@ include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
 
-$sql = "SELECT * FROM user";
+$sql = "SELECT * FROM users";
 $query = $db->query($sql);
 
 $sql1 = "SELECT * FROM checkin";
