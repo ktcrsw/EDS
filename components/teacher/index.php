@@ -20,12 +20,14 @@ $query1 = $db->query($sql1);
    <div class="flex p-4">
       <div class="">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
-            <div id="Profile" class="">
-               <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%] shadow-md" alt="">
+            <div class="avatar">
+               <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+                  <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
+               </div>
             </div>
             <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
-               <span class="not-italic font-normal text-[28px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
-               <span class="not-italic font-normal text-[24px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
+               <span class="not-italic font-[500] text-[24px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
+               <span class="not-italic font-[400] text-[18px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
             </div>
             <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
 
@@ -35,12 +37,12 @@ $query1 = $db->query($sql1);
                </div>
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
                   <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
-                  <label class="font-medium text-[px] text-[#0093fb]">กลุ่มที่สอน</label>
+                  <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่สอน</label>
                </div>
 
             </div>
          </div>
-         <span class="p-[10px] flex text-[#817A7A] font-normal">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#0FB920]">1</p>จาก<p class="mx-1 text-[#D31D1D]">1</p></span>
+         <span class="p-[10px] flex text-[#817A7A] font-[500]">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#36d399] font-medium">1</p>จาก<p class="mx-1 text-[#D31D1D] font-medium">1</p></span>
 
 
 
@@ -146,7 +148,7 @@ $query1 = $db->query($sql1);
 
 
 
-         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">ภาระงานวันนี้</span>
+         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">ภาระงานวันนี้</span>
 
          <!-- Radial Progress ภาพรวม -->
          <?php
@@ -197,6 +199,7 @@ $query1 = $db->query($sql1);
             <!-- เช็คชื่อโฮมรูม -->
 
             <div class="w-[50%] ">
+
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-medium">เช็คชื่อโฮมรูม <p class="mx-1 text-[#36d399] font-bold">1</p>จาก<p class="mx-1 text-[red] font-bold">1</p>
                   <span class="flex ml-2 text-[#0093fb] font-medium">บันทึกโฮมรูม <p class="mx-1 text-[#36d399] font-bold">1</p>จาก <p class="mx-1 text-[red] font-bold">1</p></span>
                </span>
@@ -253,9 +256,11 @@ $query1 = $db->query($sql1);
 
 
 
-            <!-- เช็คชื่อรายวิชา -->
+            <!-- /* -------------------------------------------------------------------------- */
+            /*                               เช็คชื่อรายวิชา                              */
+            /* -------------------------------------------------------------------------- */ -->
             <div class="w-[50%]">
-               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-normal">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">0</p>จาก<p class="mx-1 text-[red] font-bold">3</p>
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">0</p>จาก<p class="mx-1 text-[red] font-bold">2</p>
                </span>
                <div class=" bg-white rounded-[20px] mb-2">
                   <!-- เนื้อหาส่วนขวา -->
@@ -288,7 +293,7 @@ $query1 = $db->query($sql1);
                      </div>
                   </div>
 
-                  <!-- ห้องเรียน -->
+                  <!-- /* -------------------------------- ห้องเรียน ------------------------------- */ -->
                   <div class="ml-6 p-2">
                      <div class="flex flex-col items-start pb-8">
                         <div class="flex flex-col">
@@ -335,7 +340,7 @@ $query1 = $db->query($sql1);
                         <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.6704 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                         <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                      </svg>
-                     <span class="text-[18px] font-medium">คาบเรียนที่ <label class="font-[500]">5,6</label></span>
+                     <span class="text-[18px] font-medium">คาบเรียนที่ <label class="font-[500]">6</label></span>
 
                      <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                         <label class="font-[500]">สถานะ :</label>
@@ -362,8 +367,8 @@ $query1 = $db->query($sql1);
                         <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
                      </div>
                   </div>
-                  
-                  
+
+
                </div>
             </div>
          </div>
