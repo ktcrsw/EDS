@@ -8,20 +8,11 @@ include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
 
-   $sql = "SELECT * FROM users";
-   $query = $db->query($sql);
+$sql = "SELECT * FROM users";
+$query = $db->query($sql);
 
-   $sql1 = "SELECT * FROM checkin";
-   $query1 = $db->query($sql1);
-   
-   $mcheck = "SELECT * FROM mcheck";
-   $mres = $db->query($mcheck);
-
-   $gres = mysqli_fetch_assoc($query);
-   $mres = mysqli_num_rows($mres);
-
-
-
+$sql1 = "SELECT * FROM checkin";
+$query1 = $db->query($sql1);
 
 
 ?>
@@ -49,12 +40,12 @@ include "../assets/teacher_nav.php";
                
 
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
-                  <span class="not-italic font-bold text-[28px] text-[#0093fb]"><?php echo $gres['main_groups'];?></span>
+                  <span class="not-italic font-bold text-[28px] text-[#0093fb]">1</span>
                   <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่ปรึกษา</label>
                   
                </div>
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
-                  <span class="not-italic font-bold text-[28px] text-[#0093fb]"><?php echo $gres['groups'];?></span>
+                  <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
                   <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่สอน</label>
                </div>
 
@@ -184,17 +175,17 @@ include "../assets/teacher_nav.php";
             <div class="stats w-full ml-[10px] py-8 shadow">
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $mres; ?>;"><?php echo $mres; ?>%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-sm sm:text-[19px] text-gray-500 font-medium">กิจกรรมหน้าเสาธง</div>
-                  <div class="text-[40px] sm:text-[50px] text-success font-bold"><?php echo $mres; ?>%</div>
+                  <div class="text-[40px] sm:text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $mres; ?>;"><?php echo $mres; ?>%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-sm sm:text-[19px] text-gray-500 font-medium">เช็คกิจกรรมหน้าเสาธง</div>
-                  <div class="text-[40px] sm:text-[50px] text-success font-bold"><?php echo $mres; ?>%</div>
+                  <div class="text-[40px] sm:text-[50px] text-success font-bold">70%</div>
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
@@ -205,10 +196,10 @@ include "../assets/teacher_nav.php";
                </div>
                <div class="stat">
                   <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
+                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
                   </div>
                   <div class="text-sm sm:text-[18px] text-gray-500 font-medium">บันทึกโฮมรูม</div>
-                  <div class="text-[40px] sm:text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
+                  <div class="text-[40px] sm:text-[50px] text-error font-bold">70%</div>
                </div>
             </div>
          </div>
@@ -252,7 +243,7 @@ include "../assets/teacher_nav.php";
                         </a>
 
                         <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
-                           <div class="stat">
+                           <div class="stat  ">
                               <div class="stat-figure text-secondary">
                                  <svg width="49" height="49" class="inline-block w-8 h-8 " fill="#FF0060" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 407.096 407.096" xml:space="preserve">
                                     <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -315,7 +306,7 @@ include "../assets/teacher_nav.php";
                         <div class="flex flex-col items-ceter ">
                            <label for="" class="text-[20px] text-gray-500 font-medium">ทั้งหมด</label>
                            <span class="text-[18px]">
-                              <label for="" class="text-[#0093fb] font-[500]"><?php echo $gres['groups'];?></label>
+                              <label for="" class="text-[#0093fb] font-[500]">3</label>
                               <label class="text-[18px] text-gray-500">กลุ่ม</label>
                            </span>
                         </div>
@@ -328,7 +319,7 @@ include "../assets/teacher_nav.php";
                                  <polyline points="17 11 19 13 23 9"></polyline>
                               </svg>
                               <span class="text-[18px]">
-                                 <label for="" class="text-[#36d399] font-[500]"><?php echo $gres['groups']; ?></label>
+                                 <label for="" class="text-[#36d399] font-[500]">1</label>
                                  <label class="text-[18px] text-gray-500">กลุ่ม</label>
                               </span>
                            </div>
@@ -343,7 +334,7 @@ include "../assets/teacher_nav.php";
                                  <line x1="23" y1="8" x2="18" y2="13"></line>
                               </svg>
                               <span class="text-[18px]">
-                                 <label for="" class="text-[#e51111] font-[500]"><?php echo $gres['groups']; ?></label>
+                                 <label for="" class="text-[#e51111] font-[500]">2</label>
                                  <label class="text-[18px] text-gray-500">กลุ่ม</label>
                               </span>
                            </div>
