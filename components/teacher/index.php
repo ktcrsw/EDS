@@ -28,12 +28,21 @@ $query1 = $db->query($sql1);
             <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
                <span class="not-italic font-[500] text-[24px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
                <span class="not-italic font-[400] text-[18px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
+               <div class="dropdown dropdown-hover border-primary-content">
+  <label tabindex="0" class="btn bg-info border-primary-content m-1">ข้อมูล</label>
+  <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+    <li><a>Item 1</a></li>
+    <li><a>Item 2</a></li>
+  </ul>
+</div>
             </div>
             <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
+               
 
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
                   <span class="not-italic font-bold text-[28px] text-[#0093fb]">1</span>
                   <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่ปรึกษา</label>
+                  
                </div>
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
                   <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
