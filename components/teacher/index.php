@@ -16,9 +16,16 @@ $query1 = $db->query($sql1);
 
 
 ?>
-<div class="w-screen h-[1900px] bg-[#f1f4f9] h-100 ">
+
+
+<div class="w-screen h-full bg-[#f1f4f9] h-100 ">
    <div class="flex p-4">
+      <!-- 
+   /* -------------------------------------------------------------------------- */
+   /*                                   โปรไฟล์                                  */
+   /* -------------------------------------------------------------------------- */ -->
       <div class="">
+         
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div class="avatar">
                <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
@@ -28,21 +35,27 @@ $query1 = $db->query($sql1);
             <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
                <span class="not-italic font-[500] text-[24px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
                <span class="not-italic font-[400] text-[18px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
-               <div class="dropdown dropdown-hover border-primary-content">
-  <label tabindex="0" class="btn bg-info border-primary-content m-1">ข้อมูล</label>
-  <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-    <li><a>Item 1</a></li>
-    <li><a>Item 2</a></li>
-  </ul>
-</div>
+               <div class="dropdown ">
+                  <label tabindex="0" class="btn m-1 border-primary-content bg-base-300 focus:bg-[#4c4f5c]" style="height: 1px;">ข้อมูล</label>
+                  <div tabindex="0" class="dropdown-content card card-compact w-64  p-2 shadow bg-[#4c4f5c] text-primary-content">
+                     <div class="card-body">
+                        <h3 class="card-title">นายกิตติชัย รักษาวงค์</h3>
+                        <p>วิทยาลัยเทคนิคอุดรธานี</p>
+                        <p>เกิด 1 มกราคา 2000</p>
+                        <p>รหัสประจำตัว 64209010033</p>
+                        <p>เบอร์โทร 011-1111-000</p>
+                     </div>
+                  </div>
+               </div>
+
             </div>
             <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
-               
+
 
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
                   <span class="not-italic font-bold text-[28px] text-[#0093fb]">1</span>
                   <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่ปรึกษา</label>
-                  
+
                </div>
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
                   <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
@@ -56,7 +69,7 @@ $query1 = $db->query($sql1);
 
 
          <div class="flex flex-col ">
-<!-- 
+            <!-- 
             /* -------------------------------------------------------------------------- */
             /*                              เช็คชื่อหน้าเสาธง                             */
             /* -------------------------------------------------------------------------- */ -->
@@ -162,7 +175,7 @@ $query1 = $db->query($sql1);
 
 
          <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">ภาระงานวันนี้</span>
-<!-- 
+         <!-- 
          /* -------------------------------------------------------------------------- */
          /*                           Radial Progress ภาพรวม                           */
          /* -------------------------------------------------------------------------- */ -->
@@ -241,6 +254,7 @@ $query1 = $db->query($sql1);
                               <div class="text-[14px] font-medium mt-4 text-[#36d399]">เช็คชื่อแล้ว </div>
                            </div>
                         </a>
+                        
 
                         <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
                            <div class="stat  ">
@@ -346,7 +360,7 @@ $query1 = $db->query($sql1);
             </div>
 
 
-                      
+
 
             <!-- /* -------------------------------------------------------------------------- */
             /*                               เช็คชื่อรายวิชา                              */
@@ -435,7 +449,10 @@ $query1 = $db->query($sql1);
                      <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                         <label class="font-[500]">สถานะ :</label>
                         <span class="font-[500] text-[#f87272]">ยังไม่เช็คชื่อ</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#f87272" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#f87272" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                           <line x1="18" y1="6" x2="6" y2="18"></line>
+                           <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
                      </div>
                   </div>
 
@@ -459,6 +476,19 @@ $query1 = $db->query($sql1);
                </div>
             </div>
          </div>
+         <div class="flex justify-center items-center mt-10">
 
+         </div>
       </div>
+
    </div>
+
+   <!-- /* -------------------------------------------------------------------------- */
+/*                                   footer                                   */
+/* -------------------------------------------------------------------------- */ -->
+   <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+
+      <div>
+         <p>Copyright © 2023 - All right reserved by <span class="text-[#0093fb]">Educations System</span> Ltd</p>
+      </div>
+   </footer>
