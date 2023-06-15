@@ -21,6 +21,7 @@ module.exports = {
     themes: ["light", "dark", "cupcake"],
   },
 }
+
 module.exports = {
   theme: {
     screens: {
