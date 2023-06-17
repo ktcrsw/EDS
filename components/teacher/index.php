@@ -39,10 +39,10 @@ $query1 = $db->query($sql1);
                   <label tabindex="0" class="btn m-1 border-primary-content bg-base-300 focus:bg-[#4c4f5c]" style="height: 1px;">ข้อมูล</label>
                   <div tabindex="0" class="dropdown-content card card-compact w-64  p-2 shadow bg-[#4c4f5c] text-primary-content">
                      <div class="card-body">
-                        <h3 class="card-title">นายกิตติชัย รักษาวงค์</h3>
+                        <h3 class="card-title"><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></h3>
                         <p>วิทยาลัยเทคนิคอุดรธานี</p>
                         <p>เกิด 1 มกราคา 2000</p>
-                        <p>รหัสประจำตัว 64209010033</p>
+                        <p type="password">รหัสประจำตัว <?php echo $_SESSION['IdCard']?></p>
                         <p>เบอร์โทร 011-1111-000</p>
                      </div>
                   </div>
@@ -483,12 +483,4 @@ $query1 = $db->query($sql1);
 
    </div>
 
-   <!-- /* -------------------------------------------------------------------------- */
-/*                                   footer                                   */
-/* -------------------------------------------------------------------------- */ -->
-   <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-
-      <div>
-         <p>Copyright © 2023 - All right reserved by <span class="text-[#0093fb]">Educations System</span> Ltd</p>
-      </div>
-   </footer>
+   <?php include '../assets/footer.php'; ?>

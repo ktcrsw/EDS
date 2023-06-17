@@ -24,7 +24,11 @@
         $_SESSION['Password'] = $row['pwd'];
         $_SESSION['Firstname'] = $row['fname'];
         $_SESSION['Lastname'] = $row['lname'];
+        $_SESSION['address'] = $row['address'];
+        $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['Permission'] = $row['permission'];
+        $_SESSION['main_groups'] = $row['main_groups'];
+        $_SESSION['groups'] = $row['groups'];
         $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];
