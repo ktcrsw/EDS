@@ -24,21 +24,6 @@ $result = $db->query($schdule);
         <div class="px-4 md:px-10 ">
             <div class="flex items-center justify-between">
                 <div class="">
-                    <div class="">
-                        <div class="py-2  text-gray-600 ">
-                            <select class="select select-bordered">
-                                <option>- ดูรายชื่อวิชาในระบบ -</option>
-                                <?php while ($row = mysqli_fetch_assoc($data)) {
-                                    echo "<option>" . $row['subject_name'] . "</option>";
-                                }
-
-
-
-                                ?>
-                            </select>
-                        </div>
-
-                    </div>
 
                 </div>
             </div>
@@ -52,9 +37,14 @@ $result = $db->query($schdule);
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             ชื่อวิชา
                         </label>
-                        <input required name="subject_name" class="appearance-none block w-full bg-gray-200 text-gray-700  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="ชื่อวิชา">
+
+                        <select name="subject_name" id="subject_name" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 ">
+                            <?php while ($allSub = mysqli_fetch_assoc($data)) { ?>
+                                <option value="<?php echo $allSub['subject_name']; ?>"><?php echo $allSub['subject_name']; ?></option>
+                            <?php } ?>
+                        </select>
                     </div>
-                    <div class="w-full md:w-1/2 px-3">
+                    <div class="w-full md:w-1/2 px-3 ">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             ครูผู้สอน
                         </label>
@@ -66,15 +56,18 @@ $result = $db->query($schdule);
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                             หลักสูตรที่สอน
                         </label>
-                        <input required name="course" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="text" placeholder="หลักสูตรที่สอน">
-                        <p class="text-gray-600 text-xs italic"></p>
+                        <select name="course" id="timestart" class="select select-bordered w-full">
+                            <option value="ปวช">ปวช</option>
+                            <option value="ปวส">ปวส</option>
+                            <option value="ป.ตรี">ป.ตรี</option>
+                        </select>                        <p class="text-gray-600 text-xs italic"></p>
                     </div>
 
                     <div class="w-full px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             ห้องที่สอน
                         </label>
-                        <select name="timeend" id="timestart" class="select select-bordered w-full">
+                        <select name="room" id="timestart" class="select select-bordered w-full">
                             <option value="530">530</option>
                             <option value="531">531</option>
                             <option value="532">532</option>
@@ -169,8 +162,8 @@ $result = $db->query($schdule);
                         <td><?php
 
 
-                        
-                        ?></td>
+
+                            ?></td>
                     </tr>
                     <!-- row 2 -->
                     <tr>
@@ -194,83 +187,83 @@ $result = $db->query($schdule);
                 </tbody>
             </table>
             <table class="table m-3 w-full border-collapse border border-slate-500" style="font-size: 24px;">
-    <!-- head -->
-    <thead>
-      <tr>
-        <th>
-          <label>
-            <input type="checkbox" class="checkbox" />
-          </label>
-        </th>
-        <th class="" style="font-size:16px;">ชื่อวิชาที่ลงสอน</th>
-        <th class="" style="font-size:16px;">ชื่ออาจารย์</th>
-        <th class="" style="font-size:16px;">หลักสูตรที่สอน</th>
-        <th class="" style="font-size:16px;">ห้องที่สอน</th>
-        <th class="" style="font-size:16px;">วันที่สอน</th>
-        <th class="" style="font-size:16px;">เวลาที่เริ่มสอน</th>
-        <th class="" style="font-size:16px;">เวลาที่สิ้นสุด</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- row 1 -->
-      <?php 
-      
-      while ($row = mysqli_fetch_assoc($result)):
-      
-      ?>
-      <tr>
-        <th>
-          <label>
-            <input type="checkbox" class="checkbox" />
-          </label>
-        </th>
-        <td style="font-size:16px;">
-          <div class="flex items-center space-x-3">
-            <div>
-              <div class="text-sm opacity-100" style="font-size:16px;"><?php echo $row['classSchedule_subjectName'];?></div>
-            </div>
-          </div>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_teacherName']?></span>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Course']?></span>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Room']?></span>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_date']?></span>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Start']?></span>
-        </td>
-        <td style="font-size:16px;">
-          <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_End']?></span>
-        </td>
-      </tr>
-      <?php endwhile; ?>
-    </tbody>
-    <!-- foot -->
-    <tfoot>
-      <tr>
-        <th></th>
-        <th>ชื่อวิชาที่ลงสอน</th>
-        <th>ชื่ออาจารย์</th>
-        <th>หลักสูตรที่สอน</th>
-        <th>ห้องที่สอน</th>
-        <th>วันที่สอน</th>
-        <th>เวลาที่เริ่มสอน</th>
-        <th>เวลาที่สิ้นสุด</th>
-        <th></th>
-      </tr>
-    </tfoot>
-    
-  </table>
+                <!-- head -->
+                <thead>
+                    <tr>
+                        <th>
+                            <label>
+                                <input type="checkbox" class="checkbox" />
+                            </label>
+                        </th>
+                        <th class="" style="font-size:16px;">ชื่อวิชาที่ลงสอน</th>
+                        <th class="" style="font-size:16px;">ชื่ออาจารย์</th>
+                        <th class="" style="font-size:16px;">หลักสูตรที่สอน</th>
+                        <th class="" style="font-size:16px;">ห้องที่สอน</th>
+                        <th class="" style="font-size:16px;">วันที่สอน</th>
+                        <th class="" style="font-size:16px;">เวลาที่เริ่มสอน</th>
+                        <th class="" style="font-size:16px;">เวลาที่สิ้นสุด</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- row 1 -->
+                    <?php
+
+                    while ($row = mysqli_fetch_assoc($result)) :
+
+                    ?>
+                        <tr>
+                            <th>
+                                <label>
+                                    <input type="checkbox" class="checkbox" />
+                                </label>
+                            </th>
+                            <td style="font-size:16px;">
+                                <div class="flex items-center space-x-3">
+                                    <div>
+                                        <div class="text-sm opacity-100" style="font-size:16px;"><?php echo $row['classSchedule_subjectName']; ?></div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_teacherName'] ?></span>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Course'] ?></span>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Room'] ?></span>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_date'] ?></span>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_Start'] ?></span>
+                            </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_End'] ?></span>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+                <!-- foot -->
+                <tfoot>
+                    <tr>
+                        <th></th>
+                        <th>ชื่อวิชาที่ลงสอน</th>
+                        <th>ชื่ออาจารย์</th>
+                        <th>หลักสูตรที่สอน</th>
+                        <th>ห้องที่สอน</th>
+                        <th>วันที่สอน</th>
+                        <th>เวลาที่เริ่มสอน</th>
+                        <th>เวลาที่สิ้นสุด</th>
+                        <th></th>
+                    </tr>
+                </tfoot>
+
+            </table>
         </div>
- 
+
 
 
 
@@ -293,4 +286,5 @@ $result = $db->query($schdule);
                 list.classList.toggle("hidden");
             }
         </script>
+        <script src="../assets/js/auto_complete.js"></script>
 </section>
