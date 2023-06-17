@@ -1,11 +1,11 @@
 <?php include "header.php"; ?>
-
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 <nav class=" top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700 ">
    <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-between">
          <div class="flex items-center justify-start">
             <a href="index.php" class="flex ml-2 md:mr-24">
-               <img src="https://cdn.discordapp.com/attachments/1056204540694757386/1109853688849236018/EDS_2.png" class="h-10 mr-3 mb-2" alt="EDS Logo" />
+               <img src="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png" class="h-10 mr-3 mb-2" alt="EDS Logo" />
                <span class="self-center text-m font-semibold sm:text-m whitespace-nowrap dark:text-white">แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</span>
             </a>
          </div>

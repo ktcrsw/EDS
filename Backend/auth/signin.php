@@ -14,7 +14,7 @@
         echo "<script>Swal('กรุณากรอกข้อมูล')</script>";
         }
 
-    $auth = "SELECT * FROM users WHERE id_card = '$idcard' AND pwd = '$password'";
+    $auth = "SELECT * FROM users WHERE username = '$idcard' AND pwd = '$password'";
     $query = $db->query($auth);
     if($row = mysqli_fetch_array($query)){
         $_SESSION['UserID'] = $row['u_id'];

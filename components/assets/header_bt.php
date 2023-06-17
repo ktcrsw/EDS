@@ -1,6 +1,5 @@
 
 EDS | แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</title>
-  <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/1056204540694757386/1107990375479644251/EDS.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 

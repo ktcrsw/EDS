@@ -60,7 +60,8 @@ $result = $db->query($schdule);
                             <option value="ปวช">ปวช</option>
                             <option value="ปวส">ปวส</option>
                             <option value="ป.ตรี">ป.ตรี</option>
-                        </select>                        <p class="text-gray-600 text-xs italic"></p>
+                        </select>
+                        <p class="text-gray-600 text-xs italic"></p>
                     </div>
 
                     <div class="w-full px-3">
@@ -243,6 +244,16 @@ $result = $db->query($schdule);
                             <td style="font-size:16px;">
                                 <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_End'] ?></span>
                             </td>
+                            <td style="font-size:16px;">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><a href=""><button class="btn btn-error 	fas fa-exclamation-circle" style="color:#fff;" onclick="Swal.fire(
+                                    {
+  icon: 'error',
+  title: 'ลบรายวิชานี้สำเร็จ',
+  text: 'ลบรายวิชานี้แล้ว!',
+}
+                                )">&nbsp;ลบรายวิชานี้</button></a></span>
+                            </td>
+
                         </tr>
                     <?php endwhile; ?>
                 </tbody>
