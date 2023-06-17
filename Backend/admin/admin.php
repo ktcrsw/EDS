@@ -13,6 +13,9 @@ $result = $db->query($sql);
 ?>
 
 
+
+
+
 <div class="overflow-x-auto m-3">
     <a href=""><button class="btn btn-primary">เพิ่มข้อมูลครู</button></a>
   <table class="table">

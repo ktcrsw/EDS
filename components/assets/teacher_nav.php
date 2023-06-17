@@ -4,13 +4,13 @@
    <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-between">
          <div class="flex items-center justify-start">
-            <a href="https://eds.kittichdevs.com" class="flex ml-2 md:mr-24">
+            <a href="index.php" class="flex ml-2 md:mr-24">
                <img src="https://cdn.discordapp.com/attachments/1056204540694757386/1109853688849236018/EDS_2.png" class="h-10 mr-3 mb-2" alt="EDS Logo" />
                <span class="self-center text-m font-semibold sm:text-m whitespace-nowrap dark:text-white">แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</span>
             </a>
          </div>
          <div class="flex items-center">
-            <p class="dark:text-white"><b><?php echo $_SESSION['Username']; ?></b></p>
+            <p class="dark:text-white"><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></b></p>
             <div class="flex items-center ml-3">
                <div>
                   <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
@@ -49,7 +49,7 @@
 
             </li>
             <li>
-               <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
+               <a href="class_schedule.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
                <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#43d47b" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M21 12H3M12 3v18"/></svg>
                   <span class="flex-1 ml-3 whitespace-nowrap">จัดการตารางเรียน</span>
                </a>
