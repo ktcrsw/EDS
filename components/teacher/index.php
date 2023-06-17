@@ -19,78 +19,81 @@ $query1 = $db->query($sql1);
 
 
 <div class="w-screen h-full bg-[#f1f4f9] h-100 ">
-   <div class="flex p-4">
+   <div class="min-[1000px]:flex p-4">
       <!-- 
    /* -------------------------------------------------------------------------- */
    /*                                   โปรไฟล์                                  */
    /* -------------------------------------------------------------------------- */ -->
       <div class="">
-         
-         <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
-            <div class="avatar">
-               <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2 indicator">
-                  <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class=" w-[162px] h-[162px] rounded-[50%] dhs shadow-md " alt="">
-               </div>
-            </div>
-            <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
-               <span class="not-italic font-[500] text-[24px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
-               <span class="not-italic font-[400] text-[18px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
-               <div class="dropdown ">
-                  <label tabindex="0" class="btn m-1 border-primary-content bg-base-300 focus:bg-[#4c4f5c]" style="height: 1px;">ข้อมูล</label>
-                  <div tabindex="0" class="dropdown-content card card-compact w-64  p-2 shadow bg-[#4c4f5c] text-primary-content">
-                     <div class="card-body">
-                        <h3 class="card-title"><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></h3>
-                        <p>วิทยาลัยเทคนิคอุดรธานี</p>
-                        <p>เกิด 1 มกราคา 2000</p>
-                        <p type="password">รหัสประจำตัว <?php echo $_SESSION['IdCard']?></p>
-                        <p>เบอร์โทร 011-1111-000</p>
-                     </div>
+         <div class="flex justify-center items-center">
+            <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
+               <div class="avatar">
+                  <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
+                     <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
                   </div>
                </div>
-
-            </div>
-            <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
-
-
-               <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
-                  <span class="not-italic font-bold text-[28px] text-[#0093fb]">1</span>
-                  <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่ปรึกษา</label>
+               <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
+                  <span class="not-italic font-[500] text-[24px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
+                  <span class="not-italic font-[400] text-[18px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
+                  <div class="dropdown ">
+                     <label tabindex="0" class="btn m-1 border-primary-content bg-base-300 focus:bg-[#4c4f5c]" style="height: 1px;">ข้อมูล</label>
+                     <div tabindex="0" class="dropdown-content card card-compact w-64  p-2 shadow bg-[#4c4f5c] text-primary-content">
+                        <div class="card-body">
+                           <h3 class="card-title">นายกิตติชัย รักษาวงค์</h3>
+                           <p>วิทยาลัยเทคนิคอุดรธานี</p>
+                           <p>เกิด 1 มกราคา 2000</p>
+                           <p>รหัสประจำตัว 64209010033</p>
+                           <p>เบอร์โทร 011-1111-000</p>
+                        </div>
+                     </div>
+                  </div>
 
                </div>
-               <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
-                  <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
-                  <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่สอน</label>
-               </div>
+               <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
 
+
+                  <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
+                     <span class="not-italic font-bold text-[28px] text-[#0093fb]">1</span>
+                     <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่ปรึกษา</label>
+
+                  </div>
+                  <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
+                     <span class="not-italic font-bold text-[28px] text-[#0093fb]">2</span>
+                     <label class="font-medium text-[18px] text-[#0093fb]">กลุ่มที่สอน</label>
+                  </div>
+
+               </div>
             </div>
          </div>
-         <span class="p-[10px] flex text-[#817A7A] font-[500]">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#36d399] font-medium">1</p>จาก<p class="mx-1 text-[#D31D1D] font-medium">1</p></span>
 
 
 
-         <div class="flex flex-col ">
-            <!-- 
+         <div class="justify-center items-center">
+            <span class="p-[10px] flex max-[1000px]:justify-center text-[#817A7A] font-[500]">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#36d399] font-medium">1</p>จาก<p class="mx-1 text-[#D31D1D] font-medium">1</p></span>
+            <div class="flex justify-center items-center flex-col ">
+               <!-- 
             /* -------------------------------------------------------------------------- */
             /*                              เช็คชื่อหน้าเสาธง                             */
             /* -------------------------------------------------------------------------- */ -->
-            <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
-               <div class="flex  items-center  h-[53px]">
-                  <div class="flex items-center gap-[15px]">
-                     <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.65625 16.5C0.65625 7.74937 7.74937 0.65625 16.5 0.65625C25.2506 0.65625 32.3438 7.74937 32.3438 16.5C32.3438 25.2506 25.2506 32.3438 16.5 32.3438C7.74937 32.3438 0.65625 25.2506 0.65625 16.5ZM22.3662 13.5522C22.4637 13.4223 22.5343 13.2742 22.5737 13.1167C22.6132 12.9591 22.6207 12.7952 22.5959 12.6347C22.5712 12.4742 22.5145 12.3202 22.4294 12.1819C22.3442 12.0436 22.2323 11.9236 22.1002 11.8292C21.968 11.7347 21.8183 11.6676 21.6599 11.6319C21.5014 11.5961 21.3374 11.5924 21.1775 11.6209C21.0176 11.6494 20.865 11.7096 20.7287 11.7979C20.5924 11.8863 20.4751 12.0009 20.3838 12.1353L15.1253 19.4965L12.4862 16.8575C12.2552 16.6422 11.9496 16.525 11.6339 16.5306C11.3182 16.5362 11.0169 16.6641 10.7936 16.8874C10.5703 17.1107 10.4424 17.4119 10.4368 17.7277C10.4313 18.0434 10.5485 18.349 10.7638 18.58L14.42 22.2362C14.5451 22.3613 14.6959 22.4575 14.862 22.5184C15.028 22.5793 15.2054 22.6033 15.3816 22.5888C15.5579 22.5742 15.7289 22.5215 15.8827 22.4343C16.0366 22.347 16.1696 22.2273 16.2725 22.0835L22.3662 13.5522Z" fill="#18BD14" />
+               <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
+                  <div class="flex  items-center  h-[53px]">
+                     <div class="flex items-center gap-[15px]">
+                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd" d="M0.65625 16.5C0.65625 7.74937 7.74937 0.65625 16.5 0.65625C25.2506 0.65625 32.3438 7.74937 32.3438 16.5C32.3438 25.2506 25.2506 32.3438 16.5 32.3438C7.74937 32.3438 0.65625 25.2506 0.65625 16.5ZM22.3662 13.5522C22.4637 13.4223 22.5343 13.2742 22.5737 13.1167C22.6132 12.9591 22.6207 12.7952 22.5959 12.6347C22.5712 12.4742 22.5145 12.3202 22.4294 12.1819C22.3442 12.0436 22.2323 11.9236 22.1002 11.8292C21.968 11.7347 21.8183 11.6676 21.6599 11.6319C21.5014 11.5961 21.3374 11.5924 21.1775 11.6209C21.0176 11.6494 20.865 11.7096 20.7287 11.7979C20.5924 11.8863 20.4751 12.0009 20.3838 12.1353L15.1253 19.4965L12.4862 16.8575C12.2552 16.6422 11.9496 16.525 11.6339 16.5306C11.3182 16.5362 11.0169 16.6641 10.7936 16.8874C10.5703 17.1107 10.4424 17.4119 10.4368 17.7277C10.4313 18.0434 10.5485 18.349 10.7638 18.58L14.42 22.2362C14.5451 22.3613 14.6959 22.4575 14.862 22.5184C15.028 22.5793 15.2054 22.6033 15.3816 22.5888C15.5579 22.5742 15.7289 22.5215 15.8827 22.4343C16.0366 22.347 16.1696 22.2273 16.2725 22.0835L22.3662 13.5522Z" fill="#18BD14" />
+                        </svg>
+                        <span class=" text-[32px] ">เช็คชื่อหน้าเสาธง</span>
+                     </div>
+                     <svg class=" ml-11" width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.49 20.5725C28.7358 20.8186 28.8738 21.1522 28.8738 21.5C28.8738 21.8478 28.7358 22.1814 28.49 22.4275L15.365 35.5525C15.1162 35.7843 14.7871 35.9105 14.4471 35.9045C14.107 35.8985 13.7826 35.7608 13.5421 35.5203C13.3017 35.2798 13.1639 34.9554 13.1579 34.6154C13.1519 34.2754 13.2781 33.9463 13.51 33.6975L25.7075 21.5L13.51 9.30248C13.2781 9.05367 13.1519 8.72459 13.1579 8.38456C13.1639 8.04453 13.3017 7.72011 13.5421 7.47964C13.7826 7.23916 14.107 7.10142 14.4471 7.09542C14.7871 7.08942 15.1162 7.21564 15.365 7.44748L28.49 20.5725Z" fill="#817A7A" />
                      </svg>
-                     <span class=" text-[32px] ">เช็คชื่อหน้าเสาธง</span>
                   </div>
-                  <svg class=" ml-11" width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path d="M28.49 20.5725C28.7358 20.8186 28.8738 21.1522 28.8738 21.5C28.8738 21.8478 28.7358 22.1814 28.49 22.4275L15.365 35.5525C15.1162 35.7843 14.7871 35.9105 14.4471 35.9045C14.107 35.8985 13.7826 35.7608 13.5421 35.5203C13.3017 35.2798 13.1639 34.9554 13.1579 34.6154C13.1519 34.2754 13.2781 33.9463 13.51 33.6975L25.7075 21.5L13.51 9.30248C13.2781 9.05367 13.1519 8.72459 13.1579 8.38456C13.1639 8.04453 13.3017 7.72011 13.5421 7.47964C13.7826 7.23916 14.107 7.10142 14.4471 7.09542C14.7871 7.08942 15.1162 7.21564 15.365 7.44748L28.49 20.5725Z" fill="#817A7A" />
-                  </svg>
+                  <div class="p-4">
+                     <span class="text-[24px] text-[817a7a]">ปวช.1/ชกว./2</span>
+                  </div>
                </div>
-               <div class="p-4">
-                  <span class="text-[24px] text-[817a7a]">ปวช.1/ชกว./2</span>
-               </div>
-            </div>
-            </a>
+               </a>
 
+            </div>
          </div>
       </div>
       <div class="w-full">
@@ -99,7 +102,7 @@ $query1 = $db->query($sql1);
          /*                                ประชาสัมพันธ์                               */
          /* -------------------------------------------------------------------------- */ -->
 
-         <div id="Notify" class=" h-[275 rounded-[20px] ml-[10px] bg-[#0093fb]">
+         <div id="Notify" class=" max-[1000px]:mt-4 h-[275 rounded-[20px] min-[1000px]:ml-[10px] bg-[#0093fb]">
             <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
                <div class="flex flex-row items-center p-0 gap-[17px]">
                   <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,62 +176,64 @@ $query1 = $db->query($sql1);
 
 
 
-
-         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">ภาระงานวันนี้</span>
          <!-- 
          /* -------------------------------------------------------------------------- */
          /*                           Radial Progress ภาพรวม                           */
          /* -------------------------------------------------------------------------- */ -->
+         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">ภาระงานวันนี้</span>
          <?php
 
          $row = mysqli_num_rows($query1);
 
          ?>
+
          <div class="flex navhover justify-center items-center">
             <div class="stats w-full ml-[10px] py-8 shadow">
-               <div class="stat">
-                  <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+               <div class="grid grid-cols-2 min-[1861px]:grid-cols-4 ">
+                  <div class="stat">
+                     <div class="stat-figure text-secondary">
+                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem;  --value:70;">70%</div>
+                     </div>
+                     <div class="">
+                        <div class=" flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">กิจกรรมหน้าเสาธง</div>
+                        <div class="flex justify-center text-[50px] text-success font-bold">70%</div>
+                     </div>
                   </div>
-                  <div class="text-sm sm:text-[19px] text-gray-500 font-medium">กิจกรรมหน้าเสาธง</div>
-                  <div class="text-[40px] sm:text-[50px] text-success font-bold">70%</div>
-               </div>
-               <div class="stat">
-                  <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+                  <div class="stat">
+                     <div class="stat-figure text-secondary">
+                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     </div>
+                     <div class="flex justify-center text-[19px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">เช็คกิจกรรมหน้าเสาธง</div>
+                     <div class="flex justify-center text-[50px] text-success font-bold">70%</div>
                   </div>
-                  <div class="text-sm sm:text-[19px] text-gray-500 font-medium">เช็คกิจกรรมหน้าเสาธง</div>
-                  <div class="text-[40px] sm:text-[50px] text-success font-bold">70%</div>
-               </div>
-               <div class="stat">
-                  <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
+
+                  <div class="stat">
+                     <div class="stat-figure text-secondary">
+                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
+                     </div>
+                     <div class=" flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">เช็คชื่อโฮมรูม</div>
+                     <div class="flex justify-center text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
                   </div>
-                  <div class="text-sm sm:text-[19px] text-gray-500 font-medium">เช็คชื่อโฮมรูม</div>
-                  <div class="text-[40px] sm:text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
-               </div>
-               <div class="stat">
-                  <div class="stat-figure text-secondary">
-                     <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+
+                  <div class="stat">
+                     <div class="stat-figure text-secondary">
+                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:70;">70%</div>
+                     </div>
+                     <div class="flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">บันทึกโฮมรูม</div>
+                     <div class="flex justify-center text-[50px] text-error font-bold">70%</div>
                   </div>
-                  <div class="text-sm sm:text-[18px] text-gray-500 font-medium">บันทึกโฮมรูม</div>
-                  <div class="text-[40px] sm:text-[50px] text-error font-bold">70%</div>
                </div>
             </div>
          </div>
 
 
 
-
-
-         <div class="flex gap-2 ml-[10px]">
-
-
-            <!-- /* -------------------------------------------------------------------------- */
+         <!-- /* -------------------------------------------------------------------------- */
             /*                               เช็คชื่อโฮมรูม                               */
             /* -------------------------------------------------------------------------- */ -->
 
-            <div class="w-[50%] ">
+         <div class="min-[1293px]:flex gap-2 ml-[10px]">
+            <div class="max-[1293px]:w-full w-[50%] ">
 
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-medium">เช็คชื่อโฮมรูม <p class="mx-1 text-[#36d399] font-bold">1</p>จาก<p class="mx-1 text-[red] font-bold">1</p>
                   <span class="flex ml-2 text-[#0093fb] font-medium">บันทึกโฮมรูม <p class="mx-1 text-[#36d399] font-bold">1</p>จาก <p class="mx-1 text-[red] font-bold">1</p></span>
@@ -254,7 +259,7 @@ $query1 = $db->query($sql1);
                               <div class="text-[14px] font-medium mt-4 text-[#36d399]">เช็คชื่อแล้ว </div>
                            </div>
                         </a>
-                        
+
 
                         <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
                            <div class="stat  ">
@@ -279,13 +284,11 @@ $query1 = $db->query($sql1);
                      </div>
                   </div>
                </div>
-
-
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-medium">เช็คชื่อเข้าเรียน แผนกเทคโนโลยีสารสนเทศ</span>
 
                <!-- /* -------------------------------------------------------------------------- */
-               /*                          เช็คชื่อเข้าเรียน ภาพรวม                          */
-               /* -------------------------------------------------------------------------- */ -->
+/*                          เช็คชื่อเข้าเรียน ภาพรวม                          */
+/* -------------------------------------------------------------------------- */ -->
                <?php
                function DateThai($strDate)
                {
@@ -316,7 +319,7 @@ $query1 = $db->query($sql1);
                      </div>
                   </div>
                   <div class="flex justify-center mt-7">
-                     <div class="flex flex-row items-center gap-[100px]">
+                     <div class="flex flex-row items-center gap-[50px] ">
                         <div class="flex flex-col items-ceter ">
                            <label for="" class="text-[20px] text-gray-500 font-medium">ทั้งหมด</label>
                            <span class="text-[18px]">
@@ -361,15 +364,15 @@ $query1 = $db->query($sql1);
 
 
 
-
             <!-- /* -------------------------------------------------------------------------- */
             /*                               เช็คชื่อรายวิชา                              */
             /* -------------------------------------------------------------------------- */ -->
-            <div class="w-[50%]">
+            <div class=" w-[50%] max-[1293px]:w-full">
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">1</p>จาก<p class="mx-1 text-[red] font-bold">2</p>
                </span>
+
+               <!-- /* -------------------------------- วิชาที่ 1 ------------------------------- */ -->
                <div class=" bg-white rounded-[20px] mb-2">
-                  <!-- เนื้อหาส่วนขวา -->
                   <div class="flex  items-start ml-4  p-2 gap-3">
                      <div class="flex justify-center items-center w-[50px] h-[50px] bg-slate-500 rounded-[50%]">
                         <label class="text-white font-medium text-lg">1</label>
@@ -399,7 +402,6 @@ $query1 = $db->query($sql1);
                      </div>
                   </div>
 
-                  <!-- /* -------------------------------- ห้องเรียน ------------------------------- */ -->
                   <div class="ml-6 p-2">
                      <div class="flex flex-col items-start pb-8">
                         <div class="flex flex-col">
@@ -407,8 +409,7 @@ $query1 = $db->query($sql1);
                            <label for="" class="text-[14px] font-[500] text-gray-500">จำนวนทั้งหมด 30 คน</label>
                         </div>
 
-                        <div class="w-[507px] h-0 mt-2 border-solid border-gray-200 border-[1px] ">
-                        </div>
+
                      </div>
 
                      <div class="flex flex-col items-start pb-8">
@@ -417,14 +418,15 @@ $query1 = $db->query($sql1);
                            <label for="" class="text-[14px] font-[500] text-gray-500">จำนวนทั้งหมด 16 คน</label>
                         </div>
 
-                        <div class="w-[507px] h-0 mt-2 border-solid border-gray-200 border-[1px] ">
-                        </div>
+
                      </div>
                      <div class="flex justify-center items-center pb-2 ">
                         <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
                      </div>
                   </div>
                </div>
+
+               <!-- /* -------------------------------- วิชาที่ 2 ------------------------------- */ -->
 
                <div class=" bg-white rounded-[20px] pb-4">
                   <div class="flex  items-start ml-4  p-2 gap-3">
@@ -463,24 +465,15 @@ $query1 = $db->query($sql1);
                            <label for="" class="text-[20px] font-[500]">ปวช.2/1 เทคนิคคอมพิวเตอร์ (ปกติ)</label>
                            <label for="" class="text-[14px] font-[500] text-gray-500">จำนวนทั้งหมด 16 คน</label>
                         </div>
-
-                        <div class="w-[507px] h-0 mt-2 border-solid border-gray-200 border-[1px] ">
-                        </div>
                      </div>
                      <div class="flex justify-center items-center pb-2 ">
                         <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
                      </div>
                   </div>
-
-
                </div>
             </div>
          </div>
          <div class="flex justify-center items-center mt-10">
-
          </div>
       </div>
-
    </div>
-
-   <?php include '../assets/footer.php'; ?>
