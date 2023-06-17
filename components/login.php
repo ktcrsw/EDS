@@ -10,73 +10,89 @@
   <link rel="stylesheet" href="./assets/output.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../../src/input.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" components/index.php crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=IBM+Plex+Sans+Thai+Looped&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.all.min.js
+"></script>
+  <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
+" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.6.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+  </script>
+  <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 </head>
 
-<body class="flex justify-center">
-  <div class="flex w-600  h-600 bg-white 400 mt-24 drop-shadow-shadow-xlxl border rounded-round-40 ">
-    <div class="w-571 h-772 bg-#0093FB shadow-blux border rounded-round-40 ">
-      <img src="image/woman_student.png" alt="" class="w-187 h-519 absolute left-[188px] top-[139px]">
-      <div class="flex flex-row items-center p-0 absolute w-[450px] h-[79px] left-[20px] top-0">
-        <div class=" p-[10px] gap-[10px] w-[107px] h-[79px]">
-          <h1 class="absolute  left-[29.25px] mt-[3px] "><img src="/image/logoEDS.svg" alt=""></h1>
-        </div>
-        <label class="font-medium text-[30px] leading-[39px] not-italic text-white font-ibm-plex-sans ml-7 mt-3 ">Education System</label>
+<body>
+  <div class="grid min-[1030px]:grid-cols-2 h-screen">
+    <div class=" w-full flex justify-center items-center">
+      <div class="w-full min-[1300px]:ml-32  flex justify-center items-center">
+        <img src="../components/image/eds_logo.svg" class="w-[200px] h-[300px] md:w-[auto] md:h-[auto]" alt="">
+        <label class="text-[130px] min-[1300px]:text-[200px] font-[700] text-[#3884FD]">EDS</label>
       </div>
-      <img src="image/yellow.svg" class="absolute left-[117px] top-[143.8px]" alt="">
-      <img src="image/orange.svg" class="absolute left-[424.76px] top-[146.18px]" alt="">
-      <img src="image/green.svg" class="absolute left-[440px] top-[414.86px]" alt="">
-      <img src="image/Group 5.svg" class="absolute left-[168px] top-[661px]" alt="">
-      <img src="image/pink.svg" class="absolute left-[73.56px] top-[390.06px]" alt="">
     </div>
-    <div class="  w-[600px] h-[650px] mt-[109px] ml-[300px]">
-      <div class="w-[470px] h-[541px]">
-        <label class="font-bold not-italic text-[70px] leading-[91px] text-[#808080] -mx-px font-ibm-thai">เข้าสู่ระบบ EDS</label>
-        <div class=" rounded w-[470px] h-[432px] mt-14 ">
-          <div class="flex gap-20 ">
-            <img src="image/female 1.svg" class=" w-[94px] h-[44px] pl-3 " alt="">
-            <img src="image/graduating-student 1.svg" class="w-[94px] h-[44px] " alt="">
-            <img src="image/user-gear 1.svg" class="w-[94px] h-[44px] pl-5 " alt="">
+    <div class="w-full flex justify-center items-center">
+      <div class="flex items-center justify-center">
+        <div>
+          <label class="text-[70px] font-bold text-[#808080] ">เข้าสู่ระบบ EDS</label>
+          <div class="btn-group flex justify-center items-center mt-8">
+            <a href="http://localhost/eds/components/login_stu.php">
+              <button class="btn btn-info
+  text-white rounded-none rounded-l-[15px] bg-[#3884fd]  w-32 hover:bg-[#5ED9AC]"><img src="./image/graduated (1).png" class="mr-1">นักเรียน</button>
+            </a>
+            <a href="http://localhost/eds/components/login.php">
+              <button class="btn rounded-none btn-success text-white w-32     "><img src="./image/teacher (1).png" class="mr-1">ครู</button>
+            </a>
+            <a href="http://localhost/eds/components/login_admin.php">
+              <button class="btn rounded-none btn-info bg-[#3884fd]  text-white rounded-r-[15px] hover:bg-[#5ED9AC] w-32"><img src="./image/manager.png" class="mr-1">ผู้ดูแล</button>
+            </a>
           </div>
-          <div class="flex gap-20 font-ibm-thai text-[16px] font-normal">
-            <button class="w-24 h-12  hover:text-blue-500 focus:text-blue-500">
-              ครู/บุคลากร
-            </button>
-            <button class="w-24 h-12  hover:text-blue-500 focus:text-blue-500">
-              นักเรียน
-            </button>
-            <button class="w-24 h-12 hover:text-blue-500 focus:text-blue-500">
-              ผู้ดูแล
-            </button>
-          </div>
-          ​
-          <!-- ---Login---- -->
-
+<!-- 
+          /* -------------------------------------------------------------------------- */
+          /*                                    login                                   */
+          /* -------------------------------------------------------------------------- */ -->
           <form action="../Backend/auth/signin.php" method="post" name="frm">
-            <div class="ml-12 mt-12">
-              <div class="mb-4 font-ibm-thai font-normal text-[24px] leading-[40px]">
-                <div class="relative">
-                  <div class="flex left-10">
-                    <input id="idcard" name="idcard" type="text" class="block appearance-none w-[351px] h-[57px] rounded-[10px] bg-white border border-gray-300  rounded py-2 px-3   leading-tight focus:outline-none focus:shadow-outline shadow-sha-input " placeholder="รหัสประจำตัวประชาชน/ID Card">
-                  </div>
-                </div>
-              </div>
+          <div class="flex justify-center items-center mt-8">
+            <div class="w-[340px]">
+              <div class="relative h-10 w-full min-w-[200px]  ">
 
-              <div class="mb-4 font-ibm-thai font-normal text-[24px] leading-[40px] mt-8">
-                <div class="relative">
-                  <input id="pwd" name="pwd" type="password" class="block appearance-none w-[351px] h-[57px] rounded-[10px] bg-white border border-gray-300 rounded py-2 px-3 pl-[p] leading-tight  focus:outline-none focus:shadow-outline shadow-sha-input " placeholder="รหัสผ่าน/Password">
-                </div>
-              </div>
+                <input id="idcard" name="idcard" type="text" class="peer h-full w-full rounded-[7px] border border-gray-300 t bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" placeholder=" " />
+                <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
 
-
-              <div class="flex items-center justify-between font-ibm-thai text-[24px]">
-                <input id="loginBtn" type="submit" onlick="javascript:swal('test')" class="bg-bg-login hover:bg-blue-700 font-normal text-red-50 w-[351px] h-[58px] rounded-[10px] focus:outline-none focus:shadow-outline mt-[37px]" type="button" value="เข้าระบบ">
+                  ผู้ใช้งาน/Username
+                </label>
               </div>
-          </form>
+            </div>
+          </div>
+          <div class="flex justify-center items-center mt-4">
+            <div class="w-[340px]">
+              <div class="relative h-10 w-full min-w-[200px]  ">
+                <input id="pwd" name="pwd" type="password" class="peer h-full w-full rounded-[7px] border border-gray-300 t bg-transparent px-3 py-2.5 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50" placeholder=" " />
+                <label class="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                  รหัสผ่าน/Password
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center items-center pb-11">
+            <button id="loginBtn" type="submit" onlick="javascript:swal('test')" class="btn bg-[#3884fd] hover:bg-[#5ED9AC] text-white border-0 duration-500  w-[340px] mt-7"><svg xmlns="http://www.w3.org/2000/svg" class="mr-2" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4M10 17l5-5-5-5M13.8 12H3" />
+              </svg>เข้าสู่ระบบ</button>
+          </div>
         </div>
+          </form>
       </div>
     </div>
   </div>
-  </div>
+
   <script>
     function IsEmpty() {
       if (document.forms['frm'].username.value === "") {
