@@ -89,19 +89,18 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
           </div>
         </div>
           </form>
+          
       </div>
+      
     </div>
+    
   </div>
+  <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
 
-  <script>
-    function IsEmpty() {
-      if (document.forms['frm'].username.value === "") {
-        alert("empty");
-        return false;
-      }
-      return true;
-    }
-  </script>
+<div>
+   <p>Copyright © 2023 - All right reserved by <span class="text-[#0093fb]"><a href="eds_team.php">Educations System</a></span> Ltd</p>
+</div>
+</footer>
 </body>
 <?php include 'bg.php'; ?>
 
