@@ -139,54 +139,74 @@ $result = $db->query($schdule);
                     <a href="dataSchedule.php"><label tabindex="0" class="btn btn-accent m-1">ดูรายชื่อวิชาที่ลงสอนทั้งหมด</label></a>
                 </div>
             </form>
-            <table class="table m-3 border-collapse border border-slate-500">
-                <!-- head -->
-                <thead>
-                    <tr>
-                        <th style="font-size:16px;" class="border border-slate-600">ก่อนคาบแรก</th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 1 <br>8.30 - 9.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 2 <br>9.30 - 10.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 3 <br>10.30 - 11.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 4 <br>11.30 - 12.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 5 <br>12.30 - 13.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 6 <br>13.30 - 14.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 7 <br>14.30 - 15.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 8 <br>15.30 - 16.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 9 <br>16.30 - 17.30 </th>
-                        <th style="font-size:16px;" class="border border-slate-600">คาบที่ 10 <br>17.30 - 18.30 </th>
-                    </tr>
-                </thead>
-                <tbody class="border-collapse border border-slate-500">
-                    <!-- row 1 -->
-                    <tr>
-                        <th>จันทร์</th>
-                        <td><?php
+            <div class="overflow-x-auto">
+  <table class="table m-3 border-collapse border border-slate-500">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th class="border border-slate-600">ก่อนคาบแรก</th>
+        <th class="border border-slate-600">คาบที่ 1 <br>8.30 - 9.30 </th>
+        <th class="border border-slate-600">คาบที่ 2 <br>9.30 - 10.30 </th>
+        <th class="border border-slate-600">คาบที่ 3 <br>10.30 - 11.30 </th>
+        <th class="border border-slate-600">คาบที่ 4 <br>11.30 - 12.30 </th>
+        <th class="border border-slate-600">คาบที่ 5 <br>12.30 - 13.30 </th>
+        <th class="border border-slate-600">คาบที่ 6 <br>13.30 - 14.30 </th>
+        <th class="border border-slate-600">คาบที่ 7 <br>14.30 - 15.30 </th>
+        <th class="border border-slate-600">คาบที่ 8 <br>15.30 - 16.30 </th>
+        <th class="border border-slate-600">คาบที่ 9 <br>16.30 - 17.30 </th>
+        <th class="border border-slate-600">คาบที่ 10 <br>17.30 - 18.30 </th>
+      </tr>
+    </thead>
+    <tbody class="border-collapse border border-slate-500">
+      <!-- row 1 -->
+      <tr>
+        <th class="table-th-mobile">จันทร์</th>
+        <td class="table-td-mobile">
+          <?php
+          // Content for cell
+          ?>
+        </td>
+      </tr>
+      <!-- row 2 -->
+      <tr>
+        <th class="table-th-mobile">อังคาร</th>
+        <td class="table-td-mobile">
+          <?php
+          // Content for cell
+          ?>
+        </td>
+      </tr>
+      <!-- row 3 -->
+      <tr>
+        <th class="table-th-mobile">พุธ</th>
+        <td class="table-td-mobile">
+          <?php
+          // Content for cell
+          ?>
+        </td>
+      </tr>
+      <!-- row 4 -->
+      <tr>
+        <th class="table-th-mobile">พฤหัสบดี</th>
+        <td class="table-td-mobile">
+          <?php
+          // Content for cell
+          ?>
+        </td>
+      </tr>
+      <!-- row 5 -->
+      <tr>
+        <th class="table-th-mobile">ศุกร์</th>
+        <td class="table-td-mobile">
+          <?php
+          // Content for cell
+          ?>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-
-
-                            ?></td>
-                    </tr>
-                    <!-- row 2 -->
-                    <tr>
-                        <th>อังคาร</th>
-
-                    </tr>
-                    <!-- row 3 -->
-                    <tr>
-                        <th>พุธ</th>
-
-                    </tr>
-                    <!-- row 4 -->
-                    <tr>
-                        <th>พฤหัสบดี</th>
-
-                    </tr>
-                    <!-- row 5 -->
-                    <tr>
-                        <th>ศุกร์</th>
-                    </tr>
-                </tbody>
-            </table>
             <table class="table m-3 w-full border-collapse border border-slate-500" style="font-size: 24px;">
                 <!-- head -->
                 <thead>

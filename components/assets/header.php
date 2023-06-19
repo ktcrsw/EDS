@@ -35,6 +35,12 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
 <script src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
 <link rel="stylesheet" href="../../src/input.css">
+<script src="
+https://cdn.jsdelivr.net/npm/darkreader@4.9.58/darkreader.min.js
+"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.1/dist/full.css" rel="stylesheet" type="text/css" />
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
   
   *{
