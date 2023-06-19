@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 17, 2023 at 01:44 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jun 19, 2023 at 08:14 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -228,6 +228,7 @@ INSERT INTO `subjecttbl` (`subject_id`, `subject_name`, `subject_des`, `teacherI
 CREATE TABLE `users` (
   `u_id` int(11) NOT NULL,
   `id_card` varchar(13) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `pwd` varchar(20) DEFAULT NULL,
   `fname` varchar(255) DEFAULT NULL,
@@ -243,10 +244,10 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`u_id`, `id_card`, `email`, `pwd`, `fname`, `lname`, `address`, `permission`, `main_groups`, `groups`, `img`) VALUES
-(1, '3626299495765', 'k@gmail.com', '123', 'Kittichai', 'Raksawong', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
-(30, 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
-(42, 'usr', '64209010030@gmail.com', '1234', 'User', 'Demo', '', 0, '', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg');
+INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `permission`, `main_groups`, `groups`, `img`) VALUES
+(1, '3626299495765', 'EDS-1', 'k@gmail.com', '123', 'Kittichai', 'Raksawong', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
+(30, 'admin', '', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
+(42, 'usr', '', '64209010030@gmail.com', '1234', 'User', 'Demo', '', 0, '', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg');
 
 --
 -- Indexes for dumped tables
