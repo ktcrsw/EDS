@@ -1,4 +1,5 @@
 <html data-theme="light"></html>
+
 <head>
   <title>EDS | แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</title>
   <meta charset="utf-8">
@@ -47,4 +48,15 @@ https://cdn.jsdelivr.net/npm/darkreader@4.9.58/darkreader.min.js
     font-family: "IBM Plex Sans Thai";
     font-weight: 400;
   }
+  body {
+  background-color: white;
+  color: black;
+
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 </style>
+   

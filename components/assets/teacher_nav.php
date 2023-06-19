@@ -14,7 +14,7 @@
             <label class="swap swap-rotate">
 
                <!-- this hidden checkbox controls the state -->
-               <input type="checkbox" hidden onclick="toggledarktheme()" />
+               <input type="checkbox" hidden onclick="myFunction()" />
 
                <!-- sun icon -->
                <svg class="swap-on fill-current w-10 h-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -130,11 +130,9 @@
 
    </aside>
    <script>
-      function toggledarktheme() {
-         if (DarkReader.isEnabled()) {
-            DarkReader.disable();
-         } else {
-            DarkReader.enable();
-         }
-      }
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
    </script>

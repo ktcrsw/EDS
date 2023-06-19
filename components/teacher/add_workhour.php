@@ -139,7 +139,6 @@ $result = $db->query($schdule);
                     <a href="dataSchedule.php"><label tabindex="0" class="btn btn-accent m-1">ดูรายชื่อวิชาที่ลงสอนทั้งหมด</label></a>
                 </div>
             </form>
-            <div class="overflow-x-auto">
   <table class="table m-3 border-collapse border border-slate-500">
     <!-- head -->
     <thead>
@@ -161,7 +160,7 @@ $result = $db->query($schdule);
       <!-- row 1 -->
       <tr>
         <th class="table-th-mobile">จันทร์</th>
-        <td class="table-td-mobile">
+        <td class="">
           <?php
           // Content for cell
           ?>
@@ -170,7 +169,7 @@ $result = $db->query($schdule);
       <!-- row 2 -->
       <tr>
         <th class="table-th-mobile">อังคาร</th>
-        <td class="table-td-mobile">
+        <td class="">
           <?php
           // Content for cell
           ?>
@@ -179,7 +178,7 @@ $result = $db->query($schdule);
       <!-- row 3 -->
       <tr>
         <th class="table-th-mobile">พุธ</th>
-        <td class="table-td-mobile">
+        <td class="">
           <?php
           // Content for cell
           ?>
@@ -188,7 +187,7 @@ $result = $db->query($schdule);
       <!-- row 4 -->
       <tr>
         <th class="table-th-mobile">พฤหัสบดี</th>
-        <td class="table-td-mobile">
+        <td class="">
           <?php
           // Content for cell
           ?>
@@ -197,7 +196,7 @@ $result = $db->query($schdule);
       <!-- row 5 -->
       <tr>
         <th class="table-th-mobile">ศุกร์</th>
-        <td class="table-td-mobile">
+        <td class="">
           <?php
           // Content for cell
           ?>
@@ -205,7 +204,6 @@ $result = $db->query($schdule);
       </tr>
     </tbody>
   </table>
-</div>
 
             <table class="table m-3 w-full border-collapse border border-slate-500" style="font-size: 24px;">
                 <!-- head -->
