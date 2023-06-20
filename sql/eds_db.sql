@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2023 at 08:14 AM
+-- Generation Time: Jun 20, 2023 at 09:00 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -61,7 +61,10 @@ CREATE TABLE `classschedule` (
 
 INSERT INTO `classschedule` (`classSchedule_id`, `classSchedule_subjectName`, `classSchedule_teacherName`, `classSchedule_Course`, `classSchedule_Room`, `classSchedule_date`, `classSchedule_Start`, `classSchedule_End`) VALUES
 (2, 'คอมพิวเตอร์เบื้องต้น 1', 'อ.คชาม์', 'ปวช.', '535', 'พุธ', '14.30', '15.30 '),
-(7, 'ฝึกงาน', 'อ.บงกชเพชร', 'ปวส.', '', 'ศุกร์', '17.30', '18.30');
+(7, 'ฝึกงาน', 'อ.บงกชเพชร', 'ปวส.', '', 'ศุกร์', '17.30', '18.30'),
+(8, 'หลักการออกแบบระบบ 3', 'อ.คชาม์', 'ปวช', '533', 'พุธ', '14.30', '16.30'),
+(11, 'คอมพิวเตอร์เบื้องต้น 1', 'กิตติชัย', 'ปวช', '530', 'จันทร์', '8.30', '9.30'),
+(12, 'ฐานข้อมูลเบื้องต้น 1', 'กิตติชัย', 'ปวช', '530', 'จันทร์', '10.30', '12.30');
 
 -- --------------------------------------------------------
 
@@ -129,6 +132,22 @@ CREATE TABLE `news` (
   `n_id` int(11) NOT NULL,
   `n_name` varchar(255) DEFAULT NULL,
   `n_detail` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `save_classschedule`
+--
+
+CREATE TABLE `save_classschedule` (
+  `no` int(11) NOT NULL,
+  `classSchedule_subjectName` varchar(255) DEFAULT NULL,
+  `classSchedule_teacherName` varchar(255) DEFAULT NULL,
+  `classSchedule_Room` varchar(255) DEFAULT NULL,
+  `classSchedule_date` varchar(255) DEFAULT NULL,
+  `classSchedule_Start` varchar(255) DEFAULT NULL,
+  `classSchedule_End` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -245,8 +264,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `permission`, `main_groups`, `groups`, `img`) VALUES
-(1, '3626299495765', 'EDS-1', 'k@gmail.com', '123', 'Kittichai', 'Raksawong', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
-(30, 'admin', '', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
+(1, '3626299495765', 'EDS-1', 'k@gmail.com', '123', 'กิตติชัย', 'รักษาวงค์', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
+(30, 'admin', 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
 (42, 'usr', '', '64209010030@gmail.com', '1234', 'User', 'Demo', '', 0, '', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg');
 
 --
@@ -284,6 +303,12 @@ ALTER TABLE `news`
   ADD PRIMARY KEY (`n_id`);
 
 --
+-- Indexes for table `save_classschedule`
+--
+ALTER TABLE `save_classschedule`
+  ADD PRIMARY KEY (`no`);
+
+--
 -- Indexes for table `stdtbl`
 --
 ALTER TABLE `stdtbl`
@@ -315,7 +340,7 @@ ALTER TABLE `checkin`
 -- AUTO_INCREMENT for table `classschedule`
 --
 ALTER TABLE `classschedule`
-  MODIFY `classSchedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `classSchedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `enrolltbl`
@@ -334,6 +359,12 @@ ALTER TABLE `mcheck`
 --
 ALTER TABLE `news`
   MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `save_classschedule`
+--
+ALTER TABLE `save_classschedule`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subjecttbl`
