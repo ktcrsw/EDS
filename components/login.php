@@ -32,6 +32,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
 </head>
 
 <body>
+  
   <div class="grid min-[1030px]:grid-cols-2 h-screen">
     <div class=" w-full flex justify-center items-center">
       <div class="w-full min-[1300px]:ml-32  flex justify-center items-center">
@@ -55,6 +56,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
               <button class="btn rounded-none btn-info bg-[#3884fd]  text-white rounded-r-[15px] hover:bg-[#5ED9AC] w-32"><img src="./image/manager.png" class="mr-1">ผู้ดูแล</button>
             </a>
           </div>
+          
 <!-- 
           /* -------------------------------------------------------------------------- */
           /*                                    login                                   */
@@ -88,6 +90,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
               </svg>เข้าสู่ระบบ</button>
           </div>
         </div>
+        
           </form>
           
       </div>

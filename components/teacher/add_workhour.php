@@ -1,9 +1,7 @@
-<?php session_start(); ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
-include "../assets/teacher_nav.php";
 
 $sql = "SELECT * FROM users";
 $query = $db->query($sql);
@@ -27,7 +25,6 @@ $result = $db->query($schdule);
 
                 </div>
             </div>
-            <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">จัดการตารางเรียน</p>
         </div>
 
         <div class="bg-white py-4  px-4 md:px-8 xl:px-10">
@@ -48,7 +45,7 @@ $result = $db->query($schdule);
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             ครูผู้สอน
                         </label>
-                        <input required name="teacher_name" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="ชื่อครูผู้สอน">
+                        <input required name="teacher_name" class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="<?php echo $_SESSION['Firstname']; ?>" value="<?php echo $_SESSION['Firstname']; ?>">
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -136,7 +133,7 @@ $result = $db->query($schdule);
                 </div>
                 <button type="submit" class="btn btn-primary text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">ลงเวลาที่สอน</button>
                 <div class="dropdown dropdown-right">
-                    <a href="dataSchedule.php"><label tabindex="0" class="btn btn-accent m-1">ดูรายชื่อวิชาที่ลงสอนทั้งหมด</label></a>
+                    <a href="dataSchedule.php"><label tabindex="0" class="btn btn-success m-1 text-light"><span class="text-white"> ดูรายชื่อวิชาที่ลงสอนทั้งหมด</label></a>
                 </div>
             </form>
   <table class="table m-3 border-collapse border border-slate-500">
@@ -234,7 +231,7 @@ $result = $db->query($schdule);
                         <tr>
                             <th>
                                 <label>
-                                    <input type="checkbox" class="checkbox" />
+                                    <input type="checkbox" class="checkbox" name="check"/>
                                 </label>
                             </th>
                             <td style="font-size:16px;">
@@ -262,14 +259,19 @@ $result = $db->query($schdule);
                             <td style="font-size:16px;">
                                 <span class="badge badge-ghost badge-sm" style="font-size:16px;"><?php echo $row['classSchedule_End'] ?></span>
                             </td>
+                            <td hidden>
+                            <span class="badge badge-ghost badge-sm" name="checkid" style="font-size:16px;"><?php echo $row['classSchedule_id'] ?></span>
+                            </td>
                             <td style="font-size:16px;">
-                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><a href=""><button class="btn btn-error 	fas fa-exclamation-circle" style="color:#fff;" onclick="Swal.fire(
+                                <form action="../../Backend/functions/remove_schedule.php?=<?php echo $row['classSchedule_id'];?>" method="post">
+                                <span class="badge badge-ghost badge-sm" style="font-size:16px;"><a href="../../Backend/functions/remove_schedule.php?=<?php echo $row['classSchedule_id'];?> " name="checkid"><button class="btn btn-error 	fas fa-exclamation-circle" style="color:#fff;" onclick="Swal.fire(
                                     {
   icon: 'error',
   title: 'ลบรายวิชานี้สำเร็จ',
   text: 'ลบรายวิชานี้แล้ว!',
 }
                                 )">&nbsp;ลบรายวิชานี้</button></a></span>
+                                </form>
                             </td>
 
                         </tr>

@@ -24,5 +24,5 @@
     $add = "INSERT INTO classschedule(classSchedule_id, classSchedule_subjectName, classSchedule_teacherName, classSchedule_Room, classSchedule_Course, classSchedule_date, classSchedule_Start, classSchedule_End) VALUES ('', '$subject_name', '$teacher_name', '$room', '$course', '$date', '$timestart', '$timeend')";
     $addSuccess = $db->query($add);
 
-    header('location: ../../components/teacher/add_workhour.php');
+    header('location: ../../components/teacher/data_management.php');
 ?>

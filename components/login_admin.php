@@ -61,7 +61,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
                     <!-- /* -------------------------------------------------------------------------- */
           /*                                    login                                   */
           /* -------------------------------------------------------------------------- */ -->
-                    <form action="../Backend/auth/signin_std.php" method="post" name="frm">
+                    <form action="../Backend/auth/signin_admin.php" method="post" name="frm">
                         <div class="flex justify-center items-center mt-8">
                             <div class="w-[340px]">
                                 <div class="relative h-10 w-full min-w-[200px]  ">
