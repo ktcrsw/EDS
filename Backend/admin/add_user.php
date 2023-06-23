@@ -7,15 +7,17 @@
     $result = $db->query($sql);
 
 
-    isset($_REQUEST['idcard']) ? $idcard = $_REQUEST['idcard'] : $idcard = '';
+
     isset($_REQUEST['username']) ? $username = $_REQUEST['username'] : $username = '';
-    isset($_REQUEST['password']) ? $password = $_REQUEST['password'] : $password = '';
+    isset($_REQUEST['fname']) ? $fname = $_REQUEST['fname'] : $fname = '';
+    isset($_REQUEST['lname']) ? $lname = $_REQUEST['lname'] : $lname = '';
+
     $_FILES['upload']['tmp_name'];
     $targetDir = "./img/";
 
     isset($_FILES['upload']) && isset($_FILES['upload']['name']);
     $ext = explode(".",$_FILES['upload']['name']);
-    $filename = $_SESSION['UserID'].".".$ext[1]."png";
+    $filename = $_SESSION['Username'].".".$ext[1]."png";
 
 
     if(move_uploaded_file($_FILES['upload']['tmp_name'], $targetDir . $filename)){
@@ -23,7 +25,7 @@
     }
     
 
-    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, permission, img) VALUES ('', '$idcard', '$username', '', '$password', '', '', '1', '$filename')";
+    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, permission, img) VALUES ('', '', '$username', '', '', '$fname', '$lname', '1', '$filename')";
     $query = $db->query($data);
 
     if(mysqli_affected_rows($db)){
