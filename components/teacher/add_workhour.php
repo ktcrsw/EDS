@@ -153,23 +153,48 @@ $result = $db->query($schdule);
         <th class="border border-slate-600">คาบที่ 10 <br>17.30 - 18.30 </th>
       </tr>
     </thead>
+
     <tbody class="border-collapse border border-slate-500">
       <!-- row 1 -->
+      <?php 
+    
+    if($row = mysqli_fetch_array($result)){
+        // $dataSchedule = array(
+        //     "classSchedule_id"=>$row['classSchedule_id'],
+        //     "classSchedule_subjectName"=>$row['classSchedule_subjectName'],
+        //     "classSchedule_teachertName"=>$row['classSchedule_teacherName'],
+        //     "classSchedule_Course"=>$row['classSchedule_Course'],
+        //     "classSchedule_Room"=>$row['classSchedule_Room'],
+        //     "classSchedule_date"=>$row['classSchedule_date'],
+        //     "classSchedule_Start"=>$row['classSchedule_Start'],
+        //     "classSchedule_End"=>$row['classSchedule_End']
+        // );    
+        $_SESSION['classSchedule_id'] = $row['classSchedule_id'];
+        $_SESSION['classSchedule_subjectName'] = $row['classSchedule_subjectName'];
+        $_SESSION['classSchedule_teacherName'] = $row['classSchedule_teacherName'];
+        $_SESSION['classSchedule_Course'] = $row['classSchedule_Course'];
+        $_SESSION['classSchedule_Room'] = $row['classSchedule_Room'];
+        $_SESSION['classSchedule_date'] = $row['classSchedule_date'];
+        $_SESSION['classSchedule_Start'] = $row['classSchedule_Start'];
+        $_SESSION['classSchedule_End'] = $row['classSchedule_End'];
+    }
+    
+    ?>
       <tr>
         <th class="table-th-mobile">จันทร์</th>
         <td class="">
           <?php
-          // Content for cell
+          if($row['classSchedule_Start'] == '8.30' AND $row['classSchedule_End'] == '9.30'){
+            echo $row['classSchedule_subjectName']. "<br>" . $row['classSchedule_teacherName'];
+          }
           ?>
         </td>
-      </tr>
+    </tr>
       <!-- row 2 -->
       <tr>
         <th class="table-th-mobile">อังคาร</th>
         <td class="">
-          <?php
-          // Content for cell
-          ?>
+            
         </td>
       </tr>
       <!-- row 3 -->

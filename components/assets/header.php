@@ -10,7 +10,7 @@
   crossorigin="anonymous">
 </script>
 <script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
-<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
+<link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&family=IBM+Plex+Sans+Thai+Looped&display=swap" rel="stylesheet"><script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
