@@ -158,7 +158,9 @@ $result = $db->query($schdule);
       <!-- row 1 -->
       <?php 
     
-    if($row = mysqli_fetch_array($result)){
+    $saveClassSchedule = "SELECT * FROM save_classschedule";
+    $resultClassSchedule = $db->query($saveClassSchedule);
+    if($row = mysqli_fetch_array($resultClassSchedule)){
         // $dataSchedule = array(
         //     "classSchedule_id"=>$row['classSchedule_id'],
         //     "classSchedule_subjectName"=>$row['classSchedule_subjectName'],
@@ -169,10 +171,9 @@ $result = $db->query($schdule);
         //     "classSchedule_Start"=>$row['classSchedule_Start'],
         //     "classSchedule_End"=>$row['classSchedule_End']
         // );    
-        $_SESSION['classSchedule_id'] = $row['classSchedule_id'];
+        $_SESSION['classSchedule_id'] = $row['no'];
         $_SESSION['classSchedule_subjectName'] = $row['classSchedule_subjectName'];
         $_SESSION['classSchedule_teacherName'] = $row['classSchedule_teacherName'];
-        $_SESSION['classSchedule_Course'] = $row['classSchedule_Course'];
         $_SESSION['classSchedule_Room'] = $row['classSchedule_Room'];
         $_SESSION['classSchedule_date'] = $row['classSchedule_date'];
         $_SESSION['classSchedule_Start'] = $row['classSchedule_Start'];
@@ -182,13 +183,106 @@ $result = $db->query($schdule);
     ?>
       <tr>
         <th class="table-th-mobile">จันทร์</th>
-        <td class="">
-          <?php
-          if($row['classSchedule_Start'] == '8.30' AND $row['classSchedule_End'] == '9.30'){
-            echo $row['classSchedule_subjectName']. "<br>" . $row['classSchedule_teacherName'];
-          }
-          ?>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "8.30" OR  $_SESSION['classSchedule_End'] == "9.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+        }
+        
+        ?>
         </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "9.30" OR  $_SESSION['classSchedule_End'] == "10.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "10.30" OR  $_SESSION['classSchedule_End'] == "11.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "11.30"  OR  $_SESSION['classSchedule_End'] == "12.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "12.30"  ){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "13.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "14.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "15.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "16.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+        <td class="text-center items-center">
+        <?php
+
+        if($_SESSION['classSchedule_teacherName'] == $_SESSION['Firstname'] AND $_SESSION['classSchedule_Start'] == "17.30"){
+            echo $_SESSION['classSchedule_subjectName']. "<br>" . $_SESSION['classSchedule_Room']. "<br>". $_SESSION['classSchedule_teacherName'];
+
+        }
+        
+        ?>
+        </td>
+
     </tr>
       <!-- row 2 -->
       <tr>
