@@ -143,6 +143,7 @@ $result = $db->query($schdule);
         <th class="border border-slate-600">ก่อนคาบแรก</th>
         <th class="border border-slate-600">คาบที่ 1 <br>8.30 - 9.30 </th>
         <th class="border border-slate-600">คาบที่ 2 <br>9.30 - 10.30 </th>
+        <th class="border border-slate-600">คาบที่ 1,2 <br>9.30 - 10.30 </th>
         <th class="border border-slate-600">คาบที่ 3 <br>10.30 - 11.30 </th>
         <th class="border border-slate-600">คาบที่ 4 <br>11.30 - 12.30 </th>
         <th class="border border-slate-600">คาบที่ 5 <br>12.30 - 13.30 </th>

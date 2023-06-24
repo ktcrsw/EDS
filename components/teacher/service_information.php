@@ -9,8 +9,8 @@ include "../assets/teacher_nav.php";
 <section class="m-2 w-full">
      
 
-     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+     <div class="  mb-4 border-b border-gray-200 dark:border-gray-700">
+         <ul class=" flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
              <li class="mr-2" role="presentation">
                  <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">ค้นหาข้อมูลนักศึกษา</button>
              </li>
