@@ -286,7 +286,6 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         min-height: 60px;">
         <a href="#"><?=$row_day['title']?></a><br>
         <?=$row_day['room']?><br>
-        <?=$row_day['building']?>
         </div>
         <?php } ?>
         <?php } ?>
