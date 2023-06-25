@@ -431,7 +431,6 @@ $(function(){
 }); 
 </script>
 <script type="text/javascript">
-// ส่วนของ script สำหรับให้สามารถลากตารางเวลา ซ้ายขวา โดยไม่ต้องเลื่อน scroll bar
 document.addEventListener('DOMContentLoaded', function() {
     const ele = document.querySelector('.wrap_schedule');
     ele.style.cursor = 'grab';
