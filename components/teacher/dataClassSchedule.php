@@ -333,8 +333,8 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
         </div>        
     </div>    
     <div class="col-auto text-right">
-        <button class="btn btn-light btn-sm mr-2" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_prev?>'">< Prev</button>
-        <button class="btn btn-light btn-sm" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_next?>'">Next ></button>
+        <button class="btn btn-light btn-sm mr-2" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_prev?>'">< ย้อนกลับ</button>
+        <button class="btn btn-light btn-sm" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_next?>'">ถัดไป ></button>
     </div>
 </div>
 </div>
