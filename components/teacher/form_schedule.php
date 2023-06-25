@@ -29,7 +29,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     schedule_repeatday='".$p_schedule_repeatday."'
     ";
     $db->query($sql);
-    header("Location:form_schedule.php");
+    header("Location:data_management.php");
     exit;
 }
 ?>

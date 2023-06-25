@@ -3,14 +3,9 @@
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM tbl_schedule";
 $query = $db->query($sql);
 
-$subject = "SELECT * FROM subjecttbl";
-$data = $db->query($subject);
-
-$schdule = "SELECT * FROM classschedule";
-$result = $db->query($schdule);
 ?>
     <style type="text/css">
     div.table-responsive::-webkit-scrollbar,
@@ -33,39 +28,6 @@ $result = $db->query($schdule);
     }
     ::-webkit-scrollbar-thumb:active {
       background: #000000;
-    }
-    .wrap_schedule_control{
-        margin:auto;
-        width:800px;    
-    }
-    .wrap_schedule{
-        cursor: grab;
-        margin:auto;
-        width:800px;    
-    }
-    .time_schedule{
-        font-size:12px; 
-    }
-    .day_schedule{
-        font-size:12px; 
-    }
-    .time_schedule_text{
- 
-    }
-    .day_schedule_text{
-        width:80px;
-        font-size: 12px;
-        padding: 10px 5px;
-    }
-    .day-head-label{
-        position: relative;
-        right: 10px;
-        top: 0; 
-    }
-    .time-head-label{
-        position: relative;
-        left: 10px;
-        bottom: 0;  
     }
     .diagonal-cross{
     border-bottom: 2px solid #dee2e6;
@@ -90,7 +52,6 @@ $result = $db->query($schdule);
  
   
 <?php
-// ส่วนของตัวแปรสำหรับกำหนด
 $dayTH=array("จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์","อาทิตย์");     
 $monthTH=array(
 "","มกราคม","กุมภาพันธ์","มีนาคม","เมษายน","พฤษภาคม","มิถุนายน",
@@ -99,7 +60,7 @@ $monthTH=array(
 $monthTH_brev=array(     
 "","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค."                                        
 );    
-function thai_date_short($time){   // 19  ธ.ค. 2556
+function thai_date_short($time){  
     global $dayTH,$monthTH_brev;   
     $thai_date_return = date("j",$time);   
     $thai_date_return.=" ".$monthTH_brev[date("n",$time)];   
@@ -108,38 +69,34 @@ function thai_date_short($time){   // 19  ธ.ค. 2556
 } 
  
   
-////////////////////// ส่วนของการจัดการตารางเวลา /////////////////////
-$sc_startTime=date("Y-m-d 08:00:00");  // กำหนดเวลาเริ่มต้ม เปลี่ยนเฉพาะเลขเวลา
-$sc_endtTime=date("Y-m-d 18:00:00");  // กำหนดเวลาสื้นสุด เปลี่ยนเฉพาะเลขเวลา
+
+$sc_startTime=date("Y-m-d 08:00:00");  
+$sc_endtTime=date("Y-m-d 18:00:00"); 
 $sc_t_startTime=strtotime($sc_startTime);
 $sc_t_endTime=strtotime($sc_endtTime);
-$sc_numStep="60"; // ช่วงช่องว่างเวลา หน่ายนาที 60 นาที = 1 ชั่วโมง
-$num_dayShow=5;  // จำนวนวันที่โชว์ 1 - 7
+$sc_numStep="60";
+$num_dayShow=5;  
 $sc_timeStep=array();
 $sc_numCol=0;
 $hour_block_width = 90;
-////////////////////// ส่วนของการจัดการตารางเวลา /////////////////////
   
       
-// ส่วนของการกำหนดวัน สามารถนำไปประยุกต์กรณีทำตารางเวลาแบบ เลื่อนดูแต่ละสัปดาห์ได้
-$now_day=date("Y-m-d"); // วันปัจจุบัน ให้แสดงตารางที่มีวันปัจจุบัน เมื่อแสดงครั้งแรก
-if(isset($_GET['uts']) && $_GET['uts']!=""){ // เมื่อมีการเปลี่ยนสัปดาห์
-    $now_day=date("Y-m-d",trim($_GET['uts'])); // เปลี่ยนวันที่ แปลงจากค่าวันจันทร์ที่ส่งมา
+$now_day=date("Y-m-d"); 
+if(isset($_GET['uts']) && $_GET['uts']!=""){ 
+    $now_day=date("Y-m-d",trim($_GET['uts']));
     $now_day=date("Y-m-d",strtotime($now_day." monday this week")); 
 }
-// หาตัวบวก หรือลบ เพื่อหาวันที่ของวันจันทร์ในสัปดาห์
-$start_weekDay=date("Y-m-d",strtotime("monday this week")); // หาวันจันทร์ของสัปดาห์
-if(isset($_GET['uts']) && $_GET['uts']!=""){ // ถ้ามีส่งค่าเปลี่ยนสัปดาห์มา
-    $start_weekDay=$now_day; // ให้ใช้วันแรก เป็นวันที่ส่งมา
+$start_weekDay=date("Y-m-d",strtotime("monday this week"));
+if(isset($_GET['uts']) && $_GET['uts']!=""){ 
+    $start_weekDay=$now_day;
 }
-// หววันที่วันอาทิตย์ของสัปดาห์นั้นๆ
 $end_weekDay=date("Y-m-d",strtotime($start_weekDay." +7 day"));
-$timestamp_prev=strtotime($start_weekDay." -7 day");// ค่าวันจันทร์ของอาทิตย์ก่อหน้า
-$timestamp_next=strtotime($start_weekDay." +7 day"); // ค่าวันจันทร์ของอาทิตย์ถัดไป
+$timestamp_prev=strtotime($start_weekDay." -7 day");
+$timestamp_next=strtotime($start_weekDay." +7 day");
 while($sc_t_startTime<=$sc_t_endTime){
     $sc_timeStep[$sc_numCol]=date("H:i",$sc_t_startTime);    
     $sc_t_startTime=$sc_t_startTime+($sc_numStep*60); 
-    $sc_numCol++;    // ได้จำนวนคอลัมน์ที่จะแสดง
+    $sc_numCol++;   
 }
  
 function getduration($datetime1, $datetime2){
@@ -166,7 +123,6 @@ function timeblock($time,$sc_numCol,$sc_timeStep){
  
  
  
-///////////////// ส่วนของข้อมูล ที่ดึงจากฐานข้อมูบ ////////////////////////
 $data_schedule=array();
 $sql="
     SELECT * FROM tbl_schedule  WHERE 
@@ -177,7 +133,7 @@ $sql="
 ";
 $result = $db->query($sql);
 if($result){
-    while($row = $result->fetch_assoc()){
+    while($row = mysqli_fetch_assoc($result)){
         $repeat_day = ($row['schedule_repeatday']!="")?explode(",",$row['schedule_repeatday']):[];
         $data_schedule[] = array(
             "id"=>$row['schedule_id'],
@@ -187,69 +143,15 @@ if($result){
             "end_time"=>$row['schedule_endtime'],
             "repeat_day"=>$repeat_day,
             "title"=>$row['schedule_title'],
-            "room"=>"ห้องบรรยาย ",
-            "building"=>"ตึก A"     
+            "room"=>$row['schedule_room'],
+            "building"=>$row['schedule_teacherName']     
         );
     }
 }
- 
-///////////////// ส่วนของข้อมูล ที่ดึงจากฐานข้อมูบ ////////////////////////
-  
-  
-///////////////// ตัวอย่างรูปแบบข้อมูล //////////////////
-/*$demo_year_month=date("Y-m");
-$data_schedule=array(
-    array(
-        "id"=>1,
-        "start_date"=>"{$demo_year_month}-12", // รุปแบบ 0000-00-00
-        "end_date"=>"{$demo_year_month}-21",
-        "start_time"=>"08:00:00",
-        "end_time"=>"09:30:00",
-        "repeat_day"=>array(1,3,5),
-        "title"=>"test data 1",
-        "room"=>"ห้องบรรยาย 1",
-        "building"=>"ตึก A"      
-    ),
-    array(
-        "id"=>2,
-        "start_date"=>"{$demo_year_month}-15",
-        "end_date"=>"{$demo_year_month}-21",
-        "start_time"=>"10:00:00",
-        "end_time"=>"11:00:00",
-        "repeat_day"=>array(2,4),
-        "title"=>"test data 2",
-        "room"=>"ห้องบรรยาย 2",
-        "building"=>"ตึก B"      
-    ),  
-    array(
-        "id"=>3,
-        "start_date"=>"{$demo_year_month}-15",
-        "end_date"=>"{$demo_year_month}-25",
-        "start_time"=>"14:30:00",
-        "end_time"=>"16:00:00",
-        "repeat_day"=>[],
-        "title"=>"test data 3",
-        "room"=>"ห้องบรรยาย 3",
-        "building"=>"ตึก C"      
-    ),      
-    array(
-        "id"=>4,
-        "start_date"=>"{$demo_year_month}-19",
-        "end_date"=>"{$demo_year_month}-28",
-        "start_time"=>"16:30:00",
-        "end_time"=>"18:00:00",
-        "repeat_day"=>[1,4,5],
-        "title"=>"test data 4",
-        "room"=>"ห้องบรรยาย 4",
-        "building"=>"ตึก D"
-    ),          
-);*/
-///////////////// ตัวอย่างรูปแบบข้อมูล //////////////////
 ?>
  
  
  <?php
-  ////////////////////// ส่วนของการจัดรูปแบบข้อมูลก่อนแสดงในตารางเวลา  ///////////////////////
  $data_day_schedule = [];
  $checkDayKey = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
  if(isset($data_schedule) && count($data_schedule)>0){
@@ -296,7 +198,6 @@ $data_schedule=array(
         }
     }
  }
- ////////////////////// ส่วนของการจัดรูปแบบข้อมูลก่อนแสดงในตารางเวลา  ///////////////////////
  ?>
  
 <div class="wrap_schedule_control mt-5">
@@ -317,15 +218,14 @@ $data_schedule=array(
         </div>        
     </div>    
     <div class="col-auto text-right">
-        <button class="btn btn-light btn-sm mr-2" type="button" onClick="window.location='demo_schedule.php?uts=<?=$timestamp_prev?>'">< Prev</button>
-        <button class="btn btn-light btn-sm" type="button" onClick="window.location='demo_schedule.php?uts=<?=$timestamp_next?>'">Next ></button>
-        <button class="btn btn-primary btn-sm ml-3" type="button" onClick="window.location='demo_schedule.php'">Home</button>       
+        <button class="btn btn-light btn-sm mr-2" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_prev?>'">< Prev</button>
+        <button class="btn btn-light btn-sm" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_next?>'">Next ></button>
     </div>
 </div>
 </div>
 <br>
 <div class="table-responsive wrap_schedule">
-<table class="table  table-bordered">
+<table class="table m-3 border-collapse border border-slate-500">
 <thead class="thead-light">
   <tr class="time_schedule">
     <th class="p-0">
@@ -350,11 +250,9 @@ for($i_time=0;$i_time<$sc_numCol-1;$i_time++){
 </thead>  
 <tbody>
 <?php
-// วนลูปแสดงจำนวนวันตามที่กำหนด
 for($i_day=0;$i_day<$num_dayShow;$i_day++){
     $dayInSchedule_chk=date("Y-m-d",strtotime($start_weekDay." +".$i_day." day"));
     $dayKeyChk = date("D",strtotime($start_weekDay." +".$i_day." day"));
-//    $dayInSchedule_show=date("d-m-Y",strtotime($start_weekDay." +".$i_day." day"));
     $dayInSchedule_show = thai_date_short(strtotime($start_weekDay." +".$i_day." day"));
 ?>
   <tr>
@@ -413,7 +311,7 @@ $(function(){
         format: 'YYYY-MM-DD'
     });
     $('#select_date').on('change.datetimepicker',function(e){
-        window.location='demo_schedule.php?uts='+e.date.format("X");
+        window.location='data_management.php?uts='+e.date.format("X");
     });
  
 }); 
