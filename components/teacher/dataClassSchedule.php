@@ -38,13 +38,13 @@ $query = $db->query($sql);
         transform: translateY(20px) translateX(5px) rotate(20deg);
     }
     .sc-detail{
-        font-size: 11px;
-        background-color: #63E327;
-        color: #FFFFFF;
+
+        background-color: #8AF3FF;
+        color: #000000;
     }
     .sc-detail a{
-        color: #FF4F00;
-        font-size: 14px;
+        color: #000000;
+        font-size: 18px;    
     }
     </style>  
 
