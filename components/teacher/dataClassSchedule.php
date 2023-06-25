@@ -145,6 +145,7 @@ if($result){
                                 "duration" => getduration(strtotime($row['start_time']),strtotime($row['end_time'])),
                                 "timeblock"=> timeblock($row['start_time'],$sc_numCol,$sc_timeStep),
                                 "title" => $row['title'],
+                                "detail" => $row['detail'],
                                 "room" => $row['room'],
                                 "building" => $row['building'],
                              ];             
@@ -161,6 +162,7 @@ if($result){
                             "duration" => getduration(strtotime($row['start_time']),strtotime($row['end_time'])),
                             "timeblock"=> timeblock($row['start_time'],$sc_numCol,$sc_timeStep),
                             "title" => $row['title'],
+                            "detail" => $row['detail'],
                             "room" => $row['room'],
                             "building" => $row['building'],                          
                          ];
@@ -175,6 +177,7 @@ if($result){
 // การบันทึกข้อมูลอย่างง่ายเบื้องตั้น
 if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $p_schedule_title = (isset($_POST['schedule_title']))?$_POST['schedule_title']:"";
+    $p_schedule_detail = (isset($_POST['schedule_detail']))?$_POST['schedule_detail']:"";
     $p_schedule_startdate = (isset($_POST['schedule_startdate']))?$_POST['schedule_startdate']:"0000-00-00";
     $p_schedule_enddate = (isset($_POST['schedule_enddate']))?$_POST['schedule_enddate']:"0000-00-00";
     $p_schedule_enddate = ($p_schedule_enddate=="0000-00-00")?$p_schedule_startdate:$p_schedule_enddate;
@@ -185,6 +188,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $sql = "
     INSERT INTO tbl_schedule SET
     schedule_title='".$p_schedule_title."',
+    schedule_detail='".$p_schedule_detail."',
     schedule_startdate='".$p_schedule_startdate."',
     schedule_enddate='".$p_schedule_enddate."',
     schedule_starttime='".$p_schedule_starttime."',
@@ -218,6 +222,22 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
                         </select>           
     </div>
 </div>
+<div class="form-group row">
+    <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">หลักสูตร</label>
+    <div class="col-12 col-sm-8">
+        <div class="input-group date" id="schedule_detail" data-target-input="nearest">
+        <select name="schedule_detail" id="schedule_detail" class="select select-bordered w-full">
+                            <option value="ปวช">ปวช</option>
+                            <option value="ปวส">ปวส</option>
+                            <option value="ป.ตรี">ป.ตรี</option>
+                        </select>     
+    </div>          
+        </div>       
+      <div class="invalid-feedback">
+        กรุณากรอก วันที่เริ่มต้น
+      </div>            
+    </div>
+</div>  
 <div class="form-group row">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
     <div class="col-12 col-sm-8">
@@ -400,6 +420,7 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         margin-left: <?=$sc_start_x?>px;
         min-height: 60px;">
         <a href="#"><?=$row_day['title']?></a><br>
+        <?=$row_day['detail']?><br>
         <?=$row_day['room']?><br>
         </div>
         <?php } ?>
@@ -444,7 +465,6 @@ document.addEventListener('DOMContentLoaded', function() {
         pos = {
             left: ele.scrollLeft,
             top: ele.scrollTop,
-            // Get the current mouse position
             x: e.clientX,
             y: e.clientY,
         };
@@ -454,11 +474,9 @@ document.addEventListener('DOMContentLoaded', function() {
     };
  
     const mouseMoveHandler = function(e) {
-        // How far the mouse has been moved
         const dx = e.clientX - pos.x;
         const dy = e.clientY - pos.y;
  
-        // Scroll the element
         ele.scrollTop = pos.top - dy;
         ele.scrollLeft = pos.left - dx;
     };
@@ -471,7 +489,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.removeEventListener('mouseup', mouseUpHandler);
     };
  
-    // Attach the handler
     ele.addEventListener('mousedown', mouseDownHandler);
 });
 $(function () {
