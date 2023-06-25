@@ -1,3 +1,4 @@
+<?php session_start();?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
@@ -6,6 +7,8 @@ include "../assets/header.php";
 $sql = "SELECT * FROM tbl_schedule";
 $query = $db->query($sql);
 
+$subject = "SELECT * FROM subjecttbl";
+$data = $db->query($subject);
 ?>
 
 <?php
@@ -37,32 +40,29 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     <meta charset='utf-8' />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">  
-    <style type="text/css">
-        .wrap-form{width:800px;margin: auto;}
-      </style>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">    
   </head>
   <body>
   
     <br>
     <br>
-      <div class="wrap-form">
+      <div class="">
 <form action="" method="post" accept-charset="utf-8"> 
 <div class="form-group row">
-    <label for="schedule_title" class="col-sm-2 col-form-label text-right">หัวข้อ</label>
+    <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
     <div class="col-12 col-sm-8">
-      <input type="text" class="form-control" name="schedule_title"
-       autocomplete="off" value="" required>      
-      <div class="invalid-feedback">
-        กรุณากรอก หัวข้อ
-      </div>            
+    <select name="schedule_title" id="schedule_title" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
+                            <?php while ($allSub = mysqli_fetch_assoc($data)) { ?>
+                                <option value="<?php echo $allSub['subject_name']; ?>" style="font-size:14px;"><?php echo $allSub['subject_name']; ?></option>
+                            <?php } ?>
+                        </select>           
     </div>
 </div>
 <div class="form-group row">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_startdate" data-target-input="nearest">
-          <input type="text" class="form-control datetimepicker-input" name="schedule_startdate" data-target="#schedule_startdate"
+          <input type="text" datepicker  class="form-control  w-full" name="schedule_startdate" data-target="#schedule_startdate"
            autocomplete="off" value="" required>           
             <div class="input-group-append" data-target="#schedule_startdate" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
@@ -127,25 +127,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
       </div>            
     </div>
 </div>
-<div class="form-group row">
-    <label for="schedule_endtime" class="col-2 col-form-label text-right">ทำซ้ำวัน</label>
-    <div class="col-12 col-sm-10 pt-2">
-        <?php
-        $dayTH = array('อา.','จ.','อ.','พ.','พฤ.','ศ.','ส.');
-        ?>
-        <div class="input-group">
-        <?php foreach($dayTH as $k => $day_value){?>
-        <div class="form-check ml-3" style="width:50px;">
-            <input class="custom-control-input repeatday_chk" type="checkbox"
-                name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
-                value="<?=$k?>">
-                <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
-        </div>    
-        <?php } ?>
-        <input type="hidden" name="schedule_repeatday" id="schedule_repeatday" value="" />
-        </div>
-        <br>    
-    </div>
+v>
 </div>
 <div class="form-group row">
     <div class="col-sm-2 offset-sm-2 text-right pt-3">
