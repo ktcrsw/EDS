@@ -1,4 +1,6 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
+
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
@@ -115,6 +117,7 @@ if($result){
             "end_time"=>$row['schedule_endtime'],
             "repeat_day"=>$repeat_day,
             "title"=>$row['schedule_title'],
+            "detail"=>$row['schedule_detail'],
             "room"=>$row['schedule_room'],
             "building"=>$row['schedule_teacherName']     
         );
@@ -196,7 +199,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     schedule_repeatday='".$p_schedule_repeatday."'
     ";
     $db->query($sql);
-    header("Location:data_management.php");
+    header("Location:../../Backend/api/classSchedule_Module/pageControl.php");
     exit;
 }
 ?>
@@ -308,7 +311,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     </div>
 </div>
 </div>
-<div class="form-group row">
+<div class="form-group row" hidden>
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
     <div class="col-12 col-sm-10 pt-2">
         <?php
@@ -319,7 +322,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
         <div class="form-check ml-3" style="width:50px;">
             <input class="custom-control-input repeatday_chk" type="checkbox"
                 name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
-                value="<?=$k?>">
+                value="<?=$k?>" hidden>
                 <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
         </div>    
         <?php } ?>

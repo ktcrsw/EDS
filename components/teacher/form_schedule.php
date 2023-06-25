@@ -1,8 +1,11 @@
 <?php session_start();?>
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
+include "../assets/teacher_nav.php";
 
 $sql = "SELECT * FROM tbl_schedule";
 $query = $db->query($sql);
@@ -46,7 +49,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
   
     <br>
     <br>
-      <div class="">
+      <div class="wrap-form">
 <form action="" method="post" accept-charset="utf-8"> 
 <div class="form-group row">
     <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
@@ -127,7 +130,25 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
       </div>            
     </div>
 </div>
-v>
+<div class="form-group row">
+    <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
+    <div class="col-12 col-sm-10 pt-2">
+        <?php
+        $dayTH = array('จ.','อ.','พ.','พฤ.','ศ.');
+        ?>
+        <div class="input-group">
+        <?php foreach($dayTH as $k => $day_value){?>
+        <div class="form-check ml-3" style="width:50px;">
+            <input class="custom-control-input repeatday_chk" type="checkbox"
+                name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
+                value="<?=$k?>">
+                <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
+        </div>    
+        <?php } ?>
+        <input type="hidden" name="schedule_repeatday" id="schedule_repeatday" value="" />
+        </div>
+        <br>    
+    </div>
 </div>
 <div class="form-group row">
     <div class="col-sm-2 offset-sm-2 text-right pt-3">
@@ -143,7 +164,7 @@ v>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment-with-locales.min.js"></script>    
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/js/tempusdominus-bootstrap-4.min.js"></script>    
   
-<script type="text/javascript">
+<script>
     $(function () {
         // เมื่อเฃือกวันทำซ้ำ วนลูป สร้างชุดข้อมูล
         $(document.body).on("change",".repeatday_chk",function(){

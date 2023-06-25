@@ -1,4 +1,5 @@
 <?php include "../assets/header.php"; ?>
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 
 <div class="grid  min-[1306px]:grid-cols-2 ">
 <div class="flex justify-center items-center w-auto h-auto">
