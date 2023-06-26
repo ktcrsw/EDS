@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 20, 2023 at 09:00 AM
+-- Generation Time: Jun 26, 2023 at 07:47 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -150,6 +150,13 @@ CREATE TABLE `save_classschedule` (
   `classSchedule_End` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Dumping data for table `save_classschedule`
+--
+
+INSERT INTO `save_classschedule` (`no`, `classSchedule_subjectName`, `classSchedule_teacherName`, `classSchedule_Room`, `classSchedule_date`, `classSchedule_Start`, `classSchedule_End`) VALUES
+(1, 'ฐานข้อมูลเบื้องต้น 1', 'กิตติชัย', '530', 'จันทร์', '10.30', '12.30');
+
 -- --------------------------------------------------------
 
 --
@@ -197,46 +204,76 @@ CREATE TABLE `subjecttbl` (
   `subject_id` int(11) NOT NULL,
   `subject_name` varchar(255) DEFAULT NULL,
   `subject_des` varchar(255) NOT NULL,
-  `teacherID` int(11) NOT NULL,
-  `teacherName` varchar(255) NOT NULL
+  `subject_subNum` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `subjecttbl`
 --
 
-INSERT INTO `subjecttbl` (`subject_id`, `subject_name`, `subject_des`, `teacherID`, `teacherName`) VALUES
-(1, 'คอมพิวเตอร์เบื้องต้น 1', 'ปวช.', 0, 'ครูกิตติชัย'),
-(2, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช.', 0, 'ครูกิตติชัย'),
-(3, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช.', 0, 'ครูกิตติชัย'),
-(4, 'หลักการออกแบบระบบ 1', 'ปวช.', 0, 'ครูกิตติชัย'),
-(5, 'หลักการออกแบบระบบ 2', 'ปวช.', 0, 'ครูกิตติชัย'),
-(6, 'หลักการออกแบบระบบ 3', 'ปวช.', 0, ''),
-(7, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช.', 0, ''),
-(8, 'ฐานข้อมูลเบื้องต้น 2', 'ปวช.', 0, ''),
-(9, 'คณิตศาสตร์คอมพิวเตอร์ 1', 'ปวช.', 0, ''),
-(10, 'คณิตศาสตร์คอมพิวเตอร์ 2', 'ปวส.', 0, ''),
-(11, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช. / ปวส.', 0, ''),
-(12, 'การเขียนโปรแกรมด้วยภาษา C และ C++', 'ปวช. / ปวส.', 0, ''),
-(13, 'หลักการออกแบบระบบ 1', 'ปวช. / ปวส.', 0, ''),
-(14, 'หลักการออกแบบระบบ 2', 'ปวช. / ปวส.', 0, ''),
-(15, 'หลักการออกแบบระบบ 3', 'ปวช. / ปวส.', 0, ''),
-(16, 'การสร้างฐานข้อมูลด้วยภาษา SQL', 'ปวช. / ปวส.', 0, ''),
-(17, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวช. / ปวส.', 0, ''),
-(18, 'การออกแบบกราฟิกและแอนิเมชั่น 2', 'ปวช. / ปวส.', 0, ''),
-(19, 'การออกแบบกราฟิกและแอนิเมชั่น 3', 'ปวช. / ปวส.', 0, ''),
-(20, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 1', 'ปวช. / ปวส.', 0, ''),
-(21, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 2', 'ปวช. / ปวส.', 0, ''),
-(22, 'ระบบเครือข่ายเบื้องต้น 1', 'ปวช. / ปวส.', 0, ''),
-(23, 'ระบบเครือข่ายเบื้องต้น 2', 'ปวช. / ปวส.', 0, ''),
-(24, 'การใช้โปรแกรมสำนักงานเบื้องต้น 1', 'ปวช. / ปวส.', 0, ''),
-(25, 'การใช้โปรแกรมสำนักงานเบื้องต้น 2', 'ปวช. / ปวส.', 0, ''),
-(26, 'การสร้างเกม 1', 'ปวช. / ปวส.', 0, ''),
-(27, 'การสร้างเกม 2', 'ปวช. / ปวส.', 0, ''),
-(28, 'ฝึกงาน', 'ปวช. / ปวส.', 0, ''),
-(29, 'กิจกรรมสถานประกอบการ 1', 'ปวช. / ปวส.', 0, ''),
-(30, 'กิจกรรมสถานประกอบการ 2', 'ปวช. / ปวส.', 0, ''),
-(31, 'กิจกรรมสถานประกอบการ 3', 'ปวช.', 0, '');
+INSERT INTO `subjecttbl` (`subject_id`, `subject_name`, `subject_des`, `subject_subNum`) VALUES
+(1, 'คอมพิวเตอร์เบื้องต้น 1', 'ปวช.', '20001-0001'),
+(2, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช.', '20001-0002'),
+(3, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช.', '20001-0003'),
+(4, 'หลักการออกแบบระบบ 1', 'ปวช.', '20001-0004'),
+(5, 'หลักการออกแบบระบบ 2', 'ปวช.', '20001-0005'),
+(6, 'หลักการออกแบบระบบ 3', 'ปวช.', '20001-0006'),
+(7, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช.', '20001-0007'),
+(8, 'ฐานข้อมูลเบื้องต้น 2', 'ปวช.', '20001-0008'),
+(9, 'คณิตศาสตร์คอมพิวเตอร์ 1', 'ปวช.', '20001-0009'),
+(10, 'คณิตศาสตร์คอมพิวเตอร์ 2', 'ปวส.', '20001-0010'),
+(11, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช. / ปวส.', '20001-0011'),
+(12, 'การเขียนโปรแกรมด้วยภาษา C และ C++', 'ปวช. / ปวส.', '20001-0012'),
+(13, 'หลักการออกแบบระบบ 1', 'ปวช. / ปวส.', '20001-0013'),
+(14, 'หลักการออกแบบระบบ 2', 'ปวช. / ปวส.', '20001-0014'),
+(15, 'หลักการออกแบบระบบ 3', 'ปวช. / ปวส.', '20001-0015'),
+(16, 'การสร้างฐานข้อมูลด้วยภาษา SQL', 'ปวช. / ปวส.', '20001-0016'),
+(17, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวช. / ปวส.', '20001-0017'),
+(18, 'การออกแบบกราฟิกและแอนิเมชั่น 2', 'ปวช. / ปวส.', '20001-0018'),
+(19, 'การออกแบบกราฟิกและแอนิเมชั่น 3', 'ปวช. / ปวส.', '20001-0019'),
+(20, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 1', 'ปวช. / ปวส.', '20001-0020'),
+(21, 'การพัฒนาโปรแกรมบนอุปกรณ์เคลื่อนที่ 2', 'ปวช. / ปวส.', '20001-0021'),
+(22, 'ระบบเครือข่ายเบื้องต้น 1', 'ปวช. / ปวส.', '20001-0022'),
+(23, 'ระบบเครือข่ายเบื้องต้น 2', 'ปวช. / ปวส.', '20001-0023'),
+(24, 'การใช้โปรแกรมสำนักงานเบื้องต้น 1', 'ปวช. / ปวส.', '20001-0024'),
+(25, 'การใช้โปรแกรมสำนักงานเบื้องต้น 2', 'ปวช. / ปวส.', '20001-0025'),
+(26, 'การสร้างเกม 1', 'ปวช. / ปวส.', '20001-0026'),
+(27, 'การสร้างเกม 2', 'ปวช. / ปวส.', '20001-0027'),
+(28, 'ฝึกงาน', 'ปวช. / ปวส.', '20001-0028'),
+(29, 'กิจกรรมสถานประกอบการ 1', 'ปวช. / ปวส.', '20001-0029'),
+(30, 'กิจกรรมสถานประกอบการ 2', 'ปวช. / ปวส.', '20001-0030'),
+(31, 'กิจกรรมสถานประกอบการ 3', 'ปวช.', '20001-0031');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_schedule`
+--
+
+CREATE TABLE `tbl_schedule` (
+  `schedule_id` int(11) NOT NULL,
+  `schedule_title` varchar(256) NOT NULL,
+  `schedule_detail` text NOT NULL,
+  `schedule_room` varchar(150) NOT NULL,
+  `schedule_teacherName` varchar(150) NOT NULL,
+  `schedule_startdate` date NOT NULL,
+  `schedule_enddate` date NOT NULL,
+  `schedule_starttime` time NOT NULL,
+  `schedule_endtime` time NOT NULL,
+  `schedule_repeatday` varchar(20) NOT NULL,
+  `schedule_createdate` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `tbl_schedule`
+--
+
+INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_room`, `schedule_teacherName`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
+(16, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '535', '', '2023-06-20', '2023-06-20', '10:30:00', '12:30:00', '', '2023-06-25 11:17:46'),
+(17, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', '', '', '2023-06-23', '2023-06-23', '17:30:00', '18:30:00', '', '2023-06-25 11:22:33'),
+(18, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช', '', '', '2023-06-19', '2023-06-19', '13:30:00', '15:30:00', '', '2023-06-25 11:39:04'),
+(19, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '', '', '2023-06-21', '2023-06-21', '17:30:00', '18:30:00', '', '2023-06-25 11:41:12'),
+(20, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวส', '', '', '2023-06-19', '2023-06-19', '08:30:00', '10:30:00', '', '2023-06-25 11:42:54');
 
 -- --------------------------------------------------------
 
@@ -266,7 +303,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `permission`, `main_groups`, `groups`, `img`) VALUES
 (1, '3626299495765', 'EDS-1', 'k@gmail.com', '123', 'กิตติชัย', 'รักษาวงค์', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
 (30, 'admin', 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
-(42, 'usr', '', '64209010030@gmail.com', '1234', 'User', 'Demo', '', 0, '', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg');
+(74, '', 'EDS-002', '', '123', 'บงกรูช', 'เพชรชี่', '', 1, '', 0, 'EDS_.png'),
+(75, '', 'EDS-003', '', '123', 'ชััยัยัย', 'ชับัยัยัย', '', 1, '', 0, 'EDS-1.png');
 
 --
 -- Indexes for dumped tables
@@ -321,6 +359,12 @@ ALTER TABLE `subjecttbl`
   ADD PRIMARY KEY (`subject_id`);
 
 --
+-- Indexes for table `tbl_schedule`
+--
+ALTER TABLE `tbl_schedule`
+  ADD PRIMARY KEY (`schedule_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -364,7 +408,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `save_classschedule`
 --
 ALTER TABLE `save_classschedule`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `subjecttbl`
@@ -373,10 +417,16 @@ ALTER TABLE `subjecttbl`
   MODIFY `subject_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
+-- AUTO_INCREMENT for table `tbl_schedule`
+--
+ALTER TABLE `tbl_schedule`
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=73;
+  MODIFY `u_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
