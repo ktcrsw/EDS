@@ -73,14 +73,38 @@ $result = $db->query($schdule);
 
 
 
+                        <?php
+                        ///////////////////////////////////////////////
+                        /*
 
+                                $_SESSION ของข้อมูลนักเรียนอิงจากพวกนี้ไปใช้
+                                
+                                $_SESSION['StudentNo']
+                                $_SESSION['Course'] 
+                                $_SESSION['StudentID'] 
+                                $_SESSION['StudentName'] 
+                                $_SESSION['StudentLName'] 
+                                $_SESSION['StudentGroups'] 
+                                $_SESSION['StudentYear']
+                                $_SESSION['Department']
+                                $_SESSION['status'] 
+                                $_SESSION['StudentImg'] 
+
+                                        #Kittichai Raksawong
+
+                        */
+                        //////////////////////////////////////////////
+
+
+
+                        ?>
                         <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                             <div class="flex">
                                 <div>
                                     <a href="#" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
                                         <div class="avatar">
                                             <div class="w-12 rounded-full">
-                                            <img src="../image/<?php echo $_SESSION['StudentImg'];?>" />
+                                                <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
                                             </div>
                                         </div>
                                     </a>
@@ -88,15 +112,15 @@ $result = $db->query($schdule);
                                         <div class="flex">
                                             <div class="avatar">
                                                 <div class="w-[130px] h-[170px]  rounded">
-                                                <img src="../image/<?php echo $_SESSION['StudentImg'];?>" />
+                                                    <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex flex-col ml-2">
-                                    <span class="text-[16px] font-semibold"><?php echo $_SESSION['StudentName']. "&nbsp;" .$_SESSION['StudentLName'];?></span>
-                                    <span><?php echo $_SESSION['StudentID'];?></span>
+                                    <span class="text-[16px] font-semibold"><?php echo $_SESSION['StudentName'] . "&nbsp;" . $_SESSION['StudentLName']; ?></span>
+                                    <span><?php echo $_SESSION['StudentID']; ?></span>
                                 </div>
                                 <a href="" class=" ml-auto flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
@@ -109,28 +133,28 @@ $result = $db->query($schdule);
                         </td>
 
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <?php
-                        
-                        if($_SESSION['status'] == 0){
-                            echo "<span class='inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300'>";
-                            echo "พ้นการศึกษา";
-                            echo "</span>";
-                        }
-                        if($_SESSION['status'] == 1){
-                            echo "<span class='inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300'>";
-                            echo "กำลังศึกษา";
-                            echo "</span>";
-                        }
-                        ?>
+                            <?php
+
+                            if ($_SESSION['status'] == 0) {
+                                echo "<span class='inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300'>";
+                                echo "พ้นการศึกษา";
+                                echo "</span>";
+                            }
+                            if ($_SESSION['status'] == 1) {
+                                echo "<span class='inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300'>";
+                                echo "กำลังศึกษา";
+                                echo "</span>";
+                            }
+                            ?>
                         </td>
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <?php echo $_SESSION['Department'];?>
+                            <?php echo $_SESSION['Department']; ?>
                         </td>
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <?php echo $_SESSION['Course'];?>
+                            <?php echo $_SESSION['Course']; ?>
                         </td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentYear'];?></td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentGroups'];?></td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentYear']; ?></td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentGroups']; ?></td>
                     </tr>
 
 
