@@ -18,7 +18,22 @@ $dataStu = $db->query($totalStu);
 $totalStus = "SELECT * FROM enrolltbl_high";
 $dataStus = $db->query($totalStus);
 
-$countVoc = mysqli_num_rows($dataStu);
+
+///////////////////////////////////////////////
+/*
+
+CountVoc = รวมนักเรียนทั้งหมดที่อยู่ในระดับชั้น ปวช.
+CountVocHigh = รวมนักเรียนทั้งหมดที่อยู่ในระดับชั้น ปวส.
+
+
+วิธีเรียกใช้ใน Tag Script ให้ <?=$countVoc;?> หรือ <?=$countVocHigh?>
+แต่ตัวแปลมันไม่เป็น Global ถ้าใช้บน Hostingอาจจะพังไปเลย
+
+          #Kittichai Raksawong
+
+*/
+//////////////////////////////////////////////
+$countVoc = mysqli_num_rows($dataStu); 
 $countVocHigh = mysqli_num_rows($dataStus);
 
 
