@@ -80,7 +80,7 @@ $result = $db->query($schdule);
                                     <a href="#" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
                                         <div class="avatar">
                                             <div class="w-12 rounded-full">
-                                                <img src="https://www.tnnthailand.com/static/inline-images/news/15947450205e0352c6f232c.jpeg" />
+                                            <img src="../image/<?php echo $_SESSION['StudentImg'];?>" />
                                             </div>
                                         </div>
                                     </a>
@@ -88,15 +88,15 @@ $result = $db->query($schdule);
                                         <div class="flex">
                                             <div class="avatar">
                                                 <div class="w-[130px] h-[170px]  rounded">
-                                                    <img src="https://www.tnnthailand.com/static/inline-images/news/15947450205e0352c6f232c.jpeg" />
+                                                <img src="../image/<?php echo $_SESSION['StudentImg'];?>" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="flex flex-col ml-2">
-                                    <span class="text-[16px] font-semibold">นายบงกชเพชร ยอดกระโทก</span>
-                                    <span>64209010033</span>
+                                    <span class="text-[16px] font-semibold"><?php echo $_SESSION['StudentName']. "&nbsp;" .$_SESSION['StudentLName'];?></span>
+                                    <span><?php echo $_SESSION['StudentID'];?></span>
                                 </div>
                                 <a href="" class=" ml-auto flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
@@ -109,68 +109,31 @@ $result = $db->query($schdule);
                         </td>
 
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                            <span class="inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-                                <span class="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
-                                ยังศึกษาอยู่
-                            </span>
+                        <?php
+                        
+                        if($_SESSION['status'] == 0){
+                            echo "<span class='inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300'>";
+                            echo "พ้นการศึกษา";
+                            echo "</span>";
+                        }
+                        if($_SESSION['status'] == 1){
+                            echo "<span class='inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300'>";
+                            echo "กำลังศึกษา";
+                            echo "</span>";
+                        }
+                        ?>
                         </td>
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                            เทคโนโลยีสารสนเทศ
+                        <?php echo $_SESSION['Department'];?>
                         </td>
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                            ปวช
+                        <?php echo $_SESSION['Course'];?>
                         </td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">3</td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">2</td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentYear'];?></td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $_SESSION['StudentGroups'];?></td>
                     </tr>
 
 
-                    <tr class="odd:bg-slate-50">
-                        <td class=" h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500  ">
-
-                            <div class="flex">
-                                <div>
-                                    <a href="#" data-popover-target="popover-2" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
-                                        <div class="avatar">
-                                            <div class="w-12 rounded-full">
-                                                <img src="https://a-static.besthdwallpaper.com/newjeans-hanni-in-omg-album-shoot-wallpaper-2048x1536-108339_26.jpg" />
-                                            </div>
-                                        </div>
-                                    </a>
-                                    <div data-popover id="popover-2" role="tooltip" class="absolute z-10 invisible transition-opacity duration-300">
-                                        <div class="flex">
-                                            <div class="avatar">
-                                                <div class="w-[130px] h-[170px] rounded">
-                                                    <img src="https://i.pinimg.com/564x/38/0e/65/380e65d847db07176c86fc429264c27a.jpg" />
-                                                </div>
-                                            </div>
-                                         
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col ml-2">
-                                    <span class="text-[16px] font-semibold">บงกชเพชร ยอดกระโทก</span>
-                                    <span>64209010033</span>
-                                </div>
-                                <a href="" class=" ml-auto flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
-                                        <circle cx="11" cy="11" r="8"></circle>
-                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                    </svg>
-                                </a>
-                            </div>
-                        </td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                            <span class="inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300">
-                                <span class="w-2 h-2 mr-1 bg-red-500 rounded-full"></span>
-                                พ้นสภาพ
-                            </span>
-                        </td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">เทคโนโลยีสารสนเทศ</td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">ปวช</td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">3</td>
-                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">2</td>
-                    </tr>
 
                 </tbody>
             </table>

@@ -47,6 +47,9 @@ https://cdn.jsdelivr.net/npm/@preline/preline@1.0.0/dist/hs-ui.bundle.min.js
 "></script>
 <link rel="stylesheet" href="https://uicdn.toast.com/chart/latest/toastui-chart.min.css" />
 <script src="https://uicdn.toast.com/chart/latest/toastui-chart.min.js"></script>
+<script
+  type="text/javascript"
+  src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
 <style>
   
   *{
