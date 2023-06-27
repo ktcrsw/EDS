@@ -215,9 +215,9 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     <br>
       <div class="">
 <form action="" method="post" accept-charset="utf-8"> 
-<div class="">
-    <label for="schedule_title" class="">วิชาที่สอน</label>
-    <div class="">
+<div class="form-group row">
+    <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
+    <div class="col-12 col-sm-8">
     <select name="schedule_title" id="schedule_title" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
                             <?php while ($allSub = mysqli_fetch_assoc($data)) { ?>
                                 <option value="<?php echo $allSub['subject_name']; ?>" style="font-size:14px;"><?php echo $allSub['subject_name']; ?></option>

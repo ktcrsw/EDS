@@ -6,7 +6,7 @@
 
 include("../../components/assets/header.php");
 
-header("Refresh:1; url=../../components/teacher/data_management.php");
+header("Refresh:1; url=portal.php");
 
 echo "<script  type='text/javascript'>
 Swal.fire(

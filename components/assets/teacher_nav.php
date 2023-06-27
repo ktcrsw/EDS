@@ -27,8 +27,8 @@
          <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                <div class="font-medium min-[750px]:hidden "><p><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></b></p></div>
-               <div class="font-medium ">Teacher User</div>
-               <div class="truncate">k@gmail.com</div>
+               <div class="font-medium "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></div>
+               <div class="truncate"><?php echo $_SESSION['Email']?></div>
             </div>
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
              
