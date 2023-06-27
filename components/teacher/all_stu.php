@@ -9,6 +9,20 @@
 
 
 <div id="chart-area"></div>
+<?php include "../../Backend/db/connect.db.php";
+
+//รวมปวช
+$totalStu = "SELECT * FROM enrolltbl";
+$dataStu = $db->query($totalStu);
+//รวมปวส
+$totalStus = "SELECT * FROM enrolltbl_high";
+$dataStus = $db->query($totalStus);
+
+$countVoc = mysqli_num_rows($dataStu);
+$countVocHigh = mysqli_num_rows($dataStus);
+
+
+?>
 <script>
 const el = document.getElementById('chart-area');
       const data = {
@@ -16,11 +30,11 @@ const el = document.getElementById('chart-area');
         series: [
           {
             name: 'ปวช',
-            data: 46.02,
+            data: <?=$countVoc;?>,
           },
           {
             name: 'ปวส',
-            data: 20.47,
+            data: <?=$countVocHigh;?>,
           },
          
         ],
@@ -63,39 +77,39 @@ const el = document.getElementById('chart-area');
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">1</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">2</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">3</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countVoc?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countVoc?></td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-700 ">ตกค้าง</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
       </tr>
     </tbody>
     <tfoot>
     <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">รวม</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countVoc?></td>
       </tr>
     </tfoot>
   </table>
@@ -119,39 +133,39 @@ const el = document.getElementById('chart-area');
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">1</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countVocHigh?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countVocHigh?></td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">2</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">3</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
       </tr>
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-700 ">ตกค้าง</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
       </tr>
     </tbody>
     <tfoot>
     <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">รวม</th>
 
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">0</td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countVocHigh?></td>
       </tr>
     </tfoot>
   </table>

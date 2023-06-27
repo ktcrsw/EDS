@@ -18,7 +18,7 @@
         </div>
         <div class="relative w-64 ">
           <div class="mx-auto max-w-xs">
-            <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdid" />
+            <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="รหัสนักศึกษา" name="stdid" required/>
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
           </div>
           <div class="relative w-64 ">
             <div class="mx-auto max-w-xs">
-              <input type="text" class="block w-full h-10 rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdname"/>
+              <input type="text" class="block w-full h-10 rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="ชื่อจริง" name="stdname" />
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
           </div>
           <div class="relative w-64 ">
             <div class="mx-auto max-w-xs">
-              <input type="text" class="block w-full h-10 rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdlname"/>
+              <input type="text" class="block w-full h-10 rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="นามสกุล" name="stdlname" />
             </div>
           </div>
         </div>
