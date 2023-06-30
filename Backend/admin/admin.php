@@ -4,91 +4,137 @@
 <?php include "../db/connect.db.php";
 
 
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM enrolltbl";
 $result = $db->query($sql);
 
 
 
 
 ?>
-<section class="m-2">
-     
-     <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-         <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-             <li class="mr-2" role="presentation">
-                 <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">เพิ่มข้อมูลผู้ใช้</button>
-             </li>
-             <li class="mr-2" role="presentation">
-                 <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">เช็คชื่อนักศึกษาเข้าร่วมกิจกรรมหน้าเสาธง</button>
-             </li>
-             <li class="mr-2" role="presentation">
-                 <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">เช็คชื่อนักศึกษาเข้าเรียนรายวิชา</button>
-             </li>
-             <li class="mr-2" role="presentation">
-                 <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">พิมพ์รายงานเอกสาร</button>
-             </li>
-         </ul>
-     </div>
-     <div id="myTabContent">
-         <div class="hidden" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        
-             <div>
-             <div class="px-4 md:px-10 ">
-                 <div class="flex items-center justify-between">
-                     <div class="">
-     
-                     </div>
-                 </div>
-                 <p tabindex="0" class="focus:outline-none text-base sm:text-lg md:text-xl lg:text-2xl font-bold leading-normal text-gray-800">เพิ่มข้อมูลผู้ใช้</p>
-     
-                 <div class="sm:px-6 w-full">
-
-<div class="px-4 md:px-10 ">
-      <div class="flex items-center justify-between">
-      </div>
-</div>
-
-<div class="bg-white py-4  px-4 md:px-8 xl:px-10">
-      <form action="add_user.php" method="post">
-      <input type="file" class="file-input file-input-bordered file-input-info w-full max-w-xs" name="upload" />
-            <label for="Username" class="block mb-2 text-md font-medium text-gray-900 dark:text-dark mt-2">ชื่อผู้ใช้</label>
-            <input required name="username" class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="ตัวอย่าง EDS-000">
+<section class="m-2 w-full">
+    <!-- /* -------------------------------------------------------------------------- */
+    /*                        หน้าผลการค้นหาข้อมูลนักศึกษา                        */
+    /* -------------------------------------------------------------------------- */ -->
 
 
-            <label for="Firstname" class="block mt-2 text-md font-medium text-gray-900 dark:text-dark">ชื่อจริง</label>
-            <input required name="fname" class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="ชื่อจริง">
-            
-            <label for="Firstname" class="block mt-2 text-md font-medium text-gray-900 dark:text-dark">นามสกุล</label>
-            <input required name="lname" class="appearance-none block w-full  text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="นามสกุล">
 
-            <input type="submit" class="btn btn-primary mt-2" value="เพิ่มข้อมูล">
-      </form>
 
-      <div class="sm:flex items-center justify-between">
-            <div class="flex items-center">
+    <!-- Component: Table with hover state -->
+    <div class="flex justify-center px-24 items-center">
+        <div class="w-full overflow-x-auto">
+            <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รหัสนักศึกษา ชื่อ-นามสกุล</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สถานะ</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สาขาวิชา</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">หลักสูตร</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ชั้นปี</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">กลุ่มเรียน</th>
+                    </tr>
+                    <?php while($row = mysqli_fetch_assoc($result)):?>
+                    <tr>
 
-      </div>
-</div>
-             </div>
-             
-             
-             </div>
-     
-     
-             
-         </div>
-     
-     
-     
-     
-     
-     
-         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-         </div>
-         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
-         </div>
-         <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
-         </div>
-     </div>
-     
-     </section>
+
+
+                        <?php
+                        ///////////////////////////////////////////////
+                        /*
+
+                                $row ของข้อมูลนักเรียนอิงจากพวกนี้ไปใช้
+                                
+                                $row['StudentNo']
+                                $row['Course'] 
+                                $row['StudentID'] 
+                                $row['ref_stdlname'] 
+                                $row['StudentLName'] 
+                                $row['StudentGroups'] 
+                                $row['StudentYear']
+                                $row['Department']
+                                $row['status'] 
+                                $row['ref_stdImg'] 
+
+                                        #Kittichai Raksawong
+
+                        */
+                        //////////////////////////////////////////////
+
+
+
+                        ?>
+                        <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                            <div class="flex">
+                                <div>
+                                    <a href="#" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
+                                        <div class="avatar">
+                                            <div class="w-12 rounded-full">
+                                                <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <div data-popover id="popover-1" role="tooltip" class="absolute z-10 invisible transition-opacity duration-300">
+                                        <div class="flex">
+                                            <div class="avatar">
+                                                <div class="w-[130px] h-[170px]  rounded">
+                                                    <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col ml-2">
+                                    <span class="text-[16px] font-semibold"><?php echo $row['ref_stdfname'] . "&nbsp;" . $row['ref_stdlname']; ?></span>
+                                    <span><?php echo $row['ref_studenttbl']; ?></span>
+                                </div>
+                                <a href="" class=" ml-auto flex items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                                        <circle cx="11" cy="11" r="8"></circle>
+                                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                    </svg>
+                                </a>
+                            </div>
+
+                        </td>
+
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                            <?php
+                            //
+                            ?>
+                            <a href="../functions/aprroval_std.php?stdid=<?php echo $row['no'];?>">
+                            <?php 
+                            
+                            if ($row['ref_status'] == 0) {
+                                echo "<span class='inline-flex items-center bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-red-900 dark:text-red-300'>";
+                                echo "พ้นการศึกษา";
+                                echo "</span>";
+                            }
+                            if ($row['ref_status'] == 1) {
+                                echo "<span class='inline-flex items-center bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300'>";
+                                echo "กำลังศึกษา";
+                                echo "</span>";
+                            }
+                            
+                            
+                            ?>
+                        </a>
+                        </td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                            <?php echo $row['ref_department']; ?>
+                        </td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                            <?php echo $row['ref_course']; ?>
+                        </td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_years']; ?></td>
+                        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_stdGroups']; ?></td>
+                    </tr>
+                    <?php endwhile; ?>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+</section>
