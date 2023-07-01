@@ -29,12 +29,23 @@ $data = $db->query($subject);
         <div class="flex justify-center">
           <div class="avatar mt-4">
             <div class="w-[230px] h-[270px] rounded">
-              <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
+              <?php 
+              
+              if($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'หญิง'){
+                  echo "<img src='../image/null_user_girl.png' />";
+              } elseif($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'ชาย') {
+                  echo "<img src='../image/null_user.png' />";
+              } else {
+
+                                                
+              ?>
+                  <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
+                  <?php } ?>
             </div>
           </div>
         </div>
         <div class="flex flex-col items-center mt-4">
-          <span class="text-[20px] font-medium"><?php echo $_SESSION['StudentName']; ?></span>
+          <span class="text-[20px] font-medium"><?php echo $_SESSION['StudentName'] . "&nbsp;" . $_SESSION['StudentLName']; ?></span>
           <span class="text-gray-500"><?php echo $_SESSION['StudentID']; ?></span>
           <div class=" mt-2 gap-4">
             <span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">

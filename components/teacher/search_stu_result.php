@@ -1,4 +1,6 @@
 <?php session_start(); ?>
+<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
@@ -104,7 +106,18 @@ $result = $db->query($schdule);
                                     <a href="" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
                                         <div class="avatar">
                                             <div class="w-12 rounded-full">
-                                                <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
+                                            <?php 
+                                                
+                                                if($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'หญิง'){
+                                                    echo "<img src='../image/null_user_girl.png' />";
+                                                } elseif($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'ชาย') {
+                                                    echo "<img src='../image/null_user.png' />";
+                                                } else {
+
+                                                
+                                                ?>
+                                                    <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
+                                            <?php } ?>
                                             </div>
                                         </div>
                                     </a>
@@ -112,7 +125,18 @@ $result = $db->query($schdule);
                                         <div class="flex">
                                             <div class="avatar">
                                                 <div class="w-[130px] h-[170px]  rounded">
+                                                <?php 
+                                                
+                                                if($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'หญิง'){
+                                                    echo "<img src='../image/null_user_girl.png' />";
+                                                } elseif($_SESSION['StudentImg'] == '' AND $_SESSION['StudentSex'] == 'ชาย') {
+                                                    echo "<img src='../image/null_user.png' />";
+                                                } else {
+
+                                                
+                                                ?>
                                                     <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                         </div>
@@ -122,7 +146,7 @@ $result = $db->query($schdule);
                                     <span class="text-[16px] font-semibold"><?php echo $_SESSION['StudentName'] . "&nbsp;" . $_SESSION['StudentLName']; ?></span>
                                     <span><?php echo $_SESSION['StudentID']; ?></span>
                                 </div>
-                                <a href="profile_stu.php?=<?php echo $_SESSION['StudentID'];?>" class=" ml-auto flex items-center">
+                                <a href="profile_stu.php?=<?php echo $_SESSION['StudentID']. "&nbsp" .$_SESSION['StudentName'] . "&nbsp;" . $_SESSION['StudentLName']; ?>" class=" ml-auto flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
                                         <circle cx="11" cy="11" r="8"></circle>
                                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
