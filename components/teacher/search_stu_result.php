@@ -101,7 +101,7 @@ $result = $db->query($schdule);
                         <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                             <div class="flex">
                                 <div>
-                                    <a href="#" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
+                                    <a href="" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
                                         <div class="avatar">
                                             <div class="w-12 rounded-full">
                                                 <img src="../image/<?php echo $_SESSION['StudentImg']; ?>" />
@@ -122,7 +122,7 @@ $result = $db->query($schdule);
                                     <span class="text-[16px] font-semibold"><?php echo $_SESSION['StudentName'] . "&nbsp;" . $_SESSION['StudentLName']; ?></span>
                                     <span><?php echo $_SESSION['StudentID']; ?></span>
                                 </div>
-                                <a href="" class=" ml-auto flex items-center">
+                                <a href="profile_stu.php?=<?php echo $_SESSION['StudentID'];?>" class=" ml-auto flex items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
                                         <circle cx="11" cy="11" r="8"></circle>
                                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
