@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
-
+    
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
 <?php include "../../Backend/db/connect.db.php";
@@ -36,7 +36,7 @@ include "../assets/teacher_nav.php";
          <?php include './search_stu.php'; ?>
          </div>
          <div class="hidden p-4 " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-
+         <?php include './all_stu.php'; ?>
          </div>
          <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
              <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Settings tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>

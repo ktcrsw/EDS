@@ -63,7 +63,7 @@ $data = $db->query($subject);
               }
               ?>
             </span>
-            <span class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"> เทคโนโลยีสารสนเทศ ปวช.3/2 </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-blue-50 px-2 py-1 text-xs font-semibold text-blue-600"> เทคโนโลยีสารสนเทศ ปวช.<?php echo $_SESSION['StudentYear']; ?>/<?php echo $_SESSION['StudentGroups']; ?> </span>
           </div>
 
           <ul class="relative flex flex-col gap-12 py-12 pl-6 before:absolute before:top-0 before:left-6 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 before:border-dashed after:absolute after:top-6 after:left-6 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200 ">
