@@ -223,6 +223,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
                                 <option value="<?php echo $allSub['subject_name']; ?>" style="font-size:14px;"><?php echo $allSub['subject_name']; ?></option>
                             <?php } ?>
                         </select>           
+                        
     </div>
 </div>
 <div class="form-group row">

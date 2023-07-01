@@ -23,7 +23,6 @@
 
                 <!-- Description -->
                 <p class="text-gray-700 text-lg font-light">
-                EDS Website Development Team - Education System
                 </p>
             </div>
         </div>
