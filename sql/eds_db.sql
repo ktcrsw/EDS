@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2023 at 07:47 AM
+-- Generation Time: Jul 04, 2023 at 03:44 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -88,12 +88,15 @@ CREATE TABLE `classtbl` (
 
 CREATE TABLE `enrolltbl` (
   `no` int(11) NOT NULL,
-  `ref_subjecttbl` int(13) DEFAULT NULL,
+  `ref_course` varchar(255) NOT NULL,
   `ref_studenttbl` varchar(13) DEFAULT NULL,
-  `ref_stdname` varchar(255) NOT NULL,
+  `ref_stdfname` varchar(255) NOT NULL,
+  `ref_stdlname` varchar(255) NOT NULL,
+  `ref_sex` varchar(10) NOT NULL,
   `ref_stdGroups` int(11) NOT NULL,
-  `ref_stdroom` varchar(255) NOT NULL,
+  `ref_years` varchar(255) NOT NULL,
   `ref_department` varchar(255) NOT NULL,
+  `ref_status` int(11) NOT NULL,
   `ref_stdImg` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -101,9 +104,57 @@ CREATE TABLE `enrolltbl` (
 -- Dumping data for table `enrolltbl`
 --
 
-INSERT INTO `enrolltbl` (`no`, `ref_subjecttbl`, `ref_studenttbl`, `ref_stdname`, `ref_stdGroups`, `ref_stdroom`, `ref_department`, `ref_stdImg`) VALUES
-(1, 3, '64209010026', 'นายเตชสิทธิ์ แก้ววิเชียร', 2, '2', 'เทคโนโลยีสารสนเทศ', '64209010026.jpg'),
-(2, 1, '64209010027', 'นายคชาม์ สร้อยศรี', 2, '2', 'เทคโนโลยีสารสนเทศ', '64209010027.jpg');
+INSERT INTO `enrolltbl` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_sex`, `ref_stdGroups`, `ref_years`, `ref_department`, `ref_status`, `ref_stdImg`) VALUES
+(1, 'ปวช', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010026.jpg'),
+(2, 'ปวช', '64209010027', 'คชาม์', 'สร้อยศรี', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 1, '64209010027.jpg'),
+(3, 'ปวช', '64209010028', 'ทรงพล', 'คำภูมี', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010028.png'),
+(4, 'ปวช', '64209010030', 'กิตติชัย', 'รักษาวงค์', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010030.png'),
+(5, 'ปวช', '64209010031', 'สุทธิชัย', 'ตะกุดโฉม', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010031.png'),
+(6, 'ปวช', '64209010032', 'พัชรพล', 'ธรเสนา', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010032.png'),
+(7, 'ปวช', '64209010033', 'บงกชเพชร', 'ยอดกระโทก', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010033.png'),
+(8, 'ปวช', '64209010034', 'ธีรศักดิ์', 'พลเมืองนิด', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010034.png'),
+(9, 'ปวช', '64209010035', 'ภูชิต', 'สายวินัย', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010035.png'),
+(10, 'ปวช', '64209010038', 'ชนากานต์', 'พงษ์สุทธิ์', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010038.png'),
+(11, 'ปวช', '64209010042', 'ศิวนาถ', 'ธนทรัพย์อำไพ', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010042.png'),
+(12, 'ปวช', '64209010002', 'ศุภนิมิต', 'พยัคฆพงศ์', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(13, 'ปวช', '64209010003', 'ศรยุทธ', 'ทองใส', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(14, 'ปวช', '64209010004', 'กฤษฏ์', 'ถาวโร', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(15, 'ปวช', '64209010005', 'มนัญชัย', 'น้อยไทย', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(16, 'ปวช', '64209010006', 'อรุณรัตน์', 'ประชานันท์', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(17, 'ปวช', '64209010007', 'กิติศักดิ์', 'ศรีนามหวด', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(18, 'ปวช', '64209010008', 'นนทนันท์', 'ชุมคำไฮ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(19, 'ปวช', '64209010009', 'วิรัตน์', 'เบ้าทองหล่อ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(20, 'ปวช', '64209010010', 'วราวุฒิ', 'ขาวขำ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(21, 'ปวช', '64209010011', 'นภิสรา', 'อิทธิสาร', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(22, 'ปวช', '64209010012', 'เวียงพิงค์', 'โคตรภักดี', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(23, 'ปวช', '64209010013', 'พัชราภา', 'สาริยา', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enrolltbl_high`
+--
+
+CREATE TABLE `enrolltbl_high` (
+  `no` int(11) NOT NULL,
+  `ref_course` varchar(255) NOT NULL,
+  `ref_studenttbl` varchar(13) DEFAULT NULL,
+  `ref_stdfname` varchar(255) NOT NULL,
+  `ref_stdlname` varchar(255) NOT NULL,
+  `ref_stdGroups` int(11) NOT NULL,
+  `ref_years` varchar(255) NOT NULL,
+  `ref_department` varchar(255) NOT NULL,
+  `ref_status` int(11) NOT NULL,
+  `ref_stdImg` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `enrolltbl_high`
+--
+
+INSERT INTO `enrolltbl_high` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_stdGroups`, `ref_years`, `ref_department`, `ref_status`, `ref_stdImg`) VALUES
+(1, 'ปวส', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, '1', 'เทคโนโลยีสารสนเทศ', 0, '64209010026.jpg'),
+(2, 'ปวส', '64209010027', 'คชาม์', 'สร้อยศรี', 2, '1', 'เทคโนโลยีสารสนเทศ', 1, '64209010027.jpg');
 
 -- --------------------------------------------------------
 
@@ -273,7 +324,8 @@ INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, 
 (17, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', '', '', '2023-06-23', '2023-06-23', '17:30:00', '18:30:00', '', '2023-06-25 11:22:33'),
 (18, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช', '', '', '2023-06-19', '2023-06-19', '13:30:00', '15:30:00', '', '2023-06-25 11:39:04'),
 (19, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '', '', '2023-06-21', '2023-06-21', '17:30:00', '18:30:00', '', '2023-06-25 11:41:12'),
-(20, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวส', '', '', '2023-06-19', '2023-06-19', '08:30:00', '10:30:00', '', '2023-06-25 11:42:54');
+(20, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวส', '', '', '2023-06-19', '2023-06-19', '08:30:00', '10:30:00', '', '2023-06-25 11:42:54'),
+(21, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '', '', '2023-06-26', '2023-10-02', '09:30:00', '12:30:00', '', '2023-06-26 07:18:06');
 
 -- --------------------------------------------------------
 
@@ -390,7 +442,7 @@ ALTER TABLE `classschedule`
 -- AUTO_INCREMENT for table `enrolltbl`
 --
 ALTER TABLE `enrolltbl`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `mcheck`
@@ -420,7 +472,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `tbl_schedule`
 --
 ALTER TABLE `tbl_schedule`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`

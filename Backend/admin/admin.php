@@ -65,22 +65,25 @@ $result = $db->query($sql);
                         <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                             <div class="flex">
                                 <div>
-                                    <a href="#" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
+                                    <a href="admin.php" data-popover-target="popover-1" data-popover-placement="right" type="button" class="items-center justify-center w-12 h-12 text-white rounded-full">
                                         <div class="avatar">
                                             <div class="w-12 rounded-full">
-                                                <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
-                                            </div>
+                                            <?php 
+              
+              if($row['ref_stdImg'] == '' AND $row['ref_sex'] == 'หญิง'){
+                  echo "<img src='../../components/image/null_user_girl.png' />";
+              } elseif($row['ref_stdImg'] == '' AND $row['ref_sex'] == 'ชาย') {
+                  echo "<img src='../../components/image/null_user.png' />";
+              } else {
+
+                                                
+              ?>
+                  <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
+                  <?php } ?>                                            
+                </div>
                                         </div>
                                     </a>
-                                    <div data-popover id="popover-1" role="tooltip" class="absolute z-10 invisible transition-opacity duration-300">
-                                        <div class="flex">
-                                            <div class="avatar">
-                                                <div class="w-[130px] h-[170px]  rounded">
-                                                    <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                                 <div class="flex flex-col ml-2">
                                     <span class="text-[16px] font-semibold"><?php echo $row['ref_stdfname'] . "&nbsp;" . $row['ref_stdlname']; ?></span>

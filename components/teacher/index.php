@@ -132,7 +132,7 @@ $query1 = $db->query($sql1);
                      <div class="pb-4 ml-4 mt-1 bg-slate- w-16 h-20 ">
                         <label for="" class="text-[15px]  justify-center flex text-gray-200 font-bold">ไฟล์แนบ</label>
 
-                        <a href="">
+                        <a href="file:///C:/Users/chkcg/Downloads/rei%20baby.jpg">
                            <div class="items-center flex justify-center">
                               <div class="bg-blue-400 w-14 h-10 items-center justify-center flex rounded-lg border border-blue-400 duration-300 hover:border-white ">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -159,7 +159,7 @@ $query1 = $db->query($sql1);
                      <div class="pb-4 ml-4 mt-1 bg-slate- w-16 h-20 ">
                         <label for="" class="text-[15px]  justify-center flex text-gray-200 font-bold">ไฟล์แนบ</label>
 
-                        <a href="">
+                        <a href="file:///C:/Users/chkcg/Downloads/rei%20baby.jpg">
                            <div class="items-center flex justify-center">
                               <div class="bg-blue-400 w-14 h-10 items-center justify-center flex rounded-lg border border-blue-400 duration-300 hover:border-white ">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

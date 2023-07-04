@@ -85,7 +85,6 @@
                     <div class="text-center mt-6">
                         <!-- Name -->
                         <h1 class="text-gray-900 text-xl font-bold mb-1">
-                            Bongkotpethr Yodkratok
                         </h1>
 
                         <!-- Title -->
