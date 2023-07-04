@@ -4,7 +4,7 @@
 <?php include "../db/connect.db.php";
 
 
-$sql = "SELECT * FROM enrolltbl";
+$sql = "SELECT * FROM enrolltbl LIMIT 5";
 $result = $db->query($sql);
 
 
@@ -131,9 +131,10 @@ $result = $db->query($sql);
                         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_stdGroups']; ?></td>
                     </tr>
                     <?php endwhile; ?>
-
+                        
 
                 </tbody>
+                   <a href="admin.php?page=NextPage"></a> <button>Next Page</button>
             </table>
         </div>
     </div>

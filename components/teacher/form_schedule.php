@@ -15,7 +15,6 @@ $data = $db->query($subject);
 ?>
 
 <?php
-// การบันทึกข้อมูลอย่างง่ายเบื้องตั้น
 if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $p_schedule_title = (isset($_POST['schedule_title']))?$_POST['schedule_title']:"";
     $p_schedule_startdate = (isset($_POST['schedule_startdate']))?$_POST['schedule_startdate']:"0000-00-00";
