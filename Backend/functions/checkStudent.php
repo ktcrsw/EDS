@@ -2,10 +2,10 @@
 
     session_start();
     
-    funtion getCheckStudents(){
+    function getCheckStudents(){
         // 
 
-        
+
     }
 
 

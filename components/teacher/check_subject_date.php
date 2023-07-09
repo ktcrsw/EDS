@@ -16,6 +16,10 @@ $query = $db->query($sql);
 
 $subject = "SELECT * FROM subjecttbl";
 $data = $db->query($subject);
+
+
+
+
 ?>
 <div class="w-full py-6 ">
 <!-- Component: Table with hover state -->

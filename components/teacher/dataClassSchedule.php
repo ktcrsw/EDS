@@ -203,17 +203,12 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     exit;
 }
 ?>
-  <head>
-    <meta charset='utf-8' />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.1.2/css/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">    
-  </head>
+
   <body>
   
     <br>
     <br>
-      <div class="">
+      <div class="  ">
 <form action="" method="post" accept-charset="utf-8"> 
 <div class="form-group row">
     <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
@@ -237,24 +232,17 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
                         </select>     
     </div>          
         </div>       
-      <div class="invalid-feedback">
-        กรุณากรอก วันที่เริ่มต้น
-      </div>            
+          
     </div>
 </div>  
 <div class="form-group row">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_startdate" data-target-input="nearest">
-          <input type="text" datepicker  class="form-control  w-full" name="schedule_startdate" data-target="#schedule_startdate"
+          <input type="date" datepicker  class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_startdate" data-target="#schedule_startdate"
            autocomplete="off" value="" required>           
-            <div class="input-group-append" data-target="#schedule_startdate" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-            </div>
         </div>       
-      <div class="invalid-feedback">
-        กรุณากรอก วันที่เริ่มต้น
-      </div>            
+           
     </div>
 </div>
 <div class="form-group row">
@@ -264,15 +252,10 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="far fa-times-circle"></i></div>
             </div>           
-          <input type="text" class="form-control datetimepicker-input" name="schedule_enddate" data-target="#schedule_enddate"
+          <input type="date" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_enddate" data-target="#schedule_enddate"
            autocomplete="off" value="" >           
-            <div class="input-group-append" data-target="#schedule_enddate" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-            </div>
         </div>            
-      <div class="invalid-feedback">
-        กรุณากรอก วันที่สิ้นสุด
-      </div>            
+           
     </div>
 </div>
 <div class="form-group row">
@@ -282,15 +265,10 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="far fa-times-circle"></i></div>
             </div>           
-          <input type="text" class="form-control datetimepicker-input" name="schedule_starttime" data-target="#schedule_starttime"
+          <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_starttime" data-target="#schedule_starttime"
            autocomplete="off" value="" >           
-            <div class="input-group-append" data-target="#schedule_starttime" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-clock"></i></div>
-            </div>
         </div>          
-      <div class="invalid-feedback">
-        กรุณากรอก เวลาเริ่มต้น
-      </div>            
+         
     </div>
 </div>
 <div class="form-group row">
@@ -300,15 +278,10 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
             <div class="input-group-prepend">
                 <div class="input-group-text"><i class="far fa-times-circle"></i></div>
             </div>           
-          <input type="text" class="form-control datetimepicker-input" name="schedule_endtime" data-target="#schedule_endtime"
+          <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_endtime" data-target="#schedule_endtime"
            autocomplete="off" value="" >           
-            <div class="input-group-append" data-target="#schedule_endtime" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-clock"></i></div>
-            </div>
         </div>           
-      <div class="invalid-feedback">
-        กรุณากรอก เวลาสิ้นสุด
-      </div>            
+          
     </div>
 </div>
 </div>
@@ -403,7 +376,7 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
     </div>
     </td>
     <td class="p-0 position-relative" colspan="10">
-    <div class="position-absolute">
+    <div class="position absolute">
     <div class="d-flex align-content-stretch" style="min-height: 60px;">
         <?php for($i=1;$i<$sc_numCol;$i++){ ?>
         <div class="bg-light text-center border-right" style="width: <?=$hour_block_width ?>px;margin-right: 1px;">
@@ -412,14 +385,14 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         <?php } ?>
     </div>
     </div>
-    <div class="position-absolute" style="z-index: 100;">
+    <div class="position absolute" style="z-index: 100;">
         <?php
         if(isset($data_day_schedule[$dayKeyChk]) && count($data_day_schedule[$dayKeyChk])>0){
             foreach($data_day_schedule[$dayKeyChk] as $row_day){
                 $sc_width = ($row_day['duration']/60)*($hour_block_width/$sc_numStep);
                 $sc_start_x = $row_day['timeblock']*$hour_block_width+(int)$row_day['timeblock'];
         ?>
-        <div class="position-absolute text-center sc-detail" style="
+        <div class="position absolute text-center sc-detail" style="
         width: <?=$sc_width?>px;margin-right: 1px;
         margin-left: <?=$sc_start_x?>px;
         min-height: 60px;">
