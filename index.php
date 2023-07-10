@@ -1,7 +1,7 @@
 <?php 
 
-    include "./components/assets/header.php";
-    // header("location: ./components/login.php");
+    include "./Frontend/assets/header.php";
+    // header("location: ./Frontend/login.php");
 
 ?> 
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
@@ -94,7 +94,8 @@
           <h1 class="mt-2 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
             EDS <br /><span>Education System</span>
           </h1>
-          <a href="components/login.php">          <button type="button"
+          <a href="Frontend
+    /login.php">          <button type="button"
             class="rounded border-2 border-neutral-50 px-[46px] pt-[14px] pb-[12px] text-sm font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-100 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200"
             data-te-ripple-init data-te-ripple-color="light">
             เริ่มต้นใช้งาน

@@ -3,7 +3,7 @@
 
     session_start();
     session_destroy();
-    header('location: ../../components/login.php');
+    header('location: ../../Frontend/login.php');
 
 
 

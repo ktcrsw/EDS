@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    include("../../components/assets/header.php");
+    include("../../Frontend/assets/header.php");
     include("../db/connect.db.php");
     
     $users = "SELECT * FROM enrolltbl";

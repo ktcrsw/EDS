@@ -1,7 +1,7 @@
 <?php 
     session_start();
 
-    include("../../components/assets/header.php");
+    include("../../Frontend/assets/header.php");
     include("../db/connect.db.php");
     
     $users = "SELECT * FROM users";
@@ -32,11 +32,11 @@
         $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];
-            header("location: ../../components/users/index.php");
+            header("location: ../../Frontend/users/index.php");
         }
         
         if($_SESSION['Permission'] == 1){
-            header("location: ../../components/teacher/index.php");
+            header("location: ../../Frontend/teacher/index.php");
         }
         
         if($_SESSION['Permission'] == 2){

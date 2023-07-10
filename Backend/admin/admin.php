@@ -1,6 +1,6 @@
 <?php session_start(); ?>
-<?php include "../../components/assets/header.php"; ?>
-<?php include "../../components/assets/admin_nav.php"; ?>
+<?php include "../../Frontend/assets/header.php"; ?>
+<?php include "../../Frontend/assets/admin_nav.php"; ?>
 <?php include "../db/connect.db.php";
 
 
@@ -71,14 +71,14 @@ $result = $db->query($sql);
                                             <?php 
               
               if($row['ref_stdImg'] == '' AND $row['ref_sex'] == 'หญิง'){
-                  echo "<img src='../../components/image/null_user_girl.png' />";
+                  echo "<img src='../../Frontend/image/null_user_girl.png' />";
               } elseif($row['ref_stdImg'] == '' AND $row['ref_sex'] == 'ชาย') {
-                  echo "<img src='../../components/image/null_user.png' />";
+                  echo "<img src='../../Frontend/image/null_user.png' />";
               } else {
 
                                                 
               ?>
-                  <img src="../../components/image/<?php echo $row['ref_stdImg']; ?>" />
+                  <img src="../../Frontend/image/<?php echo $row['ref_stdImg']; ?>" />
                   <?php } ?>                                            
                 </div>
                                         </div>

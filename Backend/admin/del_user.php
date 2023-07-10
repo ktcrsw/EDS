@@ -1,6 +1,6 @@
 <?php include "../db/connect.db.php";
 
-    include "../../components/assets/header.php";
+    include "../../Frontend/assets/header.php";
 
     $sql = "SELECT * FROM users";
     $result = $db->query($sql);
