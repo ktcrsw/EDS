@@ -1,5 +1,5 @@
-<?php include"components/assets/header.php";?>
-<link rel="stylesheet" href="components/assets/404.css">
+<?php include"Frontend/assets/header.php";?>
+<link rel="stylesheet" href="Frontend/assets/404.css">
 
 <div class="flex-container">
   <div class="text-center">

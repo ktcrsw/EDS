@@ -29,7 +29,7 @@ $result = $db->query($std);
         $_SESSION['StudentImg'] = $searchData['ref_stdImg'];
 
         if($_SESSION['StudentID'] != $stdid){
-            include("../../components/assets/header.php");
+            include("../../Frontend/assets/header.php");
 
 echo "<script  type='text/javascript'>
 Swal.fire({
@@ -38,9 +38,9 @@ Swal.fire({
     text: 'ลองใหม่อีกครั้งภายหลัง',
   })
 </script>";
-header("Refresh:2; url=../../components/teacher/service_information.php");
+header("Refresh:2; url=../../Frontend/teacher/service_information.php");
         } else {
-            header("Refresh:0; url=../../components/teacher/search_stu_result.php");
+            header("Refresh:0; url=../../Frontend/teacher/search_stu_result.php");
 
         }
 
