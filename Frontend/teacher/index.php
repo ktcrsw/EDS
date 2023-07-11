@@ -41,11 +41,11 @@ $query1 = $db->query($sql1);
                      <label tabindex="0" class="btn m-1 border-primary-content bg-base-300 focus:bg-[#4c4f5c]" style="height: 1px;">ข้อมูล</label>
                      <div tabindex="0" class="dropdown-content card card-compact w-64  p-2 shadow bg-[#4c4f5c] text-primary-content">
                         <div class="card-body">
-                           <h3 class="card-title">นายกิตติชัย รักษาวงค์</h3>
+                           <h3 class="card-title"><?php echo $_SESSION['Firstname']. "&nbsp;" . $_SESSION['Lastname'];?></h3>
                            <p>วิทยาลัยเทคนิคอุดรธานี</p>
-                           <p>เกิด 1 มกราคา 2000</p>
-                           <p>รหัสประจำตัว 64209010033</p>
-                           <p>เบอร์โทร 011-1111-000</p>
+                           <p>เกิด <?php echo $_SESSION['BD'];?></p>
+                           <p>รหัสประจำตัว <?php echo $_SESSION['IdCard'];?></p>
+                           <p>เบอร์โทร <?php echo $_SESSION['Phone'];?></p>
                         </div>
                      </div>
                   </div>
@@ -115,51 +115,30 @@ $query1 = $db->query($sql1);
                </div>
 
             </div>
+            <?php
 
+            $getFiles = "SELECT * FROM files ORDER BY filesID DESC LIMIT 2";
+            $queryFiles = $db->query($getFiles);
+            while ($file = mysqli_fetch_assoc($queryFiles)):
+
+            ?>
             <div class="mx-20 max-w-full">
                <div class="divide-y divide-gray-100">
                   <detail class="group  " open>
                      <div class=" items-center justify-between  text-lg font-medium text-secondary-900 ">
-                        <span class="text-white font-medium text-[22px]">ประชาสัมพันธ์ เรื่อง เปิดซ่อมแก้กิจกรรมของนักเรียน นักศึกษา ภาคเรียน 1 ปีการศึกษา 2566 </span>
+                        <span class="text-white font-medium text-[22px]">ประชาสัมพันธ์ เรื่อง <?php echo $file['fileName'];?> ภาคเรียน 1 ปีการศึกษา <?php echo $file['fileYears'];?> </span>
                         <div class=" flex items-center enter">
                            <svg width="20" height="20" class="ml-4 " viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 0.125C5.48206 0.125 5.0462 0.217187 5.86872 0.381281C6.03281 0.545376 6.125 0.767936 6.125 1V2.75H16.625V1C16.625 0.767936 16.7172 0.545376 16.8813 0.381281C17.0454 0.217187 17.2679 0.125 17.5 0.125C17.7321 0.125 17.9546 0.217187 18.1187 0.381281C18.2828 0.545376 18.375 0.767936 18.375 1V2.75H19.25C20.1783 2.75 21.0685 3.11875 21.7249 3.77513C22.3813 4.4315 22.75 5.32174 22.75 6.25V19.375C22.75 20.3033 22.3813 21.1935 21.7249 21.8499C21.0685 22.5063 20.1783 22.875 19.25 22.875H3.5C2.57174 22.875 1.6815 22.5063 1.02513 21.8499C0.368749 21.1935 0 20.3033 0 19.375V6.25C0 5.32174 0.368749 4.4315 1.02513 3.77513C1.6815 3.11875 2.57174 2.75 3.5 2.75H4.375V1C4.375 0.767936 4.46719 0.545376 4.63128 0.381281C4.79538 0.217187 5.01794 0.125 5.25 0.125ZM21 10.625C21 10.1609 20.8156 9.71575 20.4874 9.38756C20.1592 9.05937 19.7141 8.875 19.25 8.875H3.5C3.03587 8.875 2.59075 9.05937 2.26256 9.38756C1.93437 9.71575 1.75 10.1609 1.75 10.625V19.375C1.75 19.8391 1.93437 20.2842 2.26256 20.6124C2.59075 20.9406 3.03587 21.125 3.5 21.125H19.25C19.7141 21.125 20.1592 20.9406 20.4874 20.6124C20.8156 20.2842 21 19.8391 21 19.375V10.625Z" fill="white" />
                            </svg>
-                           <label for="Date" class="text-white text-sm ml-2 mr-2">06/05/2023 - 10/07/2023</label>
+                           <label for="Date" class="text-white text-sm ml-2 mr-2"><?php echo $file['fileDate'];?></label>
                         </div>
                      </div>
-                     <div class=" ml-4 mt-4 text-white font-light">งานกิจกรรมนักเรียน นักศึกษา ฝ่ายพัฒนากิจการนักเรียน นักศึกษา จึงกำหนดวัน เวลา และรายละเอียดในการซ่อมแก้กิจกรรม </div>
+                     <div class=" ml-4 mt-4 text-white font-light"><?php echo $file['fileDescription'];?> </div>
                      <div class="pb-4 ml-4 mt-1 bg-slate- w-16 h-20 ">
                         <label for="" class="text-[15px]  justify-center flex text-gray-200 font-bold">ไฟล์แนบ</label>
 
-                        <a href="file:///C:/Users/chkcg/Downloads/rei%20baby.jpg">
-                           <div class="items-center flex justify-center">
-                              <div class="bg-blue-400 w-14 h-10 items-center justify-center flex rounded-lg border border-blue-400 duration-300 hover:border-white ">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
-                                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
-                                 </svg>
-                                 <span class="text-lg text-white ml-1">1</span>
-                              </div>
-                           </div>
-                        </a>
-                     </div>
-                  </detail>
-                  <detail class="group" open>
-                     <div class=" items-center justify-between  text-lg font-medium text-secondary-900 ">
-                        <span class="text-white font-medium text-[20px]">ประชาสัมพันธ์ เรื่อง การเข้าร่วมกิจกรรมหน้าเสาธง ประจำภาคเรียน 1/2566</span>
-                        <div class=" flex items-center enter">
-                           <svg width="20" height="20" class="ml-4 " viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <path fill-rule="evenodd" clip-rule="evenodd" d="M5.25 0.125C5.48206 0.125 5.0462 0.217187 5.86872 0.381281C6.03281 0.545376 6.125 0.767936 6.125 1V2.75H16.625V1C16.625 0.767936 16.7172 0.545376 16.8813 0.381281C17.0454 0.217187 17.2679 0.125 17.5 0.125C17.7321 0.125 17.9546 0.217187 18.1187 0.381281C18.2828 0.545376 18.375 0.767936 18.375 1V2.75H19.25C20.1783 2.75 21.0685 3.11875 21.7249 3.77513C22.3813 4.4315 22.75 5.32174 22.75 6.25V19.375C22.75 20.3033 22.3813 21.1935 21.7249 21.8499C21.0685 22.5063 20.1783 22.875 19.25 22.875H3.5C2.57174 22.875 1.6815 22.5063 1.02513 21.8499C0.368749 21.1935 0 20.3033 0 19.375V6.25C0 5.32174 0.368749 4.4315 1.02513 3.77513C1.6815 3.11875 2.57174 2.75 3.5 2.75H4.375V1C4.375 0.767936 4.46719 0.545376 4.63128 0.381281C4.79538 0.217187 5.01794 0.125 5.25 0.125ZM21 10.625C21 10.1609 20.8156 9.71575 20.4874 9.38756C20.1592 9.05937 19.7141 8.875 19.25 8.875H3.5C3.03587 8.875 2.59075 9.05937 2.26256 9.38756C1.93437 9.71575 1.75 10.1609 1.75 10.625V19.375C1.75 19.8391 1.93437 20.2842 2.26256 20.6124C2.59075 20.9406 3.03587 21.125 3.5 21.125H19.25C19.7141 21.125 20.1592 20.9406 20.4874 20.6124C20.8156 20.2842 21 19.8391 21 19.375V10.625Z" fill="white" />
-                           </svg>
-                           <label for="Date" class="text-white text-sm ml-2 mr-2">06/05/2023 - 10/07/2023</label>
-                        </div>
-                     </div>
-                     <div class=" ml-4 mt-4 text-white font-light">งานกิจกรรมนักเรียน นักศึกษา ฝ่ายพัฒนากิจการนักเรียน นักศึกษาการเข้าร่วมกิจกรรมหน้าเสาธง ประจำภาคเรียน</div>
-                     <div class="pb-4 ml-4 mt-1 bg-slate- w-16 h-20 ">
-                        <label for="" class="text-[15px]  justify-center flex text-gray-200 font-bold">ไฟล์แนบ</label>
-
-                        <a href="file:///C:/Users/chkcg/Downloads/rei%20baby.jpg">
+                        <a href="../../Backend/files/<?php echo $file['filesLinks'];?>">
                            <div class="items-center flex justify-center">
                               <div class="bg-blue-400 w-14 h-10 items-center justify-center flex rounded-lg border border-blue-400 duration-300 hover:border-white ">
                                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -174,8 +153,9 @@ $query1 = $db->query($sql1);
                   </detail>
                </div>
             </div>
+            <?php endwhile; ?>
          </div>
-
+         
 
 
          <!-- 

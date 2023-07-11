@@ -13,7 +13,7 @@
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="../../src/input.css">
-  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" components/index.php crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" Frontend/index.php crossorigin="anonymous">
   </script>
   <script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +38,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
   <div class="grid min-[1030px]:grid-cols-2 h-screen">
     <div class=" w-full flex justify-center items-center">
       <div class="w-full min-[1300px]:ml-32  flex justify-center items-center">
-        <img src="../components/image/eds_logo.svg" class="w-[200px] h-[300px] md:w-[auto] md:h-[auto]" alt="">
+        <img src="../Frontend/image/eds_logo.svg" class="w-[200px] h-[300px] md:w-[auto] md:h-[auto]" alt="">
         <label class="text-[130px] min-[1300px]:text-[200px] font-[700] text-[#3884FD]">EDS</label>
       </div>
     </div>
@@ -47,14 +47,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
         <div>
           <label class="text-[70px] font-bold text-[#808080] ">เข้าสู่ระบบ EDS</label>
           <div class="btn-group flex justify-center items-center mt-8">
-            <a href="http://localhost/eds/components/login_stu.php">
+            <a href="http://localhost/eds/Frontend/login_stu.php">
               <button class="btn btn-info
   text-white rounded-none rounded-l-[15px] bg-[#3884fd]  w-32 hover:bg-[#5ED9AC]"><img src="./image/graduated (1).png" class="mr-1">นักเรียน</button>
             </a>
-            <a href="http://localhost/eds/components/login.php">
+            <a href="http://localhost/eds/Frontend/login.php">
               <button class="btn rounded-none btn-success text-white w-32     "><img src="./image/teacher (1).png" class="mr-1">ครู</button>
             </a>
-            <a href="http://localhost/eds/components/login_admin.php">
+            <a href="http://localhost/eds/Frontend/login_admin.php">
               <button class="btn rounded-none btn-info bg-[#3884fd]  text-white rounded-r-[15px] hover:bg-[#5ED9AC] w-32"><img src="./image/manager.png" class="mr-1">ผู้ดูแล</button>
             </a>
           </div>

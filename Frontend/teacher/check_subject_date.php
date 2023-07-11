@@ -14,9 +14,8 @@ $query = $db->query($sql);
 $sql = "SELECT * FROM users";
 $query = $db->query($sql);
 
-$subject = "SELECT * FROM subjecttbl";
+$subject = "SELECT * FROM enrollsubject";
 $data = $db->query($subject);
-
 
 
 

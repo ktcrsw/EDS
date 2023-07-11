@@ -25,6 +25,8 @@
         $_SESSION['Firstname'] = $row['fname'];
         $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['address'] = $row['address'];
+        $_SESSION['Phone'] = $row['phone'];
+        $_SESSION['BD'] = $row['birthday'];
         $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['Permission'] = $row['permission'];
         $_SESSION['main_groups'] = $row['main_groups'];
