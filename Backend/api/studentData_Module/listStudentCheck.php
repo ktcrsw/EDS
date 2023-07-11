@@ -8,7 +8,7 @@ include '../../db/connect.db.php';
 isset($_REQUEST['year']) ? $year = $_REQUEST['year'] : $year = '';
 isset($_REQUEST['group']) ? $group = $_REQUEST['group'] : $group = '';
 
-$_SESSION['Groups'] = $groups;
+$_SESSION['GP'] = $group;
 $_SESSION['Year'] = $year;
 
 $stds = "SELECT * FROM enrollsubject WHERE ref_years = '$year' AND ref_stdGroups = '$group'";
@@ -37,7 +37,6 @@ while ($row = mysqli_fetch_assoc($result)){
 }
 header('location: ../../../Frontend/teacher/check_subject_date.php');
 
-    
 
 ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -16,7 +16,10 @@ $query = $db->query($sql);
 
 $subject = "SELECT * FROM enrollsubject";
 $data = $db->query($subject);
+$sgroup = $_SESSION['GP'];
+$syear = $_SESSION['Year'];
 
+// echo $sgroup. "" . $syear;
 
 
 ?>

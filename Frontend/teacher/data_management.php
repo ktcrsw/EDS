@@ -31,7 +31,8 @@ $data = $db->query($subject);
             <button class="inline-block p-4 border-b-2 rounded-t-lg "id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">เช็คชื่อนักศึกษาเข้าร่วมกิจกรรมหน้าเสาธง</button>
         </li>
         <li role="presentation">
-            <button class="inline-block p-4 border-b-2  rounded-t-lg" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">พิมพ์รายงานเอกสาร</button>
+            <a href="./service_information.php"><button class="inline-block p-4 border-b-2  rounded-t-lg" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">พิมพ์รายงานเอกสาร</button>
+            </a>
         </li>
     </ul>
 </div>
@@ -40,14 +41,10 @@ $data = $db->query($subject);
     <?php include './check_subject_selectgroup.php'; ?>
     </div>
     <div class="hidden p-4 rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="settings-tab">
-    
-
-    This page is not intended to be used.
+    <?php include './fileDownloads.php';?>        
 
     </div>
     <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
-        <p class="text-sm text-gray-500 dark:text-gray-400">This is some placeholder content the <strong class="font-medium text-gray-800 dark:text-white">Contacts tab's associated content</strong>. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling.</p>
-        
     </div>
 </div>
 

@@ -6,9 +6,13 @@
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
-$sgroup = $_SESSION['Groups'];
+
+$sgroup = $_SESSION['GP'];
 $syear = $_SESSION['Year'];
-$sql = "SELECT * FROM enrollsubject WHERE ref_stdGroups = '$sgroup' AND ref_years = '$syear'";
+
+// echo $sgroup. "" . $syear;
+
+$sql = "SELECT * FROM enrollsubject WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
 $query = $db->query($sql);
 
 
@@ -60,7 +64,7 @@ $query = $db->query($sql);
                                    
                                 </div>
                                 <div class="flex flex-col justify-center ml-4">
-                                    <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname']. "&nbsp" . $listname['ref_stdlname']; ?></span>
+                                    <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname']. "&nbsp" . $listStd['ref_stdlname']; ?></span>
                                     <span><?php echo $listStd['ref_studenttbl'];?></span>
                                 </div>
 
