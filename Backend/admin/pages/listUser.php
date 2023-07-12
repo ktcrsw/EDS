@@ -57,7 +57,7 @@
 
                ?>
                   <tr>
-                     <form action="editUser.php" method="get">
+                     <form action="../editUser.php" method="get">
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo $user['id_card']; ?></span>
                      </td>
