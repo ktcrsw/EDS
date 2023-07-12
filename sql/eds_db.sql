@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 04, 2023 at 03:44 AM
+-- Generation Time: Jul 12, 2023 at 08:21 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -83,6 +83,36 @@ CREATE TABLE `classtbl` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `enrollsubject`
+--
+
+CREATE TABLE `enrollsubject` (
+  `nullID` int(11) NOT NULL,
+  `schedule_id` int(11) NOT NULL,
+  `u_id` int(11) NOT NULL,
+  `schedule_title` varchar(255) NOT NULL,
+  `ref_studenttbl` varchar(255) DEFAULT NULL,
+  `ref_stdfname` varchar(255) DEFAULT NULL,
+  `ref_stdlname` varchar(255) DEFAULT NULL,
+  `ref_stdGroups` int(11) DEFAULT NULL,
+  `ref_years` int(11) DEFAULT NULL,
+  `ref_status` int(11) DEFAULT NULL,
+  `ref_stdImg` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `enrollsubject`
+--
+
+INSERT INTO `enrollsubject` (`nullID`, `schedule_id`, `u_id`, `schedule_title`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_stdGroups`, `ref_years`, `ref_status`, `ref_stdImg`) VALUES
+(1, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
+(2, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
+(3, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
+(4, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `enrolltbl`
 --
 
@@ -105,10 +135,10 @@ CREATE TABLE `enrolltbl` (
 --
 
 INSERT INTO `enrolltbl` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_sex`, `ref_stdGroups`, `ref_years`, `ref_department`, `ref_status`, `ref_stdImg`) VALUES
-(1, 'ปวช', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010026.jpg'),
+(1, 'ปวช', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 1, '64209010026.jpg'),
 (2, 'ปวช', '64209010027', 'คชาม์', 'สร้อยศรี', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 1, '64209010027.jpg'),
-(3, 'ปวช', '64209010028', 'ทรงพล', 'คำภูมี', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010028.png'),
-(4, 'ปวช', '64209010030', 'กิตติชัย', 'รักษาวงค์', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010030.png'),
+(3, 'ปวช', '64209010028', 'ทรงพล', 'คำภูมี', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 1, '64209010028.png'),
+(4, 'ปวช', '64209010030', 'กิตติชัย', 'รักษาวงค์', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 1, '64209010030.png'),
 (5, 'ปวช', '64209010031', 'สุทธิชัย', 'ตะกุดโฉม', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010031.png'),
 (6, 'ปวช', '64209010032', 'พัชรพล', 'ธรเสนา', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010032.png'),
 (7, 'ปวช', '64209010033', 'บงกชเพชร', 'ยอดกระโทก', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '64209010033.png'),
@@ -126,7 +156,7 @@ INSERT INTO `enrolltbl` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `
 (19, 'ปวช', '64209010009', 'วิรัตน์', 'เบ้าทองหล่อ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
 (20, 'ปวช', '64209010010', 'วราวุฒิ', 'ขาวขำ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
 (21, 'ปวช', '64209010011', 'นภิสรา', 'อิทธิสาร', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
-(22, 'ปวช', '64209010012', 'เวียงพิงค์', 'โคตรภักดี', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(22, 'ปวช', '64209010012', 'เวียงพิงค์', 'โคตรภักดี', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 1, ''),
 (23, 'ปวช', '64209010013', 'พัชราภา', 'สาริยา', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, '');
 
 -- --------------------------------------------------------
@@ -155,6 +185,31 @@ CREATE TABLE `enrolltbl_high` (
 INSERT INTO `enrolltbl_high` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_stdGroups`, `ref_years`, `ref_department`, `ref_status`, `ref_stdImg`) VALUES
 (1, 'ปวส', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, '1', 'เทคโนโลยีสารสนเทศ', 0, '64209010026.jpg'),
 (2, 'ปวส', '64209010027', 'คชาม์', 'สร้อยศรี', 2, '1', 'เทคโนโลยีสารสนเทศ', 1, '64209010027.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `filesID` int(11) NOT NULL,
+  `fileName` varchar(255) DEFAULT NULL,
+  `fileDescription` varchar(255) DEFAULT NULL,
+  `fileYears` varchar(255) DEFAULT NULL,
+  `fileStatus` int(11) DEFAULT NULL,
+  `fileDate` date NOT NULL,
+  `filesLinks` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `files`
+--
+
+INSERT INTO `files` (`filesID`, `fileName`, `fileDescription`, `fileYears`, `fileStatus`, `fileDate`, `filesLinks`) VALUES
+(1, 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง หยุดเรียนกรณีพิเศษ', 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง หยุดเรียนกรณีพิเศษ', '2566', 1, '2023-07-11', 'test.pdf'),
+(2, 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง ผลการประกวดและตัดสินแผนธุรกิจ', 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง ผลการประกวดและตัดสินแผนธุรกิจ', '2566', 1, '2023-07-11', '5.7.66.png'),
+(3, 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง พ้นสภาพการเป็นนักศึกษา ระดับประกาศนียบัตรวิชาชีพ พุทธศักราช ๒๕๖๒ ประจำปีการศึกษา ๒๕๖๖', 'ประกาศวิทยาลัยเทคนิคอุดรธานี เรื่อง พ้นสภาพการเป็นนักศึกษา ระดับประกาศนียบัตรวิชาชีพ พุทธศักราช ๒๕๖๒ ประจำปีการศึกษา ๒๕๖๖', '2566', 1, '2023-07-11', 'A4.7.66.jpg');
 
 -- --------------------------------------------------------
 
@@ -305,8 +360,11 @@ CREATE TABLE `tbl_schedule` (
   `schedule_id` int(11) NOT NULL,
   `schedule_title` varchar(256) NOT NULL,
   `schedule_detail` text NOT NULL,
+  `schedule_classYears` int(11) NOT NULL,
+  `schedule_classGroup` int(11) NOT NULL,
   `schedule_room` varchar(150) NOT NULL,
   `schedule_teacherName` varchar(150) NOT NULL,
+  `schedule_teacherID` int(11) NOT NULL,
   `schedule_startdate` date NOT NULL,
   `schedule_enddate` date NOT NULL,
   `schedule_starttime` time NOT NULL,
@@ -319,13 +377,10 @@ CREATE TABLE `tbl_schedule` (
 -- Dumping data for table `tbl_schedule`
 --
 
-INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_room`, `schedule_teacherName`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
-(16, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '535', '', '2023-06-20', '2023-06-20', '10:30:00', '12:30:00', '', '2023-06-25 11:17:46'),
-(17, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', '', '', '2023-06-23', '2023-06-23', '17:30:00', '18:30:00', '', '2023-06-25 11:22:33'),
-(18, 'คอมพิวเตอร์เบื้องต้น 2', 'ปวช', '', '', '2023-06-19', '2023-06-19', '13:30:00', '15:30:00', '', '2023-06-25 11:39:04'),
-(19, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '', '', '2023-06-21', '2023-06-21', '17:30:00', '18:30:00', '', '2023-06-25 11:41:12'),
-(20, 'การออกแบบกราฟิกและแอนิเมชั่น 1', 'ปวส', '', '', '2023-06-19', '2023-06-19', '08:30:00', '10:30:00', '', '2023-06-25 11:42:54'),
-(21, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', '', '', '2023-06-26', '2023-10-02', '09:30:00', '12:30:00', '', '2023-06-26 07:18:06');
+INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_classYears`, `schedule_classGroup`, `schedule_room`, `schedule_teacherName`, `schedule_teacherID`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
+(16, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', 3, 1, '535', 'กิตติชัย รักษาวงค์', 1, '2023-06-20', '2023-06-20', '10:30:00', '12:30:00', '', '2023-06-25 11:17:46'),
+(17, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', 3, 2, '', 'กิตติชัย รักษาวงค์', 1, '2023-06-23', '2023-06-23', '17:30:00', '18:30:00', '', '2023-06-25 11:22:33'),
+(22, 'ฐานข้อมูลเบื้องต้น 2', 'ปวส', 0, 0, '', '', 0, '2023-07-10', '2023-08-28', '12:01:00', '22:02:00', '', '2023-07-09 08:02:09');
 
 -- --------------------------------------------------------
 
@@ -342,6 +397,8 @@ CREATE TABLE `users` (
   `fname` varchar(255) DEFAULT NULL,
   `lname` varchar(255) DEFAULT NULL,
   `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `birthday` varchar(255) NOT NULL,
   `permission` int(11) NOT NULL,
   `main_groups` varchar(255) NOT NULL,
   `groups` int(11) NOT NULL,
@@ -352,11 +409,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `permission`, `main_groups`, `groups`, `img`) VALUES
-(1, '3626299495765', 'EDS-1', 'k@gmail.com', '123', 'กิตติชัย', 'รักษาวงค์', '', 1, '0', 0, 'LINE_ALBUM_รูปนักศึกษาสุดหล่อ+สุดสวย ปวช.22_๒๒๑๒๐๙_15.jpg'),
-(30, 'admin', 'admin', 'admin@gmail.com', 'admin', 'Techasit', 'Admin', '', 2, '', 0, ''),
-(74, '', 'EDS-002', '', '123', 'บงกรูช', 'เพชรชี่', '', 1, '', 0, 'EDS_.png'),
-(75, '', 'EDS-003', '', '123', 'ชััยัยัย', 'ชับัยัยัย', '', 1, '', 0, 'EDS-1.png');
+INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `phone`, `birthday`, `permission`, `main_groups`, `groups`, `img`) VALUES
+(1, '3626299495765', 'EDS-1', 'kittichai@eds.ac.th', '123', 'กิตติชัย', 'รักษาวงค์', 'วิทยาลัยเทคนิคอุดรธานี', '0959611962', '13/04/2548', 1, '0', 0, 'EDS.png'),
+(30, 'admin', 'admin', 'admin@eds.ac.th', 'admin', 'Techasit', 'Admin', 'วิทยาลัยเทคนิคอุดรธานี', '0951155655', '12/02/2535', 2, '', 0, 'admin.png'),
+(74, '1313144949856', 'EDS-2', 'bongkruttt@eds.ac.th', '123', 'บงกรูช', 'เพชรชี่', 'วิทยาลัยเทคนิคอุดรธานี', '089999999', '15/01/2536', 1, '', 0, 'EDS_0.png'),
+(75, '8746545155516', 'EDS-003', 'chaiyot@eds.ac.th', '123', 'ชััยัยัย', 'ชับัยัยัย', 'วิทยาลัยเทคนิคอุดรธานี', '04888888', '28/05/2522', 1, '', 0, 'EDS-1.png');
 
 --
 -- Indexes for dumped tables
@@ -375,10 +432,22 @@ ALTER TABLE `classschedule`
   ADD PRIMARY KEY (`classSchedule_id`);
 
 --
+-- Indexes for table `enrollsubject`
+--
+ALTER TABLE `enrollsubject`
+  ADD PRIMARY KEY (`nullID`);
+
+--
 -- Indexes for table `enrolltbl`
 --
 ALTER TABLE `enrolltbl`
   ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`filesID`);
 
 --
 -- Indexes for table `mcheck`
@@ -439,10 +508,22 @@ ALTER TABLE `classschedule`
   MODIFY `classSchedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `enrollsubject`
+--
+ALTER TABLE `enrollsubject`
+  MODIFY `nullID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `enrolltbl`
 --
 ALTER TABLE `enrolltbl`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `filesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mcheck`
@@ -472,7 +553,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `tbl_schedule`
 --
 ALTER TABLE `tbl_schedule`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `users`

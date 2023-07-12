@@ -16,6 +16,7 @@
    <div class="flex justify-center px-24 items-center">
       <div class="w-full overflow-x-auto">
          <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
+            <a href=""><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มผู้ใช้งาน</button></a>
             <tbody>
                <tr>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รหัสบัตรประชาชน</th>
@@ -24,10 +25,10 @@
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ชื่อจริง</th>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">นามสกุล</th>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ที่อยู่</th>
-                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">เบอร์มือถือ</th>
-                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">วันเกิด</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">เบอร์</th>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สถานะ</th>
-                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รูปประจำตัว</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รูป</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">Edit</th>
                   <!-- <select class="select select-bordered w-full max-w-xs mb-3">
                      <option disabled selected>เลือกปีการศึกษา</option>
                      <option value="2566">2566</option>
@@ -56,17 +57,12 @@
 
                ?>
                   <tr>
-                     <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <div class="flex">
-                           <div class="flex flex-col ml-2">
-                              <span class="text-[16px] font-semibold"></span>
-                              <span><?php echo $user['id_card']; ?></span>
-                            </div>
-                        </div>
-                        
-                    </td>
-                    
-                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                     <form action="editUser.php" method="get">
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <span><?php echo $user['id_card']; ?></span>
+                     </td>
+
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo $user['username']; ?></span>
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
@@ -85,25 +81,27 @@
                         <?php echo $user['phone']; ?>
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <?php echo $user['birthday']; ?>
-                     </td>
+                        <?php
+
+                        if ($user['permission'] == 0) {
+                           echo "<p style='color:red;'>Error</p>";
+                        }
+                        if ($user['permission'] == 1) {
+                           echo "<p style='color:green;'>Aprroved</p>";
+                        }
+                        if ($user['permission'] == 2) {
+                           echo "<p style='color:orange;'>Admin</p>";
+                        }
+
+                        ?> </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                         <?php
-
-if ($user['permission'] == 0) {
-    echo "<p style='color:red;'>ยังไม่อนุมัติให้ใช้ระบบ</p>";
-}
-if ($user['permission'] == 1) {
-    echo "<p style='color:green;'>อนุมัติแล้ว</p>";
-}
-if ($user['permission'] == 2) {
-    echo "<p style='color:orange;'>ผู้ดูแลระบบ</p>";
-}
-
-?>                     </td>
-                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                    <img src="../img/<?php echo $user['img']; ?>" alt="">
-                    </td>
+                        <img src="../img/<?php echo $user['img']; ?>" alt="">
+                     </td> 
+                     <td class="h-12 px-8 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <input type="text" value="<?php echo $user['u_id'];?>" name="userID" hidden>
+                        <button type="submit" class="btn btn-warning w-full" style="color:#fff;">Edit</button>
+                     </td>
+                     </form>
                   </tr>
                <?php endwhile; ?>
 
