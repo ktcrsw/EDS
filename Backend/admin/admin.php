@@ -12,7 +12,7 @@ if (isset($_GET['page'])) {
     $page = 1;
 }
 $start = ($page - 1) * $perpage;
-$sql = "SELECT * from enrolltbl limit {$start} , {$perpage} ";
+$sql = "SELECT * from enrolltbl ORDER BY ref_studenttbl ASC limit {$start} , {$perpage} ";
 $query = $db->query($sql);
 
 
@@ -123,8 +123,9 @@ $query = $db->query($sql);
                     <a href="admin.php?page=<?php echo $i; ?>"><button class="btn btn-active" style="background-color:#000;color:#fff;"><?php echo $i; ?></button></a>
                 <?php } ?>
                 <a href="admin.php?page=<?php echo $total_page; ?>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
+                    <span aria-hidden="true" style="font-size:28px;">&raquo;</span>
                 </a>
+
             </div>
         </div>
     </div>
