@@ -25,7 +25,7 @@ $result = $db->query($sql);
     <!-- Component: Table with hover state -->
     <div class="flex justify-center px-24 items-center">
         <div class="w-full overflow-x-auto">
-            <form action="../functions/updateUser.php">
+            <form action="../functions/updateUser.php" method="post" enctype="multipart/form-data">
                 <?php while($userResult = mysqli_fetch_array($result)): ?>
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
@@ -37,6 +37,7 @@ $result = $db->query($sql);
                                 <div class="mt-2">
                                     <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                                         <span class="flex select-none items-center pl-3 text-gray-500 sm:text-sm"></span>
+                                        <input type="text" name="uid" id="id" autocomplete="id" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['u_id'];?>" value="<?php echo $userResult['u_id'];?>" hidden>
                                         <input type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['username'];?>" value="<?php echo $userResult['username'];?>">
                                     </div>
                                 </div>
@@ -53,8 +54,8 @@ $result = $db->query($sql);
                             <div class="col-span-full">
                                 <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">รูปประจำตัว</label>
                                 <div class="mt-2 flex items-center gap-x-3">
-                                    <img src="../img/<?php echo $userResult['img'];?>" class="h-64 w-64 rounded-full"/>
-                                    <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="image-file"></input>
+                                    <img src="img/<?php echo $userResult['img'];?>" class="h-64 w-64 rounded-full"/>
+                                    <input type="file" name="upload" class="file-input file-input-bordered w-full max-w-xs"></input>
                                 </div>
                             </div>
 
@@ -82,20 +83,23 @@ $result = $db->query($sql);
                             <div class="sm:col-span-4">
                                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">อีเมล์</label>
                                 <div class="mt-2">
-                                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['email'];?>">
+                                    <input id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['email'];?>" value="<?php echo $userResult['email'];?>">
                                 </div>
                             </div>
 
                             <div class="col-span-full">
                                 <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">เบอร์มือถือ</label>
                                 <div class="mt-2">
-                                    <input type="text" name="street-address" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['phone'];?>">
+                                    <input type="text" name="phone" id="street-address" autocomplete="street-address" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="<?php echo $userResult['phone'];?>" value="<?php echo $userResult['phone'];?>">
+                                    
                                 </div>
+                                
                             </div>
 
                         </div>
                     </div>
-
+                    <input type="submit" value="บันทึกการแก้ไข " class="btn btn-success" style="color:#fff;">
+                    
                 <?php endwhile; ?>
             </form>
         </div>
