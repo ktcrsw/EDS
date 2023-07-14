@@ -13,7 +13,7 @@ $result = $db->query($sql);
 <section class="m-2 w-full">
     <div class="flex justify-center px-24 items-center">
         <div class="w-full overflow-x-auto">
-            <form action="../functions/updateUser.php">
+            <form action="../functions/add_user.php">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h1 class="text-base font-semibold leading-7 text-gray-900" style="font-size: 22px;margin-top:2rem;">เพิ่มข้อมูลนักเรียนนักศึกษา</h1>
@@ -32,7 +32,7 @@ $result = $db->query($sql);
                             <div class="col-span-full">
                                 <label for="about" class="block text-sm font-medium leading-6 text-gray-900">แผนก</label>
                                 <div class="mt-1 mb-2">
-                                    <input type="text" name="department" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"/>
+                                    <input type="text" name="department" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" placeholder="เทคโนโลยีสารสนเทศ" disabled/>
                                 </div>
                                 </div>
                             </div>
@@ -41,9 +41,9 @@ $result = $db->query($sql);
                                 <div class="mt-2">
                                     <select name="years" id="years" class="select select-info mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เลือกระดับการศึกษา ---</option>
-                                        <option value="voc">ปวช</option>
-                                        <option value="hvoc">ปวส</option>
-                                        <option value="bachelor">ปริญญาตรี</option>
+                                        <option value="ปวช">ปวช</option>
+                                        <option value="ปวส">ปวส</option>
+                                        <option value="ปริญญาตรี">ปริญญาตรี</option>
                                     </select>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ $result = $db->query($sql);
                                 <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">รูปประจำตัว</label>
                                 <div class="mt-2 flex items-center gap-x-3">
                                     <img src="../../Frontend/image/null_user.png" class="h-64 w-64 rounded-full"/>
-                                    <input type="file" class="file-input file-input-bordered w-full max-w-xs" name="image-file"></input>
+                                    <input type="file" name="upload" class="file-input file-input-bordered w-full max-w-xs"></input>
                                 </div>
                             </div>
 
@@ -102,9 +102,9 @@ $result = $db->query($sql);
                                 <div class="mt-2">
                                 <select name="sex" id="years" class="select select-info mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เพศ ---</option>
-                                        <option value="man">ชาย</option>
-                                        <option value="woman">หญิง</option>
-                                        <option value="non-sex">ไม่ระบุ</option>
+                                        <option value="ชาย">ชาย</option>
+                                        <option value="หญิง">หญิง</option>
+                                        <option value="ไม่ระบุ">ไม่ระบุ</option>
                                     </select>                                </div>
                             </div>
 

@@ -16,19 +16,16 @@ $sql = "SELECT * from enrolltbl limit {$start} , {$perpage} ";
 $query = $db->query($sql);
 
 
+
+
 ?>
+
 <section class="m-2 w-full">
-    <!-- /* -------------------------------------------------------------------------- */
-    /*                        หน้าผลการค้นหาข้อมูลนักศึกษา                        */
-    /* -------------------------------------------------------------------------- */ -->
-
-
-
-
-    <!-- Component: Table with hover state -->
     <div class="flex justify-center px-24 items-center">
+
         <div class="w-full overflow-x-auto">
-        <a href="addUserPage.php"><button class="btn btn-success mt-2 mb-2" style="color:#fff;">เพิ่มข้อมูล</button></a>
+
+            <a href="addUserPage.php"><button class="btn btn-success mt-2 mb-2" style="color:#fff;">เพิ่มข้อมูล</button></a>
             <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
                 <tbody>
                     <tr>
@@ -41,34 +38,6 @@ $query = $db->query($sql);
                     </tr>
                     <?php while ($row = mysqli_fetch_assoc($query)) : ?>
                         <tr>
-
-
-
-                            <?php
-                            ///////////////////////////////////////////////
-                            /*
-
-                                $row ของข้อมูลนักเรียนอิงจากพวกนี้ไปใช้
-                                
-                                $row['StudentNo']
-                                $row['Course'] 
-                                $row['StudentID'] 
-                                $row['ref_stdlname'] 
-                                $row['StudentLName'] 
-                                $row['StudentGroups'] 
-                                $row['StudentYear']
-                                $row['Department']
-                                $row['status'] 
-                                $row['ref_stdImg'] 
-
-                                        #Kittichai Raksawong
-
-                        */
-                            //////////////////////////////////////////////
-
-
-
-                            ?>
                             <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                                 <div class="flex">
                                     <div>
@@ -141,6 +110,7 @@ $query = $db->query($sql);
 
 
                 </tbody>
+                </form>
             </table>
             <?php
             $sql2 = "SELECT * from enrolltbl ";
@@ -149,14 +119,13 @@ $query = $db->query($sql);
             $total_page = ceil($total_record / $perpage);
             ?>
             <div class="mt-2">
-            <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-                <a href="admin.php?page=<?php echo $i; ?>"><button class="btn btn-active" style="background-color:#000;color:#fff;"><?php echo $i; ?></button></a>
-            <?php } ?>
-            <a href="admin.php?page=<?php echo $total_page; ?>" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-            </a>
+                <?php for ($i = 1; $i <= $total_page; $i++) { ?>
+                    <a href="admin.php?page=<?php echo $i; ?>"><button class="btn btn-active" style="background-color:#000;color:#fff;"><?php echo $i; ?></button></a>
+                <?php } ?>
+                <a href="admin.php?page=<?php echo $total_page; ?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
             </div>
-
         </div>
     </div>
 
