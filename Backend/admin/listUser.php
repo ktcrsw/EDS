@@ -2,7 +2,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
-<?php include "../../db/connect.db.php";
+<?php include "../db/connect.db.php";
 ?>
 <section class="m-2 w-full">
    <!-- /* -------------------------------------------------------------------------- */
@@ -57,7 +57,7 @@
 
                ?>
                   <tr>
-                     <form action="../editUser.php" method="get">
+                     <form action="editUser.php" method="get">
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo $user['id_card']; ?></span>
                      </td>
@@ -95,7 +95,7 @@
 
                         ?> </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                        <img src="../img/<?php echo $user['img']; ?>" alt="">
+                        <img src="img/<?php echo $user['img']; ?>" alt="" class="w-50 h-50" width="50">
                      </td> 
                      <td class="h-12 px-8 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <input type="text" value="<?php echo $user['u_id'];?>" name="userID" hidden>

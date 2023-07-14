@@ -7,10 +7,9 @@
     $result = $db->query($sql);
 
 
+    $studentID = $_GET['username'];
+    $department = $_GET['department'];
 
-    isset($_REQUEST['username']) ? $username = $_REQUEST['username'] : $username = '';
-    isset($_REQUEST['fname']) ? $fname = $_REQUEST['fname'] : $fname = '';
-    isset($_REQUEST['lname']) ? $lname = $_REQUEST['lname'] : $lname = '';
 
     $_FILES['upload']['tmp_name'];
     $targetDir = "./img/";
@@ -27,18 +26,6 @@
 
     $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, permission, img) VALUES ('', '', '$username', '', '', '$fname', '$lname', '1', '$filename')";
     $query = $db->query($data);
-
-    if(mysqli_affected_rows($db)){
-        echo "<script>Swal.fire(
-            'สำเร็จ',
-            'เพิ่มข้อมูลสำเร็จ',
-          )
-        </script>";
-        header('refresh:2; admin.php');
-        
-    } else {
-        echo "Error";
-    }
 
 
 ?>
