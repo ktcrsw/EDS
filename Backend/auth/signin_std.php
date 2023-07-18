@@ -17,7 +17,7 @@
     if($row = mysqli_fetch_array($query)){
         $_SESSION['ref_status'] = $row['ref_status'];
         if($_SESSION['ref_status'] == '0'){
-            header("location: ../../components/users/index.php");
+            header("location: ../../Frontend/users/index.php");
         }
     }
 
