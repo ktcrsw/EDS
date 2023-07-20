@@ -33,7 +33,7 @@ $syear = $_SESSION['Year'];
 </div>
 <div class=" justify-center items-center flex gap-4 mb-4 pt-16">
     <!-- Component: Base primary basic button -->
-<a href="./check_subject_tablestu.php" class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-emerald-600 transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-200/60 hover:bg-emerald-300  disabled:cursor-not-allowed disabled:shadow-none">
+<a href="./check_subject_tablestu.php?=<?php echo $_SESSION['GP'];?>" class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-emerald-600 transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-200/60 hover:bg-emerald-300  disabled:cursor-not-allowed disabled:shadow-none">
   <span>เช็คชื่อคาบทฤษฎี</span>
 </a>
 <!-- Component: Base primary basic button -->

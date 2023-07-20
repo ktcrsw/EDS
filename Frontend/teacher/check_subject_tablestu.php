@@ -64,70 +64,85 @@ $querys = $db->query($sqls);
                     /*                                      1                                     */
                     /* -------------------------------------------------------------------------- */ -->
                         <?php while ($listStd = mysqli_fetch_assoc($query)) : ?>
-                            <tr class="odd:bg-slate-50">
-                                <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex py-4">
-                                        <div>
-                                            <div class="avatar">
-                                                <div class="w-[120px] h-[130px] rounded-xl">
-                                                    <img src="../image/<?php echo $listStd['ref_stdImg']; ?>" />
+                            <form method="post">
+                                <tr class="odd:bg-slate-50">
+                                    <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex py-4">
+                                            <div>
+                                                <div class="avatar">
+                                                    <div class="w-[120px] h-[130px] rounded-xl">
+                                                    <?php 
+                                                
+                                                if($listStd['ref_stdImg'] == '') {
+                                                    echo "<img src='../image/null_user.png' />";
+                                                } else 
+
+                                                
+                                                ?>
+                                                       <img src="../image/<?php echo $listStd['ref_stdImg']; ?>" /> 
+                                                    </div>
                                                 </div>
+
+                                            </div>
+                                            <div class="flex flex-col justify-center ml-4">
+                                                <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname'] . "&nbsp" . $listStd['ref_stdlname']; ?></span>
+                                                <span><?php echo $listStd['ref_studenttbl']; ?></span>
                                             </div>
 
                                         </div>
-                                        <div class="flex flex-col justify-center ml-4">
-                                            <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname'] . "&nbsp" . $listStd['ref_stdlname']; ?></span>
-                                            <span><?php echo $listStd['ref_studenttbl']; ?></span>
+
+                                    </td>
+
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="come" class="radio radio-success" />
                                         </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="notcome" class="radio radio-error" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="sick-leave" class="radio radio-warning" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="business-leave" class="radio radio-warning" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="late" class="radio radio-warning" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <input type="text" class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center ">
+                                        <span class="text-green-400 font-medium text-[16px]">1</span>/<span class="text-red-500 font-medium text-[16px]">1</span>
+                                    </td>
+                                </tr>
+                            <?php endwhile; ?>
 
-                                    </div>
-
-                                </td>
-
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex justify-center">
-                                        <input type="radio" name="come" class="radio radio-success" />
-                                    </div>
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex justify-center">
-                                        <input type="radio" name="notcome" class="radio radio-error" />
-                                    </div>
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex justify-center">
-                                        <input type="radio" name="sick-leave" class="radio radio-warning" />
-                                    </div>
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex justify-center">
-                                        <input type="radio" name="business-leave" class="radio radio-warning" />
-                                    </div>
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex justify-center">
-                                        <input type="radio" name="late" class="radio radio-warning" />
-                                    </div>
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <input type="text" class="block  mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" />
-                                </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center ">
-                                    <span class="text-green-400 font-medium text-[16px]">1</span>/<span class="text-red-500 font-medium text-[16px]">1</span>
-                                </td>
-                            </tr>
-                        <?php endwhile; ?>
 
 
 
                     </tbody>
                 </table>
+                <input class="inline-flex items-center  justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก">                </input> 
+            </form>
             </div>
             <div class="mt-4">
-            <!-- <form action="../../Backend/functions/check_subject.php">
-                        <?php //while($studt = mysqli_fetch_assoc($querys)):?>
-                        <input type="text" name="StudentID" id="StudentID" value="<?php //echo $studt['ref_studenttbl'];?>">
-                        <?php //endwhile; ?>
+                <!-- <form action="../../Backend/functions/check_subject.php">
+                        <?php //while($studt = mysqli_fetch_assoc($querys)):
+                        ?>
+                        <input type="text" name="StudentID" id="StudentID" value="<?php //echo $studt['ref_studenttbl'];
+                                                                                    ?>">
+                        <?php //endwhile; 
+                        ?>
                         <button type="submit" class="btn btn-primary">Submit</button>
             </form> -->
 
