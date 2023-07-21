@@ -41,7 +41,7 @@
                      <option value="2552">2552</option>
                      <option value="2551">2551</option>
                   </select>
-                  <a href=""><button class="btn btn-success ml-2" style="color:#fff;">เพิ่มเอกสาร</button></a>
+                  <a href="./addFile.php"><button class="btn btn-success ml-2" style="color:#fff;">เพิ่มเอกสาร</button></a>
                </tr>
                <?php
 

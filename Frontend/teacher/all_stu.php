@@ -15,6 +15,14 @@
 $totalStu = "SELECT * FROM enrolltbl";
 $dataStu = $db->query($totalStu);
 
+//ปวช.1 ชาย
+$totalStuMenOne = "SELECT * FROM enrolltbl WHERE ref_sex = 'ชาย' AND ref_years = '1'";
+$dataStuMenOne = $db->query($totalStuMenOne);
+
+//ปวช.1 หญิง
+$totalStuMenThree = "SELECT * FROM enrolltbl WHERE ref_sex = 'ชาย' AND ref_years = '1'";
+$dataStuMenThree = $db->query($totalStuMenThree);
+
 //ปวช.3 ชาย
 $totalStuMenThree = "SELECT * FROM enrolltbl WHERE ref_sex = 'ชาย' AND ref_years = '3'";
 $dataStuMenThree = $db->query($totalStuMenThree);
@@ -42,6 +50,8 @@ CountVocHigh = รวมนักเรียนทั้งหมดที่�
 
 */
 //////////////////////////////////////////////
+$countMenOne = mysqli_num_rows($dataStuMenOne); 
+
 $countVoc = mysqli_num_rows($dataStu); 
 $countVocHigh = mysqli_num_rows($dataStus);
 
@@ -106,7 +116,7 @@ const el = document.getElementById('chart-area');
       <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">1</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countMenOne?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">0</td>
       </tr>

@@ -363,8 +363,10 @@ $query1 = $db->query($sql1);
                $queryGetStd = $db->query($getStudentTest);
                $total = 0;
 
-
-               while ($subjectRows = mysqli_fetch_assoc($queryMySubject)) :
+               
+               
+               for($i = 1; $i <= 2; $i++){
+               while ($subjectRows = mysqli_fetch_assoc($queryMySubject)){
                $number = 0;
                
 
@@ -372,14 +374,7 @@ $query1 = $db->query($sql1);
                   <div class=" bg-white rounded-[20px] mb-2">
                      <div class="flex  items-start ml-4  p-2 gap-3">
                         <div class="flex justify-center items-center w-[50px] h-[50px] bg-slate-500 rounded-[50%]">
-                           <label class="text-white font-medium text-lg"><?php 
-                           
-                           while($number < 1){
-                              echo $number += 1;
-                           }
-                           
-                           
-                           ?></label>
+                           <label class="text-white font-medium text-lg"><?php echo $i++; ?></label>
                         </div>
                         <div class="flex flex-col">
                            <span class="text-[20px] font-medium"><?php echo $subjectRows['schedule_title']; ?></span>
@@ -421,11 +416,12 @@ $query1 = $db->query($sql1);
                            </div>
                         </div>
                         <div class="flex justify-center items-center pb-2 ">
-                           <button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button>
+                           <a href="data_management.php"><button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button></a>
                         </div>
                      </div>
                   </div>
-               <?php endwhile; ?>
+               <?php } 
+               }?>
             </div>
          </div>
          <div class="flex justify-center items-center mt-10">

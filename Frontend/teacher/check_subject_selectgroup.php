@@ -39,6 +39,7 @@ $resultSubjectList = $db->query($subjectList);
                   <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['schedule_teacherName']; ?></td>
                   <input type="text" name="year" value="<?php echo $row['schedule_classYears']; ?>" hidden>
                   <input type="text" name="group" value="<?php echo $row['schedule_classGroup'];; ?>" hidden>
+                  <input type="text" name="subID" value="<?php echo $row['schedule_id'];; ?>" hidden>
 
                   <td class="h-12 px-1 text-sm transitions duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><button type="submit" class=" ml-auto flex items-center" type="">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">

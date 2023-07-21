@@ -7,9 +7,11 @@ include '../../db/connect.db.php';
 
 isset($_REQUEST['year']) ? $year = $_REQUEST['year'] : $year = '';
 isset($_REQUEST['group']) ? $group = $_REQUEST['group'] : $group = '';
+isset($_REQUEST['subID']) ? $subjectteacherid = $_REQUEST['subID'] : $subjectteacherid = '';
 
 $_SESSION['GP'] = $group;
 $_SESSION['Year'] = $year;
+$_SESSION['SubjectTeacherID'] = $subjectteacherid;
 
 $stds = "SELECT * FROM enrollsubject WHERE ref_years = '$year' AND ref_stdGroups = '$group'";
 $result = $db->query($stds);

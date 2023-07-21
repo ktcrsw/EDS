@@ -16,7 +16,7 @@
    <div class="flex justify-center px-24 items-center">
       <div class="w-full overflow-x-auto">
          <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
-            <a href=""><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มผู้ใช้งาน</button></a>
+            <a href="./addUser-Admin.php"><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มผู้ใช้งาน</button></a>
             <tbody>
                <tr>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รหัสบัตรประชาชน</th>

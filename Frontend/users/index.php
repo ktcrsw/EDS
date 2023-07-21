@@ -5,7 +5,7 @@
       include "../assets/header.php";
       include "../assets/user_nav.php";
 
-      $sql = "SELECT * FROM users";
+      $sql = "SELECT * FROM enrolltbl";
       $query = $db->query($sql);
 
 ?>
@@ -13,11 +13,10 @@
       <div class="flex p-4">
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div id="Profile" class="">
-            <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%]" alt="">
+            <img src="../image/<?php echo $_SESSION['ref_stdImg1']; ?>" class="w-[162px] h-[162px] rounded-[50%]" alt="">
            </div>
            <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
-                  <span class="not-italic font-normal text-[28px] "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></span>
-                  <span class="not-italic font-normal text-[24px] text-[#9a9a9a]"><?php echo $_SESSION['Email']; ?></span>
+                  <span class="not-italic font-normal text-[28px] "><?php echo $_SESSION['ref_stdfname1'] . "&nbsp;" . $_SESSION['ref_stdlname1']; ?></span>
            </div>
            <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
      

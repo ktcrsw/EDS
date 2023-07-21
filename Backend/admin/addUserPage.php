@@ -39,7 +39,7 @@ $result = $db->query($sql);
                             <div class="col-span-full">
                                 <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">ระดับการศึกษา</label>
                                 <div class="mt-2">
-                                    <select name="years" id="years" class="select select-info mb-2 select-bordered w-full max-w-xs">
+                                    <select name="years" id="years" class="select select-bordered mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เลือกระดับการศึกษา ---</option>
                                         <option value="ปวช">ปวช</option>
                                         <option value="ปวส">ปวส</option>
@@ -50,7 +50,7 @@ $result = $db->query($sql);
                                                         <div class="col-span-full">
                                 <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">กลุ่ม</label>
                                 <div class="mt-2">
-                                    <select name="groups" id="groups" class="select select-info mb-2 select-bordered w-full max-w-xs">
+                                    <select name="groups" id="groups" class="select select-bordered mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เลือกกลุ่ม ---</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -61,7 +61,7 @@ $result = $db->query($sql);
                             <div class="col-span-full">
                                 <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900">ระดับปีการศึกษา</label>
                                 <div class="mt-2">
-                                    <select name="certificate" id="years" class="select select-info mb-2 select-bordered w-full max-w-xs">
+                                    <select name="certificate" id="years" class="select select-bordered mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เลือกระดับปีการศีกษา ---</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -100,7 +100,7 @@ $result = $db->query($sql);
                             <div class="sm:col-span-4">
                                 <label for="sex" class="block text-sm font-medium leading-6 text-gray-900">เพศ</label>
                                 <div class="mt-2">
-                                <select name="sex" id="years" class="select select-info mb-2 select-bordered w-full max-w-xs">
+                                <select name="sex" id="years" class="select select-bordered mb-2 select-bordered w-full max-w-xs">
                                         <option selected>--- เพศ ---</option>
                                         <option value="ชาย">ชาย</option>
                                         <option value="หญิง">หญิง</option>

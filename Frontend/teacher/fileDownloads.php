@@ -121,6 +121,68 @@
          </table>
       </div>
    </div>
+   <div class="flex justify-center px-24 items-center mt-5">
+      <div class="w-full overflow-x-auto">
+         <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
+            <tbody>
+               <tr>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ชื่อเอกสาร</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สถานะ</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">รายละเอียดเบื้องต้น</th>
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ปีการศึกษา</th>
+
+               </tr>
+               <?php
+
+               $getFilesS = "SELECT * FROM filestudent";
+               $queryFilesS = $db->query($getFilesS);
+               while ($fileS = mysqli_fetch_assoc($queryFilesS)) :
+
+               ?>
+                  <tr>
+                     <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <div class="flex">
+                           <div class="flex flex-col ml-2">
+                              <span class="text-[16px] font-semibold"></span>
+                              <span><?php echo $fileS['fileName']; ?></span>
+                           </div>
+                           <a href="../../Backend/pdf/<?php echo $fileS['filesLinks']; ?>" class=" ml-auto flex items-center">
+                              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+                                 <line fill="none" stroke="#A5A5A5" stroke-width="2" stroke-miterlimit="10" x1="25" y1="28" x2="7" y2="28" />
+                                 <line fill="none" stroke="#A5A5A5" stroke-width="2" stroke-miterlimit="10" x1="16" y1="23" x2="16" y2="4" />
+                                 <polyline fill="none" stroke="#A5A5A5" stroke-width="2" stroke-miterlimit="10" points="9,16 16,23 23,16 " />
+                              </svg>
+                           </a>
+                        </div>
+
+                     </td>
+
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <?php
+
+                        if ($fileS['fileStatus'] == 0) {
+                           echo "<p style='color:red;'>ไม่พร้อมดาวน์โหลด</p>";
+                        }
+                        if ($fileS['fileStatus'] == 1) {
+                           echo "<p style='color:green;'>พร้อมดาวน์โหลด</p>";
+                        }
+
+                        ?>
+                     </td>
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <?php echo $fileS['fileDescription']; ?>
+                     </td>
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                        <?php echo $fileS['fileYears']; ?>
+                     </td>
+                  </tr>
+               <?php endwhile; ?>
+
+
+            </tbody>
+         </table>
+      </div>
+   </div>
 
 
 
