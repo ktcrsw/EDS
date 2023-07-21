@@ -32,7 +32,7 @@ $data = $db->query($subject);
 </div>
 <div id="myTabContent">
     <div class="hidden p-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <?php include 'dataClassSchedule.php'; ?>
+        <?php include './dataClassSchedule.php'; ?>
     </div>
 </div>
 
