@@ -9,9 +9,9 @@ $teacherID = $_SESSION['UserID'];
 $subjectLst = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = $teacherID";
 $querySublst = $db->query($subjectLst);
 
-$sql = "SELECT * FROM enrolltbl";
-$query = $db->query($sql);
 
+<<<<<<< HEAD
+=======
 $sql = "SELECT * FROM users";
 $query = $db->query($sql);
 
@@ -21,6 +21,7 @@ $data = $db->query($subject);
 
 
 // echo $sgroup. "" . $syear;
+>>>>>>> 9ff9a95d1085ff93b6f643f81eac3e39456513e2
 
 
 ?>
