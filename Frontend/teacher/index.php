@@ -416,7 +416,7 @@ $query1 = $db->query($sql1);
                            </div>
                         </div>
                         <div class="flex justify-center items-center pb-2 ">
-                           <a href="data_management.php"><button class="btn btn-info  text-base-100  w-1/2">ดำเนินการเช็คชื่อ</button></a>
+                           <a href="data_management.php"><button class="btn btn-info text-base-100" >ดำเนินการเช็คชื่อ</button></a>
                         </div>
                      </div>
                   </div>

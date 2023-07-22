@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 
@@ -17,9 +17,7 @@ $query = $db->query($sql);
 $subject = "SELECT * FROM enrollsubject";
 $data = $db->query($subject);
 
-$subjectteacherid = $_SESSION['SubjectTeacherID'];
-$sgroup = $_SESSION['GP'];
-$syear = $_SESSION['Year'];
+
 
 // echo $sgroup. "" . $syear;
 
