@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 12, 2023 at 08:21 AM
+-- Generation Time: Jul 22, 2023 at 01:07 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -105,10 +105,10 @@ CREATE TABLE `enrollsubject` (
 --
 
 INSERT INTO `enrollsubject` (`nullID`, `schedule_id`, `u_id`, `schedule_title`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_stdGroups`, `ref_years`, `ref_status`, `ref_stdImg`) VALUES
-(1, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
-(2, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
-(3, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
-(4, 16, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png');
+(1, 17, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
+(2, 17, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
+(3, 17, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
+(4, 17, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png');
 
 -- --------------------------------------------------------
 
@@ -157,7 +157,12 @@ INSERT INTO `enrolltbl` (`no`, `ref_course`, `ref_studenttbl`, `ref_stdfname`, `
 (20, 'ปวช', '64209010010', 'วราวุฒิ', 'ขาวขำ', 'ชาย', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
 (21, 'ปวช', '64209010011', 'นภิสรา', 'อิทธิสาร', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
 (22, 'ปวช', '64209010012', 'เวียงพิงค์', 'โคตรภักดี', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 1, ''),
-(23, 'ปวช', '64209010013', 'พัชราภา', 'สาริยา', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, '');
+(23, 'ปวช', '64209010013', 'พัชราภา', 'สาริยา', 'หญิง', 1, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(24, 'ปวช', '64209010045', 'ชนาธิป', 'ปัทมวงศ์จริยา', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(25, 'ปวช', '64209010047', 'ศิริวัฒน์', 'อุทัยมาตย์', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(26, 'ปวช', '64209010048', 'พันธกร', 'โพพะนา', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(27, 'ปวช', '64209010049', 'ธนัตปรีชา ', 'มังคลานิมิตร', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, ''),
+(28, 'ปวช', '64209010050', 'ธนกฤต', 'แสนเมือง', 'ชาย', 2, '3', 'เทคโนโลยีสารสนเทศ', 0, '');
 
 -- --------------------------------------------------------
 
@@ -214,6 +219,29 @@ INSERT INTO `files` (`filesID`, `fileName`, `fileDescription`, `fileYears`, `fil
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `filestudent`
+--
+
+CREATE TABLE `filestudent` (
+  `filesStudentID` int(11) NOT NULL,
+  `fileName` varchar(255) DEFAULT NULL,
+  `fileDescription` varchar(255) DEFAULT NULL,
+  `fileYears` varchar(255) DEFAULT NULL,
+  `fileStatus` int(11) DEFAULT NULL,
+  `fileDate` date NOT NULL,
+  `filesLinks` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `filestudent`
+--
+
+INSERT INTO `filestudent` (`filesStudentID`, `fileName`, `fileDescription`, `fileYears`, `fileStatus`, `fileDate`, `filesLinks`) VALUES
+(1, 'รายชื่อนักเรียน ปวช.3/1', 'รายชื่อนักเรียน ปวช.3/1 ปีการศึกษา 2566', '2566', 1, '2023-07-21', 'voc-3-1.php');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mcheck`
 --
 
@@ -262,6 +290,28 @@ CREATE TABLE `save_classschedule` (
 
 INSERT INTO `save_classschedule` (`no`, `classSchedule_subjectName`, `classSchedule_teacherName`, `classSchedule_Room`, `classSchedule_date`, `classSchedule_Start`, `classSchedule_End`) VALUES
 (1, 'ฐานข้อมูลเบื้องต้น 1', 'กิตติชัย', '530', 'จันทร์', '10.30', '12.30');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `statusstudent`
+--
+
+CREATE TABLE `statusstudent` (
+  `no` int(11) NOT NULL,
+  `statusValue` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `statusstudent`
+--
+
+INSERT INTO `statusstudent` (`no`, `statusValue`) VALUES
+(1, 'มาเรียน'),
+(2, 'ขาดเรียน'),
+(3, 'ลาป่วย'),
+(4, 'ลากิจ'),
+(5, 'สาย');
 
 -- --------------------------------------------------------
 
@@ -410,10 +460,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `phone`, `birthday`, `permission`, `main_groups`, `groups`, `img`) VALUES
-(1, '3626299495765', 'EDS-1', 'kittichai@eds.ac.th', '123', 'กิตติชัย', 'รักษาวงค์', 'วิทยาลัยเทคนิคอุดรธานี', '0959611962', '13/04/2548', 1, '0', 0, 'EDS.png'),
+(1, '3626299495765', 'EDS0001', 'kittichai@eds.ac.th', '123', 'กิตติชัย', 'รักษาวงค์', '  วิทยาลัยเทคนิคอุดรธานี', '0959611962', '13/04/2548', 1, '0', 0, 'EDS0001.jfif'),
 (30, 'admin', 'admin', 'admin@eds.ac.th', 'admin', 'Techasit', 'Admin', 'วิทยาลัยเทคนิคอุดรธานี', '0951155655', '12/02/2535', 2, '', 0, 'admin.png'),
 (74, '1313144949856', 'EDS-2', 'bongkruttt@eds.ac.th', '123', 'บงกรูช', 'เพชรชี่', 'วิทยาลัยเทคนิคอุดรธานี', '089999999', '15/01/2536', 1, '', 0, 'EDS_0.png'),
-(75, '8746545155516', 'EDS-003', 'chaiyot@eds.ac.th', '123', 'ชััยัยัย', 'ชับัยัยัย', 'วิทยาลัยเทคนิคอุดรธานี', '04888888', '28/05/2522', 1, '', 0, 'EDS-1.png');
+(75, '8746545155516', 'EDS-003', 'chaiyot@eds.ac.th', '123', 'ชััยัยัย', 'ชับัยัยัย', ' วิทยาลัยเทคนิคอุดรธานี', '04888888', '28/05/2522', 1, '', 0, 'EDS-003.jfif');
 
 --
 -- Indexes for dumped tables
@@ -450,6 +500,12 @@ ALTER TABLE `files`
   ADD PRIMARY KEY (`filesID`);
 
 --
+-- Indexes for table `filestudent`
+--
+ALTER TABLE `filestudent`
+  ADD PRIMARY KEY (`filesStudentID`);
+
+--
 -- Indexes for table `mcheck`
 --
 ALTER TABLE `mcheck`
@@ -465,6 +521,12 @@ ALTER TABLE `news`
 -- Indexes for table `save_classschedule`
 --
 ALTER TABLE `save_classschedule`
+  ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `statusstudent`
+--
+ALTER TABLE `statusstudent`
   ADD PRIMARY KEY (`no`);
 
 --
@@ -517,13 +579,19 @@ ALTER TABLE `enrollsubject`
 -- AUTO_INCREMENT for table `enrolltbl`
 --
 ALTER TABLE `enrolltbl`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `files`
 --
 ALTER TABLE `files`
   MODIFY `filesID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `filestudent`
+--
+ALTER TABLE `filestudent`
+  MODIFY `filesStudentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `mcheck`
@@ -542,6 +610,12 @@ ALTER TABLE `news`
 --
 ALTER TABLE `save_classschedule`
   MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `statusstudent`
+--
+ALTER TABLE `statusstudent`
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `subjecttbl`
