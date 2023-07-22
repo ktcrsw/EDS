@@ -8,20 +8,7 @@ include "../assets/header.php";
 
 
 
-$sql = "SELECT * FROM enrolltbl";
-$query = $db->query($sql);
 
-$sql = "SELECT * FROM users";
-$query = $db->query($sql);
-
-$subject = "SELECT * FROM enrollsubject";
-$data = $db->query($subject);
-
-$subjectteacherid = $_SESSION['SubjectTeacherID'];
-$sgroup = $_SESSION['GP'];
-$syear = $_SESSION['Year'];
-
-// echo $sgroup. "" . $syear;
 
 
 ?>
