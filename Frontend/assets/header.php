@@ -26,11 +26,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
       type="text/css"
     />
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
-
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
 <script src="https://cdn.tailwindcss.com"></script>
 <script
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
+<script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 

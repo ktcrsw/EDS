@@ -87,7 +87,7 @@ include "../assets/teacher_nav.php";
                                 <label for="birthday">วันสิ้นสุดการสอน</label>
                                 <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
                             </form>
-                            <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white">บันทึก</a>
+                            <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white"></a>
                             <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
                             </div>

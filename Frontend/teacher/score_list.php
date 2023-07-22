@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 
@@ -8,6 +8,22 @@ include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
 
+<<<<<<< HEAD
+=======
+$sql = "SELECT * FROM enrolltbl";
+$query = $db->query($sql);
+
+$sql = "SELECT * FROM users";
+$query = $db->query($sql);
+
+$subject = "SELECT * FROM enrollsubject";
+$data = $db->query($subject);
+
+
+
+// echo $sgroup. "" . $syear;
+
+>>>>>>> 9ff9a95d1085ff93b6f643f81eac3e39456513e2
 
 ?>
 

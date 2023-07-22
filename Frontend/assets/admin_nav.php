@@ -1,4 +1,5 @@
 <?php include "header.php"; ?>
+<script src="https://kit.fontawesome.com/7360243360.js" crossorigin="anonymous"></script>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 <nav class=" top-0 z-50 w-full bg-dark border-dark border-gray-200 dark:bg-gray-800 dark:border-gray-700 ">
    <div class="px-3 py-3 lg:px-5 lg:pl-3">

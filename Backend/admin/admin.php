@@ -35,7 +35,7 @@ $query = $db->query($sql);
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">หลักสูตร</th>
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">ชั้นปี</th>
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">กลุ่มเรียน</th>
-                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">Action</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">Action</th>
                     </tr>
                     <?php while ($row = mysqli_fetch_assoc($query)) : ?>
                         <tr>
@@ -106,6 +106,10 @@ $query = $db->query($sql);
                             </td>
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_years']; ?></td>
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_stdGroups']; ?></td>
+                            <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
+                                <a href=""><button class="btn btn-warning"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i></button></a>
+                                <a href="../functions/remove_user.php?=<?php ?>"><button class="btn btn-error"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button></a>
+                            </td>
                         </tr>
                     <?php endwhile; ?>
 
@@ -118,13 +122,17 @@ $query = $db->query($sql);
             $query2 = $db->query($sql2);
             $total_record = mysqli_num_rows($query2);
             $total_page = ceil($total_record / $perpage);
+            $total_pages = 1;
             ?>
             <div class="mt-2">
+                <a href="admin.php?page=<?php echo $total_pages; ?>" aria-label="Next">
+                    <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-left"></i></span>
+                </a>
                 <?php for ($i = 1; $i <= $total_page; $i++) { ?>
-                    <a href="admin.php?page=<?php echo $i; ?>"><button class="btn btn-active" style="background-color:#000;color:#fff;"><?php echo $i; ?></button></a>
+                    <a href="admin.php?page=<?php echo $i; ?>"><button class="btn btn-ghost border bordered" style="background-color:#E3E3E3;color:gray;"><?php echo $i; ?></button></a>
                 <?php } ?>
                 <a href="admin.php?page=<?php echo $total_page; ?>" aria-label="Next">
-                    <span aria-hidden="true" style="font-size:28px;">&raquo;</span>
+                    <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-right"></i></span>
                 </a>
 
             </div>
