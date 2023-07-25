@@ -7,6 +7,13 @@
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
+$studentGroup = $_SESSION['studentGroup'];
+$studentYear = $_SESSION['studentYear'];
+$subjectStuID = $_SESSION['subjectStuID'];
+$subjectIDName = $_SESSION['subjectIDName'];
+
+$stds = "SELECT * FROM tbl_schedule WHERE schedule_id = '$subjectStuID'";
+$result = $db->query($stds);
 
 
 ?>
@@ -14,115 +21,117 @@ include "../assets/teacher_nav.php";
     <div class="flex p-8">
         <div class="w-1/3 h-screen  p-4 flex justify-center">
             <div>
-                <div class="flex-row">
-                    <div>
-                        <span>รหัสวิชาเรียน : </span>
-                        <span> 2100-1100</span>
-                    </div>
-                    <div>
-                        <span>ชื่อวิชาเรียน : </span>
-                        <span>พาสาไทย</span>
-                    </div>
-                    <span>กำหนดสัดส่วนคะแนนเป็นร้อยละ(%) จาก 100%</span>
-                    <div class="flex pb-2">
-                        <div class="p-4 rounded-md text-white bg-green-400">จิตพิสัย</div>
-                        <input id="score" type="text" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                        <div class="flex items-center text-lg ">%</div>
-                    </div>
-                    <div class="flex pb-2">
-                        <div class="p-4 rounded-md text-white bg-pink-500">ทฤษฎี</div>
-                        <input id="score" type="text" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                        <div class="flex items-center text-lg ">%</div>
-                    </div>
-                    <div class="flex pb-2">
-                        <div class="p-4 rounded-md text-white bg-orange-400">ปฏิบัติ</div>
-                        <input id="score" type="text" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                        <div class="flex items-center text-lg ">%</div>
-                    </div>
-                    <div class="flex pb-2">
-                        <div class="p-4 rounded-md text-white bg-blue-400">สอบปลายภาค</div>
-                        <input id="score" type="text" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                        <div class="flex items-center text-lg ">%</div>
-                    </div>
-                    <label class="text-[22px] font-semibold">กำหนดหน่วยการสอน</label>
+                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                    <div class="flex-row">
+                        <div>
+                            <span>รหัสวิชาเรียน : 20001-00<?php echo $row['schedule_id']; ?></span>
+                            <span> </span>
+                        </div>
+                        <div>
+                            <span>ชื่อวิชาเรียน : </span>
+                            <span><?php echo $row['schedule_title']; ?></span>
+                        </div>
+                        <span>กำหนดสัดส่วนคะแนนเป็นร้อยละ(%) จาก 100%</span>
+                        <div class="flex pb-2">
+                            <div class="p-4 rounded-md text-white bg-green-400">จิตพิสัย</div>
+                            <input id="mindScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <div class="flex items-center text-lg ">%</div>
+                        </div>
+                        <div class="flex pb-2">
+                            <div class="p-4 rounded-md text-white bg-pink-500">ทฤษฎี</div>
+                            <input id="theoryScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <div class="flex items-center text-lg ">%</div>
+                        </div>
+                        <div class="flex pb-2">
+                            <div class="p-4 rounded-md text-white bg-orange-400">ปฏิบัติ</div>
+                            <input id="carryOutScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <div class="flex items-center text-lg ">%</div>
+                        </div>
+                        <div class="flex pb-2">
+                            <div class="p-4 rounded-md text-white bg-blue-400">สอบปลายภาค</div>
+                            <input id="finalThermScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <div class="flex items-center text-lg ">%</div>
+                        </div>
+                        <label class="text-[22px] font-semibold">กำหนดหน่วยการสอน</label>
 
-                    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-                        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-                            <li class="mr-2" role="presentation">
-                                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="score-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">คะแนนเก็บระหว่างภาค (ุ60%)</button>
-                            </li>
-                            <li class="mr-2" role="presentation">
-                                <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="final-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">คะแนนสอบปลายภาค (ุ60%)</button>
-                            </li>
+                        <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+                            <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 rounded-t-lg" id="score-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">คะแนนเก็บระหว่างภาค (ุ60%)</button>
+                                </li>
+                                <li class="mr-2" role="presentation">
+                                    <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="final-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">คะแนนสอบปลายภาค (ุ60%)</button>
+                                </li>
 
-                        </ul>
-                    </div>
-
-
-
-                    <div id="myTabContent">
-                        <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                            <div class="pb-6">
-                                <span>หน่วยการสอน :
-                                    <span class="border p-1 rounded-lg border-gray-300">หน่วยการเรียนที่ 1</span>
-                                </span>
-                            </div>
-                            <div class="pb-ภ">
-                                <span>คะแนนภาคทฤษฎี :
-                                    <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                </span>
-                            </div>
-                            <div class="pb-6">
-                                <span>คะแนนภาคปฏิบัติ :
-                                    <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                </span>
-
-
-                            </div>
-                            <form action="/action_page.php">
-                                <label for="birthday">วันที่เริ่มสอน</label>
-                                <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                            </form>
-                            <form action="/action_page.php">
-                                <label for="birthday">วันสิ้นสุดการสอน</label>
-                                <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                            </form>
-                            <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white"></a>
-                            <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                            </div>
+                            </ul>
                         </div>
 
 
 
-                        <div class="hidden  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                            <div class="pb-6">
-                                <span>ชื่อรายการ :
-                                    <span class="border p-1 rounded-lg border-gray-300">สอบปลายภาค</span>
-                                </span>
-                            </div>
-                            <div class="pb-2">
-                                <span>คะแนน :
-                                    <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                </span>
-                            </div>
-                            <form action="/action_page.php">
-                                <label for="birthday">วันที่เริ่มสอบ</label>
-                                <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                            </form>
-                            <form action="/action_page.php">
-                                <label for="birthday">วันสิ้นสุดการสอบ</label>
-                                <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                            </form>
-                            <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white"> บันทึก</a>
+                        <div id="myTabContent">
+                            <form action="" method="post">
                             <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="pb-6">
+                                    <span>หน่วยการสอน :
+                                        <span class="border p-1 rounded-lg border-gray-300">หน่วยการเรียนที่ 1</span>
+                                    </span>
+                                </div>
+                                <div class="pb-ภ">
+                                    <span>คะแนนภาคทฤษฎี :
+                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                    </span>
+                                </div>
+                                <div class="pb-6">
+                                    <span>คะแนนภาคปฏิบัติ :
+                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                    </span>
+ 
 
+                                </div>
+                                <form action="/action_page.php">
+                                    <label for="birthday">วันที่เริ่มสอน</label>
+                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                </form>
+                                <form action="/action_page.php">
+                                    <label for="birthday">วันสิ้นสุดการสอน</label>
+                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                </form>
+                                <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white">ยืนยัน</a>
+                                <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                </div>
                             </div>
+
+
+
+                            <div class="hidden  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                <div class="pb-6">
+                                    <span>ชื่อรายการ :
+                                        <span class="border p-1 rounded-lg border-gray-300">สอบปลายภาค</span>
+                                    </span>
+                                </div>
+                                <div class="pb-2">
+                                    <span>คะแนน :
+                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                    </span>
+                                </div>
+                                <form action="">
+                                    <label for="birthday">วันที่เริ่มสอบ</label>
+                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                </form>
+                                <form action="">
+                                    <label for="birthday">วันสิ้นสุดการสอบ</label>
+                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                    <a href="" typeclass="px-4 py-2  rounded-lg bg-blue-500 text-white"> บันทึก</a>
+                                </form>
+                                <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                </div>
+                            </div>
+                            </form>
                         </div>
-
+                    <?php endwhile;     ?>
                     </div>
-
-                </div>
             </div>
         </div>
 
@@ -209,7 +218,7 @@ include "../assets/teacher_nav.php";
 
                     <div class="py-4">
                         <a href="./score_list.php" class="px-4 py-2  rounded-lg bg-blue-500 text-white">เสร็จสิ้น</a>
-                        <button class="px-4 py-2  rounded-lg bg-red-500 text-white">ลบทั้งหมด</button>
+                        <button id="clear" class="px-4 py-2  rounded-lg bg-red-500 text-white" value="clear" onclick="clearInput()">ลบทั้งหมด</button>
                         <a href="./data_management.php" class="px-4 py-2  rounded-lg bg-blue-300 text-white">ย้อนกลับ</a>
                     </div>
                 </div>
@@ -217,3 +226,40 @@ include "../assets/teacher_nav.php";
             </div>
         </div>
     </div>
+
+    <script>
+        var mindScore = document.getElementById('mindScore');
+        var theoryScore = document.getElementById('theoryScore');
+        var carryOutScore = document.getElementById('carryOutScore');
+        var finalThermScore = document.getElementById('finalThermScore');
+        $('#mindScore').on('input', function(evt) {
+            var value = evt.target.value
+
+            if (value.length <= 40) {
+                $('#theoryScore').val(20);
+                $('#carryOutScore').val(20);
+                $('#finalThermScore').val(20);
+                return
+            }
+        }) 
+
+        function clearInput(){
+            var getValue= document.getElementById("mindScore");
+        if(getValue.value !="") {
+            getValue.value = "";
+        }
+            var getValue= document.getElementById("theoryScore");
+        if(getValue.value !="") {
+            getValue.value = "";
+        }
+            var getValue= document.getElementById("carryOutScore");
+        if(getValue.value !="") {
+            getValue.value = "";
+        }
+            var getValue= document.getElementById("finalThermScore");
+        if(getValue.value !="") {
+            getValue.value = "";
+        }
+    }
+
+    </script>
