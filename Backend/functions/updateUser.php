@@ -25,6 +25,6 @@
     $queryUpdate = $db->query($updateUser);
 
 
-    header('location: ../admin/admin.php');
+    header('location: ../admin/admin_datamanagement.php');
 
 ?>

@@ -7,10 +7,10 @@
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
-$studentGroup = $_SESSION['studentGroup'];
-$studentYear = $_SESSION['studentYear'];
+
 $subjectStuID = $_SESSION['subjectStuID'];
-$subjectIDName = $_SESSION['subjectIDName'];
+
+
 
 $stds = "SELECT * FROM tbl_schedule WHERE schedule_id = '$subjectStuID'";
 $result = $db->query($stds);
@@ -236,9 +236,10 @@ $result = $db->query($stds);
             var value = evt.target.value
 
             if (value.length <= 40) {
-                $('#theoryScore').val(20);
-                $('#carryOutScore').val(20);
-                $('#finalThermScore').val(20);
+                var sumaryScore = 100 / $('#mindScore');
+                $('#theoryScore').val(sumaryScore);
+                $('#carryOutScore').val(sumaryScore);
+                $('#finalThermScore').val(sumaryScore);
                 return
             }
         }) 

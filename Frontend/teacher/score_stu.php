@@ -6,7 +6,7 @@
 include "../assets/header.php";
 
 $teacherID = $_SESSION['UserID'];
-$subjectLst = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = $teacherID";
+$subjectLst = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = $teacherID ORDER BY schedule_id ASC" ;
 $querySublst = $db->query($subjectLst);
 
 
@@ -36,12 +36,14 @@ $querySublst = $db->query($subjectLst);
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_classYears'] . "/" . $subjectrow['schedule_classGroup'];?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_title'];?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_teacherName'];?></td>
-        <input type="text" name="teacherID" value="<?php echo $_SESSION['UserID'];?>"hidden/>
-        <input type="text" name="studentYear" value="<?php echo $subjectrow['schedule_classYears'];?>" hidden/>
-        <input type="text" name="studentGroup" value="<?php echo $subjectrow['schedule_classGroup'];?>"hidden/>
-        <input type="text" name="SubjectID" value="<?php echo $subjectrow['schedule_id'];?>"hidden/>
-        <input type="text" name="SubjectName" value="<?php echo $subjectrow['schedule_title'];?>"hidden/>
-        <td class="h-12 px-1 text-sm transitions duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><button type="submit" class="btn btn-warning" align="center"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></td>
+        <input type="text" name="teacherID" value="<?php echo $_SESSION['UserID'];?>" hidden/>
+        <input type="text" name="studentYear" value="<?php echo $subjectrow['schedule_classYears'];?>"  hidden/>
+        <input type="text" name="studentGroup" value="<?php echo $subjectrow['schedule_classGroup'];?>" hidden/>
+        <input type="text" name="SubjectName" value="<?php echo $subjectrow['schedule_title'];?>"  hidden/>
+        <td class="h-12 px-1 text-sm transitions duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+        <input type="text" name="subi" value="<?php echo $subjectrow['schedule_id'];?>" placeholder="<?php echo $subjectrow['schedule_id'];?>"/>
+
+          <button type="submit" class="btn btn-warning" align="center"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></td>
                               </tr>
 
 
