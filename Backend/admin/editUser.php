@@ -54,8 +54,8 @@ $result = $db->query($sql);
                             <div class="col-span-full">
                                 <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">รูปประจำตัว</label>
                                 <div class="mt-2 flex items-center gap-x-3">
-                                    <img src="img/<?php echo $userResult['img'];?>" class="h-64 w-64 rounded-full"/>
-                                    <input type="file" name="upload" class="file-input file-input-bordered w-full max-w-xs"></input>
+                                    <img src="img/<?php echo $userResult['img'];?>" class="h-64 w-64 rounded-full" id="img"/>
+                                    <input type="file" name="upload" class="file-input file-input-bordered w-full max-w-xs" id="upload"></input>
                                 </div>
                             </div>
 
@@ -106,3 +106,19 @@ $result = $db->query($sql);
     </div>
 
 </section>
+<script>
+    
+    $(document).ready(() =>{
+        $('#upload').change(function(){ 
+            const file = this.files[0];
+            if(file){
+                let reader = new FileReader();
+                reader.onload = function (event){
+                    $('#img').attr("src", event.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+</script>

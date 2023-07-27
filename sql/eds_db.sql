@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2023 at 01:07 PM
+-- Generation Time: Jul 27, 2023 at 03:47 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -78,6 +78,23 @@ CREATE TABLE `classtbl` (
   `class_limit` int(11) DEFAULT NULL,
   `class_time` varchar(255) NOT NULL,
   `teacher_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `createscore`
+--
+
+CREATE TABLE `createscore` (
+  `createScoreID` int(11) NOT NULL,
+  `createScoreTeacherID` int(11) DEFAULT NULL,
+  `createScoreMind` int(11) DEFAULT NULL,
+  `createScoreTheory` int(11) DEFAULT NULL,
+  `createScoreCarry` int(11) DEFAULT NULL,
+  `createScoreFinal` int(11) DEFAULT NULL,
+  `createScoreStartDate` date DEFAULT NULL,
+  `createScoreEndDate` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -430,7 +447,7 @@ CREATE TABLE `tbl_schedule` (
 INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_classYears`, `schedule_classGroup`, `schedule_room`, `schedule_teacherName`, `schedule_teacherID`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
 (16, 'ฐานข้อมูลเบื้องต้น 1', 'ปวช', 3, 1, '535', 'กิตติชัย รักษาวงค์', 1, '2023-06-20', '2023-06-20', '10:30:00', '12:30:00', '', '2023-06-25 11:17:46'),
 (17, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', 3, 2, '', 'กิตติชัย รักษาวงค์', 1, '2023-06-23', '2023-06-23', '17:30:00', '18:30:00', '', '2023-06-25 11:22:33'),
-(22, 'ฐานข้อมูลเบื้องต้น 2', 'ปวส', 0, 0, '', '', 0, '2023-07-10', '2023-08-28', '12:01:00', '22:02:00', '', '2023-07-09 08:02:09');
+(22, 'ฐานข้อมูลเบื้องต้น 2', 'ปวส', 1, 1, '', 'กิตติชัย รักษาวงค์', 1, '2023-07-10', '2023-08-28', '12:01:00', '22:02:00', '', '2023-07-09 08:02:09');
 
 -- --------------------------------------------------------
 
@@ -460,10 +477,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `id_card`, `username`, `email`, `pwd`, `fname`, `lname`, `address`, `phone`, `birthday`, `permission`, `main_groups`, `groups`, `img`) VALUES
-(1, '3626299495765', 'EDS0001', 'kittichai@eds.ac.th', '123', 'กิตติชัย', 'รักษาวงค์', '  วิทยาลัยเทคนิคอุดรธานี', '0959611962', '13/04/2548', 1, '0', 0, 'EDS0001.jfif'),
+(1, '3626299495765', 'EDS0001', 'kittichai@eds.ac.th', '123', 'กิตติชัย', 'รักษาวงค์', '   วิทยาลัยเทคนิคอุดรธานี', '0959611962', '13/04/2548', 1, '0', 0, 'EDS0001.jpg'),
 (30, 'admin', 'admin', 'admin@eds.ac.th', 'admin', 'Techasit', 'Admin', 'วิทยาลัยเทคนิคอุดรธานี', '0951155655', '12/02/2535', 2, '', 0, 'admin.png'),
 (74, '1313144949856', 'EDS-2', 'bongkruttt@eds.ac.th', '123', 'บงกรูช', 'เพชรชี่', 'วิทยาลัยเทคนิคอุดรธานี', '089999999', '15/01/2536', 1, '', 0, 'EDS_0.png'),
-(75, '8746545155516', 'EDS-003', 'chaiyot@eds.ac.th', '123', 'ชััยัยัย', 'ชับัยัยัย', ' วิทยาลัยเทคนิคอุดรธานี', '04888888', '28/05/2522', 1, '', 0, 'EDS-003.jfif');
+(75, '8746545155516', 'EDS-003', 'chaiyot@eds.ac.th', '123', 'คิตตี้ชัย', 'มาจ๊ะ', '  วิทยาลัยเทคนิคอุดรธานี', '04888888', '28/05/2522', 1, '', 0, 'EDS-003.jpg');
 
 --
 -- Indexes for dumped tables
@@ -480,6 +497,12 @@ ALTER TABLE `checkin`
 --
 ALTER TABLE `classschedule`
   ADD PRIMARY KEY (`classSchedule_id`);
+
+--
+-- Indexes for table `createscore`
+--
+ALTER TABLE `createscore`
+  ADD PRIMARY KEY (`createScoreID`);
 
 --
 -- Indexes for table `enrollsubject`
@@ -568,6 +591,12 @@ ALTER TABLE `checkin`
 --
 ALTER TABLE `classschedule`
   MODIFY `classSchedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `createscore`
+--
+ALTER TABLE `createscore`
+  MODIFY `createScoreID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `enrollsubject`
