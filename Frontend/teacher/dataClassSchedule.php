@@ -205,11 +205,10 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
 ?>
 
   <body>
-  
-    <br>
-    <br>
+
       <div class="  ">
-<form action="" method="post" accept-charset="utf-8"> 
+<form action="" method="post" accept-charset="utf-8">
+     
 <div class="form-group row">
     <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
     <div class="col-12 col-sm-8">

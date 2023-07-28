@@ -1,5 +1,4 @@
 <html data-theme="light"></html>
-
 <head>
   <title>EDS | แผนกวิชาเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</title>
   <meta charset="utf-8">

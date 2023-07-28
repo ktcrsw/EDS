@@ -6,12 +6,12 @@ include '../../db/connect.db.php';
 
 isset($_REQUEST['subi']) ? $stuSubID = $_REQUEST['subi'] : $stuSubID = '';
 
-
+$_SESSION['subjectStuID'] = $stuSubID;
 
 echo $stuSubID;
 
 
-    // header('location: ../../../Frontend/teacher/score_create.php');
+    header('location: ../../../Frontend/teacher/score_create.php');
 
 
 ?>

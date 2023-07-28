@@ -235,14 +235,14 @@ $result = $db->query($stds);
         $('#mindScore').on('input', function(evt) {
             var value = evt.target.value
 
-            if (value.length <= 40) {
-                var sumaryScore = 100 / $('#mindScore');
-                $('#theoryScore').val(sumaryScore);
-                $('#carryOutScore').val(sumaryScore);
-                $('#finalThermScore').val(sumaryScore);
+            if (value.length == 20) {
+                $('#theoryScore').val(20);
+                $('#carryOutScore').val(20);
+                $('#finalThermScore').val(40);
                 return
             }
         }) 
+        
 
         function clearInput(){
             var getValue= document.getElementById("mindScore");

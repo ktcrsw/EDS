@@ -25,20 +25,7 @@
           
     </div>
 </div>  
-<div class="form-group row">
-    <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">หลักสูตร</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_detail" data-target-input="nearest">
-        <select name="schedule_detail" id="schedule_detail" class="select select-bordered w-full">
-                            <option value="ปวช">ปวช</option>
-                            <option value="ปวส">ปวส</option>
-                            <option value="ป.ตรี">ป.ตรี</option>
-                        </select>     
-    </div>          
-        </div>       
-          
-    </div>
-</div>  
+
 <div class="form-group row">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">ห้องที่สอน</label>
     <div class="col-12 col-sm-8">

@@ -1,4 +1,10 @@
-<?php session_start(); ?>
+<?php session_start(); 
+
+   if($_SESSION['UserID'] == ''){
+      header('location: ../login.php');
+   }
+
+?>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
