@@ -5,7 +5,9 @@
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 
-$sql = "SELECT * FROM tbl_schedule";
+$teacherID = $_SESSION['UserID'];
+
+$sql = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = '$teacherID'";
 $query = $db->query($sql);
 
 ?>
@@ -99,7 +101,7 @@ $sql="
     SELECT * FROM tbl_schedule  WHERE 
     (schedule_startdate  >= '".$start_weekDay."' AND schedule_startdate <  '".$end_weekDay."') OR
     ('".$start_weekDay."' > schedule_startdate  AND schedule_enddate <  '".$end_weekDay."'  AND schedule_enddate >= '".$start_weekDay."' )  OR
-    ('".$start_weekDay."' > schedule_startdate  AND '".$end_weekDay."'  < schedule_enddate  AND schedule_enddate >= '".$start_weekDay."' ) 
+    ('".$start_weekDay."' > schedule_startdate  AND '".$end_weekDay."'  < schedule_enddate  AND schedule_enddate >= '".$start_weekDay."' )  AND schedule_teacherID = '$teacherID'
     ORDER BY schedule_startdate
 ";
 $result = $db->query($sql);

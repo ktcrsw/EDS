@@ -19,7 +19,7 @@
    <div class="flex justify-center px-24 items-center">
       <div class="w-full overflow-x-auto">
          <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
-            <a href="./class_schedule.php"><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มตารางสอน</button></a>
+            <a href="./data_management.php"><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มตารางสอน</button></a>
             <tbody>
                <tr>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">รหัสวิชา</th>
@@ -57,7 +57,7 @@
 
                ?>
                   <tr>
-                     <form action="editclass.php" method="get">
+                     <form action="../../Backend/functions/remove_schedule.php" method="get">
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo "20001-000".$class['schedule_id']; ?></span>
                      </td>
@@ -78,8 +78,8 @@
                         <?php echo $class['schedule_endtime']; ?>
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
-                     <a href=""><button class="btn btn-warning"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i></button></a>
-                                <a href="../functions/remove_user.php?=<?php ?>"><button class="btn btn-error"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button></a>
+                        <input type="text" value="<?php echo $class['schedule_id']; ?>" name="classID">
+                     <button class="btn btn-error" type="submit"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
                      </td>
                      </form>
                   </tr>

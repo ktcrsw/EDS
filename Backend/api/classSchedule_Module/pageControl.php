@@ -4,7 +4,6 @@
 
 <?php             include("../db/connect.db.php");
 
-include("../../Frontend/assets/header.php");
 
 header("Refresh:1; url=portal.php");
 

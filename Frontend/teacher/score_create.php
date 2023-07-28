@@ -245,7 +245,7 @@ $result = $db->query($stds);
         
 
         function clearInput(){
-            var getValue= document.getElementById("mindScore");
+            var getValue = document.getElementById("mindScore");
         if(getValue.value !="") {
             getValue.value = "";
         }
