@@ -24,7 +24,7 @@ $result = $db->query($stds);
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                     <div class="flex-row">
                         <div>
-                            <span>รหัสวิชาเรียน : 20001-00<?php echo $row['schedule_id']; ?></span>
+                            <span>รหัสวิชาเรียน : 20001-000<?php echo $row['schedule_id']; ?></span>
                             <span> </span>
                         </div>
                         <div>
@@ -69,65 +69,65 @@ $result = $db->query($stds);
 
 
                         <div id="myTabContent">
-                            <form action="" method="post">
-                            <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <div class="pb-6">
-                                    <span>หน่วยการสอน :
-                                        <span class="border p-1 rounded-lg border-gray-300">หน่วยการเรียนที่ 1</span>
-                                    </span>
-                                </div>
-                                <div class="pb-ภ">
-                                    <span>คะแนนภาคทฤษฎี :
-                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                    </span>
-                                </div>
-                                <div class="pb-6">
-                                    <span>คะแนนภาคปฏิบัติ :
-                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                    </span>
- 
-
-                                </div>
-                                <form action="/action_page.php">
-                                    <label for="birthday">วันที่เริ่มสอน</label>
-                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                                </form>
-                                <form action="/action_page.php">
-                                    <label for="birthday">วันสิ้นสุดการสอน</label>
-                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                                </form>
-                                <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white">ยืนยัน</a>
+                            <form action="../../Backend/functions/createScore.php" method="post">
                                 <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="pb-6">
+                                        <span>หน่วยการสอน :
+                                            <span class="border p-1 rounded-lg border-gray-300">หน่วยการเรียนที่ 1</span>
+                                        </span>
+                                    </div>
+                                    <div class="pb-ภ">
+                                        <span>คะแนนภาคทฤษฎี :
+                                            <input id="score" name="theory" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                        </span>
+                                    </div>
+                                    <div class="pb-6">
+                                        <span>คะแนนภาคปฏิบัติ :
+                                            <input id="score" name="carry" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                        </span>
 
+
+                                    </div>
+                                    <div class="pb-6">
+                                        <label for="birthday">วันที่เริ่มสอน</label>
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="startdate">
+                                    </div>
+                                    <div class="pb-6">
+                                        <label for="birthday">วันสิ้นสุดการสอน</label>
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="enddate">
+                                    </div>
+                                    <button type="submit" class="px-4 py-2  rounded-lg btn btn-primary">ยืนยัน</button>
+                                    <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
 
+                            <form action="../../Backend/function/createScoreFinal.php" method="post">
+                                <div class="hidden  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+                                    <div class="pb-6">
+                                        <span>ชื่อรายการ :
+                                            <span class="border p-1 rounded-lg border-gray-300">สอบปลายภาค</span>
+                                        </span>
+                                    </div>
+                                    <div class="pb-2">
+                                        <span>คะแนน :
+                                            <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                        </span>
+                                    </div>
+                                    <div class="pb-6">
+                                        <label for="birthday">วันที่เริ่มสอบ</label>
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                    </div>
+                                    <div class="pb-6">
+                                        <label for="birthday">วันสิ้นสุดการสอบ</label>
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                    </div>
+                                    <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white">ยืนยัน</a>
+                                    <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-
-                            <div class="hidden  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-                                <div class="pb-6">
-                                    <span>ชื่อรายการ :
-                                        <span class="border p-1 rounded-lg border-gray-300">สอบปลายภาค</span>
-                                    </span>
+                                    </div>
                                 </div>
-                                <div class="pb-2">
-                                    <span>คะแนน :
-                                        <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
-                                    </span>
-                                </div>
-                                <form action="">
-                                    <label for="birthday">วันที่เริ่มสอบ</label>
-                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                                </form>
-                                <form action="">
-                                    <label for="birthday">วันสิ้นสุดการสอบ</label>
-                                    <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
-                                    <a href="" typeclass="px-4 py-2  rounded-lg bg-blue-500 text-white"> บันทึก</a>
-                                </form>
-                                <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">
-
-                                </div>
-                            </div>
                             </form>
                         </div>
                     <?php endwhile;     ?>
@@ -241,26 +241,25 @@ $result = $db->query($stds);
                 $('#finalThermScore').val(40);
                 return
             }
-        }) 
-        
+        })
 
-        function clearInput(){
+
+        function clearInput() {
             var getValue = document.getElementById("mindScore");
-        if(getValue.value !="") {
-            getValue.value = "";
+            if (getValue.value != "") {
+                getValue.value = "";
+            }
+            var getValue = document.getElementById("theoryScore");
+            if (getValue.value != "") {
+                getValue.value = "";
+            }
+            var getValue = document.getElementById("carryOutScore");
+            if (getValue.value != "") {
+                getValue.value = "";
+            }
+            var getValue = document.getElementById("finalThermScore");
+            if (getValue.value != "") {
+                getValue.value = "";
+            }
         }
-            var getValue= document.getElementById("theoryScore");
-        if(getValue.value !="") {
-            getValue.value = "";
-        }
-            var getValue= document.getElementById("carryOutScore");
-        if(getValue.value !="") {
-            getValue.value = "";
-        }
-            var getValue= document.getElementById("finalThermScore");
-        if(getValue.value !="") {
-            getValue.value = "";
-        }
-    }
-
     </script>
