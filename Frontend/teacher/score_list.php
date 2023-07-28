@@ -6,10 +6,28 @@
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
+$subjectStuID = $_SESSION['subjectStuID'];
+$teacherID = $_SESSION['UserID'];
 
 
+
+$stds = "SELECT * FROM tbl_schedule WHERE schedule_id = '$subjectStuID'";
+$result = $db->query($stds);
+
+
+$getScore = "SELECT * FROM createscore WHERE createScoreTeacherID = '$teacherID' AND createScoreSubjectID = '$subjectStuID'";
+$queryGetScore = $db->query($getScore);
 
 ?>
+<?php while ($score = mysqli_fetch_array($queryGetScore)) {
+
+$mindScore = $score['createScoreMind'];
+$theoryScore = $score['createScoreTheory'];
+$carryScore = $score['createScoreCarry'];
+$finalScore = $score['createScoreFinal'];
+$startDate = $score['createScoreStartDate'];
+$endDate = $score['createScoreEndDate'];
+} ?>
 
 <div class="w-full h-screen  ">
     

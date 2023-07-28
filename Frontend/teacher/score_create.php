@@ -9,6 +9,7 @@ include "../assets/teacher_nav.php";
 
 
 $subjectStuID = $_SESSION['subjectStuID'];
+$teacherID = $_SESSION['UserID'];
 
 
 
@@ -16,7 +17,19 @@ $stds = "SELECT * FROM tbl_schedule WHERE schedule_id = '$subjectStuID'";
 $result = $db->query($stds);
 
 
+$getScore = "SELECT * FROM createscore WHERE createScoreTeacherID = '$teacherID' AND createScoreSubjectID = '$subjectStuID'";
+$queryGetScore = $db->query($getScore);
+
 ?>
+<?php while ($score = mysqli_fetch_array($queryGetScore)) {
+
+$mindScore = $score['createScoreMind'];
+$theoryScore = $score['createScoreTheory'];
+$carryScore = $score['createScoreCarry'];
+$finalScore = $score['createScoreFinal'];
+$startDate = $score['createScoreStartDate'];
+$endDate = $score['createScoreEndDate'];
+} ?>
 <div class="w-full ">
     <div class="flex p-8">
         <div class="w-1/3 h-screen  p-4 flex justify-center">
@@ -39,12 +52,12 @@ $result = $db->query($stds);
                         </div>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-pink-500">ทฤษฎี</div>
-                            <input id="theoryScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="theoryScore" type="number" min="0" max="20" value="<?php echo $theoryScore;?>" placeholder="<?php echo $theoryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-orange-400">ปฏิบัติ</div>
-                            <input id="carryOutScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="carryOutScore" type="number" min="0" max="20" value="<?php echo $carryScore;?>" placeholder="<?php echo $carryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
@@ -167,12 +180,13 @@ $result = $db->query($stds);
                                 <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400">สอบปลายภาค 20%</th>
 
                             </tr>
+                            
                             <tr class="transition-colors duration-300 hover:bg-slate-50" a>
                                 <td class="h-12 p-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                                     <div class="w-full h-12 flex bg-[#ffffe8]">
                                         <div class="w-full p-2 text-16 font-semibold">จิตพิสัย</div>
                                         <div class="w-1/3 bg-green-400 flex items-center justify-center">
-                                            <span class="text-white font-medium text-lg">20</span>
+                                            <span class="text-white font-medium text-lg"><?php echo $mindScore; ?></span>
                                         </div>
 
                                     </div>
@@ -181,10 +195,10 @@ $result = $db->query($stds);
                                     <div class="w-full   h-full flex bg-[#ffffe8]">
                                         <div class="w-full p-2 text-16 font-semibold flex-col">
                                             <div>หน่วยการเรียนที่ 1</div>
-                                            <span>01/02/2022 - 01/08/2023</span>
+                                            <span><?php echo $startDate; ?> - <?php echo $endDate; ?></span>
                                         </div>
                                         <div class="w-1/3 bg-pink-500 flex items-center justify-center">
-                                            <span class="text-white font-medium text-lg">20</span>
+                                            <span class="text-white font-medium text-lg"><?php echo $theoryScore; ?></span>
                                         </div>
 
                                     </div>
@@ -193,15 +207,23 @@ $result = $db->query($stds);
                                     <div class="w-full   h-full flex bg-[#ffffe8]">
                                         <div class="w-full p-2 text-16 font-semibold flex-col">
                                             <div>หน่วยการเรียนที่ 2</div>
-                                            <span>01/02/2022 - 01/08/2023</span>
+                                            <span><?php echo $startDate; ?> - <?php echo $endDate; ?></span>
                                         </div>
                                         <div class="w-1/3 bg-orange-400 flex items-center justify-center">
-                                            <span class="text-white font-medium text-lg">40</span>
+                                            <span class="text-white font-medium text-lg"><?php echo $carryScore; ?></span>
                                         </div>
 
                                     </div>
                                 </td>
-                                <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">ไม่มีข้อมูลแสดง</td>
+                                <td class="h-12 p-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                    <div class="w-full h-12 flex bg-[#ffffe8]">
+                                        <div class="w-full p-2 text-16 font-semibold">ปลายภาค</div>
+                                        <div class="w-1/3 bg-blue-400 flex items-center justify-center">
+                                            <span class="text-white font-medium text-lg"><?php echo $finalScore; ?></span>
+                                        </div>
+
+                                    </div>
+                                </td>
 
                             </tr>
                             <tr>
@@ -211,7 +233,6 @@ $result = $db->query($stds);
                                 <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400">20 คะแนน</th>
 
                             </tr>
-
                         </tbody>
                     </table>
 
