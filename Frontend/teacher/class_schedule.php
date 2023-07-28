@@ -27,12 +27,20 @@ $data = $db->query($subject);
         <li class="mr-2" role="presentation">
             <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">จัดตารางเรียน</button>
         </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="listClass" data-tabs-target="#listClass" type="button" role="tab" aria-controls="listClass" aria-selected="false">ดูตารางเรียนทั้งหมด</button>
+        </li>
 
     </ul>
 </div>
 <div id="myTabContent">
     <div class="hidden p-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <?php include './dataClassSchedule.php'; ?>
+    </div>
+</div>
+<div id="myTabContent">
+    <div class="hidden p-4" id="listClass" role="tabpanel" aria-labelledby="profile-tab">
+        <?php include './listClassSchedule.php'; ?>
     </div>
 </div>
 

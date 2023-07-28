@@ -13,18 +13,15 @@ $query = $db->query($sql);
     <style type="text/css">
     .sc-detail{
 
-        background-color: #8AF3FF;
-        color: #000000;
+        background-color: #8BB4D0;
+        color: #002640;
     }
     .sc-detail a{
-        color: #000000;
-        font-size: 18px;    
+        color: #002640;
+        font-size: 12px;    
     }
     </style>  
 
-  
- 
-  
 <?php
 $dayTH=array("จันทร์","อังคาร","พุธ","พฤหัสบดี","ศุกร์","เสาร์","อาทิตย์");     
 $monthTH=array(
@@ -36,8 +33,8 @@ $monthTH_brev=array(
 );    
 function thai_date_short($time){  
     global $dayTH,$monthTH_brev;   
-    $thai_date_return = date("j",$time);   
-    $thai_date_return.=" ".$monthTH_brev[date("n",$time)];   
+    $thai_date_return = date("j",$time);
+    $thai_date_return .= " " . $monthTH_brev[date("n", $time)];   
     $thai_date_return.= " ".(date("Y",$time)+543);   
     return $thai_date_return;   
 } 
@@ -119,7 +116,7 @@ if($result){
             "title"=>$row['schedule_title'],
             "detail"=>$row['schedule_detail'],
             "room"=>$row['schedule_room'],
-            "building"=>$row['schedule_teacherName']     
+            "teachername"=>$row['schedule_teacherName'],
         );
     }
 }
@@ -150,7 +147,6 @@ if($result){
                                 "title" => $row['title'],
                                 "detail" => $row['detail'],
                                 "room" => $row['room'],
-                                "building" => $row['building'],
                              ];             
                         }
                     }
@@ -167,7 +163,7 @@ if($result){
                             "title" => $row['title'],
                             "detail" => $row['detail'],
                             "room" => $row['room'],
-                            "building" => $row['building'],                          
+                            "teachername" => $row['teachername'],                          
                          ];
                     }
                 }
@@ -181,6 +177,8 @@ if($result){
 if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     $p_schedule_title = (isset($_POST['schedule_title']))?$_POST['schedule_title']:"";
     $p_schedule_detail = (isset($_POST['schedule_detail']))?$_POST['schedule_detail']:"";
+    $p_schedule_teacherName = $_SESSION['Firstname'];
+    $p_schedule_teacherID = $_SESSION['UserID'];
     $p_schedule_startdate = (isset($_POST['schedule_startdate']))?$_POST['schedule_startdate']:"0000-00-00";
     $p_schedule_enddate = (isset($_POST['schedule_enddate']))?$_POST['schedule_enddate']:"0000-00-00";
     $p_schedule_enddate = ($p_schedule_enddate=="0000-00-00")?$p_schedule_startdate:$p_schedule_enddate;
@@ -192,6 +190,8 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     INSERT INTO tbl_schedule SET
     schedule_title='".$p_schedule_title."',
     schedule_detail='".$p_schedule_detail."',
+    schedule_teacherName='".$p_schedule_teacherName."',
+    schedule_teacherID='".$p_schedule_teacherID."',
     schedule_startdate='".$p_schedule_startdate."',
     schedule_enddate='".$p_schedule_enddate."',
     schedule_starttime='".$p_schedule_starttime."',
@@ -285,22 +285,22 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     </div>
 </div>
 </div>
-<div class="form-group row" hidden>
+<div class="form-group row" >
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
     <div class="col-12 col-sm-10 pt-2">
         <?php
-        $dayTH = array('จ.','อ.','พ.','พฤ.','ศ.');
+        $dayTH = array('จันทร์.','อังคาร.','พุธ.','พฤหัสบดี.','ศุกร์.');
         ?>
         <div class="input-group">
         <?php foreach($dayTH as $k => $day_value){?>
         <div class="form-check ml-3" style="width:50px;">
             <input class="custom-control-input repeatday_chk" type="checkbox"
                 name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
-                value="<?=$k?>" hidden>
+                value="<?=$k?>" >
                 <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
         </div>    
         <?php } ?>
-        <input type="hidden" name="schedule_repeatday" id="schedule_repeatday" value="" />
+        <input type="text" name="schedule_repeatday" id="schedule_repeatday" value="" />
         </div>
         <br>    
     </div>
@@ -312,30 +312,6 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
 </div> 
 </form>
           </div>
-<div class="wrap_schedule_control mt-5">
-<div class="d-flex">
-    <div class="text-left d-flex align-items-center">
-    <?php
-    $num_dayShow_in_schedule = $num_dayShow-1;
-    ?>
-    ตารางเรียนวันที่ <?=thai_date_short(strtotime($start_weekDay))?> ถึง 
-    <?=thai_date_short(strtotime($start_weekDay."+{$num_dayShow_in_schedule} day"))?>
-    </div>
-    <div class="col-auto text-right ml-auto">
-        <div class="input-group date" id="select_date" data-target-input="nearest">
-            <input type="text" name="select_date" class="form-control datetimepicker-input d-none" data-target="#select_date"/>
-            <div class="input-group-append" data-target="#select_date" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="far fa-calendar-alt"></i></div>
-            </div>
-        </div>        
-    </div>    
-    <div class="col-auto text-right">
-        <button class="btn btn-light btn-sm mr-2" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_prev?>'">< ย้อนกลับ</button>
-        <button class="btn btn-light btn-sm" type="button" onClick="window.location='data_management.php?uts=<?=$timestamp_next?>'">ถัดไป ></button>
-    </div>
-</div>
-</div>
-<br>
 <div class="table-responsive wrap_schedule">
 <table class="table m-3 border-collapse border border-slate-500">
 <thead class="thead-light">
@@ -371,34 +347,34 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
     <td class="p-0 text-center table-active">
     <div class="day_schedule_text text-nowrap" style="min-height: 60px;">
         <?=$dayTH[$i_day]?> 
-        <br>
-        <?=$dayInSchedule_show?>    
-    </div>
+        </div>
     </td>
     <td class="p-0 position-relative" colspan="10">
-    <div class="position absolute">
+    <div class="position absolute mb-5">
     <div class="d-flex align-content-stretch" style="min-height: 60px;">
         <?php for($i=1;$i<$sc_numCol;$i++){ ?>
-        <div class="bg-light text-center border-right" style="width: <?=$hour_block_width ?>px;margin-right: 1px;">
+        <div class="bg-light text-center border-right mb-5" style="width: <?=$hour_block_width ?>px;margin-right: 1px;">
         &nbsp;
         </div>
         <?php } ?>
     </div>
     </div>
-    <div class="position absolute" style="z-index: 100;">
+    <div class="relative" style="z-index: 100;">
         <?php
         if(isset($data_day_schedule[$dayKeyChk]) && count($data_day_schedule[$dayKeyChk])>0){
             foreach($data_day_schedule[$dayKeyChk] as $row_day){
                 $sc_width = ($row_day['duration']/60)*($hour_block_width/$sc_numStep);
                 $sc_start_x = $row_day['timeblock']*$hour_block_width+(int)$row_day['timeblock'];
         ?>
-        <div class="position absolute text-center sc-detail" style="
+        <div class="relative absolute bottom-0 left-0  text-center sc-detail" style="
         width: <?=$sc_width?>px;margin-right: 1px;
         margin-left: <?=$sc_start_x?>px;
         min-height: 60px;">
-        <a href="#"><?=$row_day['title']?></a><br>
-        <?=$row_day['detail']?><br>
+        <?php echo ""; ?><br>
+        <a href="#" style="font-size: 18px;"><?=$row_day['title']?></a><br>
         <?=$row_day['room']?><br>
+        <?=$row_day['detail']?><br>
+        <?php echo ""; ?><br>
         </div>
         <?php } ?>
         <?php } ?>
