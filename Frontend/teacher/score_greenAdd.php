@@ -42,41 +42,47 @@ $endDate = $score['createScoreEndDate'];
         <table class="w-full mt-4 text-left border border-separate rounded border-slate-200" cellspacing="0">
             <tbody>
                 <tr>
-                <?php 
+                    <form action="../../Backend/functions/saveMindScore.php" method="post">
+                    <?php 
       
-      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON enrollsubject.schedule_id = save_studentscore.subjectID WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdImg AS img ,  enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON enrollsubject.schedule_id = save_studentscore.subjectID WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
       $queryGetStd = $db->query($getStd);
-      for($i = 1; $i <= $totalStd; $i++){
-      while($stds = mysqli_fetch_assoc($queryGetStd)){
+      $totalStd = mysqli_num_rows($queryGetStd);
+      while($stds = mysqli_fetch_assoc($queryGetStd)):
 
 
-      ?>          
+      ?>    
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
                                 <div class="w-24 rounded-full">
-                                    <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
+                                    <img src="../image/<?php echo $stds['img'];?>" />
                                 </div>
                             </div>
                             <div class="flex-col ">
                                 <div>
                                     <span class="inline-flex items-center justify-center gap-1 rounded-full bg-emerald-500 px-1.5 text-sm text-white">
-                                      <?php echo $i++;?>
                                         <span class="sr-only"></span>
                                     </span class="font-semibold "><?php echo $stds['stdid'];?></div>
                                     <div class="gap-2">
                                     <span class="ml-4 "><?php echo $stds['name']. "            " . $stds['lname'];?></span>
-                                    <input id="score" type="text" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    <input id="std_id" type="text" name="std_id" value="<?php echo $stds['stdid'];?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    <input id="std_id" type="text" name="subjectID" value="<?php echo $subjectStuID;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    <input id="score" type="text" name="mindScore" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                                     </div>
                                     
+                <?php
+    endwhile;
+
+         ?>
                             </div>
                         </div>
+                        </form>
                     </th>
-        <?php }
-        }  ?>
+                    
+
 
                 </tr>
-                
 
 
             </tbody>

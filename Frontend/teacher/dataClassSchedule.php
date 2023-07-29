@@ -345,14 +345,14 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
     $dayInSchedule_show = thai_date_short(strtotime($start_weekDay." +".$i_day." day"));
 ?>
   <tr>
-    <td class="p-0 text-center table-active">
-    <div class="day_schedule_text text-nowrap" style="min-height: 60px;">
+    <td class="p-0 text-center table-active border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
+    <div class="day_schedule_text text-nowrap " style="min-height: 60px;">
         <?=$dayTH[$i_day]?> 
         </div>
     </td>
-    <td class="p-0 position-relative" colspan="10">
-    <div class="position absolute mb-5">
-    <div class="d-flex align-content-stretch" style="min-height: 60px;">
+    <td class="p-0 position-relative  " colspan="10">
+    <div class="position absolute mb-5 ">
+    <div class="d-flex align-content-stretch " style="min-height: 60px; ">
         <?php for($i=1;$i<$sc_numCol;$i++){ ?>
         <div class="bg-light text-center border-right mb-5" style="width: <?=$hour_block_width ?>px;margin-right: 1px;">
         &nbsp;
@@ -367,7 +367,7 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
                 $sc_width = ($row_day['duration']/60)*($hour_block_width/$sc_numStep);
                 $sc_start_x = $row_day['timeblock']*$hour_block_width+(int)$row_day['timeblock'];
         ?>
-        <div class="relative absolute bottom-0 left-0  text-center sc-detail" style="
+        <div class="relative border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 absolute bottom-0 left-0  text-center sc-detail border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100" style="
         width: <?=$sc_width?>px;margin-right: 1px;
         margin-left: <?=$sc_start_x?>px;
         min-height: 60px;">
