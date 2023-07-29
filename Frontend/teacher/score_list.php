@@ -11,10 +11,6 @@ $teacherID = $_SESSION['UserID'];
 
 
 
-$stds = "SELECT * FROM tbl_schedule WHERE schedule_id = '$subjectStuID'";
-$result = $db->query($stds);
-
-
 $getScore = "SELECT * FROM createscore WHERE createScoreTeacherID = '$teacherID' AND createScoreSubjectID = '$subjectStuID'";
 $queryGetScore = $db->query($getScore);
 
@@ -59,10 +55,10 @@ $endDate = $score['createScoreEndDate'];
   <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
     <tbody>
       <tr>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-green-400">จิตพิสัย 20%</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-pink-500">ภาคทฤษฏี 20%</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-orange-400">ภาคปฏิบัติ 40%</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400">สอบปลายภาค 20%</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-green-400">จิตพิสัย <?php echo $mindScore;?>%</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-pink-500">ภาคทฤษฏี <?php echo $theoryScore;?>%</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-orange-400">ภาคปฏิบัติ <?php echo $carryScore;?>%</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400">สอบปลายภาค <?php echo $finalScore;?>%</th>
        
       </tr>
       <tr class="transition-colors duration-300 hover:bg-slate-50" a>
@@ -70,7 +66,7 @@ $endDate = $score['createScoreEndDate'];
             <div class="w-full h-12 flex bg-[#ffffe8]">
                 <div class="w-full p-2 text-16 font-semibold">จิตพิสัย</div>
                 <a href="./score_greenEditList.php" class="w-1/3 bg-green-400 flex items-center justify-center duration-500 hover:bg-green-300">
-                    <span class="text-white font-medium text-lg">20</span>
+                    <span class="text-white font-medium text-lg"><?php echo $mindScore;?></span>
                 </a>
                 
             </div>
@@ -79,10 +75,10 @@ $endDate = $score['createScoreEndDate'];
         <div class="w-full   h-full flex bg-[#ffffe8]">
                 <div class="w-full p-2 text-16 font-semibold flex-col">
                     <div class="font-semibold">หน่วยการเรียนที่ 1</div>
-                    <span>01/02/2022 - 01/08/2023</span>
+                    <span><?php echo $startDate;?> - <?php echo $endDate;?></span>
                 </div>
                 <a href="./score_pinkEdit.php" class="w-1/3 bg-pink-500 flex items-center justify-center duration-500 hover:bg-pink-300">
-                    <span class="text-white font-medium text-lg">20</span>
+                    <span class="text-white font-medium text-lg"><?php echo $theoryScore;?></span>
                 </a>
                 
             </div>
@@ -91,10 +87,10 @@ $endDate = $score['createScoreEndDate'];
         <div class="w-full   h-full flex bg-[#ffffe8]">
                 <div class="w-full p-2 text-16 font-semibold flex-col">
                     <div class="font-semibold">หน่วยการเรียนที่ 2</div>
-                    <span>01/02/2022 - 01/08/2023</span>
+                    <span><?php echo $startDate;?> - <?php echo $endDate;?></span>
                 </div>
                 <a href="./score_orangeEdit.php" class="w-1/3 bg-orange-400 flex items-center justify-center duration-500 hover:bg-orange-300">
-                    <span class="text-white font-medium text-lg">40</span>
+                    <span class="text-white font-medium text-lg"><?php echo $carryScore;?></span>
                 </a>
                 
             </div>
@@ -103,10 +99,10 @@ $endDate = $score['createScoreEndDate'];
         <div class="w-full   h-full flex bg-[#ffffe8]">
                 <div class="w-full p-2 text-16 font-semibold flex-col">
                     <div class="font-semibold">สอบปลายภาค</div>
-                    <span>01/02/2022 - 01/08/2023</span>
+                    <span><?php echo $endDate;?></span>
                 </div>
                 <a href="./score_blueAdd.php" class="w-1/3 bg-blue-400 flex items-center justify-center duration-500 hover:bg-blue-300">
-                    <span class="text-white font-medium text-lg">20</span>
+                    <span class="text-white font-medium text-lg"><?php echo $finalScore;?></span>
                 </a>
                 
             </div>
@@ -114,10 +110,10 @@ $endDate = $score['createScoreEndDate'];
      
       </tr>
       <tr>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-green-400">20 คะแนน</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-pink-500">20 คะแนน</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-orange-400">40 คะแนน</th>
-        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400">20 คะแนน</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-green-400"><?php echo $mindScore;?> คะแนน</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-pink-500"><?php echo $theoryScore;?> คะแนน</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-orange-400"><?php echo $carryScore;?> คะแนน</th>
+        <th scope="col" class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white bg-blue-400"><?php echo $finalScore;?> คะแนน</th>
        
       </tr>
       
@@ -140,50 +136,27 @@ $endDate = $score['createScoreEndDate'];
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">คะแนนรวม(100)</th>
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">เกรด</th>
       </tr>
+      <?php 
+      
+      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON enrollsubject.schedule_id = save_studentscore.subjectID WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+      $queryGetStd = $db->query($getStd);
+      while($stds = mysqli_fetch_assoc($queryGetStd)){
+
+
+      ?>
       <tr class="transition-colors duration-300 hover:bg-slate-50 odd:bg-slate-50" a>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-green-400 ">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">40</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['stdid'];?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['name']. "" . $stds['lname'];?></td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-green-400 "><?php echo $stds['mind'];?></td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500"><?php echo $stds['theory'];?></td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400"><?php echo $stds['carry'];?></td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400"><?php echo $stds['final'];?></td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
         <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
         
       </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50 odd:bg-slate-50" a>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-green-400 ">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">40</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
-        
-      </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50 odd:bg-slate-50" a>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-green-400 ">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">40</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
-        
-      </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50 odd:bg-slate-50" a>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-green-400 ">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500">20</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">40</td>
-        <td class="h-12 px-6 text-lg font-medium border-l border-t first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
-        
-      </tr>
+      
+        <?php } ?>
      
       
     </tbody>
