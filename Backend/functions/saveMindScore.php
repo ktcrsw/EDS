@@ -4,7 +4,7 @@
     include '../db/connect.db.php';
     
     $std_id = $_POST['std_id'];
-    $MindScore = $_POST['MindScore'];
+    $MindScore = $_POST['mindScore'];
     $subjectID = $_POST['subjectID'];
     $teacherID = $_SESSION['UserID'];
 
@@ -13,8 +13,9 @@
     echo $subjectID . "<br>";
     echo $teacherID . "<br>";
 
-    // $saveScore = "";
-    // $queryScore = $db->query($saveScore);
+
+     $saveScore = "UPDATE save_studentscore SET mindScore ='$MindScore' WHERE studentID = '$std_id' subjectID = '$subjectID'";
+     $queryScore = $db->query($saveScore);
 
 
 ?>

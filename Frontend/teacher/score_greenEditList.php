@@ -66,9 +66,9 @@ $endDate = $score['createScoreEndDate'];
         <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $i++;?></td>
         <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['stdid'];?></td>
         <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['name']. "            " . $stds['lname'];?></td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['mind'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['mind'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['mind'];?></td>
         
       </tr>
      <?php } 
