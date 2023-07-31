@@ -96,7 +96,7 @@ $queryStatus = $db->query($getStatus);
                                         </div>
 
                                     </td>
-                                    <form action="../../Backend/functions/check_subject.php" method="get" class="allforms">
+                                    <form action="../../Backend/functions/check_subject.php" method="get" id="my-button">
 
                                         <td>                                            
                                             <div class="flex justify-center ml-4 align-items-center">
@@ -133,7 +133,7 @@ $queryStatus = $db->query($getStatus);
                                         </td>
                                         <td>                                            
                                             <div class="flex justify-center ml-4 align-items-center">
-                                                <input type="submit" class="checkbox checkbox-primary" name="late"/>
+                                                <input type="submit" class="checkbox checkbox-primary" name="sub" id="sub"/>
                                             </div>
                                         </td>
 
@@ -145,12 +145,12 @@ $queryStatus = $db->query($getStatus);
                                 </tbody>
                                 <input type="text" value="<?php echo $listStd['ref_studenttbl']; ?>" name="stdid">
                         <input type="text" value="<?php echo $subjectteacherid; ?>" name="subjectteacherid">
-                        <input id="allsubmit" name="submit" class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
-                    </form>
-                                <?php endwhile; ?>
-                            </table>
-                            
-
+                        <?php endwhile; ?>
+                    </table>
+                    
+                    <input id="my-button" name="submit" class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
+                </form>
+                    
                         </div>
             <div class="mt-4">
                 <!-- <form action="../../Backend/functions/check_subject.php">
@@ -222,18 +222,3 @@ $queryStatus = $db->query($getStatus);
 </div>
 
 </div>
-<script>
-    $(function() {
-    $("#allsubmit").click(function(){
-        $('.allforms').each(function(){
-            valuesToSend = $(this).serialize();
-            $.ajax($(this).attr('action'),
-                {
-                method: $(this).attr('method'),
-                data: valuesToSend
-                }
-            )
-        });
-    });
-});
-</script>
