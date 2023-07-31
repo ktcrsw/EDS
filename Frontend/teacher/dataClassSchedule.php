@@ -201,8 +201,8 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     schedule_repeatday='".$p_schedule_repeatday."'
     ";
     $db->query($sql);
-    header("Location:../../Backend/api/classSchedule_Module/pageControl.php");
-    exit;
+    header("Location: data_management.php");
+
 }
 ?>
 
@@ -212,6 +212,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
 <form action="" method="post" accept-charset="utf-8">
      
 <div class="form-group row">
+    
     <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
     <div class="col-12 col-sm-8">
     <select name="schedule_title" id="schedule_title" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">

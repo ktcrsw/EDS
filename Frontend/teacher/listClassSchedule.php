@@ -78,7 +78,7 @@
                         <?php echo $class['schedule_endtime']; ?>
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
-                        <input type="text" value="<?php echo $class['schedule_id']; ?>" name="classID">
+                        <input type="text" value="<?php echo $class['schedule_id']; ?>" name="classID" hidden>
                      <button class="btn btn-error" type="submit"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
                      </td>
                      </form>

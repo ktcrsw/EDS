@@ -49,7 +49,7 @@ $endDate = $score['createScoreEndDate'];
                         <span>กำหนดสัดส่วนคะแนนเป็นร้อยละ(%) จาก 100%</span>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-green-400">จิตพิสัย</div>
-                            <input id="mindScore" name="mindScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="mindScore" name="mind" type="number" min="0" max="20"value="<?php echo $mindScore;?>" placeholder="<?php echo $mindScore;?>"  class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
@@ -90,7 +90,12 @@ $endDate = $score['createScoreEndDate'];
                                             <span class="border p-1 rounded-lg border-gray-300">หน่วยการเรียนที่ 1</span>
                                         </span>
                                     </div>
-                                    <div class="pb-ภ">
+                                    <div class="pb-6">
+                                        <span>คะแนนจิตพิสัย :
+                                            <input id="score" name="mind" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                        </span>
+                                    </div>
+                                    <div class="pb-6">
                                         <span>คะแนนภาคทฤษฎี :
                                             <input id="score" name="theory" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
                                         </span>
@@ -126,16 +131,16 @@ $endDate = $score['createScoreEndDate'];
                                     </div>
                                     <div class="pb-2">
                                         <span>คะแนน :
-                                            <input id="score" type="text" placeholder="0" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
+                                            <input id="score" type="text" placeholder="0" name="final" class=" w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 ">
                                         </span>
                                     </div>
                                     <div class="pb-6">
                                         <label for="birthday">วันที่เริ่มสอบ</label>
-                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="Startfinal">
                                     </div>
                                     <div class="pb-6">
                                         <label for="birthday">วันสิ้นสุดการสอบ</label>
-                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="date">
+                                        <input type="date" id="date" class="rounded-lg border-gray-300" name="Endfinal">
                                     </div>
                                     <a href="" class="px-4 py-2  rounded-lg bg-blue-500 text-white">ยืนยัน</a>
                                     <div class="hidden  " id="profile" role="tabpanel" aria-labelledby="profile-tab">

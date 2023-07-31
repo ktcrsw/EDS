@@ -31,7 +31,6 @@ $querySublst = $db->query($subjectLst);
       </tr>
       <?php while($subjectrow = mysqli_fetch_assoc($querySublst)):?>
       <tr class="transition-colors duration-300 hover:bg-slate-50">
-        <form action="../../Backend/api/saveScore_Module/pageControl.php" method="post">
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_detail'];?> เทคโนโลยีสารสนเทศ ปกติ</td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_classYears'] . "/" . $subjectrow['schedule_classGroup'];?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $subjectrow['schedule_title'];?></td>
@@ -41,14 +40,14 @@ $querySublst = $db->query($subjectLst);
         <input type="text" name="studentGroup" value="<?php echo $subjectrow['schedule_classGroup'];?>" hidden/>
         <input type="text" name="SubjectName" value="<?php echo $subjectrow['schedule_title'];?>"  hidden/>
         <td class="h-12 px-1 text-sm transitions duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-        <input type="text" name="subi" value="<?php echo $subjectrow['schedule_id'];?>" placeholder="<?php echo $subjectrow['schedule_id'];?>"/>
-
+          <form action="../../Backend/api/saveScore_Module/pageControl.php?=<?php echo $subjectrow['schedule_id'];?>?>" method="post">
+          <input type="text" name="subi" value="<?php echo $subjectrow['schedule_id'];?>" placeholder="<?php echo $subjectrow['schedule_id'];?>" hidden/>
           <button type="submit" class="btn btn-warning" align="center"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button></td>
-                              </tr>
+        </form>       
+        </tr>
 
 
         <?php endwhile; ?>
-      </form>       
       
     </tbody>
   </table>

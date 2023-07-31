@@ -20,7 +20,7 @@
     $updateScore = "UPDATE save_studentscore SET theoryScore = $theory WHERE studentID = '$std_id' AND subjectID = '$subjectID'";
     $queryScore = $db->query($updateScore);
 
-    // header('location: ../../Frontend/teacher/score_pinkAdd.php')
+    header('location: ../../Frontend/teacher/score_pinkAdd.php')
 
 
 

@@ -17,7 +17,7 @@
     echo $enddate;
 
 
-    $saveScore = "INSERT INTO createscore(createScoreID, createScoreTeacherID, createScoreMind, createScoreTheory, createScoreCarry, createScoreFinal, createScoreStartDate, createScoreEndDate) VALUES ('', '$teacherID', $mindScore', '$theoryScore', '$carryScore', '', '$startdate', '$enddate');";
+    $saveScore = "UPDATE createscore SET createScoreMind ='$mindScore', createScoreTheory='$theoryScore', createScoreCarry='$carryScore',createScoreFinal='0',createScoreStartDate='$startdate',createScoreEndDate='$enddate' WHERE createScoreTeacherID = '$teacherID'";
     $queryScore = $db->query($saveScore);
 
 
