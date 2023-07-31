@@ -13,6 +13,8 @@
     $StatusBusiness = $_GET['business-leave'];
     $StatusLate = $_GET['late'];
 
+
+    if(isset($_GET['submit'])) {
     $save = array('StudentID' => $studentUserID, 
     'TeacherID' => $teacherUserID,
     'SubjectID' => $subject,
@@ -22,8 +24,12 @@
     'Business' => $StatusBusiness,
     'Late' => $StatusLate,
     );
-
+    
     echo "<pre>";
     print_r($save);
     echo "</pre>";
+    } 
+
+    
+
 ?>

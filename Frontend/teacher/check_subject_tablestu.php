@@ -68,7 +68,6 @@ $queryStatus = $db->query($getStatus);
                         /*                                      1                                     */
                         /* -------------------------------------------------------------------------- */ -->
                         <?php while ($listStd = mysqli_fetch_assoc($query)) : ?>
-                            <form action="../../Backend/functions/check_subject.php" method="get">
                                 <tr class="odd:bg-slate-50">
                                     <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                                         <div class="flex py-4">
@@ -90,30 +89,69 @@ $queryStatus = $db->query($getStatus);
                                             </div>
                                             <div class="flex flex-col justify-center ml-4">
                                                 <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname'] . "&nbsp" . $listStd['ref_stdlname']; ?></span>
-                                                <input type="text" value="<?php echo $listStd['ref_studenttbl']; ?>" name="stdid">
-                                                <input type="text" value="<?php echo $subjectteacherid; ?>" name="subjectteacherid">
+                                                
                                                 <span><?php echo $listStd['ref_studenttbl']; ?></span>
                                             </div>
 
                                         </div>
 
                                     </td>
+                                    <form action="../../Backend/functions/check_subject.php" method="get" class="allforms">
 
-                                    <td>
-                                            <input type="radio" name="1" class=" radio-success" />
-                                    </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="checkbox" class="checkbox checkbox-primary" name="come"/>
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="checkbox" class="checkbox checkbox-primary" name="notcome"/>
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="checkbox" class="checkbox checkbox-primary" name="sick-leave"/>
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="checkbox" class="checkbox checkbox-primary" name="business-leave"/>
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="checkbox" class="checkbox checkbox-primary" name="late"/>
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                            </div>
+                                        </td>
+                                        <td>                                            
+                                            <div class="flex justify-center ml-4 align-items-center">
+                                                <input type="submit" class="checkbox checkbox-primary" name="late"/>
+                                            </div>
+                                        </td>
+
+                                        
+                                    </tr>
                                     
-                                </tr>
-                            <?php endwhile; ?>
+                                    
+                                    
+                                </tbody>
+                                <input type="text" value="<?php echo $listStd['ref_studenttbl']; ?>" name="stdid">
+                        <input type="text" value="<?php echo $subjectteacherid; ?>" name="subjectteacherid">
+                        <input id="allsubmit" name="submit" class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
+                    </form>
+                                <?php endwhile; ?>
+                            </table>
+                            
 
-
-
-
-                    </tbody>
-                </table>
-                <input class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
-                </form>
-            </div>
+                        </div>
             <div class="mt-4">
                 <!-- <form action="../../Backend/functions/check_subject.php">
                         <?php //while($studt = mysqli_fetch_assoc($querys)):
@@ -184,3 +222,18 @@ $queryStatus = $db->query($getStatus);
 </div>
 
 </div>
+<script>
+    $(function() {
+    $("#allsubmit").click(function(){
+        $('.allforms').each(function(){
+            valuesToSend = $(this).serialize();
+            $.ajax($(this).attr('action'),
+                {
+                method: $(this).attr('method'),
+                data: valuesToSend
+                }
+            )
+        });
+    });
+});
+</script>
