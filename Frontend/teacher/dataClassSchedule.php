@@ -97,11 +97,10 @@ function timeblock($time,$sc_numCol,$sc_timeStep){
  
  
 $data_schedule=array();
-$sql="
-    SELECT * FROM tbl_schedule  WHERE 
+$sql="SELECT * FROM tbl_schedule  WHERE schedule_teacherID = '$teacherID' AND
     (schedule_startdate  >= '".$start_weekDay."' AND schedule_startdate <  '".$end_weekDay."') OR
-    ('".$start_weekDay."' > schedule_startdate  AND schedule_enddate <  '".$end_weekDay."'  AND schedule_enddate >= '".$start_weekDay."' )  OR
-    ('".$start_weekDay."' > schedule_startdate  AND '".$end_weekDay."'  < schedule_enddate  AND schedule_enddate >= '".$start_weekDay."' )  AND schedule_teacherID = '$teacherID'
+('".$start_weekDay."' > schedule_startdate  AND schedule_enddate <  '".$end_weekDay."'  AND schedule_enddate >= '".$start_weekDay."' )  OR
+    ('".$start_weekDay."' > schedule_startdate  AND '".$end_weekDay."'  < schedule_enddate  AND schedule_enddate >= '".$start_weekDay."' )
     ORDER BY schedule_startdate
 ";
 $result = $db->query($sql);
