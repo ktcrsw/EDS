@@ -160,8 +160,35 @@ $endDate = $score['createScoreEndDate'];
         <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-pink-500"><?php echo $stds['theory'];?></td>
         <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-orange-400"><?php echo $stds['carry'];?></td>
         <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-white bg-blue-400"><?php echo $stds['final'];?></td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
-        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">0</td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]">
+          <?php 
+          $totalScore = $stds['mind'] + $stds['theory'] + $stds['carry'] + $stds['final'];
+        echo $totalScore;
+          ?>
+</td>
+        <td class="h-12 px-6 text-lg font-medium border-l first:border-l-0 border-slate-200 text-center stroke-slate-700 text-black bg-[#ffffe8]"><?php 
+        
+        
+        $totalScore = $stds['mind'] + $stds['theory'] + $stds['carry'] + $stds['final'];
+
+        
+        if($totalScore > 100 && $totalScore < 0){
+          echo "ไม่สามารถระบุคะแนนได่";
+        } elseif($totalScore >= 79){
+          echo "4";
+        }
+         elseif($totalScore >= 69){
+          echo "3";
+        }
+        elseif($totalScore >= 59){
+          echo "2";
+        }
+         elseif($totalScore > 49){
+          echo "1";
+        }
+        
+        
+        ?></td>
         
       </tr>
       
