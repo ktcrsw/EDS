@@ -55,7 +55,21 @@ $endDate = $score['createScoreEndDate'];
       </tr>
       <?php 
       
-      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON enrollsubject.schedule_id = save_studentscore.subjectID WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, 
+      enrollsubject.ref_stdfname AS name, 
+      enrollsubject.ref_stdlname AS lname ,
+      save_studentscore.mindScore AS mind, 
+      save_studentscore.theoryScore AS theory, 
+      save_studentscore.carryScore AS carry, 
+      save_studentscore.finalScore AS final 
+      FROM enrollsubject INNER JOIN save_studentscore 
+      ON enrollsubject.ref_studenttbl = save_studentscore.studentID
+      WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+
+
+
+
+
       $queryGetStd = $db->query($getStd);
       $totalStd = mysqli_num_rows($queryGetStd);
       for($i = 1; $i <= $totalStd; $i++){

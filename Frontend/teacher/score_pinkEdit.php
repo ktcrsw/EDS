@@ -6,10 +6,24 @@
 <?php include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
+$subjectStuID = $_SESSION['subjectStuID'];
+$teacherID = $_SESSION['UserID'];
 
 
+
+$getScore = "SELECT * FROM createscore WHERE createScoreTeacherID = '$teacherID' AND createScoreSubjectID = '$subjectStuID'";
+$queryGetScore = $db->query($getScore);
 
 ?>
+<?php while ($score = mysqli_fetch_array($queryGetScore)) {
+
+$mindScore = $score['createScoreMind'];
+$theoryScore = $score['createScoreTheory'];
+$carryScore = $score['createScoreCarry'];
+$finalScore = $score['createScoreFinal'];
+$startDate = $score['createScoreStartDate'];
+$endDate = $score['createScoreEndDate'];
+} ?>
 
 
 <div class="w-full p-4 ">
@@ -41,42 +55,41 @@ include "../assets/teacher_nav.php";
         <th scope="col" class="h-8 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">รวม (10)</th>
         <th scope="col" class="h-8 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">คำนวณ (40)</th>
       </tr>
+      <?php 
+      
+      $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, 
+      enrollsubject.ref_stdfname AS name, 
+      enrollsubject.ref_stdlname AS lname ,
+      save_studentscore.mindScore AS mind, 
+      save_studentscore.theoryScore AS theory, 
+      save_studentscore.carryScore AS carry, 
+      save_studentscore.finalScore AS final 
+      FROM enrollsubject INNER JOIN save_studentscore 
+      ON enrollsubject.ref_studenttbl = save_studentscore.studentID
+      WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+
+
+
+
+
+      $queryGetStd = $db->query($getStd);
+      $totalStd = mysqli_num_rows($queryGetStd);
+      for($i = 1; $i <= $totalStd; $i++){
+      while($stds = mysqli_fetch_assoc($queryGetStd)){
+
+      ?>
       <tr class="transition-colors duration-300 hover:bg-slate-50" a>
-        <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">1</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">10</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">40</td>
+        <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $i++;?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['stdid'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['name']. "            " . $stds['lname'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['theory'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['theory'];?></td>
+        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $stds['theory'];?></td>
         
       </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50" a>
-        <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">1</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">10</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">40</td>
-        
-      </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50" a>
-        <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">1</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">10</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">40</td>
-        
-      </tr>
-      <tr class="transition-colors duration-300 hover:bg-slate-50" a>
-        <td class="h-8 px-2 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">1</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">64209010033</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">นายบงกชเพชร ยอดกระโทก</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">10</td>
-        <td class="h-8 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">40</td>
-        
-      </tr>
+                      <?php }
+                      } ?>
+
      
       
     </tbody>

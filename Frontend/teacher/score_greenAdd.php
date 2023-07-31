@@ -34,18 +34,7 @@ $queryGetScore = $db->query($getScore);
 
         <div class="flex items-center gap-2 ml-4">
             <label for="">คะแนน</label>
-            <form action="../../Backend/functions/saveMindScore.php" method="post" class="myForms">
-            <input id="score" type="number" min="1" name="mindScore" placeholder="<?php
-
-                                                                    $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdImg AS img ,  enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON save_studentscore.subjectID =enrollsubject.schedule_id  WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
-                                                                    $queryGetStd = $db->query($getStd);
-                                                                    $totalStd = mysqli_num_rows($queryGetStd);
-                                                                    while ($stds = mysqli_fetch_assoc($queryGetStd)) {
-
-
-
-                                                                    ?>" value="<?php echo $stds['mind'];
-                                                                    } ?>" class="block w-32 px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                <input id="score" type="number" min="1" name="" placeholder="" value="" class="block w-32 px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
 
         </div>
         <table class="w-full mt-4 text-left border border-separate rounded border-slate-200" cellspacing="0">
@@ -53,10 +42,20 @@ $queryGetScore = $db->query($getScore);
                 <tr>
                     <?php
 
-                    $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, enrollsubject.ref_stdfname AS name, enrollsubject.ref_stdImg AS img ,  enrollsubject.ref_stdlname AS lname ,save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM enrollsubject INNER JOIN save_studentscore ON save_studentscore.subjectID =enrollsubject.schedule_id  WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+                    $getStd = "SELECT enrollsubject.ref_studenttbl AS stdid, 
+enrollsubject.ref_stdfname AS name, 
+enrollsubject.ref_stdlname AS lname ,
+enrollsubject.ref_stdImg AS img ,
+save_studentscore.mindScore AS mind, 
+save_studentscore.theoryScore AS theory, 
+save_studentscore.carryScore AS carry, 
+save_studentscore.finalScore AS final 
+FROM enrollsubject INNER JOIN save_studentscore 
+ON enrollsubject.ref_studenttbl = save_studentscore.studentID
+WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+
                     $queryGetStd = $db->query($getStd);
-                    $totalStd = mysqli_num_rows($queryGetStd);
-                    while ($stds = mysqli_fetch_assoc($queryGetStd)) :
+                    while ($stds = mysqli_fetch_assoc($queryGetStd)) {
 
 
                     ?>
@@ -64,7 +63,7 @@ $queryGetScore = $db->query($getScore);
                             <div class="flex gap-2 py-3">
                                 <div class="avatar">
                                     <div class="w-24 rounded-full">
-                                        <img src="../image/<?php echo $stds['img']; ?>" class="block w-16 h-16" width="16" height="16" />
+                                        <img src="../image/<?php echo $stds['img']; ?>" class="block w-16 h-16" width="16" height="16" style="width:100%; height:100%;" />
                                     </div>
                                 </div>
                                 <div class="flex-col cols-md-4">
@@ -73,15 +72,18 @@ $queryGetScore = $db->query($getScore);
                                             <span class="sr-only"></span>
                                         </span class="font-semibold "><?php echo $stds['stdid']; ?>
                                     </div>
-                                    <div class="gap-2">
-                                            <span class="ml-4 "><?php echo $stds['name'] . "            " . $stds['lname']; ?></span>
-                                            <input id="std_id" type="text" name="std_id" value="<?php echo $stds['stdid']; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                                            <input id="std_id" type="text" name="subjectID" value="<?php echo $subjectStuID; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                                            <input id="score" type="number" name="" min="1" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    <div class="gap-2" >
+                                    <form action="../../Backend/functions/saveMindScore.php?=<?php echo $stds['stdid']; ?>" method="post" class="myForms" >
+                                        <span class="ml-4 "><?php echo $stds['name'] . "            " . $stds['lname']; ?></span>
+                                        <input id="std_id" type="text" name="std_id" value="<?php echo $stds['stdid']; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                        <input id="std_id" type="text" name="subjectID" value="<?php echo $subjectStuID; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                        <input id="score" type="number" name="mindScore" min="1" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                        <input id="submit" value="บันทึก" type="submit" name="submit" placeholder="0" class="btn btn-primary block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                    </form>
                                     </div>
 
                                 <?php
-                            endwhile;
+                            };
 
                                 ?>
 
@@ -99,9 +101,7 @@ $queryGetScore = $db->query($getScore);
             </tbody>
         </table>
         <div class="pt-4">
-            <input id="submit" value="บันทึก" type="submit" name="submit" placeholder="0" class="btn btn-primary block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
 
-            </form>
             <a href="./score_greenEditList.php" class="px-4 py-2 bg-pink-500 text-white">ย้อนกลับ</a>
         </div>
     </div>
