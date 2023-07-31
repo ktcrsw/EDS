@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2023 at 03:55 PM
+-- Generation Time: Jul 31, 2023 at 03:17 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -103,7 +103,11 @@ CREATE TABLE `createscore` (
 --
 
 INSERT INTO `createscore` (`createScoreID`, `createScoreTeacherID`, `createScoreSubjectID`, `createScoreMind`, `createScoreTheory`, `createScoreCarry`, `createScoreFinal`, `createScoreStartDate`, `createScoreEndDate`) VALUES
-(2, 1, 29, 0, 20, 20, 0, '2023-07-24', '2023-08-04');
+(3, 1, 29, 10, 30, 20, 0, '0000-00-00', '0000-00-00'),
+(4, 1, 1, 10, 30, 20, 0, '0000-00-00', '0000-00-00'),
+(12, 1, 26, 0, 0, 0, 0, '0000-00-00', '0000-00-00'),
+(13, 1, 0, 0, 0, 0, 0, '0000-00-00', '0000-00-00'),
+(14, 75, 34, 20, 20, 20, 0, '2023-07-31', '2023-08-28');
 
 -- --------------------------------------------------------
 
@@ -130,12 +134,12 @@ CREATE TABLE `enrollsubject` (
 --
 
 INSERT INTO `enrollsubject` (`nullID`, `schedule_id`, `u_id`, `schedule_title`, `ref_studenttbl`, `ref_stdfname`, `ref_stdlname`, `ref_stdGroups`, `ref_years`, `ref_status`, `ref_stdImg`) VALUES
-(1, 29, 1, 'การสร้างเกม 1	', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
-(2, 29, 1, 'การสร้างเกม 1	', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
-(3, 29, 1, 'การสร้างเกม 1	', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
-(4, 29, 1, 'การสร้างเกม 1	', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png'),
-(5, 29, 1, '', '64209010031', NULL, NULL, 2, 3, 1, '64209010031.png'),
-(6, 29, 1, '', '64209010032', NULL, NULL, 2, 3, 1, '64209010032.png');
+(1, 1, 1, 'การสร้างเกม 1	', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
+(2, 1, 1, 'การสร้างเกม 1	', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
+(3, 1, 1, 'การสร้างเกม 1	', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
+(4, 1, 1, 'การสร้างเกม 1	', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png'),
+(5, 34, 1, '', '64209010031', NULL, NULL, 2, 3, 1, '64209010031.png'),
+(6, 34, 1, '', '64209010032', NULL, NULL, 2, 3, 1, '64209010032.png');
 
 -- --------------------------------------------------------
 
@@ -332,7 +336,7 @@ CREATE TABLE `save_studentscore` (
   `mindScore` int(11) DEFAULT NULL,
   `theoryScore` int(11) DEFAULT NULL,
   `carryScore` int(11) DEFAULT NULL,
-  `finalScore` int(11) DEFAULT NULL
+  `finalScore` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
@@ -340,7 +344,8 @@ CREATE TABLE `save_studentscore` (
 --
 
 INSERT INTO `save_studentscore` (`no`, `studentID`, `subjectID`, `teacherID`, `mindScore`, `theoryScore`, `carryScore`, `finalScore`) VALUES
-(1, '64209010026', 29, 1, 0, 0, 0, 0);
+(6, '64209010026', 1, 1, 20, 20, 20, 36),
+(7, '64209010027', 1, 1, 20, 20, 20, 15.6);
 
 -- --------------------------------------------------------
 
@@ -479,8 +484,8 @@ CREATE TABLE `tbl_schedule` (
 --
 
 INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_classYears`, `schedule_classGroup`, `schedule_room`, `schedule_teacherName`, `schedule_teacherID`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
-(26, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวส', 0, 0, '', '', 0, '2023-07-27', '2023-07-27', '10:30:00', '13:40:00', '4', '2023-07-27 14:32:58'),
-(29, 'การสร้างเกม 1', 'ปวช', 0, 0, '', 'กิตติชัย', 1, '2023-07-28', '2023-07-28', '13:30:00', '16:30:00', '5', '2023-07-28 06:10:56');
+(1, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', 3, 2, '', 'กิตติชัย', 1, '2023-07-31', '2023-08-31', '15:30:00', '17:30:00', '1', '2023-07-31 08:14:48'),
+(34, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช', 0, 0, '', 'คิตตี้ชัย', 75, '2023-07-31', '2023-08-28', '08:30:00', '10:30:00', '1', '2023-07-31 11:56:22');
 
 -- --------------------------------------------------------
 
@@ -635,7 +640,7 @@ ALTER TABLE `classschedule`
 -- AUTO_INCREMENT for table `createscore`
 --
 ALTER TABLE `createscore`
-  MODIFY `createScoreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `createScoreID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `enrollsubject`
@@ -683,7 +688,7 @@ ALTER TABLE `save_classschedule`
 -- AUTO_INCREMENT for table `save_studentscore`
 --
 ALTER TABLE `save_studentscore`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `statusstudent`
@@ -701,7 +706,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `tbl_schedule`
 --
 ALTER TABLE `tbl_schedule`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `users`
