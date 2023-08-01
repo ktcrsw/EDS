@@ -20,6 +20,7 @@
     $saveScore = "UPDATE createscore SET createScoreMind ='$mindScore', createScoreTheory='$theoryScore', createScoreCarry='$carryScore',createScoreFinal='0',createScoreStartDate='$startdate',createScoreEndDate='$enddate' WHERE createScoreTeacherID = '$teacherID'";
     $queryScore = $db->query($saveScore);
 
+    header('location: ../../Frontend/teacher/data_management.php');
 
 
 ?>

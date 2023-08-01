@@ -49,22 +49,22 @@ $endDate = $score['createScoreEndDate'];
                         <span>กำหนดสัดส่วนคะแนนเป็นร้อยละ(%) จาก 100%</span>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-green-400">จิตพิสัย</div>
-                            <input id="mindScore" name="mind" type="number" min="0" max="20"value="<?php echo $mindScore;?>" placeholder="<?php echo $mindScore;?>"  class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="mindScore" name="mind" type="number" min="0" max="20" placeholder="<?php echo $mindScore;?>"  class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-pink-500">ทฤษฎี</div>
-                            <input id="theoryScore" type="number" min="0" max="20" value="<?php echo $theoryScore;?>" placeholder="<?php echo $theoryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="theoryScore" type="number" min="0" max="100"  placeholder="<?php echo $theoryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-orange-400">ปฏิบัติ</div>
-                            <input id="carryOutScore" type="number" min="0" max="20" value="<?php echo $carryScore;?>" placeholder="<?php echo $carryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="carryOutScore" type="number" min="0" max="100"  placeholder="<?php echo $carryScore;?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <div class="flex pb-2">
                             <div class="p-4 rounded-md text-white bg-blue-400">สอบปลายภาค</div>
-                            <input id="finalThermScore" type="number" min="0" max="20" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                            <input id="finalThermScore" type="number" min="0" max="100" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                             <div class="flex items-center text-lg ">%</div>
                         </div>
                         <label class="text-[22px] font-semibold">กำหนดหน่วยการสอน</label>

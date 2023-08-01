@@ -367,8 +367,8 @@ $query1 = $db->query($sql1);
 
                $getStudentTest = "SELECT * FROM enrollsubject WHERE u_id = '$teacherID'";
                $queryGetStd = $db->query($getStudentTest);
-               $total = 0;
-
+               // $total = "SELECT enrollsubject.ref_stdGroups AS groups, enrollsubject.ref_years AS year WHERE";
+               $total = mysqli_num_rows($query);
                
                
                for($i = 1; $i <= 2; $i++){
@@ -386,7 +386,7 @@ $query1 = $db->query($sql1);
                            <span class="text-[20px] font-medium"><?php echo $subjectRows['schedule_title']; ?></span>
                            <div class="flex text-gray-400 text-[14px] ">
                               <label for="">รหัสวิชา</label>
-                              <span class="ml-2">XXXX</span>
+                              <span class="ml-2">20001-000<?php echo $subjectRows['schedule_id']; ?></span>
                            </div>
                         </div>
                      </div>
@@ -395,7 +395,35 @@ $query1 = $db->query($sql1);
                            <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                            <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <span class="text-[18px] font-medium">คาบเรียนที่ <label class="font-[500]">XXXX</label></span>
+                        <span class="text-[18px] font-medium">คาบเรียนที่ <label class="font-[500]">
+                        <?php 
+                        
+                  
+                         if($subjectRows['schedule_starttime'] == '08:30:00'){
+                              echo "1";
+                         }else if($subjectRows['schedule_starttime'] == '09:30:00'){
+                              echo "2";
+                         }else if($subjectRows['schedule_starttime'] == '10:30:00'){
+                              echo "3";
+                         }else if($subjectRows['schedule_starttime'] == '11:30:00'){
+                              echo "4";
+                         }else if($subjectRows['schedule_starttime'] == '12:30:00'){
+                              echo "5";
+                         }else if($subjectRows['schedule_starttime'] == '13:30:00'){
+                              echo "6";
+                         }else if($subjectRows['schedule_starttime'] == '14:30:00'){
+                              echo "7";
+                         }else if($subjectRows['schedule_starttime'] == '15:30:00'){
+                              echo "8";
+                         }else if($subjectRows['schedule_starttime'] == '16:30:00'){
+                              echo "9";
+                         }else if($subjectRows['schedule_starttime'] == '17:30:00'){
+                              echo "10";
+                         }
+                        
+                        
+                        ?>
+                        </label></span>
 
                         <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                            <label class="font-[500]">สถานะ :</label>
