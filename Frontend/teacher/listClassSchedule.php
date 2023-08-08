@@ -29,25 +29,8 @@
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">เวลาเริ่มสอน</th>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">เวลาที่สิ้นสุด</th>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">สถานะ</th>
-                  <!-- <select class="select select-bordered w-full max-w-xs mb-3">
-                     <option disabled selected>เลือกปีการศึกษา</option>
-                     <option value="2566">2566</option>
-                     <option value="2565">2565</option>
-                     <option value="2564">2564</option>
-                     <option value="2563">2563</option>
-                     <option value="2562">2562</option>
-                     <option value="2561">2561</option>
-                     <option value="2560">2560</option>
-                     <option value="2559">2559</option>
-                     <option value="2558">2558</option>
-                     <option value="2557">2557</option>
-                     <option value="2556">2556</option>
-                     <option value="2555">2555</option>
-                     <option value="2554">2554</option>
-                     <option value="2553">2553</option>
-                     <option value="2552">2552</option>
-                     <option value="2551">2551</option>
-                  </select> -->
+                  <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">พิมพ์ตารางเรียน</th>
+                  
                </tr>
                <?php
                $teacherID = $_SESSION['UserID'];
@@ -80,6 +63,9 @@
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
                         <input type="text" value="<?php echo $class['schedule_id']; ?>" name="classID" hidden>
                      <button class="btn btn-error" type="submit"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
+                     </td>
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
+                        <button class="btn btn-success" type="submit"><i class="fa-solid fa-print" style="color: #ffffff;"></i></button>
                      </td>
                      </form>
                   </tr>

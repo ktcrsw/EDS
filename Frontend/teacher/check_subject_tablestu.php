@@ -54,11 +54,7 @@ $queryStatus = $db->query($getStatus);
                     <tbody>
                         <tr class=" text-center bg-[#3b82f6]">
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white rounded-tl-lg">รหัสนักศึกษา ชื่อ-นามสกุล</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">มาเรียน</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ข</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลป</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลก</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ส</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">เช็คชื่อ</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">รายละเอียด</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white rounded-tr-lg">ไม่เข้าเรียนสะสม</th>
                         </tr>
@@ -79,7 +75,6 @@ $queryStatus = $db->query($getStatus);
                                                         echo "<img src='../image/null_user.png' />";
                                                     } else
 
-
                                                     ?>
                                                     <img src="../image/<?php echo $listStd['ref_stdImg']; ?>" />
                                                 </div>
@@ -91,43 +86,19 @@ $queryStatus = $db->query($getStatus);
 
                                             <span><?php echo $listStd['ref_studenttbl']; ?></span>
                                         </div>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="radio" class="radio o radio-primary" name="come" />
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="radio" class="radio o radio-primary" name="notcome" />
-                                    </div>
+                                    <select class="select w-full max-w-xs">
+                                        <option disabled selected>บันทึกการเช็คชื่อ</option>
+                                        <option>มาเรียน</option>
+                                        <option>ขาดเรียน</option>
+                                        <option>สาย</option>
+                                        <option>ลากิจ</option>
+                                        <option>ลาป่วย</option>
+                                    </select>
                                 </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="radio" class="radio o radio-primary" name="sick-leave" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="radio" class="radio o radio-primary" name="business-leave" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="radio" class="radio o radio-primary" name="late" />
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="flex justify-center ml-4 align-items-center">
-                                        <input type="submit" class="radio rado-primary" name="sub" id="sub" />
-                                    </div>
+                                <td class="flex flex-col justify-center w-full max-w-xs mt-2">
                                 </td>
             </div>
 
