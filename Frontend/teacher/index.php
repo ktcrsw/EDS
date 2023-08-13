@@ -19,7 +19,7 @@ include "../assets/teacher_nav.php";
 $sql = "SELECT * FROM users";
 $query = $db->query($sql);
 
-$sql1 = "SELECT * FROM checkin";
+$sql1 = "SELECT * FROM checkin where ref_teacherID = '".$_SESSION['UserID']."'";
 $query1 = $db->query($sql1);
 
 
@@ -427,17 +427,17 @@ $query1 = $db->query($sql1);
 
                         <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
                            <label class="font-[500]">สถานะ :</label>
-                           <span class="font-[500] text-[#ff0000]">ยังไม่เช็คชื่อ</span>
+                           <!-- <span class="font-[500] text-[#ff0000]">ยังไม่เช็คชื่อ</span>
                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#e51111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                               <circle cx="8.5" cy="7" r="4"></circle>
                               <line x1="18" y1="8" x2="23" y2="13"></line>
                               <line x1="23" y1="8" x2="18" y2="13"></line>
-                           </svg>
-                           <!-- <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span> -->
-                           <!-- <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           </svg> -->
+                            <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span> 
+                           <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <path d="M28 1L9.4375 19L1 10.8182" stroke="#36D399" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg> -->
+                        </svg> 
 
                         </div>
                      </div>

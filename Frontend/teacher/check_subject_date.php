@@ -17,10 +17,13 @@ $query = $db->query($sql);
 $subject = "SELECT * FROM enrollsubject";
 $data = $db->query($subject);
 
+
 $subjectteacherid = $_SESSION['SubjectTeacherID'];
 $sgroup = $_SESSION['GP'];
 $syear = $_SESSION['Year'];
 
+$ciList = "SELECT * FROM checkin WHERE groups = '".$sgroup."'"; 
+$ciListData = $db->query($ciList);
 // echo $sgroup. "" . $syear;
 
 
@@ -36,12 +39,9 @@ $syear = $_SESSION['Year'];
 <div class=" justify-center items-center flex gap-4 mb-4 pt-16">
     <!-- Component: Base primary basic button -->
 <a href="./check_subject_tablestu.php?=<?php echo $_SESSION['GP'];?>" class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-emerald-600 transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-200/60 hover:bg-emerald-300  disabled:cursor-not-allowed disabled:shadow-none">
-  <span>เช็คชื่อคาบทฤษฎี</span>
+  <span>เช็คชื่อประจำคาบเรียน</span>
 </a>
 <!-- Component: Base primary basic button -->
-<a href="./check_subject_tablestu.php" class="inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-red-500 transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-red-100/60 hover:bg-red-200 disabled:cursor-not-allowed  disabled:shadow-none">
-  <span>เช็คชื่อคาบปฏิบัติ</span>
-</a>
 <!-- End Base primary basic button -->
 </div>
 <div  >
@@ -58,9 +58,12 @@ $syear = $_SESSION['Year'];
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">จำนวนเข้าเรียน</th>
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tr-lg ">รายละเอียด</th>
       </tr>
+      <?php while($row = mysqli_fetch_assoc($ciListData)){?>
       <tr class=" odd:bg-slate-100">
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">01/01/2025</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['save_date']; ?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php if($row['check_in_status'] == 1){
+          
+          }?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
@@ -70,35 +73,7 @@ $syear = $_SESSION['Year'];
             <span class="text-green-500 font-semibold">20</span>/<span class="text-red-500 font-semibold">20</span></td>
             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">วันหยุด-ไม่มีการเรียนการสอน</td>
       </tr>
-      <tr class=" odd:bg-slate-100">
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">01/01/2025</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">
-            <span class="text-green-500 font-semibold">2</span>/<span class="text-red-500 font-semibold">1</span>
-        </td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">3</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">
-        <span class="text-green-500 font-semibold">20</span>/<span class="text-red-500 font-semibold">19</span>
-        </td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-      </tr>
-      <tr class=" odd:bg-slate-100">
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">01/01/2025</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">
-        <span class="text-green-500 font-semibold">20</span>/<span class="text-red-500 font-semibold">20</span>
-        </td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-      </tr>
-      
+      <?php } ?>
       
     </tbody>
   </table>
