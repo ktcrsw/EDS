@@ -290,18 +290,18 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
     <div class="col-12 col-sm-10 pt-2">
         <?php
-        $dayTH = array('จันทร์.','อังคาร.','พุธ.','พฤหัสบดี.','ศุกร์.');
+        $dayTH = array('จันทร์.','อังคาร.','พุธ.','พฤหัสบดี.','ศุกร์.', 'เสาร์.');
         ?>
         <div class="input-group">
         <?php foreach($dayTH as $k => $day_value){?>
         <div class="form-check ml-3" style="width:50px;">
-            <input class="custom-control-input repeatday_chk" type="checkbox"
+            <input class="radio radio-info repeatday_chk" type="radio"
                 name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
                 value="<?=$k?>" >
                 <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
         </div>    
         <?php } ?>
-        <input type="text" name="schedule_repeatday" id="schedule_repeatday" value="" />
+        <input type="text" name="schedule_repeatday" id="schedule_repeatday" value="" hidden/>
         </div>
         <br>    
     </div>

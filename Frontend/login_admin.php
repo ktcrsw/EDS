@@ -44,14 +44,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
                 <div>
                     <label class="text-[70px] font-bold text-[#808080] ">เข้าสู่ระบบ EDS</label>
                     <div class="btn-group flex justify-center items-center mt-8">
-                        <a href="http://localhost/eds/frontend/login_stu.php">
+                        <a href="login_stu.php">
                             <button class="btn btn-info
   text-white rounded-none rounded-l-[15px] bg-[#3884fd]  w-32 hover:bg-[#5ED9AC]"><img src="./image/graduated (1).png" class="mr-1">นักเรียน</button>
                         </a>
-                        <a href="http://localhost/eds/frontend/login.php">
+                        <a href="login.php">
                             <button class="btn rounded-none btn-info text-white w-32 bg-[#3884fd]  hover:bg-[#5ED9AC]  "><img src="./image/teacher (1).png" class="mr-1">ครู</button>
                         </a>
-                        <a href="http://localhost/eds/frontend/login_admin.php">
+                        <a href="login_admin.php">
                             <button class="btn rounded-none btn-success  text-white rounded-r-[15px] w-32"><img src="./image/manager.png" class="mr-1">ผู้ดูแล</button>
                         </a>
                     </div>

@@ -1,19 +1,14 @@
 <?php
 
+    session_start();
+
     $dbhost = "localhost";
     $dbroot = "root";
-    $dbpass = "";
+    $dbpass = "kittichai";
     $dbname = "eds_db";            
-
     $db = mysqli_connect($dbhost, $dbroot, $dbpass, $dbname)or die("Couldn't connect to database");
-
-    // if ($nobody_should_ever_be_here) {
-    //     header('HTTP/1.1 404 Not Found'); 
-    //     $_GET['e'] = 404; 
-                          
-    //     exit; 
-    //   }
     date_default_timezone_set('Asia/Bangkok');
-
+    $_SESSION['err'] = 'ไม่สามารถลงข้อมูลได้';
+    $_SESSION['succ'] = 'ลงข้อมูลสำเร็จ';
 
 ?>

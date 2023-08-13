@@ -121,7 +121,7 @@
             </li>
             <hr>
             <li>
-               <a href="../../Backend/auth/signout.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
+               <a href="../../Backend/auth/signout.php" onclick="comfirmLogout()" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#c40303" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
                      <path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9" />
                   </svg>
@@ -136,5 +136,12 @@
       function myFunction() {
          var element = document.body;
          element.classList.toggle("dark-mode");
+      }
+   </script>
+   <script>
+      function confirmLogout() {
+         Swal.fire(
+      'success'
+      )
       }
    </script>

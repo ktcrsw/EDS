@@ -20,6 +20,7 @@ $querys = $db->query($sqls);
 
 $getStatus = "SELECT * FROM statusstudent";
 $queryStatus = $db->query($getStatus);
+$count = mysqli_num_rows($queryStatus);
 
 ?>
 
@@ -54,7 +55,11 @@ $queryStatus = $db->query($getStatus);
                     <tbody>
                         <tr class=" text-center bg-[#3b82f6]">
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white rounded-tl-lg">รหัสนักศึกษา ชื่อ-นามสกุล</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">เช็คชื่อ</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">มาเรียน</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ข</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลป</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลก</th>
+                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ส</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">รายละเอียด</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white rounded-tr-lg">ไม่เข้าเรียนสะสม</th>
                         </tr>
@@ -62,64 +67,84 @@ $queryStatus = $db->query($getStatus);
                         <!-- /* -------------------------------------------------------------------------- */
                         /*                                      1                                     */
                         /* -------------------------------------------------------------------------- */ -->
-                        <?php while ($listStd = mysqli_fetch_assoc($query)) : ?>
-                            <tr class="odd:bg-slate-50">
-                                <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                    <div class="flex py-4">
-                                        <div>
-                                            <div class="avatar">
-                                                <div class="w-[120px] h-[130px] rounded-xl">
-                                                    <?php
+                        <form action="../../Backend/functions/check_subject.php">
+                            <?php
+                            while ($listStd = mysqli_fetch_assoc($query)) {
+                            ?>
 
-                                                    if ($listStd['ref_stdImg'] == '') {
-                                                        echo "<img src='../image/null_user.png' />";
-                                                    } else
+                                <tr class="odd:bg-slate-50">
+                                    <td class="h-16 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex py-4">
+                                            <div>
+                                                <div class="avatar">
+                                                    <div class="w-[120px] h-[130px] rounded-xl">
+                                                        <?php
 
-                                                    ?>
-                                                    <img src="../image/<?php echo $listStd['ref_stdImg']; ?>" />
+                                                        if ($listStd['ref_stdImg'] == '') {
+                                                            echo "<img src='../image/null_user.png' />";
+                                                        } else
+
+                                                        ?>
+                                                        <img src="../image/<?php echo $listStd['ref_stdImg']; ?>" />
+                                                    </div>
                                                 </div>
+
                                             </div>
-
+                                            <div class="flex flex-col justify-center ml-4">
+                                                <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname'] . "&nbsp" . $listStd['ref_stdlname']; ?></span>
+                                                <span><?php echo $listStd['ref_studenttbl']; ?></span>
+                                            </div>
                                         </div>
-                                        <div class="flex flex-col justify-center ml-4">
-                                            <span class="text-[16px] font-semibold"><?php echo $listStd['ref_stdfname'] . "&nbsp" . $listStd['ref_stdlname']; ?></span>
+                                    </td>
 
-                                            <span><?php echo $listStd['ref_studenttbl']; ?></span>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-success" value="0" />
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <select class="select w-full max-w-xs">
-                                        <option disabled selected>บันทึกการเช็คชื่อ</option>
-                                        <option>มาเรียน</option>
-                                        <option>ขาดเรียน</option>
-                                        <option>สาย</option>
-                                        <option>ลากิจ</option>
-                                        <option>ลาป่วย</option>
-                                    </select>
-                                </td>
-                                <td class="flex flex-col justify-center w-full max-w-xs mt-2">
-                                </td>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-error" value="1" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-warning" value="2" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-warning" value="3" />
+                                        </div>
+                                    </td>
+                                    <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                                        <div class="flex justify-center">
+                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-warning" value="4" />
+                                        </div>
+                                    </td>
+                                    </td>
             </div>
 
             </td>
 
-            <form action="../../Backend/functions/check_subject.php" method="get" id="my-button">
 
 
 
-                </tr>
+            </tr>
 
+            <input hidden type="date" name="date" id="date" value="<?php echo date("Y-m-d");?>">
+            <input hidden type="text" value="<?php // echo $listStd['ref_studenttbl']; ?>" name="stdid">
+            <input type="text" value="<?php echo $sgroup; ?>" name="sgroup" hidden>
+            <input type="text" value="<?php echo $subjectteacherid; ?>" name="subjectteacherid" hidden>
+        <?php }
 
-                <input type="text" value="<?php echo $listStd['ref_studenttbl']; ?>" name="stdid">
-                <input type="text" value="<?php echo $subjectteacherid; ?>" name="subjectteacherid">
-            <?php endwhile; ?>
-            </tbody>
+        ?>
+        </tbody>
 
-            </table>
+        </table>
 
-            <input id="my-button" name="submit" class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
-            </form>
+        <input id="my-button" name="submit" class="inline-flex items-center  w-100 justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] btn btn-success mt-3" style="color:#fff;" type="submit" value="บันทึก"> </input>
+        </form>
 
         </div>
         <div class="mt-4">
