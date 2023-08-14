@@ -62,7 +62,7 @@ WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
                         <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                             <div class="flex gap-2 py-3">
                                 <div class="avatar">
-                                    <div class="w-24 rounded-full w-64 h-64">
+                                    <div class="w-24 h-24 rounded-full">
                                         <img src="../image/<?php echo $stds['img']; ?>" class="block w-16 h-16" width="16" height="16" style="width:100%; height:100%;" />
                                     </div>
                                 </div>

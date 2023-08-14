@@ -32,7 +32,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                                <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -54,7 +54,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -76,7 +76,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -98,7 +98,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -189,7 +189,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -211,7 +211,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
@@ -233,7 +233,7 @@ include "../assets/teacher_nav.php";
                     <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                         <div class="flex gap-2 py-3">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
+                            <div class="w-24 h-24 rounded-full">
                                     <img src="https://hips.hearstapps.com/esquire/assets/16/38/1474665651-breaking-bad.png" />
                                 </div>
                             </div>
