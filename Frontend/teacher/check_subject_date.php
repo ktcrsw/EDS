@@ -22,9 +22,12 @@ $subjectteacherid = $_SESSION['SubjectTeacherID'];
 $sgroup = $_SESSION['GP'];
 $syear = $_SESSION['Year'];
 
-$ciList = "SELECT * FROM checkin WHERE groups = '".$sgroup."'"; 
+$currentdate = date('Y-m-d');
+
+$ciList = "SELECT * FROM checkin WHERE ref_subjectID = '$subjectteacherid' AND ref_teacherID = '".$_SESSION['UserID']."'"; 
 $ciListData = $db->query($ciList);
-// echo $sgroup. "" . $syear;
+
+
 
 
 ?>
@@ -58,7 +61,7 @@ $ciListData = $db->query($ciList);
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">จำนวนเข้าเรียน</th>
         <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tr-lg ">รายละเอียด</th>
       </tr>
-      <?php while($row = mysqli_fetch_assoc($ciListData)){?>
+      <?php while($row = mysqli_fetch_array($ciListData)){?>
       <tr class=" odd:bg-slate-100">
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['save_date']; ?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php if($row['check_in_status'] == 1){

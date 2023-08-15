@@ -14,10 +14,10 @@
             <span class="sr-only">Open user menu</span>
             <div class="avatar">
                <div class="w-8 h-8 rounded-full">
-                  <img id="image" onclick="show()" src="../image/<?php echo $_SESSION['ref_stdImg1']; ?>" alt="user photo">
+                  <img id="image" onclick="show()" src="../image/<?php echo $_SESSION['Student_Img']; ?>" alt="user photo">
                </div>
             </div>
-            <p class="text-white ml-2 text-[16px] max-[750px]:hidden"><b><?php echo $_SESSION['ref_stdfname1'] . "&nbsp;" . $_SESSION['ref_stdlname1']; ?></b></p>
+            <p class="text-white ml-2 text-[16px] max-[750px]:hidden"><b><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></b></p>
             <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="white" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
             </svg>
@@ -26,8 +26,8 @@
          <!-- Dropdown menu -->
          <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-               <div class="font-medium min-[750px]:hidden "><p><b><?php echo $_SESSION['ref_stdfname1'] . "&nbsp;" . $_SESSION['ref_stdlname1']; ?></b></p></div>
-               <div class="font-medium "><?php echo $_SESSION['ref_stdfname1'] . "&nbsp;" . $_SESSION['ref_stdlname1']; ?></div>
+               <div class="font-medium min-[750px]:hidden "><p><b><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></b></p></div>
+               <div class="font-medium "><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></div>
             </div>
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
              

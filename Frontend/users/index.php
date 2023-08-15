@@ -18,12 +18,12 @@ $query = $db->query($sql);
          <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div class="avatar">
                <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
-                  <img src="../image/<?php echo $_SESSION['ref_stdImg1']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
+                  <img src="../image/<?php echo $_SESSION['Student_Img']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
                </div>
             </div>
 
             <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">
-               <span class="not-italic font-normal text-[28px] "><?php echo $_SESSION['ref_stdfname1'] . "&nbsp;" . $_SESSION['ref_stdlname1']; ?></span>
+               <span class="not-italic font-normal text-[28px] "><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></span>
             </div>
             <div class="flex flex-row justify-center items-center p-0 gap-[75px] ">
 
