@@ -32,7 +32,13 @@ $query = $db->query($sql);
                   <label class="font-medium text-[20px] text-[#0093fb]">ผลการเรียน</label>
                </div>
                <div class="flex-col flex items-center p-0 gap-[12px] w-[107px] h-[79px]">
-                  <span class="not-italic font-bold text-[28px] text-[#0093fb]">100</span>
+                  <span class="not-italic font-bold text-[28px] text-[#0093fb]"><?php 
+                  
+                  
+                  $getMindScore = "SELECT * FROM save_studentscore WHERE studentID";
+                  
+                  
+                  ?></span>
                   <label class="font-medium text-[20px] text-[#0093fb]">จิตพิสัย</label>
                </div>
 
@@ -352,20 +358,28 @@ $query = $db->query($sql);
 
          </div>
          <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
+         <?php 
+        
+        $scheduletbl = "SELECT * FROM tbl_schedule WHERE schedule_classYears = '".$_SESSION['Student_Year']."' AND schedule_classGroup = '".$_SESSION['Student_Groups']."'";
+        $resulttbl = $db->query($scheduletbl);
+        for($i = 1; $i <= 2; $i++){
+        while($row = mysqli_fetch_assoc($resulttbl)){
+       ?>
          <div class=" bg-white w-[50%] ml-[10px] mt-  rounded-[20px] mb-2">
 
             <!-- /* -------------------------------------------------------------------------- */
         /*                                  วิชาที่ 1                                 */
         /* -------------------------------------------------------------------------- */ -->
+
             <div class="flex   ml-4  p-2 gap-3">
-               <div class="flex justify-center items-center w-[50px] h-[50px] bg-yellow-300 rounded-[50%]">
-                  <label class="text-white font-medium text-lg">1</label>
+               <div class="flex justify-center items-center w-[50px] h-[50px] bg-blue-300 rounded-[50%]">
+                  <label class="text-white font-medium text-lg"><?=$i++?></label>
                </div>
                <div class="flex flex-col">
-                  <span class="text-[20px] font-medium">เพศศึกษา</span>
+                  <span class="text-[20px] font-medium"><?php echo $row['schedule_title'];?></span>
                   <div class="flex text-gray-400 text-[14px] ">
                      <label for="">รหัสวิชา</label>
-                     <span class="ml-2">20001-0001</span>
+                     <span class="ml-2">20001-000<?php echo $row['schedule_id'];?></span>
                   </div>
                </div>
 
@@ -375,14 +389,40 @@ $query = $db->query($sql);
                   <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                   <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
                </svg>
-               <span class="text-[18px] font-medium">คาบเรียนที่ 2<label class="font-[500]">
+               <span class="text-[18px] font-medium">คาบเรียนที่ <?php
+                if($row['schedule_starttime'] == '08:30:00'){
+                  echo "1";
+             }else if($row['schedule_starttime'] == '09:30:00'){
+                  echo "2";
+             }else if($row['schedule_starttime'] == '10:30:00'){
+                  echo "3";
+             }else if($row['schedule_starttime'] == '11:30:00'){
+                  echo "4";
+             }else if($row['schedule_starttime'] == '12:30:00'){
+                  echo "5";
+             }else if($row['schedule_starttime'] == '13:30:00'){
+                  echo "6";
+             }else if($row['schedule_starttime'] == '14:30:00'){
+                  echo "7";
+             }else if($row['schedule_starttime'] == '15:30:00'){
+                  echo "8";
+             }else if($row['schedule_starttime'] == '16:30:00'){
+                  echo "9";
+             }else if($row['schedule_starttime'] == '17:30:00'){
+                  echo "10";
+             }
+            
+               
+               
+               
+               ?><label class="font-[500]">
 
                   </label></span>
 
                <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
 
 
-                  <span class="font-[500] text-green-400">09:30-10:30</span>
+                  <span class="font-[500] text-green-400"><?php echo $row['schedule_starttime']. "-" .$row['schedule_endtime'];?></span>
 
 
                </div>
@@ -395,7 +435,7 @@ $query = $db->query($sql);
                         <circle cx="12" cy="10" r="3" />
                         <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
                      </svg>
-                     <span class="px-2 text-[18px] font-medium">อาคารเรียน 5 (545)<label class="font-[500]">
+                     <span class="px-2 text-[18px] font-medium">ห้องเรียน <?php echo $row['schedule_room']; ?><label class="font-[500]">
                   </div>
                </div>
             </div>
@@ -406,67 +446,11 @@ $query = $db->query($sql);
                         <img src="https://a-static.besthdwallpaper.com/newjeans-hanni-in-omg-album-shoot-wallpaper-2560x1600-108339_7.jpg" />
                      </div>
                   </div>
-                  <span class="px-2 text-[16px] text-gray-600 font-bold">ฮานนิ รักชาติ</span>
+                  <span class="px-2 text-[16px] text-gray-600 font-bold"><?php echo $row['schedule_teacherName']; ?></span>
                </div>
                <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
             </div>
-
-            <!-- /* -------------------------------------------------------------------------- */
-/*                                  วิชาที่ 2                                 */
-/* -------------------------------------------------------------------------- */ -->
-            <div class="flex   ml-4  p-2 gap-3">
-               <div class="flex justify-center items-center w-[50px] h-[50px] bg-blue-500 rounded-[50%]">
-                  <label class="text-white font-medium text-lg">2</label>
-               </div>
-               <div class="flex flex-col">
-                  <span class="text-[20px] font-medium">โปรแกรมเคลื่อนที่</span>
-                  <div class="flex text-gray-400 text-[14px] ">
-                     <label for="">รหัสวิชา</label>
-                     <span class="ml-2">20001-0005</span>
-                  </div>
-               </div>
-            </div>
-            <div class="flex items-center flex-row p-[10px] ml-[20px] gap-2 ">
-               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-               </svg>
-               <span class="text-[18px] font-medium">คาบเรียนที่ 3<label class="font-[500]">
-
-                  </label></span>
-
-               <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
-                  <span class="font-[500] text-gray-500">13:30-15:30</span>
-               </div>
-            </div>
-            <div class="ml-[20px] p-2">
-               <div class="flex flex-col items-start">
-                  <div class="flex flex-row">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="10" r="3" />
-                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                     </svg>
-                     <span class="px-2 text-[18px] font-medium">อาคารเรียน 7 (515)<label class="font-[500]">
-
-                  </div>
-               </div>
-            </div>
-            <div class="ml-[30px] p-2 pb-10">
-               <div class="flex flex-row items-center">
-                  <div class="avatar">
-                     <div class="w-10 h-10 rounded-full">
-                        <img src="https://fbi.dek-d.com/27/0501/4005/132807202" />
-                     </div>
-                  </div>
-                  <span class="px-2 text-[16px] text-gray-600 font-bold">วันพีช มีจริง</span>
-               </div>
-               <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
-            </div>
-
-
-         </div>
-
-
-
       </div>
+      <?php } 
+      }?>
    </div>
