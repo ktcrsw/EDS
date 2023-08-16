@@ -38,7 +38,33 @@
         }
         
         if($_SESSION['Permission'] == 1){
-            header("location: ../../Frontend/teacher/index.php");
+            header("Refresh:2; url=../../Frontend/teacher/index.php");
+            include("../../Frontend/assets/header.php");
+            echo "<script>setTimeout(function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'เข้าสู่ระบบสำเร็จ',
+                    text: 'โปรดรอสักครู่ กำลังอ่านข้อมูล',
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }, function() {
+                    window.location = '../../Frontend/teacher/index.php';
+                });
+            });</script>";
+        } else {
+            header("Refresh:2; url=../../Frontend/login.php");
+            include("../../Frontend/assets/header.php");
+            echo "<script>setTimeout(function() {
+                Swal.fire({
+                    icon: 'error',
+                title: 'ไม่พบข้อมูลในระบบ',
+                text: 'ลองใหม่อีกครั้ง',
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }, function() {
+                    window.location = '../../Frontend/teacher/index.php';
+                });
+            });</>";
         }
         
         if($_SESSION['Permission'] == 2){
@@ -49,3 +75,5 @@
 
 
 ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
