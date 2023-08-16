@@ -330,7 +330,7 @@ $query = $db->query($sql);
          <!-- /* -------------------------------------------------------------------------- */
          /*                                ประชาสัมพันธ์                               */
          /* -------------------------------------------------------------------------- */ -->
-         <div id="Notify" class="w-full h-[275px] rounded-[20px] ml-[10px] bg-[#0093fb]">
+         <div id="Notify" class=" h-[275px] rounded-[20px]  ml-[10px] bg-[#0093fb]">
             <div class="flex flex-col items-center p-4 gap-[9px] w-[237px] h-[71px]">
                <div class="flex flex-row items-center p-0 gap-[17px]">
                   <svg width="19" height="21" viewBox="0 0 19 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -352,119 +352,148 @@ $query = $db->query($sql);
 
          </div>
          <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
-         <div class=" bg-white w-[50%] ml-[10px] mt-  rounded-[20px] mb-2">
+<div class="flex">
+<div class=" bg-white w-[50%] ml-[10px] mt-  rounded-[20px] mb-2">
 
-            <!-- /* -------------------------------------------------------------------------- */
-        /*                                  วิชาที่ 1                                 */
-        /* -------------------------------------------------------------------------- */ -->
-            <div class="flex   ml-4  p-2 gap-3">
-               <div class="flex justify-center items-center w-[50px] h-[50px] bg-yellow-300 rounded-[50%]">
-                  <label class="text-white font-medium text-lg">1</label>
-               </div>
-               <div class="flex flex-col">
-                  <span class="text-[20px] font-medium">เพศศึกษา</span>
-                  <div class="flex text-gray-400 text-[14px] ">
-                     <label for="">รหัสวิชา</label>
-                     <span class="ml-2">20001-0001</span>
-                  </div>
-               </div>
+<!-- /* -------------------------------------------------------------------------- */
+/*                                  วิชาที่ 1                                 */
+/* -------------------------------------------------------------------------- */ -->
+<div class="flex   ml-4  p-2 gap-3">
+   <div class="flex justify-center items-center w-[50px] h-[50px] bg-yellow-300 rounded-[50%]">
+      <label class="text-white font-medium text-lg">1</label>
+   </div>
+   <div class="flex flex-col">
+      <span class="text-[20px] font-medium">เพศศึกษา</span>
+      <div class="flex text-gray-400 text-[14px] ">
+         <label for="">รหัสวิชา</label>
+         <span class="ml-2">20001-0001</span>
+      </div>
+   </div>
 
-            </div>
-            <div class="flex items-center flex-row p-[10px] ml-[20px] gap-2 ">
-               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-               </svg>
-               <span class="text-[18px] font-medium">คาบเรียนที่ 2<label class="font-[500]">
+</div>
+<div class="flex items-center flex-row p-[10px] ml-[20px] gap-2 ">
+   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
+   </svg>
+   <span class="text-[18px] font-medium">คาบเรียนที่ 2<label class="font-[500]">
 
-                  </label></span>
+      </label></span>
 
-               <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
-
-
-                  <span class="font-[500] text-green-400">09:30-10:30</span>
+   <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
 
 
-               </div>
-            </div>
+      <span class="font-[500] text-green-400">09:30-10:30</span>
 
-            <div class="ml-[20px] p-2">
-               <div class="flex flex-col items-start">
-                  <div class="flex flex-row">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="10" r="3" />
-                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                     </svg>
-                     <span class="px-2 text-[18px] font-medium">อาคารเรียน 5 (545)<label class="font-[500]">
-                  </div>
-               </div>
-            </div>
-            <div class="ml-[30px] p-2 pb-10">
-               <div class="flex flex-row items-center">
-                  <div class="avatar">
-                     <div class="w-10 h-10 rounded-full">
-                        <img src="https://a-static.besthdwallpaper.com/newjeans-hanni-in-omg-album-shoot-wallpaper-2560x1600-108339_7.jpg" />
-                     </div>
-                  </div>
-                  <span class="px-2 text-[16px] text-gray-600 font-bold">ฮานนิ รักชาติ</span>
-               </div>
-               <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
-            </div>
 
-            <!-- /* -------------------------------------------------------------------------- */
+   </div>
+</div>
+
+<div class="ml-[20px] p-2">
+   <div class="flex flex-col items-start">
+      <div class="flex flex-row">
+         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="10" r="3" />
+            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+         </svg>
+         <span class="px-2 text-[18px] font-medium">อาคารเรียน 5 (545)<label class="font-[500]">
+      </div>
+   </div>
+</div>
+<div class="ml-[30px] p-2 pb-10">
+   <div class="flex flex-row items-center">
+      <div class="avatar">
+         <div class="w-10 h-10 rounded-full">
+            <img src="https://a-static.besthdwallpaper.com/newjeans-hanni-in-omg-album-shoot-wallpaper-2560x1600-108339_7.jpg" />
+         </div>
+      </div>
+      <span class="px-2 text-[16px] text-gray-600 font-bold">ฮานนิ รักชาติ</span>
+   </div>
+   <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
+</div>
+
+<!-- /* -------------------------------------------------------------------------- */
 /*                                  วิชาที่ 2                                 */
 /* -------------------------------------------------------------------------- */ -->
-            <div class="flex   ml-4  p-2 gap-3">
-               <div class="flex justify-center items-center w-[50px] h-[50px] bg-blue-500 rounded-[50%]">
-                  <label class="text-white font-medium text-lg">2</label>
-               </div>
-               <div class="flex flex-col">
-                  <span class="text-[20px] font-medium">โปรแกรมเคลื่อนที่</span>
-                  <div class="flex text-gray-400 text-[14px] ">
-                     <label for="">รหัสวิชา</label>
-                     <span class="ml-2">20001-0005</span>
-                  </div>
-               </div>
-            </div>
-            <div class="flex items-center flex-row p-[10px] ml-[20px] gap-2 ">
-               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
-               </svg>
-               <span class="text-[18px] font-medium">คาบเรียนที่ 3<label class="font-[500]">
+<div class="flex   ml-4  p-2 gap-3">
+   <div class="flex justify-center items-center w-[50px] h-[50px] bg-blue-500 rounded-[50%]">
+      <label class="text-white font-medium text-lg">2</label>
+   </div>
+   <div class="flex flex-col">
+      <span class="text-[20px] font-medium">โปรแกรมเคลื่อนที่</span>
+      <div class="flex text-gray-400 text-[14px] ">
+         <label for="">รหัสวิชา</label>
+         <span class="ml-2">20001-0005</span>
+      </div>
+   </div>
+</div>
+<div class="flex items-center flex-row p-[10px] ml-[20px] gap-2 ">
+   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M28.2799 21.1868C27.4316 23.1927 26.1049 24.9604 24.4157 26.3352C22.7265 27.71 20.7262 28.65 18.5898 29.0731C16.4534 29.4963 14.2458 29.3896 12.1601 28.7625C10.0744 28.1354 8.17405 27.0069 6.62525 25.4756C5.07644 23.9444 3.92631 22.0571 3.2754 19.9787C2.62449 17.9003 2.49264 15.6941 2.89135 13.5529C3.29007 11.4118 4.20721 9.40094 5.56261 7.69614C6.91801 5.99135 8.604 4.64453 10.6666 3.77344" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M29.3333 15.9998C29.3333 14.2489 28.9885 12.5151 28.3184 10.8974C27.6483 9.27972 26.6662 7.80986 25.4281 6.57175C24.19 5.33363 22.7201 4.35151 21.1024 3.68144C19.4848 3.01138 17.751 2.6665 16 2.6665V15.9998H29.3333Z" stroke="#5D5D5D" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
+   </svg>
+   <span class="text-[18px] font-medium">คาบเรียนที่ 3<label class="font-[500]">
 
-                  </label></span>
+      </label></span>
 
-               <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
-                  <span class="font-[500] text-gray-500">13:30-15:30</span>
-               </div>
-            </div>
-            <div class="ml-[20px] p-2">
-               <div class="flex flex-col items-start">
-                  <div class="flex flex-row">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="10" r="3" />
-                        <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
-                     </svg>
-                     <span class="px-2 text-[18px] font-medium">อาคารเรียน 7 (515)<label class="font-[500]">
+   <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
+      <span class="font-[500] text-gray-500">13:30-15:30</span>
+   </div>
+</div>
+<div class="ml-[20px] p-2">
+   <div class="flex flex-col items-start">
+      <div class="flex flex-row">
+         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="10" r="3" />
+            <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+         </svg>
+         <span class="px-2 text-[18px] font-medium">อาคารเรียน 7 (515)<label class="font-[500]">
 
-                  </div>
-               </div>
-            </div>
-            <div class="ml-[30px] p-2 pb-10">
-               <div class="flex flex-row items-center">
-                  <div class="avatar">
-                     <div class="w-10 h-10 rounded-full">
-                        <img src="https://fbi.dek-d.com/27/0501/4005/132807202" />
-                     </div>
-                  </div>
-                  <span class="px-2 text-[16px] text-gray-600 font-bold">วันพีช มีจริง</span>
-               </div>
-               <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
-            </div>
-
-
+      </div>
+   </div>
+</div>
+<div class="ml-[30px] p-2 pb-10">
+   <div class="flex flex-row items-center">
+      <div class="avatar">
+         <div class="w-10 h-10 rounded-full">
+            <img src="https://fbi.dek-d.com/27/0501/4005/132807202" />
          </div>
+      </div>
+      <span class="px-2 text-[16px] text-gray-600 font-bold">วันพีช มีจริง</span>
+   </div>
+   <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
+</div>
+
+
+</div>
+<div class="w-[50%] bg-slate-400  p-10 flex justify-center ">
+<div class="block max-w-xl h-[320px] rounded-lg w-full bg-white bg-cover p-12 shadow-lg dark:bg-neutral-700"
+  style="background-image: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/student-id-card-design-template-cd82f1d46ff1de1fbaf7d4cfc0b13533_screen.jpg?ts=1678892157');">
+  <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 text-white dark:text-neutral-50">
+    Card title
+  </h5>
+  <p class="mb-4 text-base text-neutral-600 text-white dark:text-neutral-200">
+    Some quick example text to build on the card title and make up the bulk of the card's content.
+  </p>
+  <button type="button"
+    class="inline-block rounded border-2 border-neutral-50 px-6 pb-[6px] pt-2 text-xs font-medium uppercase leading-normal text-neutral-50 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10"
+    data-te-ripple-init>
+    Button
+  </button>
+</div>
+
+</div>
+<!-- <div class="w-[50%] h-6  ml-[10px]">
+<div class="card  bg-base-100 shadow-">
+  <figure class="px-10 py-8">
+    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/student-id-card-design-template-cd82f1d46ff1de1fbaf7d4cfc0b13533_screen.jpg?ts=1678892157" alt="Shoes" class="rounded-xl shadow-lg" />
+    <h1></h1>
+  </figure>
+ 
+</div>
+</div> -->
+</div>
+      
 
 
 
