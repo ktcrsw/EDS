@@ -47,3 +47,25 @@
 
 
 ?>
+.<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+</script>
+<script>
+    setTimeout(function() {
+        Swal.fire({
+            icon: 'error',
+            title: 'ขออภัยไม่สามารถเข้าสู่ระบบได้',
+            text: 'โปรดติดต่อเจ้าหน้าที่',
+            showCancelButton: false,
+            showConfirmButton: false
+        }, function() {
+            window.location = "../../Frontend/login.php";
+        });
+    });
+</script>
+<?php
+
+header("Refresh:2; url=../../Frontend/login.php");
+
+
+?>

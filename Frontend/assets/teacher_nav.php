@@ -8,6 +8,7 @@
                <img src="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png" class="h-10 mr-3 mb-2" alt="EDS Logo" />
                <span class="self-center text-m font-semibold max-[500px]:text-[13px] sm:text-m whitespace-nowrap dark:text-white">แผนกเทคโนโลยีสารสนเทศ วิทยาลัยเทคนิคอุดรธานี</span>
             </a>
+            
          </div>
 
          <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
@@ -26,16 +27,33 @@
          <!-- Dropdown menu -->
          <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
-               <div class="font-medium min-[750px]:hidden "><p><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></b></p></div>
+               <div class="font-medium min-[750px]:hidden ">
+                  <p><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></b></p>
+               </div>
                <div class="font-medium "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></div>
-               <div class="truncate"><?php echo $_SESSION['Email']?></div>
+               <div class="truncate"><?php echo $_SESSION['Email'] ?></div>
             </div>
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-             
+
                <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-gray-500">เปลี่ยนรูปประจำตัว</a>
+                  <button class="p-4" onclick="my_modal_5.showModal()">เปลี่ยนรูปประจำตัว</button>
+                  <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                     <form method="dialog" class="modal-box" action="../../Backend/functions/updatePic.php" method="post" enctype="multipart/form-data">
+                        <h3 class="font-bold text-lg">เปลี่ยนรูปประจำตัว</h3>
+                        <p class="py-4">
+                        <div class="avatar align-items-center d-flex justify-content-center">
+                           <div class="w-32 rounded-full  align-items-center d-flex justify-content-center">
+                              <img src="../../Backend/admin/img/<?php echo $_SESSION['Image'];?>" id="img"/>
+                           </div>
+                        </div>
+                        </p>
+                           <input type="file" class="file-input w-full max-w-xs mt-3" />
+                           <input type="text" name="uid" id="uid" value="<?=$_SESSION['UserID']?>">
+                           <input type="submit" name="upload" id="upload" class="btn btn-accent mt-3" style="color:#fff;width:100%;" value="บันทึก">
+                     </form>
+                  </dialog>
                </li>
-             
+
             </ul>
             <div class="py-2">
                <a href="../../Backend/auth/signout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-gray-700">ออกจากระบบ</a>
@@ -67,7 +85,12 @@
             </li>
             <li>
                <a href="../teacher/service_information.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
-               <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#d73ade" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#d73ade" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
+                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                     <circle cx="9" cy="7" r="4"></circle>
+                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
                   <span class="flex-1 ml-3 whitespace-nowrap text-blue-200">บริการข้อมูลทั่วไป</span>
                </a>
             </li>
@@ -141,7 +164,23 @@
    <script>
       function confirmLogout() {
          Swal.fire(
-      'success'
-      )
+            'success'
+         )
       }
    </script>
+   <script>
+    
+    $(document).ready(() =>{
+        $('#upload').change(function(){ 
+            const file = this.files[0];
+            if(file){
+                let reader = new FileReader();
+                reader.onload = function (event){
+                    $('#img').attr("src", event.target.result);
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    });
+
+</script>

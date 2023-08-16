@@ -28,3 +28,25 @@
     header('location: ../admin/admin_datamanagement.php');
 
 ?>
+.<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11">
+
+</script>
+<script>
+    setTimeout(function() {
+        Swal.fire({
+            icon: 'success',
+            title: 'ทำการอัพเดตข้อมูลเรียบร้อย',
+            text: 'ระบบกำลังนำคุณไป',
+            showCancelButton: false,
+            showConfirmButton: false
+        }, function() {
+            window.location = "../../Frontend/login.php";
+        });
+    });
+</script>
+<?php
+
+header("Refresh:3; url=../../Frontend/login.php");
+
+
+?>
