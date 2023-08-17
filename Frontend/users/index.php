@@ -79,7 +79,9 @@ $query = $db->query($sql);
        else if ($totalScore<=49.4) {       
          echo "<span class='not-italic font-bold text-[28px] text-[#ff2323]'>0</span>";   
       }    
-                  
+                  if($totalScore == ''){
+                     
+                  }
                   ?></span>
                   <label class="font-medium text-[18px] text-[#65f473]"><?php 
                   
