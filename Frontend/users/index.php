@@ -577,6 +577,9 @@ for ($i = 1; $i <= 2; $i++) {
 /*                                student card                                */
 /* -------------------------------------------------------------------------- */ -->
 
+         <?php }
+         } ?>
+
 <div class="w-full min-[1530px]:w-[50%] ml-[10px]">
 <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">Student ID</span>
 <div class=" rounded-[10px] flex justify-center py-4   bg-slate-300">
@@ -601,8 +604,8 @@ for ($i = 1; $i <= 2; $i++) {
                               </div>
                               <div class="w-full h-[205px] ">
                                  <div class="p-4 py-8 ml-1 flex flex-col">
-                                    <span class="text-[20px] font-bold text-gray-600">Student ID <span class="ml-2 text-[20px] font-semibold text-[#f15082]">64209010026</span></span>
-                                    <span class="text-[23px] font-bold text-[#07005f]">นายเตชสิทธิ์ แก้ววิเชียร</span>
+                                    <span class="text-[20px] font-bold text-gray-600">Student ID <span class="ml-2 text-[20px] font-semibold text-[#f15082]"><?php echo $_SESSION['StudentID'];?></span></span>
+                                    <span class="text-[23px] font-bold text-[#07005f]"><?php echo $_SESSION['Student_FirstName']. "&nbsp; " . $_SESSION['Student_LastName'];?></span>
                                     <span class="font-medium">สาขาวิชา เทคโนโลยีสารสนเทศ</span>
                                     <span class="text-sm">สาขางาน โปรแกรมคอมพิวเตอร์</span>
                                  </div>
@@ -614,7 +617,4 @@ for ($i = 1; $i <= 2; $i++) {
                   </div>
 </div>
                </div>
-
-         <?php }
-         } ?>
       </div>
