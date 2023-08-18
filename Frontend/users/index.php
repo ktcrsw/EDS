@@ -663,68 +663,46 @@ $query = $db->query($sql);
 /*                                student card                                */
 /* -------------------------------------------------------------------------- */ -->
 
-<<<<<<< HEAD
-                  <div class="w-full min-[1530px]:w-[50%] ml-[10px]">
-                     <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">Student ID</span>
-                     <div class=" rounded-[10px] flex justify-center py-4   bg-slate-300">
-=======
-         <?php }
+            <?php }
          } ?>
 
-<div class="w-full min-[1530px]:w-[50%] ml-[10px]">
-<span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">Student ID</span>
-<div class=" rounded-[10px] flex justify-center py-4   bg-slate-300">
-                     
-                     <div class="block w-[502px]   rounded-lg h-[323px]  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:border-primary-300 dark:bg-neutral-600">
-                        <div class="  px-6 bg-[#689ae3] rounded-t-lg flex justify-center items-center   h-[57px] text-neutral-600 ">
-                           <span class="text-white text-[49px] tracking-widest font-bold">STUDENT</span>
-                        </div>
-                        <div class="block w-full  h-[266px] rounded-b-lg bg-white bg-cover shadow-lg dark:bg-neutral-700" style="background-image: url('./EDS.png');">
-                           <div class="flex">
-                              <div class="h-[266px]">
->>>>>>> c58f313e3038d470eeb771dd28c6e437c7311d52
+            <div class="w-full min-[1530px]:w-[50%] ml-[10px]">
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">Student ID</span>
+               <div class=" rounded-[10px] flex justify-center py-4   bg-slate-300">
 
-                        <div class="block w-[502px]   rounded-lg h-[323px]  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:border-primary-300 dark:bg-neutral-600">
-                           <div class="  px-6 bg-[#689ae3] rounded-t-lg flex justify-center items-center   h-[57px] text-neutral-600 ">
-                              <span class="text-white text-[49px] tracking-widest font-bold">STUDENT</span>
-                           </div>
-                           <div class="block w-full  h-[266px] rounded-b-lg bg-white bg-cover shadow-lg dark:bg-neutral-700" style="background-image: url('./EDS.png');">
-                              <div class="flex">
-                                 <div class="h-[266px]">
 
-                                    <div class="">
-                                       <div class="avatar">
-                                          <div class="w-[179px] h-[205px] p-4 rounded">
-                                             <img src="../image/<?php echo $_SESSION['Student_Img']; ?>" class=" shadow-md" />
-                                          </div>
-                                       </div>
-                                       <span class=" font-medium text-sm flex justify-center ">Exp. 04/04/2026</span>
+
+                  <div class="block w-[502px]   rounded-lg h-[323px]  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:border-primary-300 dark:bg-neutral-600">
+                     <div class="  px-6 bg-[#689ae3] rounded-t-lg flex justify-center items-center   h-[57px] text-neutral-600 ">
+                        <span class="text-white text-[49px] tracking-widest font-bold">STUDENT</span>
+                     </div>
+                     <div class="block w-full  h-[266px] rounded-b-lg bg-white bg-cover shadow-lg dark:bg-neutral-700" style="background-image: url('./EDS.png');">
+                        <div class="flex">
+                           <div class="h-[266px]">
+
+                              <div class="">
+                                 <div class="avatar">
+                                    <div class="w-[179px] h-[205px] p-4 rounded">
+                                       <img src="../image/<?php echo $_SESSION['Student_Img']; ?>" class=" shadow-md" />
                                     </div>
-
-<<<<<<< HEAD
                                  </div>
-                                 <div class="w-full h-[205px] ">
-                                    <div class="p-4 py-8 ml-1 flex flex-col">
-                                       <span class="text-[20px] font-bold text-gray-600">Student ID <span class="ml-2 text-[20px] font-semibold text-[#f15082]">64209010026</span></span>
-                                       <span class="text-[23px] font-bold text-[#07005f]">นายเตชสิทธิ์ แก้ววิเชียร</span>
-                                       <span class="font-medium">สาขาวิชา เทคโนโลยีสารสนเทศ</span>
-                                       <span class="text-sm">สาขางาน โปรแกรมคอมพิวเตอร์</span>
-                                    </div>
-=======
+                                 <span class=" font-medium text-sm flex justify-center ">Exp. 04/04/2026</span>
                               </div>
-                              <div class="w-full h-[205px] ">
-                                 <div class="p-4 py-8 ml-1 flex flex-col">
-                                    <span class="text-[20px] font-bold text-gray-600">Student ID <span class="ml-2 text-[20px] font-semibold text-[#f15082]"><?php echo $_SESSION['StudentID'];?></span></span>
-                                    <span class="text-[23px] font-bold text-[#07005f]"><?php echo $_SESSION['Student_FirstName']. "&nbsp; " . $_SESSION['Student_LastName'];?></span>
-                                    <span class="font-medium">สาขาวิชา เทคโนโลยีสารสนเทศ</span>
-                                    <span class="text-sm">สาขางาน โปรแกรมคอมพิวเตอร์</span>
->>>>>>> c58f313e3038d470eeb771dd28c6e437c7311d52
-                                 </div>
+
+                           </div>
+                           <div class="w-full h-[205px] ">
+                              <div class="p-4 py-8 ml-1 flex flex-col">
+                                 <span class="text-[20px] font-bold text-gray-600">Student ID <span class="ml-2 text-[20px] font-semibold text-[#f15082]">64209010026</span></span>
+                                 <span class="text-[23px] font-bold text-[#07005f]">นายเตชสิทธิ์ แก้ววิเชียร</span>
+                                 <span class="font-medium">สาขาวิชา เทคโนโลยีสารสนเทศ</span>
+                                 <span class="text-sm">สาขางาน โปรแกรมคอมพิวเตอร์</span>
                               </div>
                            </div>
-
                         </div>
                      </div>
+
                   </div>
+               </div>
+            </div>
                </div>
       </div>
