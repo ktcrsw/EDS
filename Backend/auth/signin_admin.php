@@ -32,11 +32,20 @@
         $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];
+            
             header("location: ../../Frontend/users/index.php");
         }
         
         if($_SESSION['Permission'] == 1){
             header("location: ../../Frontend/teacher/index.php");
+            include("../../Frontend/assets/header.php");
+            echo "<script  type='text/javascript'>
+            Swal.fire({
+                icon: 'error',
+                title: 'ไม่พบข้อมูล.',
+                text: 'ลองใหม่อีกครั้งภายหลัง',
+            })
+            </script>";
         }
         
         if($_SESSION['Permission'] == 2){
