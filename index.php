@@ -82,7 +82,7 @@
   <!-- Navbar -->
 
   <!-- Jumbotron -->
-  <div class="relative overflow-hidden bg-cover bg-no-repeat" style="
+  <div class="relative  overflow-hidden bg-cover bg-no-repeat" style="
         background-position: 50%;
         background-image: url('https://cdn.discordapp.com/attachments/960423388369813514/1124697325223288902/Screenshot_2023-07-01_115046.png');
         height: 500px;
@@ -106,7 +106,7 @@
   </div>
   <!-- Jumbotron -->
 </section>
-  <section class="background-radial-gradient mb-32" style="background-color: #1F2735;">
+  <section class="background-radial-gradient  mb-32" style="background-color: #1F2735;">
 
         
     <div class="px-6 py-12 text-center md:px-12 lg:text-left">

@@ -11,12 +11,13 @@ $query = $db->query($sql);
 
 ?>
 <div class="w-screen h-full bg-[#f1f4f9]">
-   <div class="flex p-4">
-      <div>
+   <div class="min-[1100px]:flex p-4">
+      <div class="flex justify-center">
          <!-- /* -------------------------------------------------------------------------- */
          /*                                   โปรไฟล์                                  */
          /* -------------------------------------------------------------------------- */ -->
-         <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
+         <div>
+         <div class="flex flex-col  items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
             <div class="avatar">
                <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
                   <img src="../image/<?php echo $_SESSION['Student_Img']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
@@ -77,7 +78,7 @@ $query = $db->query($sql);
                                                                                     if ($totalScore == '') {
                                                                                     }
                                                                                     ?></span>
-                     <label class="font-medium text-[18px] text-[#65f473]"><?php
+                     <label class="font-medium text-[18px] text-[#10b981]"><?php
 
                                                                            if (($totalScore > 100) || ($totalScore < 0)) {
                                                                               echo "ไม่สามารถคิดเกรดได้ คะแนนเกิน";
@@ -216,8 +217,9 @@ $query = $db->query($sql);
          </div>
       </div>
 
+         </div>
       <div class="w-full">
-         <div class="alert alert-info mb-3 ml-[10px] p-2 ">
+         <div class="alert alert-info mb-3  p-2 ">
 
             <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="stroke-current shrink-0 w-6 h-6"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                <path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z" />
@@ -296,7 +298,7 @@ $query = $db->query($sql);
             while ($row = mysqli_fetch_assoc($resulttbl)) {
          ?>
                <div class="min-[1530px]:flex ">
-                  <div class="w-full min-[1530px]:w-[50%] ml-[10px]">
+                  <div class="w-full min-[1530px]:w-[50%] ">
                      <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
                      <div class=" bg-white  mt-  rounded-[20px] mb-2">
 
@@ -396,13 +398,13 @@ $query = $db->query($sql);
 
 
 
-            <div class="w-full min-[1530px]:w-[50%] ml-[10px]">
+            <div class="w-full min-[1530px]:w-[50%] ">
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">Student ID</span>
                <div class=" rounded-[10px] flex justify-center py-4   bg-slate-300">
 
 
 
-                  <div class="block w-[502px]   rounded-lg h-[323px]  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:border-primary-300 dark:bg-neutral-600">
+               <div class="block w-[502px]   rounded-lg h-[323px]  bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:border-primary-300 dark:bg-neutral-600">
                      <div class="  px-6 bg-[#689ae3] rounded-t-lg flex justify-center items-center   h-[57px] text-neutral-600 ">
                         <span class="text-white text-[49px] tracking-widest font-bold">STUDENT</span>
                      </div>
