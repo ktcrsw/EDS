@@ -37,7 +37,6 @@ https://cdn.jsdelivr.net/npm/darkreader@4.9.58/darkreader.min.js
 "></script>
 
 <link href="https://cdn.jsdelivr.net/npm/daisyui@3.1.1/dist/full.css" rel="stylesheet" type="text/css" />
-<script src="https://cdn.tailwindcss.com"></script>
 <script src="
 https://cdn.jsdelivr.net/npm/@preline/preline@1.0.0/dist/hs-ui.bundle.min.js
 "></script>
@@ -60,7 +59,6 @@ https://cdn.jsdelivr.net/npm/@preline/preline@1.0.0/dist/hs-ui.bundle.min.js
 
 .dark-mode {
   background-color: black;
-  color: white;
 }
 </style>
   <?php // error_reporting(0);

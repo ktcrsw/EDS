@@ -33,28 +33,10 @@
                <div class="font-medium "><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></div>
                <div class="truncate"><?php echo $_SESSION['Email'] ?></div>
             </div>
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-
-               <li>
-                  <button class="p-4" onclick="my_modal_5.showModal()">เปลี่ยนรูปประจำตัว</button>
-                  <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                     <form method="dialog" class="modal-box" action="../../Backend/functions/updatePic.php" method="post" enctype="multipart/form-data">
-                        <h3 class="font-bold text-lg">เปลี่ยนรูปประจำตัว</h3>
-                        <p class="py-4">
-                        <div class="avatar align-items-center d-flex justify-content-center">
-                           <div class="w-32 rounded-full  align-items-center d-flex justify-content-center">
-                              <img src="../../Backend/admin/img/<?php echo $_SESSION['Image'];?>" id="img"/>
-                           </div>
-                        </div>
-                        </p>
-                           <input type="file" class="file-input w-full max-w-xs mt-3" />
-                           <input type="text" name="uid" id="uid" value="<?=$_SESSION['UserID']?>">
-                           <input type="submit" name="upload" id="upload" class="btn btn-accent mt-3" style="color:#fff;width:100%;" value="บันทึก">
-                     </form>
-                  </dialog>
-               </li>
-
-            </ul>
+         
+            <div class="py-2">
+               <a href="edit_profileData.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-gray-700">เปลี่ยนรูปประจำตัว</a>
+            </div>
             <div class="py-2">
                <a href="../../Backend/auth/signout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-gray-700">ออกจากระบบ</a>
             </div>
