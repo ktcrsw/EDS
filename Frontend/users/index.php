@@ -290,6 +290,8 @@ $query = $db->query($sql);
                </div>
             <?php endwhile; ?>
          </div>
+         <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
+
          <?php
 
          $scheduletbl = "SELECT * FROM tbl_schedule WHERE schedule_classYears = '" . $_SESSION['Student_Year'] . "' AND schedule_classGroup = '" . $_SESSION['Student_Groups'] . "' ";
@@ -299,7 +301,6 @@ $query = $db->query($sql);
          ?>
                <div class="min-[1530px]:flex ">
                   <div class="w-full min-[1530px]:w-[50%] ">
-                     <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
                      <div class=" bg-white  mt-  rounded-[20px] mb-2">
 
 
@@ -383,12 +384,6 @@ $query = $db->query($sql);
                            </div>
                            <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
                         </div>
-
-
-                        <!-- วิชาที่ 2 -->
-                     </div>
-                  </div>
-
             <?php }
          } ?>
 

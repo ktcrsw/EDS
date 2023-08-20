@@ -35,21 +35,45 @@ include "../assets/user_nav.php";
                 while($sbj = mysqli_fetch_assoc($data)):
                 
                 ?>
-                <div class="grid grid-rows-4 grid-flow-col gap-4">
-                    <div class="card w-96 bg-neutral text-neutral-content">
+                    <div class="card w-96 bg-neutral text-neutral-content mt-3">
                         <div class="card-body">
                             <h2 class="card-title"><?php echo "20001-000".$sbj['schedule_id'];?></h2>
                             <p><?php echo $sbj['schedule_title'];?></p>
                             <p><?php echo "ห้องเรียน". "   ". $sbj['schedule_room'];?></p>
                             <p><?php echo "เวลา" . "    " . $sbj['schedule_starttime']. "   -   " .$sbj['schedule_endtime'];?></p>
                             <div class="card-actions justify-end">
-                                <button class="btn">ลงทะเบียนวิชานี้</button>
+                                <form action="../../Backend/functions/enrollsubject.php" method="post">
+                                    <input type="text" name="stdid" id="stdid" value="<?php echo $_SESSION['Student_ID']; ?>" hidden>
+                                    <input type="text" name="subjid" id="stdid" value="<?php echo $sbj['schedule_id']; ?>" hidden>
+                                    <input type="text" name="subjname" id="stdid" value="<?php echo $sbj['schedule_title']; ?>" hidden>
+                                    <input type="text" name="tcid" id="stdid" value="<?php echo $sbj['schedule_teacherID']; ?>" hidden>
+                                    <input type="text" name="fname" id="stdid" value="<?php echo $_SESSION['Student_FirstName']; ?>" hidden>
+                                    <input type="text" name="lname" id="stdid" value="<?php echo $_SESSION['Student_LastName']; ?>" hidden>
+                                    <input type="text" name="gps" id="stdid" value="<?php echo $_SESSION['Student_Groups']; ?>" hidden>
+                                    <input type="text" name="yr" id="stdid" value="<?php echo $_SESSION['Student_Year']; ?>" hidden>
+                                    <input class="btn btn-success" type="submit" style="background-color:#33E55C;color:#fff;" value="ลงทะเบียนวิชานี้">
+                                    <?php 
+                                    
+                                    // $getStatus = "SELECT * FROM enrollsubject WHERE ref_studenttbl = '".$_SESSION['Student_ID']. "'";
+                                    // $queryStatus = $db->query($getStatus);
+                                    // if($row = mysqli_fetch_array($queryStatus)){
+                                    //     if($row['ref_status'] == 1){
+                                    //         echo '<input class="btn btn-error" type="submit" disabled value="วิชานี้ลงทะเบียนไปแล้ว" style="background-color:red;color:#fff;">';
+                                    //     }
+                                        
+                                    // }
+                                    // echo '';
+
+                                    
+                                    
+                                    ?>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php endwhile; ?>
             </div>
+            <?php endwhile; ?>
 
         </div>
         <div class="hidden p-4 " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
