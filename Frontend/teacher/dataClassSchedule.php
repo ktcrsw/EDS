@@ -141,6 +141,7 @@ if($result){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                         if(in_array($i+1,$row['repeat_day'])){
                              $data_day_schedule[$dayKey][] = [
+                                "id" => $row['id'],       
                                 "start_time" => $row['start_time'],       
                                 "end_time" => $row['end_time'],
                                 "duration" => getduration(strtotime($row['start_time']),strtotime($row['end_time'])),
@@ -157,6 +158,7 @@ if($result){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                          $data_day_schedule[$dayKey][] = [
+                            "id" => $row['id'],       
                             "start_time" => $row['start_time'],       
                             "end_time" => $row['end_time'],
                             "duration" => getduration(strtotime($row['start_time']),strtotime($row['end_time'])),
@@ -345,14 +347,14 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
     $dayInSchedule_show = thai_date_short(strtotime($start_weekDay." +".$i_day." day"));
 ?>
   <tr>
-    <td class="p-0 text-center table-active border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
+    <td class="p-0 text-center  table-active border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
     <div class="day_schedule_text text-nowrap " style="min-height: 60px;">
         <?=$dayTH[$i_day]?> 
         </div>
     </td>
-    <td class="p-0 position-relative  " colspan="10">
-    <div class="position absolute mb-5 ">
-    <div class="d-flex align-content-stretch " style="min-height: 60px; ">
+    <td class="p-0 position-relative h-full  " colspan="10">
+    <div class="position  absolute mb-5 ">
+    <div class="d-flex align-content-stretch  " style="min-height: 60px; ">
         <?php for($i=1;$i<$sc_numCol;$i++){ ?>
         <div class="bg-light text-center border-right mb-5" style="width: <?=$hour_block_width ?>px;margin-right: 1px;">
         &nbsp;
@@ -360,23 +362,24 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         <?php } ?>
     </div>
     </div>
-    <div class="relative" style="z-index: 100;">
+    <div class="relative h-full  " style="z-index: 100;">
         <?php
         if(isset($data_day_schedule[$dayKeyChk]) && count($data_day_schedule[$dayKeyChk])>0){
             foreach($data_day_schedule[$dayKeyChk] as $row_day){
                 $sc_width = ($row_day['duration']/60)*($hour_block_width/$sc_numStep);
                 $sc_start_x = $row_day['timeblock']*$hour_block_width+(int)$row_day['timeblock'];
         ?>
-        <div class="relative border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 absolute bottom-0 left-0  text-center sc-detail border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100" style="
-        width: <?=$sc_width?>px;margin-right: 1px;
-        margin-left: <?=$sc_start_x?>px;
-        min-height: 60px;">
+       <div class="h-full flex text-center">
+       <div>
+       <div class="bg-[#98c6b6]  font-bold " style="width: <?=$sc_width?>px;margin-right: 1px;">
         <?php echo ""; ?><br>
-        <a href="#" style="font-size: 18px;"><?=$row_day['title']?></a><br>
-        <?=$row_day['room']?><br>
-        <?=$row_day['detail']?><br>
+        <span class="text-[15px] underline ">20001-000<?=$row_day['id']?></span>
+        <span class="text-white"><?=$row_day['room']?><br></span>
+        <span class="text-blue-800 font-bold"><?=$row_day['detail']?><br></span>
         <?php echo ""; ?><br>
-        </div>
+    </div>
+       </div>
+       </div>
         <?php } ?>
         <?php } ?>
     </div>    
