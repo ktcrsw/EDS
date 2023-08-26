@@ -32,5 +32,5 @@
     $data = "INSERT INTO enrolltbl(no, ref_course, ref_studenttbl, ref_stdfname, ref_stdlname, ref_sex, ref_stdGroups, ref_years, ref_department, ref_status, ref_stdImg) VALUES ('', '$years', '$studentID', '$fname', '$lname', '$sex', '$groups', '$certificate', 'เทคโนโลยีสารสนเทศ', 0, '')";
     $query = $db->query($data);
 
-        header('location: ../admin/admin.php');
+    header('location: ../admin/admin.php');
 ?>

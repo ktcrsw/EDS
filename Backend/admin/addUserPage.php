@@ -13,7 +13,7 @@ $result = $db->query($sql);
 <section class="m-2 w-full">
     <div class="flex justify-center px-24 items-center">
         <div class="w-full overflow-x-auto">
-            <form action="../functions/add_user.php">
+            <form action="../functions/add_std.php">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h1 class="text-base font-semibold leading-7 text-gray-900" style="font-size: 22px;margin-top:2rem;">เพิ่มข้อมูลนักเรียนนักศึกษา</h1>
