@@ -246,7 +246,7 @@ $data = $db->query($subject);
                             <label class="ml-2">เนื่องจาก : </label>
                             <div class="relative w-64 ml-2 ">
                                 <div class="mx-auto max-w-xs">
-                                    <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdid" required />
+                                    <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdid"  />
                                 </div>
                             </div>
                         </div>
@@ -283,7 +283,7 @@ $data = $db->query($subject);
                                 <label class="ml-2">เนื่องจาก : </label>
                                 <div class="relative w-64 ml-2 ">
                                     <div class="mx-auto max-w-xs">
-                                        <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdid" required />
+                                        <input type="text" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-400 focus:ring focus:ring-primary-200 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="" name="stdid"  />
                                     </div>
                                 </div>
                             </div>

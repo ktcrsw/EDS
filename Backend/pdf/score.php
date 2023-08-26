@@ -80,7 +80,7 @@ $pdf->Cell(5 ,6,'',1,1,'C');
 /*Heading Of the table end*/
 
 $getStudent_VoC31 = "SELECT * FROM save_studentscore WHERE ref_stdGroups = 1 AND ref_years = 3";
-$queryStudentVoC31 = $db->query($getStudent_VoC31);
+$queryStudentVoC31 = $db->query($getStudent_VoC31   );
 $total = mysqli_num_rows($queryStudentVoC31);
 $sum = 1;
 $pdf->SetFont('THSarabunNew','',16);

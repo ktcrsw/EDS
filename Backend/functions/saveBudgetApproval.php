@@ -4,8 +4,8 @@
     require '../db/connect.db.php';
     include("../../Frontend/assets/header.php");
 
-    
-    
+
+
 
     if(empty($_POST['name'])){
         $err = array(
@@ -54,8 +54,8 @@
                     "for_chairman" => $_POST['aprroval'], 
                     "o_approval" => $_POST['o_approval'], 
                     "status" => 1, 
-                    
-                    
+
+
                 );
 
                 $saveBudget = "INSERT INTO form_budget_approval(fba_id, fba_name, fba_lname, fba_position, fba_with_person, fba_details, fba_location, fba_province, fba_amphure, fba_budget, fba_vehicles, fba_comment, fba_o_approve, startdate, enddate, fba_status) 
@@ -84,15 +84,3 @@
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-?>
