@@ -27,7 +27,7 @@ include '../../Frontend/assets/admin_nav.php';
   }
   ```
 -->
-<form>
+<form action="../functions/addFile.php" method="post" enctype="multipart/form-data">
   <div class="space-y-12 w-100">
     <div class="border-b border-gray-900/10 pb-12 ">
       <h2 class="text-base font-semibold leading-7 text-gray-900 mt-10 mb-2 flex flex-col items-center" style="font-size: 48px;">เพิ่มเอกสาร</h2>

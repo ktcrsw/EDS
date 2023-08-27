@@ -7,30 +7,20 @@
     $result = $db->query($sql);
 
 
-    $studentID = $_GET['username'];
-    $years = $_GET['years'];
-    $groups = $_GET['groups'];
-    $certificate = $_GET['certificate'];
-    $fname = $_GET['first-name'];
-    $lname = $_GET['last-name'];
-    $sex = $_GET['sex'];
-    $filename = $_GET['upload'];
+    $password = md5($_POST['password']);
+    $filename = $_POST['upload'].".png";
 
+    function password_generate($chars) 
+    {
+    $data = '123456789013';
+    return substr(str_shuffle($data), 0, $chars);
+    }
+ 
+    $idcard = password_generate(13);
 
-    // $_FILES['upload']['name'];
-    // $ext = explode(".", $_FILES['upload']['name']);
-    // $filename = $studentID.".".$ext[1];
-
-    // if(move_uploaded_file($_FILES['upload']['tmp_name'], "../admin/img/". "$filename")){
-    //     echo $studentID. $department. $years. $groups. $certificate. $filename. $fname. $lname. $sex;
-
-    // }
-
-    
-
-    echo $studentID. $department. $years. $groups. $certificate. $filename. $fname. $lname. $sex;
-    $data = "INSERT INTO enrolltbl(no, ref_course, ref_studenttbl, ref_stdfname, ref_stdlname, ref_sex, ref_stdGroups, ref_years, ref_department, ref_status, ref_stdImg) VALUES ('', '$years', '$studentID', '$fname', '$lname', '$sex', '$groups', '$certificate', 'เทคโนโลยีสารสนเทศ', 0, '')";
+    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, address, phone, birthday, permission, main_groups, groups, img) VALUE
+    ('', '".$idcard."', '".$_POST['username']."', '".$_POST['email']."', '".$password."', '".$_POST['first-name']."', '".$_POST['last-name']."', '".$_POST['about']."', '".$_POST['phone']."', '', 1, '', '', '$filename')";
     $query = $db->query($data);
 
-    header('location: ../admin/admin.php');
+    header('location: ../admin/admin_datamanagement.php');
 ?>

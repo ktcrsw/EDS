@@ -4,14 +4,14 @@
 
     $id = $_POST['id'];
 
-    $getBudgetStatus = "SELECT * FROM enrolltbl WHERE ref_studenttbl = $id";
+    $getBudgetStatus = "SELECT * FROM form_budget_approval WHERE fba_id = $id";
     $queryBudgetStatus = $db->query($getBudgetStatus);
 
     if($row = mysqli_fetch_array($queryBudgetStatus)){
-        if($row['ref_status'] == 0){
-            $update = "UPDATE enrolltbl SET ref_status = 1 WHERE ref_studenttbl = $id";
+        if($row['fba_status'] == 0){
+            $update = "UPDATE form_budget_approval SET fba_status = 1 WHERE fba_id = $id";
             $query = $db->query($update);
-            header("Refresh:1.3; url=../admin/admin.php");
+            header("Refresh:1.3; url=../admin/personnalTask.php");
             include("../../Frontend/assets/header.php");
             echo "<script>setTimeout(function() {
             Swal.fire({
@@ -21,13 +21,13 @@
                 showCancelButton: false,
                 showConfirmButton: false
             }, function() {
-                window.location = '../admin/admin.php';
+                window.location = '../admin/personnalTask.php';
             });
              });</script>";
-        } else if($row['ref_status'] == 1){
-            $update = "UPDATE enrolltbl SET ref_status = 0 WHERE ref_studenttbl = $id";
+        } else if($row['fba_status'] == 1){
+            $update = "UPDATE form_budget_approval SET fba_status = 0 WHERE fba_id = $id";
             $query = $db->query($update);
-            header("Refresh:1.3; url=../admin/admin.php");
+            header("Refresh:1.3; url=../admin/personnalTask.php");
             include("../../Frontend/assets/header.php");
             echo "<script>setTimeout(function() {
             Swal.fire({
@@ -37,7 +37,7 @@
                 showCancelButton: false,
                 showConfirmButton: false
             }, function() {
-                window.location = '../admin/admin.php';
+                window.location = '../admin/personnalTask.php';
             });
              });</script>";
     }

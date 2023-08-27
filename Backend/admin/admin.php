@@ -66,21 +66,23 @@ $query = $db->query($sql);
                                         <span class="text-[16px] font-semibold"><?php echo $row['ref_stdfname'] . "&nbsp;" . $row['ref_stdlname']; ?></span>
                                         <span><?php echo $row['ref_studenttbl']; ?></span>
                                     </div>
-                                    <a href="" class=" ml-auto flex items-center">
+                                    <form action="./dataStudent.php" method="post">
+                                    <input type="text" name="stdid" value="<?php echo $row['ref_studenttbl'];?>" hidden>
+                                    <button type="submit" class=" ml-auto flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="#f2b118" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
                                             <circle cx="11" cy="11" r="8"></circle>
                                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                                         </svg>
-                                    </a>
+                                    </button>
+                                    </form>
                                 </div>
 
                             </td>
 
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
-                                <?php
-                                //
-                                ?>
-                                <a href="../functions/aprroval_std.php?stdid=<?php echo $row['no']; ?>">
+                                <form action="../functions/aprroval_std.php" method="post">
+                                    <input type="text" name="id" value="<?php echo $row['ref_studenttbl'];?>" hidden>
+                                    <button type="submit" href="../functions/aprroval_std.php?stdid=<?php echo $row['no']; ?>">
                                     <?php
 
                                     if ($row['ref_status'] == 0) {
@@ -96,7 +98,9 @@ $query = $db->query($sql);
 
 
                                     ?>
-                                </a>
+                                </button>
+                                </form>
+                                
                             </td>
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                                 <?php echo $row['ref_department']; ?>
@@ -106,9 +110,11 @@ $query = $db->query($sql);
                             </td>
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_years']; ?></td>
                             <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['ref_stdGroups']; ?></td>
-                            <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
-                                <a href=""><button class="btn btn-warning"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i></button></a>
-                                <a href="../functions/remove_user.php?=<?php ?>"><button class="btn btn-error"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button></a>
+                            <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">                               
+                                <form action="../functions/remove_std.php" method="post">
+                                    <input type="text" name="stdid" id="stdid" value="<?php echo $row['ref_studenttbl']; ?>" hidden>
+                                <button type="submit" class="btn btn-error"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
+                                </form>
                             </td>
                         </tr>
                     <?php endwhile; ?>

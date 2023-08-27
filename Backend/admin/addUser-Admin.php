@@ -15,7 +15,7 @@ include '../../Frontend/assets/admin_nav.php';
     <!-- Component: Table with hover state -->
     <div class="flex justify-center px-24 items-center">
         <div class="w-full overflow-x-auto">
-            <form action="../functions/addUser-Admin.php" method="post" enctype="multipart/form-data">
+            <form action="../functions/add_user.php" method="post" enctype="multipart/form-data">
                 <div class="space-y-12">
                     <div class="border-b border-gray-900/10 pb-12">
                         <h2 class="text-base font-semibold leading-7 text-gray-900">เพิ่มผู้ใช้งาน</h2>
@@ -30,6 +30,14 @@ include '../../Frontend/assets/admin_nav.php';
                                         <input type="text" name="username" id="username" autocomplete="username" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="">
                                     </div>
                                 </div>
+                            </div>
+                            
+                            <div class="col-span-full">
+                                <label for="about" class="block text-sm font-medium leading-6 text-gray-900">รหัสผ่าน</label>
+                                <div class="mt-2">
+                                <input type="password" name="password" id="username" autocomplete="password" class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6" placeholder="">
+                                </div>
+                                <p class="mt-3 text-sm leading-6 text-gray-600">แก้ไขที่อยู่่</p>
                             </div>
 
                             <div class="col-span-full">
