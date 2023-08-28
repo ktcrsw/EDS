@@ -76,7 +76,7 @@ $query = $db->query($sql);
                                 if($row['fba_status'] == 1){
                                     echo '                                <button type="submit" class="btn btn-success mt-3"><i class="fa-solid fa-check"  style="color:#fff;"></i></button>                                                      ';
                                 } else if($row['fba_status'] == 0){
-                                    echo '                                <button type="submit" class="btn btn-error mt-3"><i class="fa-solid fa-x"  style="color:#fff;"></i></button>                  
+                                    echo '                                <button type="submit" class="btn btn-error mt-3" disabled><i class="fa-solid fa-x"  style="color:#fff;" ></i></button>                  
                                     ';
                                 }
 

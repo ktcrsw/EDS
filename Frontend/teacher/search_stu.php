@@ -1,6 +1,3 @@
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.all.min.js"></script>
-
 <div class="flex items-center w-full mb-4 px-4 py-3 text-sm text-pink-500 border border-pink-100 rounded bg-pink-50" role="alert">
   <!-- Text -->
   <p class="flex-1">ระบุข้อมูลอย่างน้อย 1 ข้อมูล</p>

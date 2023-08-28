@@ -6,9 +6,6 @@ $subjectList = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = $teacherID
 $resultSubjectList = $db->query($subjectList);
 
 ?>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="sweetalert2.all.min.js"></script>
-
 
   <div class="flex justify-center px-24">
     <div class="w-full overflow-x-auto">
