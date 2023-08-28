@@ -16,30 +16,34 @@ $data = $db->query($subject);
 ?>
 
 
-<section class="m-2">
-     
+<section class="w-full m-2">
 
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">จัดตารางเรียน</button>
-        </li>
-        <li class="mr-2" role="presentation">
-            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="listClass" data-tabs-target="#listClass" type="button" role="tab" aria-controls="listClass" aria-selected="false">ดูตารางเรียนทั้งหมด</button>
-        </li>
 
-    </ul>
-</div>
-<div id="myTabContent">
-    <div class="hidden p-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-        <?php include './dataClassSchedule.php'; ?>
+    <div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+        <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+            <li class="mr-2" role="presentation">
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">จัดตารางเรียน</button>
+            </li>
+            <li class="mr-2" role="presentation">
+                <button class="inline-block p-4 border-b-2 rounded-t-lg" id="listClass" data-tabs-target="#listClass" type="button" role="tab" aria-controls="listClass" aria-selected="false">ดูตารางเรียนทั้งหมด</button>
+            </li>
+
+        </ul>
     </div>
-</div>
-<div id="myTabContent">
-    <div class="hidden p-4" id="listClass" role="tabpanel" aria-labelledby="profile-tab">
-        <?php include './listClassSchedule.php'; ?>
+    <div class="flex items-center justify-center mb-10">
+        <div>
+            <div id="myTabContent">
+                <div class="hidden p-4" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <?php include './dataClassSchedule.php'; ?>
+                </div>
+            </div>
+            <div id="myTabContent">
+                <div class="hidden p-4" id="listClass" role="tabpanel" aria-labelledby="profile-tab">
+                    <?php include './listClassSchedule.php'; ?>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 
 </section>

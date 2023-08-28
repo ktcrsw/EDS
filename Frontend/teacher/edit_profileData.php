@@ -17,8 +17,11 @@ $data = $db->query($subject);
 ?>
 
 
-<section class="m-2">
+<section class="m-2 w-full flex justify-center mt-16 ">
      
+<div>
+    <span class="text-xl w-full flex justify-center items-center mb-2  font-medium">เปลี่ยนรูปประจำตัว</span>
 <?php include '../../Backend/includes/editImage.php';?>
+</div>
 
 </section>

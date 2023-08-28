@@ -213,7 +213,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
       <div class="  ">
 <form action="" method="post" accept-charset="utf-8">
      
-<div class="form-group row">
+<div class="form-group row mb-4">
     
     <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
     <div class="col-12 col-sm-8">
@@ -225,7 +225,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
                         
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-4">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">หลักสูตร</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_detail" data-target-input="nearest">
@@ -239,7 +239,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
           
     </div>
 </div>  
-<div class="form-group row">
+<div class="form-group row mb-4">
     <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_startdate" data-target-input="nearest">
@@ -249,12 +249,12 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
            
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-4">
     <label for="schedule_enddate" class="col-sm-2 col-form-label text-right">วันที่สิ้นสุด</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_enddate" data-target-input="nearest">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
+                <div class="input-group-text"></div>
             </div>           
           <input type="date" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_enddate" data-target="#schedule_enddate"
            autocomplete="off" value="" >           
@@ -262,12 +262,12 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
            
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-4">
     <label for="schedule_starttime" class="col-sm-2 col-form-label text-right">เวลาเริ่มต้น</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_starttime" data-target-input="nearest">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
+                <div class="input-group-text"></i></div>
             </div>           
           <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_starttime" data-target="#schedule_starttime"
            autocomplete="off" value="" >           
@@ -275,12 +275,12 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
          
     </div>
 </div>
-<div class="form-group row">
+<div class="form-group row mb-4">
     <label for="schedule_endtime" class="col-sm-2 col-form-label text-right">เวลาสิ้นสุด</label>
     <div class="col-12 col-sm-8">
         <div class="input-group date" id="schedule_endtime" data-target-input="nearest">
             <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
+                <div class="input-group-text"></i></div>
             </div>           
           <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_endtime" data-target="#schedule_endtime"
            autocomplete="off" value="" >           
@@ -289,27 +289,36 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     </div>
 </div>
 </div>
-<div class="form-group row" >
+<div class="form-group row mb-4" >
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
-    <div class="col-12 col-sm-10 pt-2">
+    <div class="col-12 flex flex-row col-sm-10 pt-2">
         <?php
-        $dayTH = array('อาทิตย์' ,'จันทร์.','อังคาร.','พุธ.','พฤหัสบดี.','ศุกร์.', 'เสาร์.');
+        $dayTH = array('อาทิตย์' ,'จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์', 'เสาร์');
         ?>
-        <div class="input-group">
+      
         <?php foreach($dayTH as $k => $day_value){?>
-        <div class="form-check ml-3" style="width:50px;">
+        <div class="">
+        <div class="form-check  ml-3" style="width:50px;">
+            <div class="flex flex-col justify-center items-center">
             <input class="radio radio-info repeatday_chk" type="radio"
                 name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
                 value="<?=$k?>" >
                 <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
-        </div>    
+            </div>
+        </div> 
+        </div>
+
+   
+
+
         <?php } ?>
         <input type="text" name="schedule_repeatday" id="schedule_repeatday" value="" hidden/>
-        </div>
+
         <br>    
     </div>
 </div>
-<div class="form-group row" >
+<div class="form-group row mb-4" >
+    
     <label for="schedule_endtime" class="col-2 col-form-label text-right">ชั้นปี</label>
     <div class="col-12 col-sm-10 pt-2">
     <select name="schedule_classYears" id="schedule_classYears" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
@@ -319,7 +328,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
         </select>     
     </div>
 </div>
-<div class="form-group row" >
+<div class="form-group row mb-4" >
     <label for="schedule_endtime" class="col-2 col-form-label text-right">กลุ่ม</label>
     <div class="col-12 col-sm-10 pt-2">
     <select name="schedule_classGroup" id="schedule_classGroup" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
@@ -328,7 +337,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
         </select>    
     </div>
 </div>
-<div class="form-group row" >
+<div class="form-group row mb-4" >
     <label for="schedule_endtime" class="col-2 col-form-label text-right">ห้องที่ใช้สอน</label>
     <div class="col-12 col-sm-10 pt-2">
     <select name="schedule_room" id="schedule_room" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
