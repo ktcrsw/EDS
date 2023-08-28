@@ -15,7 +15,8 @@ $pdf->SetFont('THSarabunNew','',16);
 $pdf->SetFont('THSarabunNew','B',16);
 
 /*Cell(width , height , text , border , end line , [align] )*/
-
+$pdf->Image('../upload/udtc.png', 10, 10, -300);
+$pdf->Cell(71 ,10,'',0,0);
 $pdf->Cell(71 ,10,'',0,0);
 $pdf->Image('../admin/img/logo.png', 10, 10, -300);
 $pdf->Cell(59 ,5,iconv('UTF-8', 'cp874','วิทยาลัยเทคนิคอุดรธานี'),0,1);
