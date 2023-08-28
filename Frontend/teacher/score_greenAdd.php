@@ -20,6 +20,7 @@ $queryGetScore = $db->query($getScore);
     $finalScore = $score['createScoreFinal'];
     $startDate = $score['createScoreStartDate'];
     $endDate = $score['createScoreEndDate'];
+    
 } ?>
 <div class="w-full">
     <div class="p-8 flex-row">

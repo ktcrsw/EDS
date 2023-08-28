@@ -63,7 +63,7 @@ while ($stds = mysqli_fetch_assoc($queryGetStd)) {
                    <th scope="col" class="h-full px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100">
                             <div class="flex gap-2 py-3">
                                 <div class="avatar">
-                                    <div class="w-24 rounded-full w-64 h-64">
+                                <div class="w-24 h-24 rounded-full">
                                         <img src="../image/<?php echo $stds['img']; ?>" class="block w-16 h-16" width="16" height="16" style="width:100%; height:100%;" />
                                     </div>
                                 </div>
@@ -76,8 +76,8 @@ while ($stds = mysqli_fetch_assoc($queryGetStd)) {
                                     <div class="gap-2" >
                                     <form action="../../Backend/functions/saveTheoryScore.php?=<?php echo $stds['stdid']; ?>" method="post" class="myForms" >
                                         <span class="ml-4 "><?php echo $stds['name'] . "            " . $stds['lname']; ?></span>
-                                        <input id="std_id" type="text" name="std_id" value="<?php echo $stds['stdid']; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
-                                        <input id="std_id" type="text" name="subjectID" value="<?php echo $subjectStuID; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                        <input hidden id="std_id" type="text" name="std_id" value="<?php echo $stds['stdid']; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
+                                        <input hidden id="std_id" type="text" name="subjectID" value="<?php echo $subjectStuID; ?>" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                                         <input id="score" type="number" name="theory" min="1" placeholder="0" class="block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                                         <input id="submit" value="บันทึก" type="submit" name="submit" placeholder="0" class="btn btn-primary block w-16 px-4 py-2 mt-2 ml-4  text-gray-700 bg-white border border-gray-200 rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 dark:focus:border-blue-300 focus:outline-none focus:ring">
                                     </form>

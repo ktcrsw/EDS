@@ -6,6 +6,14 @@ include "../assets/teacher_nav.php";
 $subjectStuID = $_SESSION['subjectStuID'];
 $teacherID = $_SESSION['UserID'];
 
+$perpage = 3;
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+} else {
+    $page = 1;
+}
+$start = ($page - 1) * $perpage;
+
 
 
 $getScore = "SELECT * FROM createscore WHERE createScoreTeacherID = '$teacherID' AND createScoreSubjectID = '$subjectStuID'";
@@ -31,7 +39,7 @@ $endDate = $score['createScoreEndDate'];
 
 </div>
 
-<div class="flex items-center w-full gap-4 px-4 py-3 text-sm border rounded border-emerald-100 bg-emerald-50 text-emerald-500" role="alert">
+<!-- <div class="flex items-center w-full gap-4 px-4 py-3 text-sm border rounded border-emerald-100 bg-emerald-50 text-emerald-500" role="alert">
 
   <p class="flex-1">ระบบทำการบันทึกข้อมูลแล้ว</p>
 
@@ -46,7 +54,7 @@ $endDate = $score['createScoreEndDate'];
       </svg>
     </span>
   </button>
-</div>
+</div> -->
 <!-- End Dismissible Success Alert -->
 <div class="py-4">
   <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
@@ -119,7 +127,9 @@ $endDate = $score['createScoreEndDate'];
 <div class="py-4">
     <a class="px-4 py-2  rounded-lg bg-blue-500 text-white">แก้ไขแผนการสอนและสัดส่วนคะแนน</a>
     <a class="px-4 py-2  rounded-lg bg-red-500 text-white">ลบทั้งหมด</a>
+    
     <a href="./score_create.php" class="px-4 py-2  rounded-lg bg-blue-300 text-white">ย้อนกลับ</a>
+
 </div> 
 <table class="w-full text-left  border border-separate rounded border-slate-200" cellspacing="0">
     <tbody>
@@ -144,7 +154,7 @@ $endDate = $score['createScoreEndDate'];
       save_studentscore.finalScore AS final 
       FROM enrollsubject INNER JOIN save_studentscore 
       ON enrollsubject.ref_studenttbl = save_studentscore.studentID
-      WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID'";
+      WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID' limit {$start} , {$perpage}";
       
       $queryGetStd = $db->query($getStd);
       while($stds = mysqli_fetch_assoc($queryGetStd)){
@@ -194,6 +204,38 @@ $endDate = $score['createScoreEndDate'];
       
     </tbody>
   </table> 
+  <?php
+            $sql2 = "SELECT enrollsubject.ref_studenttbl AS stdid, 
+            enrollsubject.ref_stdfname AS name, 
+            enrollsubject.ref_stdlname AS lname ,
+            save_studentscore.mindScore AS mind, 
+            save_studentscore.theoryScore AS theory, 
+            save_studentscore.carryScore AS carry, 
+            save_studentscore.finalScore AS final 
+            FROM enrollsubject INNER JOIN save_studentscore 
+            ON enrollsubject.ref_studenttbl = save_studentscore.studentID
+            WHERE teacherID = '$teacherID' AND subjectID = '$subjectStuID' ";
+            $query2 = $db->query($sql2);
+            $total_record = mysqli_num_rows($query2);
+            $total_page = ceil($total_record / $perpage);
+            $total_pages = 1;
+            ?>
+            <div class="mt-2">
+                <a href="score_list.php?page=<?php echo $total_pages; ?>" aria-label="Next">
+                    <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-left"></i></span>
+                </a>
+                <?php for ($i = 1; $i <= $total_page; $i++) { ?>
+                    <a href="score_list.php?page=<?php echo $i; ?>"><button class="btn btn-ghost border bordered" style="background-color:#E3E3E3;color:gray;"><?php echo $i; ?></button></a>
+                <?php } ?>
+                <a href="score_list.php?page=<?php echo $total_page; ?>" aria-label="Next">
+                    <span aria-hidden="true" style="font-size:16px;"><i class="fa-solid fa-angles-right"></i></span>
+                </a>
+                <form action="../../Backend/pdf/score.php" method="post">
+      <input type="text" name="subid" value="<?php echo $subjectStuID;?>" hidden>
+      <input type="text" name="teacherid" value="<?php echo $teacherID;?>" hidden>
+      <button href="./score_create.php" class=" px-4 py-2 mt-2 btn btn-success text-white" style="color:#Fff;">พิมพ์คะแนน</button>
+    </form>
+            </div>
 </div>
 
 </div>
