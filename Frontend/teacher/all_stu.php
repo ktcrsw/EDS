@@ -202,8 +202,8 @@ const el = document.getElementById('chart-area');
     <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">รวม</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$totalVocMen?></td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$totalVocGirl?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countVocHigh?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=0?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countVocHigh?></td>
       </tr>
     </tfoot>
@@ -232,16 +232,16 @@ const el = document.getElementById('chart-area');
       <tr>
        
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countMenThree?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countGirlThree?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-700 text-slate-700 bg-slate-100 "><?=$countVoc;?></td>
       </tr>
       <tr>
     
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?=$countVocHigh?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "><?=$countVocHigh?></td>
       </tr>
       
   
@@ -250,8 +250,8 @@ const el = document.getElementById('chart-area');
     <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">รวม</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">100</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countGirlThree  ?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?php echo $countVoc+$countVocHigh;?></td>
       
       </tr>
     </tfoot>

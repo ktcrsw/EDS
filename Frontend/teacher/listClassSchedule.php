@@ -17,7 +17,7 @@
    <div class="flex justify-center px-24 items-center">
       <div class="w-full overflow-x-auto">
          <table class="w-full text-left border border-separate rounded border-slate-200" cellspacing="0">
-            <a href="./data_management.php"><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มตารางสอน</button></a>
+            <a href="./class_schedule.php"><button class="btn btn-success text-light mb-3" style="color:#fff; ">เพิ่มตารางสอน</button></a>
             <tbody>
                <tr>
                   <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">รหัสวิชา</th>
@@ -38,7 +38,6 @@
 
                ?>
                   <tr>
-                     <form action="../../Backend/functions/remove_schedule.php" method="get">
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo "20001-000".$class['schedule_id']; ?></span>
                      </td>
@@ -59,13 +58,15 @@
                         <?php echo $class['schedule_endtime']; ?>
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
+                     <form action="../../Backend/functions/remove_schedule.php" method="get">
                         <input type="text" value="<?php echo $class['schedule_id']; ?>" name="classID" hidden>
                      <button class="btn btn-error" type="submit"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
+                     </form>
+
                      </td>
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 text-center stroke-slate-500 text-slate-500 ">
-                        <button class="btn btn-success" type="submit"><i class="fa-solid fa-print" style="color: #ffffff;"></i></button>
+                        <a href="../../Backend/mpdf/ตารางเรียน.php"><button class="btn btn-success" type="submit"><i class="fa-solid fa-print" style="color: #ffffff;"></i></button></a>
                      </td>
-                     </form>
                   </tr>
                <?php endwhile; ?>
 

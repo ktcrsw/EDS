@@ -69,18 +69,9 @@
                   <span class="flex-1 ml-3 whitespace-nowrap text-blue-200">บริการข้อมูลทั่วไป</span>
                </a>
             </li>
+            
             <li>
-               <a href="data_management.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-900 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#5DF5FF" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
-                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                     <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
-                  <span class="flex-1 ml-3 whitespace-nowrap text-blue-200">คะแนนเก็บ</span>
-               </a>
-
-            </li>
-            <li>
-               <a href="schedule.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
+               <a href="classScheduleTable.php" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900" viewBox="0 0 24 24" fill="none" stroke="#43d47b" stroke-width="2" stroke-linecap="butt" stroke-linejoin="arcs">
                      <rect x="3" y="3" width="18" height="18" rx="2" />
                      <path d="M21 12H3M12 3v18" />

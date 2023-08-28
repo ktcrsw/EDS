@@ -1,15 +1,36 @@
-<link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
-<?php include "../../Backend/db/connect.db.php";
-include "../assets/header.php";
+<?php
+session_start();
 
-$teacherID = $_SESSION['UserID'];
+require_once __DIR__ . '/vendor/autoload.php';
+include '../../Frontend/assets/header.php';
+include '../db/connect.db.php';
+$defaultConfig = (new Mpdf\Config\ConfigVariables())->getDefaults();
+$fontDirs = $defaultConfig['fontDir'];
 
-$sql = "SELECT * FROM tbl_schedule WHERE schedule_teacherID = '$teacherID'";
-$query = $db->query($sql);
+$defaultFontConfig = (new Mpdf\Config\FontVariables())->getDefaults();
+$fontData = $defaultFontConfig['fontdata'];
 
+$mpdf = new \Mpdf\Mpdf([
+    'fontDir' => array_merge($fontDirs, [
+        __DIR__ . '/tmp',
+    ]),
+    'fontdata' => $fontData + [
+        'sarabun' => [
+            'R' => 'THSarabunNew.ttf',
+            'I' => 'THSarabunNew Italic.ttf',
+            'B' => 'THSarabunNew Bold.ttf',
+            'BI'=> 'THSarabunNew BoldItalic.ttf'
+        ]
+    ],
+    'default_font' => 'sarabun'
+]);
+
+ob_start();
 ?>
 
-    <style type="text/css">
+
+
+<style type="text/css">
     .sc-detail{
 
         background-color: #8BB4D0;
@@ -48,7 +69,7 @@ $sc_numStep="60";
 $num_dayShow=5;  
 $sc_timeStep=array();
 $sc_numCol=0;
-$hour_block_width = 90;
+$hour_block_width = 300;
   
       
 $now_day=date("Y-m-d"); 
@@ -78,7 +99,7 @@ function getduration($datetime1, $datetime2){
 function timeblock($time,$sc_numCol,$sc_timeStep){
     global $sc_numStep;
     $time = (preg_match('/:/',$time))?(int)strtotime($time):(int)$time;
-    for($i_time=1;$i_time<$sc_numCol-1;$i_time++){
+    for($i_time=0;$i_time<$sc_numCol-1;$i_time++){
         if($time>=strtotime($sc_timeStep[$i_time]) && $time<strtotime($sc_timeStep[$i_time+1])){
             if($time>strtotime($sc_timeStep[$i_time]) ){
                 $duation = getduration($time,strtotime($sc_timeStep[$i_time]));
@@ -94,7 +115,7 @@ function timeblock($time,$sc_numCol,$sc_timeStep){
  
  
 $data_schedule=array();
-$sql="SELECT * FROM tbl_schedule  WHERE schedule_teacherID = '$teacherID' AND
+$sql="SELECT * FROM tbl_schedule  WHERE schedule_teacherID = '".$_SESSION['UserID']."' AND
     (schedule_startdate  >= '".$start_weekDay."' AND schedule_startdate <  '".$end_weekDay."') OR
 ('".$start_weekDay."' > schedule_startdate  AND schedule_enddate <  '".$end_weekDay."'  AND schedule_enddate >= '".$start_weekDay."' )  OR
     ('".$start_weekDay."' > schedule_startdate  AND '".$end_weekDay."'  < schedule_enddate  AND schedule_enddate >= '".$start_weekDay."' )
@@ -133,7 +154,7 @@ if($result){
             && strtotime($row['end_date'])>=strtotime($start_weekDay) )          
         ){
             if(isset($row['repeat_day']) && count($row['repeat_day'])>0){ // have day repeat
-                for($i=1;$i<$num_dayShow;$i++){
+                for($i=0;$i<$num_dayShow;$i++){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                         if(in_array($i+1,$row['repeat_day'])){
@@ -145,12 +166,14 @@ if($result){
                                 "title" => $row['title'],
                                 "detail" => $row['detail'],
                                 "room" => $row['room'],
+                                "teachername"=>$row['teachername'],
+
                              ];             
                         }
                     }
                 }
             }else{ // else repeat all day
-                for($i=1;$i<$num_dayShow;$i++){
+                for($i=0;$i<$num_dayShow;$i++){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                          $data_day_schedule[$dayKey][] = [
@@ -210,146 +233,9 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
 
   <body>
 
-      <div class="  ">
-<form action="" method="post" accept-charset="utf-8">
      
-<div class="form-group row">
-    
-    <label for="schedule_title" class="col-sm-2 col-form-label text-right">วิชาที่สอน</label>
-    <div class="col-12 col-sm-8">
-    <select name="schedule_title" id="schedule_title" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
-                            <?php while ($allSub = mysqli_fetch_assoc($data)) { ?>
-                                <option value="<?php echo $allSub['subject_name']; ?>" style="font-size:14px;"><?php echo $allSub['subject_name']; ?></option>
-                            <?php } ?>
-                        </select>           
-                        
-    </div>
-</div>
-<div class="form-group row">
-    <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">หลักสูตร</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_detail" data-target-input="nearest">
-        <select name="schedule_detail" id="schedule_detail" class="select select-bordered w-full">
-                            <option value="ปวช">ปวช</option>
-                            <option value="ปวส">ปวส</option>
-                            <option value="ป.ตรี">ป.ตรี</option>
-                        </select>     
-    </div>          
-        </div>       
-          
-    </div>
-</div>  
-<div class="form-group row">
-    <label for="schedule_startdate" class="col-sm-2 col-form-label text-right">วันที่เริ่มต้น</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_startdate" data-target-input="nearest">
-          <input type="date" datepicker  class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_startdate" data-target="#schedule_startdate"
-           autocomplete="off" value="" required>           
-        </div>       
-           
-    </div>
-</div>
-<div class="form-group row">
-    <label for="schedule_enddate" class="col-sm-2 col-form-label text-right">วันที่สิ้นสุด</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_enddate" data-target-input="nearest">
-            <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-            </div>           
-          <input type="date" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_enddate" data-target="#schedule_enddate"
-           autocomplete="off" value="" >           
-        </div>            
-           
-    </div>
-</div>
-<div class="form-group row">
-    <label for="schedule_starttime" class="col-sm-2 col-form-label text-right">เวลาเริ่มต้น</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_starttime" data-target-input="nearest">
-            <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-            </div>           
-          <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_starttime" data-target="#schedule_starttime"
-           autocomplete="off" value="" >           
-        </div>          
-         
-    </div>
-</div>
-<div class="form-group row">
-    <label for="schedule_endtime" class="col-sm-2 col-form-label text-right">เวลาสิ้นสุด</label>
-    <div class="col-12 col-sm-8">
-        <div class="input-group date" id="schedule_endtime" data-target-input="nearest">
-            <div class="input-group-prepend">
-                <div class="input-group-text"><i class="far fa-times-circle"></i></div>
-            </div>           
-          <input type="time" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500" name="schedule_endtime" data-target="#schedule_endtime"
-           autocomplete="off" value="" >           
-        </div>           
-          
-    </div>
-</div>
-</div>
-<div class="form-group row" >
-    <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
-    <div class="col-12 col-sm-10 pt-2">
-        <?php
-        $dayTH = array('อาทิตย์' ,'จันทร์.','อังคาร.','พุธ.','พฤหัสบดี.','ศุกร์.', 'เสาร์.');
-        ?>
-        <div class="input-group">
-        <?php foreach($dayTH as $k => $day_value){?>
-        <div class="form-check ml-3" style="width:50px;">
-            <input class="radio radio-info repeatday_chk" type="radio"
-                name="schedule_repeatday_chk" id="schedule_repeatday_chk<?=$k?>"
-                value="<?=$k?>" >
-                <label class="custom-control-label" for="schedule_repeatday_chk<?=$k?>"><?=$day_value?></label>
-        </div>    
-        <?php } ?>
-        <input type="text" name="schedule_repeatday" id="schedule_repeatday" value="" hidden/>
-        </div>
-        <br>    
-    </div>
-</div>
-<div class="form-group row" >
-    <label for="schedule_endtime" class="col-2 col-form-label text-right">ชั้นปี</label>
-    <div class="col-12 col-sm-10 pt-2">
-    <select name="schedule_classYears" id="schedule_classYears" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
-            <option value="1" style="font-size:14px;">1</option>
-            <option value="2" style="font-size:14px;">2</option>
-            <option value="3" style="font-size:14px;">3</option>
-        </select>     
-    </div>
-</div>
-<div class="form-group row" >
-    <label for="schedule_endtime" class="col-2 col-form-label text-right">กลุ่ม</label>
-    <div class="col-12 col-sm-10 pt-2">
-    <select name="schedule_classGroup" id="schedule_classGroup" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
-            <option value="1" style="font-size:14px;">1</option>
-            <option value="2" style="font-size:14px;">2</option>
-        </select>    
-    </div>
-</div>
-<div class="form-group row" >
-    <label for="schedule_endtime" class="col-2 col-form-label text-right">ห้องที่ใช้สอน</label>
-    <div class="col-12 col-sm-10 pt-2">
-    <select name="schedule_room" id="schedule_room" class="appearance-none block w-full select select-bordered text-gray-700 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500 ">
-                            <?php 
-                            $getRoom = "SELECT * FROM itroom";
-                            $roomdata = $db->query($getRoom);
-                            while ($itroom = mysqli_fetch_assoc($roomdata)) { ?>
-                                <option value="<?php echo $itroom['r_des']; ?>" style="font-size:14px;"><?php echo $itroom['r_des']; ?></option>
-                            <?php } ?>
-        </select>   
-    </div>
-</div>
-<div class="form-group row">
-    <div class="col-sm-2 offset-sm-2 text-right pt-3">
-         <button type="submit" name="btn_add" value="1" class="btn btn-primary btn-block">เพิ่มข้อมูล</button>
-    </div>
-</div> 
-</form>
-          </div>
-<div class="table wrap_schedule mt-5">
-<table class="table mt-3  border-collapse border border-slate-500">
+<div class="table-responsive wrap_schedule">
+<table class="table m-3 border-collapse border border-slate-500">
 <thead class="thead-light">
   <tr class="time_schedule">
     <th class="p-0">
@@ -410,6 +296,7 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         <a href="#" style="font-size: 18px;"><?=$row_day['title']?></a><br>
         <?=$row_day['room']?><br>
         <?=$row_day['detail']?><br>
+        <?= "อ. ".$row_day['teachername']?><br>
         <?php echo ""; ?><br>
         </div>
         <?php } ?>
@@ -435,7 +322,7 @@ $(function(){
         format: 'YYYY-MM-DD'
     });
     $('#select_date').on('change.datetimepicker',function(e){
-        window.location='index.php?uts='+e.date.format("X");
+        window.location='data_management.php?uts='+e.date.format("X");
     });
  
 }); 
@@ -500,3 +387,17 @@ $(function () {
         });         
     });
 </script>   
+
+
+<?php
+    $html=ob_get_contents();
+    $mpdf->WriteHTML($html);
+
+    $mpdf->AddPage('L'); // เพิ่มหน้าใหม่แบบแนวนอน
+    $mpdf->WriteHTML($html);
+    $mpdf->Output("res.pdf");
+    ob_end_flush();
+?>
+<a href="res.pdf" class="btn btn-primary">พิมพ์ตารางเรียน (pdf)</a>
+ </div>
+</body>
