@@ -21,7 +21,7 @@ EDS Project.
 
 # EDS - Education System
 
-- Backend 80%
-- Frontend 95%
+- Backend 95%
+- Frontend 100%
 
 

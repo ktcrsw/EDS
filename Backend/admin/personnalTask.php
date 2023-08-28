@@ -26,7 +26,7 @@ $query = $db->query($sql);
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">วันที่</th>
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สถานะ</th>                        
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">Action</th>
-                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">Status</th>                        
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">Approve</th>                        
                     </tr>
                     <?php while ($row = mysqli_fetch_assoc($query)) : ?>
                         <tr>
@@ -73,7 +73,7 @@ $query = $db->query($sql);
                             </form>
                         </td>
                             <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
-                                <form action="../functions/changeBudgetStatus.php?=<?php echo $row['fba_id']; ?>" method="post">
+                                <form action="../functions/che.php?=<?php echo $row['fba_id']; ?>" method="post">
                                 <input type="text" name="id" id="id" value="<?php echo $row['fba_id'];?>" hidden>
 
                                 <?php
@@ -97,7 +97,6 @@ $query = $db->query($sql);
                 </tbody>
                 </form>
             </table>
-            
         </div>
     </div>
 

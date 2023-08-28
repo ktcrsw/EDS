@@ -146,8 +146,8 @@ const el = document.getElementById('chart-area');
     <tr>
         <th scope="row" class="h-12 px-6 text-sm text-center transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">รวม</th>
 
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">0</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 ">0</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countMenThree?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countGirlThree?></td>
         <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 bg-[#ddf8ed] border-slate-200 stroke-slate-500 text-slate-700 "><?=$countVoc?></td>
       </tr>
     </tfoot>
