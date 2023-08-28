@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Aug 27, 2023 at 12:49 PM
+-- Generation Time: Aug 28, 2023 at 04:17 PM
 -- Server version: 8.0.17
 -- PHP Version: 7.3.10
 
@@ -1056,28 +1056,6 @@ CREATE TABLE `checkin` (
   `check_in_date` date DEFAULT NULL,
   `save_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `checkin`
---
-
-INSERT INTO `checkin` (`no`, `ref_subjectID`, `ref_teacherID`, `ref_stdID`, `check_in_status`, `groups`, `check_in_date`, `save_date`) VALUES
-(17, 1, 1, '64209010026', '0', 2, '2023-08-13', '2023-08-13'),
-(18, 1, 1, '64209010027', '1', 2, '2023-08-13', '2023-08-13'),
-(19, 1, 1, '64209010028', '0', 2, '2023-08-13', '2023-08-13'),
-(20, 1, 1, '64209010030', '0', 2, '2023-08-13', '2023-08-13'),
-(21, 1, 1, '64209010031', '0', 2, '2023-08-13', '2023-08-13'),
-(22, 1, 1, '64209010032', '0', 2, '2023-08-13', '2023-08-13'),
-(23, 34, 75, '64209010026', '0', 2, '2023-08-15', '2023-08-15'),
-(24, 34, 75, '64209010027', '1', 2, '2023-08-15', '2023-08-15'),
-(25, 34, 75, '64209010028', '0', 2, '2023-08-15', '2023-08-15'),
-(26, 34, 75, '64209010030', '2', 2, '2023-08-15', '2023-08-15'),
-(27, 34, 75, '64209010031', '2', 2, '2023-08-15', '2023-08-15'),
-(28, 34, 75, '64209010032', '2', 2, '2023-08-15', '2023-08-15'),
-(29, 1, 1, '64209010026', '0', 2, '2023-08-22', '2023-08-22'),
-(30, 1, 1, '64209010027', '1', 2, '2023-08-22', '2023-08-22'),
-(31, 1, 1, '64209010028', '1', 2, '2023-08-22', '2023-08-22'),
-(32, 1, 1, '64209010030', '0', 2, '2023-08-22', '2023-08-22');
 
 -- --------------------------------------------------------
 
@@ -10055,7 +10033,8 @@ INSERT INTO `enrollsubject` (`nullID`, `schedule_id`, `u_id`, `schedule_title`, 
 (1, 1, 1, 'การสร้างเกม 1	', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.jpg\n'),
 (2, 1, 1, 'การสร้างเกม 1	', '64209010027', 'คชาม์', 'สร้อยศรี', 2, 3, 1, '64209010027.jpg'),
 (3, 1, 1, 'การสร้างเกม 1	', '64209010028', 'ทรงพล', 'คำภูมี', 2, 3, 1, '64209010028.png'),
-(8, 1, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png');
+(8, 1, 1, 'การเขียนโปรแกรมด้วยภาษา Python', '64209010030', 'กิตติชัย', 'รักษาวงค์', 2, 3, 1, '64209010030.png'),
+(10, 43, 1, 'คอมพิวเตอร์เบื้องต้น 1', '64209010026', 'เตชสิทธิ์', 'แก้ววิเชียร', 2, 3, 1, '64209010026.png');
 
 -- --------------------------------------------------------
 
@@ -10243,6 +10222,31 @@ INSERT INTO `geographies` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `itroom`
+--
+
+CREATE TABLE `itroom` (
+  `r_id` int(11) NOT NULL,
+  `r_des` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `itroom`
+--
+
+INSERT INTO `itroom` (`r_id`, `r_des`) VALUES
+(1, 530),
+(2, 532),
+(3, 533),
+(4, 535),
+(5, 542),
+(6, 543),
+(7, 544),
+(8, 545);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mcheck`
 --
 
@@ -10411,9 +10415,19 @@ CREATE TABLE `save_studentscore` (
 --
 
 INSERT INTO `save_studentscore` (`no`, `studentID`, `subjectID`, `teacherID`, `mindScore`, `theoryScore`, `carryScore`, `finalScore`) VALUES
-(6, '64209010026', 1, 1, 20, 16, 16, 35),
-(7, '64209010027', 1, 1, 20, 20, 20, 15.6),
-(9, '64209010030', 1, 1, 15, 0, 0, 0);
+(12, '64209010027', 43, 1, 0, 0, 0, 0),
+(13, '64209010028', 43, 1, 0, 0, 0, 0),
+(14, '64209010030', 43, 1, 0, 0, 0, 0),
+(15, '64209010031', 43, 1, 0, 0, 0, 0),
+(16, '64209010032', 43, 1, 0, 0, 0, 0),
+(17, '64209010033', 43, 1, 0, 0, 0, 0),
+(18, '64209010034', 43, 1, 0, 0, 0, 0),
+(19, '64209010035', 43, 1, 0, 0, 0, 0),
+(20, '64209010036', 43, 1, 0, 0, 0, 0),
+(21, '64209010037', 43, 1, 0, 0, 0, 0),
+(22, '64209010038', 43, 1, 0, 0, 0, 0),
+(23, '64209010039', 43, 1, 0, 0, 0, 0),
+(24, '64209010026', 43, 1, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -10552,12 +10566,7 @@ CREATE TABLE `tbl_schedule` (
 --
 
 INSERT INTO `tbl_schedule` (`schedule_id`, `schedule_title`, `schedule_detail`, `schedule_classYears`, `schedule_classGroup`, `schedule_room`, `schedule_teacherName`, `schedule_teacherID`, `schedule_startdate`, `schedule_enddate`, `schedule_starttime`, `schedule_endtime`, `schedule_repeatday`, `schedule_createdate`) VALUES
-(1, 'การเขียนโปรแกรมด้วยภาษา Python', 'ปวช', 3, 2, '535', 'กิตติชัย', 1, '2023-07-31', '2023-08-31', '15:30:00', '17:30:00', '1', '2023-07-31 08:14:48'),
-(34, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวช', 3, 2, '542', 'คิตตี้ชัย', 75, '2023-07-31', '2023-08-28', '08:30:00', '10:30:00', '1', '2023-07-31 11:56:22'),
-(35, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวส', 0, 0, '', 'กิตติชัย', 1, '2023-08-22', '2023-08-29', '08:30:00', '09:30:00', '1', '2023-08-22 03:55:20'),
-(36, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวส', 0, 0, '542', 'กิตติชัย', 1, '2023-08-22', '2023-08-29', '08:30:00', '09:30:00', '3', '2023-08-22 03:55:26'),
-(37, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวส', 0, 0, '', 'กิตติชัย', 1, '2023-08-22', '2023-08-29', '08:30:00', '09:30:00', '1', '2023-08-22 03:56:02'),
-(38, 'คอมพิวเตอร์เบื้องต้น 3', 'ปวส', 0, 0, '', 'กิตติชัย', 1, '2023-08-22', '2023-08-29', '08:30:00', '09:30:00', '1', '2023-08-22 03:56:22');
+(45, 'หลักการออกแบบระบบ 1', 'ปวช', 3, 2, '542', 'กิตติชัย', 1, '2023-05-15', '2023-09-11', '13:30:00', '15:30:00', '2', '2023-08-28 15:29:40');
 
 -- --------------------------------------------------------
 
@@ -10663,6 +10672,12 @@ ALTER TABLE `geographies`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `itroom`
+--
+ALTER TABLE `itroom`
+  ADD PRIMARY KEY (`r_id`);
+
+--
 -- Indexes for table `mcheck`
 --
 ALTER TABLE `mcheck`
@@ -10760,7 +10775,7 @@ ALTER TABLE `districts`
 -- AUTO_INCREMENT for table `enrollsubject`
 --
 ALTER TABLE `enrollsubject`
-  MODIFY `nullID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `nullID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `enrolltbl`
@@ -10793,6 +10808,12 @@ ALTER TABLE `geographies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `itroom`
+--
+ALTER TABLE `itroom`
+  MODIFY `r_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT for table `mcheck`
 --
 ALTER TABLE `mcheck`
@@ -10820,7 +10841,7 @@ ALTER TABLE `save_classschedule`
 -- AUTO_INCREMENT for table `save_studentscore`
 --
 ALTER TABLE `save_studentscore`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `statusstudent`
@@ -10838,7 +10859,7 @@ ALTER TABLE `subjecttbl`
 -- AUTO_INCREMENT for table `tbl_schedule`
 --
 ALTER TABLE `tbl_schedule`
-  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `schedule_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `users`
