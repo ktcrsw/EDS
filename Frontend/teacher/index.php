@@ -34,7 +34,7 @@ $query1 = $db->query($sql1);
             <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
                <div class="avatar">
                   <div class="w-[162px] rounded-full ring ring-info ring-offset-base-100 ring-offset-2">
-                     <img src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
+                     <img src="../../Backend/upload/<?php echo $_SESSION['Image']; ?>" class="w-[162px] h-[162px] rounded-[50%] dhs shadow-md" alt="">
                   </div>
                </div>
                <div id="name" class="flex items-center flex-col w-[317px] h-[119px]">

@@ -15,7 +15,7 @@
             <span class="sr-only">Open user menu</span>
             <div class="avatar">
                <div class="w-8 h-8 rounded-full">
-                  <img id="image" onclick="show()" src="../../Backend/admin/img/<?php echo $_SESSION['Image']; ?>" alt="user photo">
+                  <img id="image" onclick="show()" src="../../Backend/upload/<?php echo $_SESSION['Image']; ?>" alt="user photo">
                </div>
             </div>
             <p class="text-white ml-2 text-[16px] max-[750px]:hidden"><b><?php echo $_SESSION['Firstname'] . "&nbsp;" . $_SESSION['Lastname']; ?></b></p>

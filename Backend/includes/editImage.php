@@ -4,9 +4,9 @@
       <!-- End Dismissible Danger Alert -->
       <div class=" items-center mb-4">
         <div class="mr-2">
-          <form action="../../Backend/functions/ediImage.php" method="post" enctype="multipart/form-data">
+          <form action="../../Backend/functions/editImage.php" method="post" enctype="multipart/form-data">
           <input type="text" class="file-input w-full max-w-xs" name="id" value="<?php echo $_SESSION['UserID'];?>" hidden/>
-          <input type="file" class="file-input w-full max-w-xs" upload />
+          <input type="file" class="file-input w-full max-w-xs" name="upload" />
           <button type="submit" class="btn btn-success inline-flex items-center justify-center h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
 
         <span class="order-2">เปลี่ยนรูป</span>

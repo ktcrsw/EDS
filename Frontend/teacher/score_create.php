@@ -31,9 +31,9 @@ $endDate = $score['createScoreEndDate'];
     <div class="flex p-8">
         <div class="w-1/3 h-screen  p-4 flex justify-center">
             <div>
-            <form action="../../Backend/functions/createScore.php" method="post">
-
+                
                 <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                    <form action="../../Backend/functions/createScore.php" method="post">
                     <div class="flex-row">
                         <div>
                             <span>รหัสวิชาเรียน : 20001-000<?php echo $row['schedule_id']; ?></span>
@@ -119,7 +119,7 @@ $endDate = $score['createScoreEndDate'];
                                 </div>
                             </form>
 
-                            <form action="../../Backend/function/createScoreFinal.php" method="post">
+                            <form action="../../Backend/functions/createScoreFinal.php" method="post">
                                 <div class="hidden  rounded-lg " id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
                                     <div class="pb-6">
                                         <span>ชื่อรายการ :
@@ -148,6 +148,7 @@ $endDate = $score['createScoreEndDate'];
                         </div>
                     <?php endwhile;     ?>
                     </div>
+                
             </div>
         </div>
 
