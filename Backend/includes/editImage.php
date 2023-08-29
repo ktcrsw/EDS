@@ -7,14 +7,14 @@
         <div>
         <div class="avatar mb-6 ">
   <div class="w-64 h-64 rounded-full">
-    <img src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202307/lisa_and_fred_0-three_four.jpg?VersionId=gsEMS79OTrrdLEoHOO32mkW3M8oU0Xaf" />
+    <img src="../../Backend/upload/<?php echo $_SESSION['Image']; ?>" id="img"/>
   </div>
 </div>
         </div>
           <div>
-          <form class="flex justify-center" action="../../Backend/functions/ediImage.php" method="post" enctype="multipart/form-data">
+          <form class="flex justify-center" action="../../Backend/functions/editImage.php" method="post" enctype="multipart/form-data">
           <input type="text" class="file-input w-full max-w-xs" name="id" value="<?php echo $_SESSION['UserID'];?>" hidden/>
-          <input type="file" class="file-input w-full max-w-xs" upload />
+          <input type="file" class="file-input w-full max-w-xs" name="upload" id="upload" />
           <button type="submit" class="btn btn-success inline-flex items-center justify-center ml-2 h-10 gap-2 px-5 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-emerald-500 hover:bg-emerald-600 focus:bg-emerald-700 disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none">
 
         <span class="order-2 text-white">บันทึกรูป</span>
@@ -38,7 +38,23 @@
 
 
 
+    <script>
 
+
+$(document).ready(() =>{
+    $('#upload').change(function(){ 
+        const file = this.files[0];
+        if(file){
+            let reader = new FileReader();
+            reader.onload = function (event){
+                $('#img').attr("src", event.target.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+});
+
+</script>
 
 
 </section>
