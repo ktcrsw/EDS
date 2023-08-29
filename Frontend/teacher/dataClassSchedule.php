@@ -19,6 +19,9 @@ $query = $db->query($sql);
         color: #002640;
         font-size: 12px;    
     }
+    aside {
+    height: 2000px;
+    }
     </style>  
 
 <?php

@@ -6,6 +6,7 @@
 
 ?>
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
+<div id="fb-root"></div>
 <?php
 
 include "../../Backend/db/connect.db.php";
@@ -76,40 +77,44 @@ $query1 = $db->query($sql1);
 
                </div>
             </div>
+            
          </div>
 
-
-
-         <div class="justify-center items-center">
-            <span class="p-[10px] flex max-[1000px]:justify-center text-[#817A7A] font-[500]">เช็คกิจกรรมหน้าเสาธง<p class="mx-1 text-[#36d399] font-medium">1</p>จาก<p class="mx-1 text-[#D31D1D] font-medium">1</p></span>
-            <div class="flex justify-center items-center flex-col ">
-               <!-- 
-            /* -------------------------------------------------------------------------- */
-            /*                              เช็คชื่อหน้าเสาธง                             */
-            /* -------------------------------------------------------------------------- */ -->
-               <div class="w-[384px] h-[144px] px-[9px] py-[10px] bg-white duration-300 hover:text-[#0093fb] drop-shadow-xl rounded-[20px] ">
-                  <div class="flex  items-center  h-[53px]">
-                     <div class="flex items-center gap-[15px]">
-                        <svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path fill-rule="evenodd" clip-rule="evenodd" d="M0.65625 16.5C0.65625 7.74937 7.74937 0.65625 16.5 0.65625C25.2506 0.65625 32.3438 7.74937 32.3438 16.5C32.3438 25.2506 25.2506 32.3438 16.5 32.3438C7.74937 32.3438 0.65625 25.2506 0.65625 16.5ZM22.3662 13.5522C22.4637 13.4223 22.5343 13.2742 22.5737 13.1167C22.6132 12.9591 22.6207 12.7952 22.5959 12.6347C22.5712 12.4742 22.5145 12.3202 22.4294 12.1819C22.3442 12.0436 22.2323 11.9236 22.1002 11.8292C21.968 11.7347 21.8183 11.6676 21.6599 11.6319C21.5014 11.5961 21.3374 11.5924 21.1775 11.6209C21.0176 11.6494 20.865 11.096 20.7287 11.7979C20.5924 11.8863 20.4751 12.0009 20.3838 12.1353L15.1253 19.4965L12.4862 16.8575C12.2552 16.6422 11.9496 16.525 11.6339 16.5306C11.3182 16.5362 11.0169 16.6641 10.7936 16.8874C10.503 17.1107 10.4424 17.4119 10.4368 17.7277C10.4313 18.0434 10.5485 18.349 10.7638 18.58L14.42 22.2362C14.5451 22.3613 14.6959 22.4575 14.862 22.5184C15.028 22.5793 15.2054 22.6033 15.3816 22.5888C15.5579 22.5742 15.7289 22.5215 15.8827 22.4343C16.0366 22.347 16.1696 22.2273 16.2725 22.0835L22.3662 13.5522Z" fill="#18BD14" />
-                        </svg>
-                        <span class=" text-[32px] ">เช็คชื่อหน้าเสาธง</span>
-                     </div>
-                     <svg class=" ml-11" width="42" height="43" viewBox="0 0 42 43" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M28.49 20.5725C28.7358 20.8186 28.8738 21.1522 28.8738 21.5C28.8738 21.8478 28.7358 22.1814 28.49 22.4275L15.365 35.5525C15.1162 35.7843 14.7871 35.9105 14.4471 35.9045C14.107 35.8985 13.7826 35.7608 13.5421 35.5203C13.3017 35.2798 13.1639 34.9554 13.1579 34.6154C13.1519 34.2754 13.2781 33.9463 13.51 33.6975L25.075 21.5L13.51 9.30248C13.2781 9.05367 13.1519 8.72459 13.1579 8.38456C13.1639 8.04453 13.3017 7.72011 13.5421 7.47964C13.7826 7.23916 14.107 7.10142 14.4471 7.09542C14.7871 7.08942 15.1162 7.21564 15.365 7.44748L28.49 20.5725Z" fill="#817A7A" />
-                     </svg>
-                  </div>
-                  <div class="p-4">
-                     <span class="text-[24px] text-[817a7a]">ปวช.1/ชกว./2</span>
-                  </div>
-               </div>
-               </a>
-
+         <div class="flex justify-center items-center mt-5">
+            <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
+               
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FITUDTC&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             </div>
+            
          </div>
-      </div>
-      <div class="w-full">
+         
+         <div class="flex justify-center items-center mt-5">
+            <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
+               
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fudontech.ac.th&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>            </div>
+            
+         </div>
 
+
+       
+      </div>
+      
+      <div class="w-full">
+      <div class="alert alert-info mb-3  px-2 ">
+
+<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="stroke-current shrink-0 w-6 h-6"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+   <path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L381.7 53c-48 48-113.1 75-181 75H192 160 64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64l0 128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352l8.7 0c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7V240 371.3C357.2 317.8 280.5 288 200.7 288H192V192h8.7c79.8 0 156.5-29.8 215.3-83.3z" />
+</svg>
+<?php
+
+$selectFile = "SELECT * FROM files LIMIT 1";
+$resultFile = $db->query($selectFile);
+while ($f = mysqli_fetch_assoc($resultFile)) {
+
+?>
+   <marquee class="text-white text-[24px] font-bold"><?php echo $f['fileName'] . "&nbsp;" . $f['fileDescription']; ?></marquee>
+<?php } ?>
+</div>
          <!-- /* -------------------------------------------------------------------------- */
          /*                                ประชาสัมพันธ์                               */
          /* -------------------------------------------------------------------------- */ -->
@@ -177,6 +182,8 @@ $query1 = $db->query($sql1);
 
          $row = mysqli_num_rows($query1);
 
+         
+
          ?>
 
          <div class="flex navhover justify-center items-center">
@@ -184,35 +191,18 @@ $query1 = $db->query($sql1);
                <div class="grid grid-cols-2 min-[1861px]:grid-cols-4 ">
                   <div class="stat">
                      <div class="stat-figure text-secondary">
-                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem;  --value:0;">0%</div>
+                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
                      </div>
-                     <div class="">
-                        <div class=" flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">กิจกรรมหน้าเสาธง</div>
-                        <div class="flex justify-center text-[50px] text-success font-bold">0%</div>
-                     </div>
-                  </div>
-                  <div class="stat">
-                     <div class="stat-figure text-secondary">
-                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:0;">0%</div>
-                     </div>
-                     <div class="flex justify-center text-[19px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">เช็คกิจกรรมหน้าเสาธง</div>
-                     <div class="flex justify-center text-[50px] text-success font-bold">0%</div>
+                     <div class=" flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">เช็คชื่อรายวิชา</div>
+                     <div class="flex justify-center text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
                   </div>
 
                   <div class="stat">
                      <div class="stat-figure text-secondary">
                         <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:<?php echo $row; ?>;"><?php echo $row; ?>%</div>
                      </div>
-                     <div class=" flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">เช็คชื่อโฮมรูม</div>
-                     <div class="flex justify-center text-[50px] text-error font-bold"><?php echo $row; ?>%</div>
-                  </div>
-
-                  <div class="stat">
-                     <div class="stat-figure text-secondary">
-                        <div class="radial-progress bg-base-200 text-info border-4 font-bold border-base-200" style="--size:6rem; --value:0;">0%</div>
-                     </div>
-                     <div class="flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">บันทึกโฮมรูม</div>
-                     <div class="flex justify-center text-[50px] text-error font-bold">0%</div>
+                     <div class="flex justify-center text-[20px] max-[1861px]:text-[19px] max-[1175px]:text-[12px] text-gray-500 font-medium">บันทึกเช็คชื่อรายวิชา</div>
+                     <div class="flex justify-center text-[50px] text-error font-bold"><?php echo $row;  ?>%</div>
                   </div>
                </div>
             </div>
