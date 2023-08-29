@@ -219,7 +219,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
 
      
 <div class="table-responsive wrap_schedule">
-<table class="table m-3 border-collapse border border-slate-500">
+<table class="table mt-3  border-collapse border border-slate-500">
 <thead class="thead-light">
   <tr class="time_schedule">
     <th class="p-0">
@@ -280,7 +280,6 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
         <a href="#" style="font-size: 18px;"><?=$row_day['title']?></a><br>
         <?=$row_day['room']?><br>
         <?=$row_day['detail']?><br>
-        <?= "อ. ".$row_day['teachername']?><br>
         <?php echo ""; ?><br>
         </div>
         <?php } ?>
@@ -290,7 +289,7 @@ for($i_day=0;$i_day<$num_dayShow;$i_day++){
   </tr>  
 <?php }?>
 </tbody>
-</table>       
+</table>      
       
 </div>    
 <script  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
