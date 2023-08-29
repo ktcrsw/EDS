@@ -225,7 +225,14 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                      <div>
                         <span class="text-[25px] font-medium">คาบโฮมรูม : คาบ 1 </span>
                      </div>
-                     <span class="text-[16px]  tracking-wider text-[6b7280]">เทคโนโลยีสารสนเทศ ปวช.1/ชกว./2</span>
+                     <?php 
+                     
+                     $getGroup = "SELECT * FROM tbl_schedule WHERE schedule_classGroup AND schedule_teacherID = '".$_SESSION['UserID']."'";
+                     $queryGroup = $db->query($getGroup);
+                     $sumG = mysqli_num_rows($queryGroup);
+                     
+                     ?>
+                     <span class="text-[16px]  tracking-wider text-[6b7280]">เทคโนโลยีสารสนเทศ</span>
                   </div>
                   <div class="items-center justify-center flex">
 
@@ -297,7 +304,20 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
 
                      <div class="stat-figure text-secondary flex flex-col justify-center items-center ">
                         <div class="stat-desc text-neutral pb-1 ">ดำเนินการ</div>
-                        <div class="radial-progress bg-base-200 text-accent-focus border-4 font-bold border-base-200" style="--size:6rem; --value:0;">0%</div>
+                        <div class="radial-progress bg-base-200 text-accent-focus border-4 font-bold border-base-200" style="--size:6rem; --value:<?php                     
+                        
+                        if($sumG >= $sumg){
+                           echo 100;
+                        }
+   
+                        ?>;"><?php                     
+                        
+                        if($sumG >= $sumg){
+                           echo 100;
+                        } else {
+                           echo $sumG;
+                        }
+   ?>%</div>
                      </div>
                   </div>
                   <div class="flex justify-center mt-7">
@@ -305,7 +325,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                         <div class="flex flex-col items-ceter ">
                            <label for="" class="text-[20px] text-gray-500 font-medium">ทั้งหมด</label>
                            <span class="text-[18px]">
-                              <label for="" class="text-[#0093fb] font-[500]">3</label>
+                              <label for="" class="text-[#0093fb] font-[500]"><?=$sumG?></label>
                               <label class="text-[18px] text-gray-500">กลุ่ม</label>
                            </span>
                         </div>
@@ -318,7 +338,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                                  <polyline points="17 11 19 13 23 9"></polyline>
                               </svg>
                               <span class="text-[18px]">
-                                 <label for="" class="text-[#36d399] font-[500]">1</label>
+                                 <label for="" class="text-[#36d399] font-[500]"><?=$sumG?></label>
                                  <label class="text-[18px] text-gray-500">กลุ่ม</label>
                               </span>
                            </div>
@@ -333,7 +353,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                                  <line x1="23" y1="8" x2="18" y2="13"></line>
                               </svg>
                               <span class="text-[18px]">
-                                 <label for="" class="text-[#e51111] font-[500]">2</label>
+                                 <label for="" class="text-[#e51111] font-[500]"><?=0?></label>
                                  <label class="text-[18px] text-gray-500">กลุ่ม</label>
                               </span>
                            </div>
@@ -350,7 +370,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
             /*                               เช็คชื่อรายวิชา                              */
             /* -------------------------------------------------------------------------- */ -->
             <div class=" w-[50%] max-[1293px]:w-full">
-               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">เช็คชื่อเข้าเรียนรายวิชา <p class="mx-1 text-[#36d399] font-bold">1</p>จาก<p class="mx-1 text-[red] font-bold">2</p>
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]"> <p class="mx-1 text-[#36d399] font-bold"></p><p class="mx-1 text-[red] font-bold"></p>
                </span>
 
                <!-- /* -------------------------------- วิชาที่ 1 ------------------------------- */ -->
@@ -420,7 +440,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                         </label></span>
 
                         <div class="flex flex-row items-start ml-4 text-[18px]  gap-1">
-                           <label class="font-[500]">สถานะ :</label>
+                           <!-- <label class="font-[500]">สถานะ :</label> -->
                            <!-- <span class="font-[500] text-[#ff0000]">ยังไม่เช็คชื่อ</span>
                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#e51111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                               <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -428,9 +448,9 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                               <line x1="18" y1="8" x2="23" y2="13"></line>
                               <line x1="23" y1="8" x2="18" y2="13"></line>
                            </svg> -->
-                            <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span> 
+                            <!-- <span class="font-[500] text-[#36D399]">เช็คชื่อแล้ว</span> 
                            <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                           <path d="M28 1L9.4375 19L1 10.8182" stroke="#36D399" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M28 1L9.4375 19L1 10.8182" stroke="#36D399" stroke-width="1.41667" stroke-linecap="round" stroke-linejoin="round" /> -->
                         </svg> 
 
                         </div>

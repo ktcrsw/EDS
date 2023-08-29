@@ -29,8 +29,6 @@
         $_SESSION['BD'] = $row['birthday'];
         $_SESSION['Lastname'] = $row['lname'];
         $_SESSION['Permission'] = $row['permission'];
-        $_SESSION['main_groups'] = $row['main_groups'];
-        $_SESSION['groups'] = $row['groups'];
         $_SESSION['Image'] = $row['img'];
         if($_SESSION['Permission'] == 0){
             echo "Welcome back " . $row['username'];

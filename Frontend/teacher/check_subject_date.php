@@ -23,7 +23,7 @@ $syear = $_SESSION['Year'];
 
 $currentdate = date('Y-m-d');
 
-$ciList = "SELECT * FROM checkin WHERE ref_subjectID = '$subjectteacherid' AND ref_teacherID = '".$_SESSION['UserID']."'"; 
+$ciList = "SELECT * FROM checkin_logs WHERE logs_subjectID = '$subjectteacherid' AND log_teacherID = '".$_SESSION['UserID']."'"; 
 $ciListData = $db->query($ciList);
 
 
@@ -51,29 +51,11 @@ $ciListData = $db->query($ciList);
     <tbody>
       <tr class="bg-[#3b82f6]">
         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tl-lg ">วันที่จัดการสอน</th>
-        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">ข</th>
-        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">ลป</th>
-        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">ลก</th>
-        <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">ส</th>
-        <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">มช</th>
-        <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white  ">รวม</th>
-        <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white ">จำนวนเข้าเรียน</th>
-        <th scope="col" class="h-12 px-1 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tr-lg ">รายละเอียด</th>
+
       </tr>
       <?php while($row = mysqli_fetch_array($ciListData)){?>
       <tr class=" odd:bg-slate-100">
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['save_date']; ?></td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php if($row['check_in_status'] == 1){
-          
-          }?></td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">-/-</td>
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "> 
-            <span class="text-green-500 font-semibold">20</span>/<span class="text-red-500 font-semibold">20</span></td>
-            <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 ">วันหยุด-ไม่มีการเรียนการสอน</td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['logs_date']; ?></td>
       </tr>
       <?php } ?>
       
