@@ -33,18 +33,18 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.5/dist/sweetalert2.min.css
 </head>
 
 <body>
-    <div class="grid min-[1030px]:grid-cols-2 h-screen">
-        <div class=" w-full flex justify-center items-center">
-            <div class="w-full min-[1300px]:ml-32  flex justify-center items-center">
-                <img src="../Frontend/image/eds_logo.svg" class="w-[200px] h-[300px] md:w-[auto] md:h-[auto]" alt="">
-                <label class="text-[130px] min-[1300px]:text-[200px] font-[700] text-[#3884FD]">EDS</label>
-            </div>
-        </div>
-        <div class="w-full flex justify-center items-center">
-            <div class="flex items-center justify-center">
-                <div>
-                    <label class="text-[70px] font-bold text-[#808080] ">เข้าสู่ระบบ EDS</label>
-                    <div class="btn-group flex justify-center items-center mt-8">
+<div class="grid min-[1030px]:grid-cols-2 h-screen">
+    <div class=" w-full flex justify-center items-center">
+      <div class="w-full min-[1300px]:ml-32  flex justify-center items-center">
+        <img src="../Frontend/image/eds_logo.svg" class="w-[200px] h-[300px] max-[458px]:w-[100px] max-[458px]:h-[200px] md:w-[auto] md:h-[auto]" alt="">
+        <label class="text-[130px] max-[458px]:text-[90px] min-[1300px]:text-[200px] font-[700] text-[#3884FD]">EDS</label>
+      </div>
+    </div>
+    <div class="w-full flex justify-center items-center">
+      <div class="flex items-center justify-center">
+        <div>
+          <label class="text-[70px] max-[458px]:text-[46px] flex justify-center  font-bold text-[#808080] ">เข้าสู่ระบบ EDS</label>
+          <div class="btn-group flex justify-center items-center mt-8">
                         <a href="login_stu.php">
                             <button class="btn btn-success
   text-white rounded-none rounded-l-[15px]   w-32 "><img src="./image/graduated (1).png" class="mr-1">นักเรียน</button>

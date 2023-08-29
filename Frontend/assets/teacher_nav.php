@@ -13,7 +13,7 @@
 
          <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="flex items-center text-sm font-medium text-gray-900 rounded-full hover:text-blue-600 dark:hover:text-blue-500 md:mr-0 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-white" type="button">
             <span class="sr-only">Open user menu</span>
-            <div class="avatar">
+            <div class="avatar online">
                <div class="w-8 h-8 rounded-full">
                   <img id="image" onclick="show()" src="../../Backend/upload/<?php echo $_SESSION['Image']; ?>" alt="user photo">
                </div>
@@ -24,7 +24,7 @@
             </svg>
          </button>
 
-         <!-- Dropdown menu -->
+
          <div id="dropdownAvatarName" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                <div class="font-medium min-[750px]:hidden ">
