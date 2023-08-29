@@ -8,8 +8,9 @@
 
 
     $password = md5($_POST['password']);
-    $filename = $_POST['upload'].".png";
-
+    $_FILES['upload']['name'];
+    $ext = explode(".", $_FILES['upload']['name']);
+    $filename = "EDS-Img".$_POST['id'].".".$ext[1];
     function password_generate($chars) 
     {
     $data = '123456789013';
@@ -17,10 +18,11 @@
     }
  
     $idcard = password_generate(13);
-
-    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, address, phone, birthday, permission, main_groups, groups, img) VALUE
-    ('', '".$idcard."', '".$_POST['username']."', '".$_POST['email']."', '".$password."', '".$_POST['first-name']."', '".$_POST['last-name']."', '".$_POST['about']."', '".$_POST['phone']."', '', 1, '', '', '$filename')";
+    if(move_uploaded_file($_FILES['upload']['tmp_name'], "../upload/". "$filename")){
+    $data = "INSERT INTO users(u_id, id_card, username, email, pwd, fname, lname, address, phone, birthday, permission, img) VALUE
+    ('', '".$idcard."', '".$_POST['username']."', '".$_POST['email']."', '".$password."', '".$_POST['first-name']."', '".$_POST['last-name']."', '".$_POST['about']."', '".$_POST['phone']."', '', 1, '$filename')";
     $query = $db->query($data);
 
     header('location: ../admin/admin_datamanagement.php');
+    }
 ?>
