@@ -26,6 +26,7 @@ $query = $db->query($sql);
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">วันที่</th>
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">สถานะ</th>                        
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">Action</th>
+                        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 text-center">Prints</th>
                         <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500">Approve</th>                        
                     </tr>
                     <?php while ($row = mysqli_fetch_assoc($query)) : ?>
@@ -68,9 +69,27 @@ $query = $db->query($sql);
                             <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
                                 <form action="../pdf/แบบขออนุญาตไปราชการ.php?=<?php echo $row['fba_id']; ?>" method="post">
                                 <input type="text" name="id" id="id" value="<?php echo $row['fba_id'];?>" hidden>
-                                <button type="submit" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i></button>                  
+                                <button type="submit" class="mt-3 btn btn-warning"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i></button>                  
                                 
                             </form>
+                            </td>
+                            <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
+                                <form action="../pdf/อนุมัติให้ข้าราชการและบุคลากรเดินทางไปราชการ.php?=<?php echo $row['fba_id']; ?>" method="post">
+                                <input type="text" name="id" id="id" value="<?php echo $row['fba_id'];?>" hidden>
+
+                                <?php
+                                
+                                if($row['fba_status'] == 1){
+                                    echo '                                <button type="submit" class="mt-3 btn btn-success"><i class="fa-solid fa-print" style="color: #ffffff;"></i></button>                                                      ';
+                                } else if($row['fba_status'] == 0){
+                                    echo '                                <button type="submit" class="mt-3 btn btn-error"><i class="fa-solid fa-print" style="color: #ffffff;"></i></button>                  
+                                    ';
+                                }
+
+                                ?>
+                                
+                            </form>
+                        </td>
                         </td>
                             <td class="h-12 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 text-center text-light text-white">
                                 <form action="../functions/changeBudgetStatus.php?=<?php echo $row['fba_id']; ?>" method="post">
@@ -79,16 +98,16 @@ $query = $db->query($sql);
                                 <?php
                                 
                                 if($row['fba_status'] == 1){
-                                    echo '                                <button type="submit" class="btn btn-success"><i class="fa-solid fa-check"  style="color:#fff;"></i></button>                                                      ';
+                                    echo '                                <button type="submit" class="mt-3 btn btn-success"><i class="fa-solid fa-check"  style="color:#fff;"></i></button>                                                      ';
                                 } else if($row['fba_status'] == 0){
-                                    echo '                                <button type="submit" class="btn btn-error"><i class="fa-solid fa-x"  style="color:#fff;"></i></button>                  
+                                    echo '                                <button type="submit" class="mt-3 btn btn-error"><i class="fa-solid fa-x"  style="color:#fff;"></i></button>                  
                                     ';
                                 }
 
                                 ?>
                                 
                             </form>
-                        </td>
+                       
 
                         </tr>
                     <?php endwhile; ?>
