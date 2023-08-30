@@ -28,13 +28,6 @@
                <div class="font-medium min-[750px]:hidden "><p><b><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></b></p></div>
                <div class="font-medium "><?php echo $_SESSION['Student_FirstName'] . "&nbsp;" . $_SESSION['Student_LastName']; ?></div>
             </div>
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
-             
-               <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-gray-500">เปลี่ยนรูปประจำตัว</a>
-               </li>
-             
-            </ul>
             <div class="py-2">
                <a href="../../Backend/auth/signout.php" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-gray-700">ออกจากระบบ</a>
             </div>

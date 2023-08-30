@@ -372,7 +372,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
             /*                               เช็คชื่อรายวิชา                              */
             /* -------------------------------------------------------------------------- */ -->
             <div class=" w-[50%] max-[1293px]:w-full">
-               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]"> <p class="mx-1 text-[#36d399] font-bold"></p><p class="mx-1 text-[red] font-bold"></p>
+               <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]"> <p class="mx-1 text-[#817A7A] font-[500]">เช็คชื่อเข้าเรียน</p><p class="mx-1 text-[red] font-bold"></p>
                </span>
 
                <!-- /* -------------------------------- วิชาที่ 1 ------------------------------- */ -->
