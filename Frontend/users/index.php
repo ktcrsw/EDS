@@ -45,7 +45,7 @@ $query = $db->query($sql);
                <?php
 
 
-               $getMindScore = "SELECT * FROM save_studentscore WHERE studentID = '" . $_SESSION['Student_ID'] . "'";
+               $getMindScore = "SELECT * FROM save_studentscore WHERE subjectID AND studentID = '" . $_SESSION['Student_ID'] . "' LIMIT 1";
                $resultScore = $db->query($getMindScore);
                $count = mysqli_num_rows($resultScore);
                while ($sc = mysqli_fetch_assoc($resultScore)) {
@@ -110,6 +110,8 @@ $query = $db->query($sql);
                   </div>
 
             </div>
+            <?php }  ?>
+
          </div>
          <div class=" justify-center flex">
             <ul class="relative flex flex-col gap-12 py-12 pl-6 before:absolute before:top-0 before:left-6 before:h-full before:border before:-translate-x-1/2 before:border-slate-200 before:border-dashed after:absolute after:top-6 after:left-6 after:bottom-6 after:border after:-translate-x-1/2 after:border-slate-200 ">
@@ -142,10 +144,9 @@ $query = $db->query($sql);
                      }
                      ?>
                   </span>
-               <?php }  ?>
                <div class="flex flex-col flex-1 gap-0">
-                  <h4 class="text-sm font-medium text-slate-700"> ภาคเรียน 1/2564 </h4>
-                  <p class="text-xs text-slate-500">ผลการเรียน อยู่ในเกณฑ์ ดีมาก</p>
+                  <h4 class="text-sm font-medium text-slate-700"> ภาคเรียน 1/2566 </h4>
+                  <p class="text-xs text-slate-500">ผลการเรียน อยู่ในเกณฑ์ ปกติ</p>
                </div>
                <!-- /* -------------------------------------------------------------------------- */
               /*                               เกรดเพิ่มเติม 1                              */
