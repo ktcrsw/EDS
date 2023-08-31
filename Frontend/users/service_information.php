@@ -213,10 +213,40 @@ $query = $db->query($sql);
 
                 </div>
             </div>
+            
         </div>
     </div>
-    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="scorelist" role="tabpanel" aria-labelledby="scorelist">
+    <div class="hidden  rounded-lg bg-gray-50 dark:bg-gray-800" id="scorelist" role="tabpanel" aria-labelledby="scorelist">
         <!-- ตรงนี้ -->
+        <div class="px-32  flex justify-center items-center  ">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh'],
+      datasets: [{
+        label: 'กราฟจำนวนการเข้าเรียน',
+        data: [12, 19, 3, 5, 2, 3, 3, 3, 3, 3, 3, 3],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+ 
     </div>
     </div>
 
