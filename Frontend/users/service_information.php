@@ -218,11 +218,26 @@ $query = $db->query($sql);
     </div>
     <div class="hidden  rounded-lg bg-gray-50 dark:bg-gray-800" id="scorelist" role="tabpanel" aria-labelledby="scorelist">
         <!-- ตรงนี้ -->
+        
         <div class="px-32  flex justify-center items-center  ">
   <canvas id="myChart"></canvas>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<?php 
+$getData = "SELECT save_studentscore.subjectID AS saveSubID, tbl_schedule.schedule_id AS scheduleID, tbl_schedule.schedule_title AS subjectName , save_studentscore.mindScore AS mind, save_studentscore.theoryScore AS theory, save_studentscore.carryScore AS carry, save_studentscore.finalScore AS final FROM save_studentscore INNER JOIN tbl_schedule ON tbl_schedule.schedule_id = save_studentscore.subjectID WHERE studentID = '".$_SESSION['Student_ID']."' ";
+$querySC = $db->query($getData);
+
+$labels = [];
+$scores = [];
+
+while($scdt = mysqli_fetch_array($querySC)){
+    $sumscore = $scdt['mind'] + $scdt['theory'] + $scdt['carry'] + $scdt['final'];
+
+    $labels[] = $scdt['subjectName'];
+    $scores[] = $sumscore;
+}
+?>
 
 <script>
   const ctx = document.getElementById('myChart');
@@ -230,10 +245,10 @@ $query = $db->query($sql);
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh','hhh'],
+      labels: <?= json_encode($labels) ?>,
       datasets: [{
-        label: 'กราฟจำนวนการเข้าเรียน',
-        data: [12, 19, 3, 5, 2, 3, 3, 3, 3, 3, 3, 3],
+        label: 'คะแนนรายวิชา',
+        data: <?= json_encode($scores) ?>,
         borderWidth: 1
       }]
     },
@@ -246,6 +261,7 @@ $query = $db->query($sql);
     }
   });
 </script>
+
  
     </div>
     </div>

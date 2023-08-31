@@ -300,13 +300,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                </div>
             <?php endwhile; ?>
          </div>
-         <?php
-
-         $scheduletbl = "SELECT * FROM tbl_schedule WHERE schedule_classYears = '" . $_SESSION['Student_Year'] . "' AND schedule_classGroup = '" . $_SESSION['Student_Groups'] . "' ";
-         $resulttbl = $db->query($scheduletbl);
-         for ($i = 1; $i <= 2; $i++) {
-            while ($row = mysqli_fetch_assoc($resulttbl)) {
-         ?>
+   
                <div class="min-[1530px]:flex  ">
                   <div class="w-full min-[1530px]:w-[50%] ml-[10px]  ">
                      <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-[500]">วิชาที่เรียนวันนี้</span>
@@ -314,6 +308,13 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
 
 
                         <!-- วิชาที่1 -->
+                        <?php
+
+$scheduletbl = "SELECT * FROM tbl_schedule WHERE schedule_classYears = '" . $_SESSION['Student_Year'] . "' AND schedule_classGroup = '" . $_SESSION['Student_Groups'] . "' ";
+$resulttbl = $db->query($scheduletbl);
+for ($i = 1; $i <= 2; $i++) {
+   while ($row = mysqli_fetch_assoc($resulttbl)) {
+?>
                         <div class="flex   ml-4  p-2 gap-3">
                            <div class="flex justify-center items-center w-[50px] h-[50px] bg-blue-300 rounded-[50%]">
                               <label class="text-white font-medium text-lg"><?= $i++ ?></label>
@@ -394,13 +395,13 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                            <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
                         </div>
 
+                        <?php }
+         } ?>
 
                         <!-- วิชาที่ 2 -->
                      </div>
                   </div>
 
-            <?php }
-         } ?>
 
             <!-- /* -------------------------------------------------------------------------- */
 /*                                student card                                */

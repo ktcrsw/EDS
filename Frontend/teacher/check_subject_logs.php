@@ -11,7 +11,7 @@ $syear = $_SESSION['Year'];
 
 // echo $sgroup. "" . $syear;
 
-$sql = "SELECT * FROM enrollsubject WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
+$sql = "SELECT * FROM enrolltbl WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
 $query = $db->query($sql);
 $sqls = "SELECT * FROM enrollsubject WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
 $querys = $db->query($sqls);
@@ -91,7 +91,30 @@ $count = mysqli_num_rows($queryStatus);
 
                                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                                         <div class="flex justify-center">
-                                            <input type="radio" name="stdID[<?= $listStd['ref_studenttbl'] ?>]" class="radio radio-success" value="0" />
+                                            <?php 
+                                            
+                                            $getStatus = "SELECT * FROM checkin WHERE ref_stdID = '".$listStd['ref_studenttbl']."'";
+                                            $queryStatusStd = $db->query($getStatus);
+
+                                            while($st = mysqli_fetch_assoc($queryStatusStd)){
+                                                if($st['check_in_status'] == 0){
+                                                    echo "มาเรียน";
+                                                }
+                                                if($st['check_in_status'] == 1){
+                                                    echo "ขาดเรียน";
+                                                }
+                                                if($st['check_in_status'] == 2){
+                                                    echo "ลาป่วย";
+                                                }
+                                                if($st['check_in_status'] == 3){
+                                                    echo "ลากิจ";
+                                                }
+                                                if($st['check_in_status'] == 4){
+                                                    echo "มาสาย";
+                                                }
+                                            }
+
+                                            ?>
                                         </div>
                                     </td>
                                    

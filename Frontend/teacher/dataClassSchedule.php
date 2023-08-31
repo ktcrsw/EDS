@@ -153,7 +153,7 @@ if($result){
                     }
                 }
             }else{ // else repeat all day
-                for($i=0;$i<$num_dayShow;$i++){
+                for($i=1;$i<$num_dayShow;$i++){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                          $data_day_schedule[$dayKey][] = [
@@ -174,41 +174,58 @@ if($result){
  }
  ?>
  <?php
-// การบันทึกข้อมูลอย่างง่ายเบื้องตั้น
-if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
-    $p_schedule_title = (isset($_POST['schedule_title']))?$_POST['schedule_title']:"";
-    $p_schedule_detail = (isset($_POST['schedule_detail']))?$_POST['schedule_detail']:"";
-    $p_schedule_classYears = (isset($_POST['schedule_classYears']))?$_POST['schedule_classYears']:"";
-    $p_schedule_classGroup = (isset($_POST['schedule_classGroup']))?$_POST['schedule_classGroup']:"";
-    $p_schedule_room = (isset($_POST['schedule_room']))?$_POST['schedule_room']:"";
-    $p_schedule_teacherName = $_SESSION['Firstname'];
-    $p_schedule_teacherID = $_SESSION['UserID'];
-    $p_schedule_startdate = (isset($_POST['schedule_startdate']))?$_POST['schedule_startdate']:"0000-00-00";
-    $p_schedule_enddate = (isset($_POST['schedule_enddate']))?$_POST['schedule_enddate']:"0000-00-00";
-    $p_schedule_enddate = ($p_schedule_enddate=="0000-00-00")?$p_schedule_startdate:$p_schedule_enddate;
-    $p_schedule_starttime = (isset($_POST['schedule_starttime']))?$_POST['schedule_starttime']:"00:00:00";
-    $p_schedule_endtime = (isset($_POST['schedule_endtime']))?$_POST['schedule_endtime']:"00:00:00";
-    $p_schedule_repeatday = (isset($_POST['schedule_repeatday']))?$_POST['schedule_repeatday']:"";
-    $p_schedule_allday = (isset($_POST['schedule_allday']))?1:0;
-    $sql = "
-    INSERT INTO tbl_schedule SET
-    schedule_title='".$p_schedule_title."',
-    schedule_detail='".$p_schedule_detail."',
-    schedule_classYears='".$p_schedule_classYears."',
-    schedule_classGroup='".$p_schedule_classGroup."',
-    schedule_room='".$p_schedule_room."',
-    schedule_teacherName='".$p_schedule_teacherName."',
-    schedule_teacherID='".$p_schedule_teacherID."',
-    schedule_startdate='".$p_schedule_startdate."',
-    schedule_enddate='".$p_schedule_enddate."',
-    schedule_starttime='".$p_schedule_starttime."',
-    schedule_endtime='".$p_schedule_endtime."',
-    schedule_repeatday='".$p_schedule_repeatday."'
-    ";
-    $db->query($sql);
-    header("Location: index.php");
-
+while($checkSame = mysqli_fetch_assoc($result)){
+    if($checkSame['tbl_starttime'] = $_POST['schedule_startdate'] && $checkSame['schedule_room'] == $_POST['schedule_room']){
+        
+        header("refesh:2; url=index.php");
+        include("../../Frontend/assets/header.php");
+            echo "<script>setTimeout(function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'ขออภัยคุณลงตารางเรียนซ้ำ',
+                    text: 'โปรดตรวจสอบข้อมูลให้ดีก่อนลง',
+                    showCancelButton: false,
+                    showConfirmButton: false
+                }, function() {
+                    window.location = '../../Frontend/users/index.php';
+                });
+            });</script>";
+    
+    } else if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
+        $p_schedule_title = (isset($_POST['schedule_title']))?$_POST['schedule_title']:"";
+        $p_schedule_detail = (isset($_POST['schedule_detail']))?$_POST['schedule_detail']:"";
+        $p_schedule_classYears = (isset($_POST['schedule_classYears']))?$_POST['schedule_classYears']:"";
+        $p_schedule_classGroup = (isset($_POST['schedule_classGroup']))?$_POST['schedule_classGroup']:"";
+        $p_schedule_room = (isset($_POST['schedule_room']))?$_POST['schedule_room']:"";
+        $p_schedule_teacherName = $_SESSION['Firstname'];
+        $p_schedule_teacherID = $_SESSION['UserID'];
+        $p_schedule_startdate = (isset($_POST['schedule_startdate']))?$_POST['schedule_startdate']:"0000-00-00";
+        $p_schedule_enddate = (isset($_POST['schedule_enddate']))?$_POST['schedule_enddate']:"0000-00-00";
+        $p_schedule_enddate = ($p_schedule_enddate=="0000-00-00")?$p_schedule_startdate:$p_schedule_enddate;
+        $p_schedule_starttime = (isset($_POST['schedule_starttime']))?$_POST['schedule_starttime']:"00:00:00";
+        $p_schedule_endtime = (isset($_POST['schedule_endtime']))?$_POST['schedule_endtime']:"00:00:00";
+        $p_schedule_repeatday = (isset($_POST['schedule_repeatday']))?$_POST['schedule_repeatday']:"";
+        $p_schedule_allday = (isset($_POST['schedule_allday']))?1:0;
+        $sql = "
+        INSERT INTO tbl_schedule SET
+        schedule_title='".$p_schedule_title."',
+        schedule_detail='".$p_schedule_detail."',
+        schedule_classYears='".$p_schedule_classYears."',
+        schedule_classGroup='".$p_schedule_classGroup."',
+        schedule_room='".$p_schedule_room."',
+        schedule_teacherName='".$p_schedule_teacherName."',
+        schedule_teacherID='".$p_schedule_teacherID."',
+        schedule_startdate='".$p_schedule_startdate."',
+        schedule_enddate='".$p_schedule_enddate."',
+        schedule_starttime='".$p_schedule_starttime."',
+        schedule_endtime='".$p_schedule_endtime."',
+        schedule_repeatday='".$p_schedule_repeatday."'
+        ";
+        $db->query($sql);
+        
+    }
 }
+
 ?>
 
   <body>
@@ -296,7 +313,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
     <div class="col-12 flex flex-row col-sm-10 pt-2">
         <?php
-        $dayTH = array('อาทิตย์' ,'จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์');
+        $dayTH = array('จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์');
         ?>
       
         <?php foreach($dayTH as $k => $day_value){?>

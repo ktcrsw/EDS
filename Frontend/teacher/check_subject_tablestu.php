@@ -11,9 +11,9 @@ $syear = $_SESSION['Year'];
 
 // echo $sgroup. "" . $syear;
 
-$sql = "SELECT * FROM enrollsubject WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
+$sql = "SELECT * FROM enrolltbl WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup' ";
 $query = $db->query($sql);
-$sqls = "SELECT * FROM enrollsubject WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup'";
+$sqls = "SELECT * FROM enrolltbl WHERE ref_years = '$syear' AND ref_stdGroups = '$sgroup' ";
 $querys = $db->query($sqls);
 
 $getStatus = "SELECT * FROM statusstudent";
@@ -58,8 +58,7 @@ $count = mysqli_num_rows($queryStatus);
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลป</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ลก</th>
                             <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">ส</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white">รายละเอียด</th>
-                            <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0  border-slate-200 stroke-slate-500 text-white rounded-tr-lg">ไม่เข้าเรียนสะสม</th>
+                            
                         </tr>
 
                         <!-- /* -------------------------------------------------------------------------- */
@@ -158,32 +157,7 @@ $count = mysqli_num_rows($queryStatus);
 
         </div>
 
-        <div class="flex items-start w-full gap-4 px-4 mt-6 py-3 text-sm border rounded border-blue-100 bg-blue-50 text-emerald-500" role="alert">
-
-            <div class="w-1/4">
-                <div class=" px-4 py-3 text-sm text-red-500 border border-red-100 rounded bg-red-200" role="alert">
-                    <p class="text-black">ไม่มีการเรียนการสอน</p>
-
-                </div>
-                <div class="mt-4">
-                    <button class="inline-flex items-center  justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-white transition duration-300 rounded focus-visible:outline-none whitespace-nowrap bg-[#3b82f6] hover:bg-blue-400">
-                        <span>บันทึก</span>
-                    </button>
-                </div>
-            </div>
-            <div class="w-1/2 px-4 py-3 text-sm text-red-500   rounded " role="alert">
-
-                <label for="" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">ประเภทเหตุผล</label>
-                <select id="" class="bg-gray-50 border w-96 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-500 dark:border-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="a">วันหยุด</option>
-                    <option value="b">กิจกรรมวิทยาลัยฯ</option>
-                    <option value="c">ราชการ</option>
-
-                </select>
-
-            </div>
-
-        </div>
+       
     </div>
 
 </div>
