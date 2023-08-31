@@ -48,7 +48,7 @@ $sc_endtTime=date("Y-m-d 18:30:00");
 $sc_t_startTime=strtotime($sc_startTime);
 $sc_t_endTime=strtotime($sc_endtTime);
 $sc_numStep="60";
-$num_dayShow=5;  
+$num_dayShow=6;  
 $sc_timeStep=array();
 $sc_numCol=0;
 $hour_block_width = 90;
@@ -126,7 +126,7 @@ if($result){
  
  <?php
  $data_day_schedule = [];
- $checkDayKey = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+ $checkDayKey = ["Mon","Tue","Wed","Thu","Fri"];
  if(isset($data_schedule) && count($data_schedule)>0){
     foreach($data_schedule as $row){
         if((strtotime($row['start_date'])>=strtotime($start_weekDay) && strtotime($row['start_date'])<strtotime($end_weekDay))
@@ -136,7 +136,7 @@ if($result){
             && strtotime($row['end_date'])>=strtotime($start_weekDay) )          
         ){
             if(isset($row['repeat_day']) && count($row['repeat_day'])>0){ // have day repeat
-                for($i=1;$i<$num_dayShow;$i++){
+                for($i=0;$i<$num_dayShow;$i++){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                         if(in_array($i+1,$row['repeat_day'])){
@@ -153,7 +153,7 @@ if($result){
                     }
                 }
             }else{ // else repeat all day
-                for($i=1;$i<$num_dayShow;$i++){
+                for($i=0;$i<$num_dayShow;$i++){
                     if(strtotime($start_weekDay." +{$i} day")>=strtotime($row['start_date']) && strtotime($start_weekDay." +{$i} day")<=strtotime($row['end_date'])){
                         $dayKey = date("D",strtotime($start_weekDay." +{$i} day"));
                          $data_day_schedule[$dayKey][] = [
@@ -296,7 +296,7 @@ if(isset($_POST['btn_add']) && $_POST['btn_add']!=""){
     <label for="schedule_endtime" class="col-2 col-form-label text-right">สอนซ้ำในวัน</label>
     <div class="col-12 flex flex-row col-sm-10 pt-2">
         <?php
-        $dayTH = array('อาทิตย์' ,'จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์', 'เสาร์');
+        $dayTH = array('อาทิตย์' ,'จันทร์','อังคาร','พุธ','พฤหัสบดี','ศุกร์');
         ?>
       
         <?php foreach($dayTH as $k => $day_value){?>

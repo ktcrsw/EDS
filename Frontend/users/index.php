@@ -218,7 +218,7 @@ $query = $db->query($sql);
          <div class="flex justify-center items-center mt-5">
             <div class="flex flex-col items-center py-[26px] px-[98px] gap-5 w-[383px] h-[474px] bg-white rounded-[20px]">
                
-            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fudontech.ac.th&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>            </div>
+            <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FITUDTC&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="340" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
             
          </div>
       </div>
@@ -383,12 +383,12 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                         </div>
                         <div class="ml-[30px] p-2 pb-10">
                            <div class="flex flex-row items-center">
-                              <div class="avatar">
+                              <!-- <div class="avatar">
                                  <div class="w-10 h-10 rounded-full">
                                     <img src="https://a-static.besthdwallpaper.com/newjeans-hanni-in-omg-album-shoot-wallpaper-2560x1600-108339_7.jpg" />
                                  </div>
-                              </div>
-                              <span class="px-2 text-[16px] text-gray-600 font-bold"><?php echo $row['schedule_teacherName']; ?></span>
+                              </div> -->
+                              <span class="px-2 text-[16px] text-gray-600 font-bold">อาจารย์ <?php echo $row['schedule_teacherName']; ?></span>
                            </div>
                            <hr class="w-48 h-1 mx-auto mt-4   bg-gray-100 border-0 rounded  dark:bg-gray-700">
                         </div>

@@ -2,30 +2,32 @@
 <link rel="icon" type="image/x-icon" href="https://cdn.discordapp.com/attachments/960423388369813514/1119515459730026526/logo.png">
 
 
-<?php include "../../Backend/db/connect.db.php";
+<?php 
+
+include "../../Backend/db/connect.db.php";
 include "../assets/header.php";
 include "../assets/teacher_nav.php";
 
 
-$sql = "SELECT * FROM enrolltbl";
-$query = $db->query($sql);
+// $sql = "SELECT * FROM enrolltbl";
+// $query = $db->query($sql);
 
-$sql = "SELECT * FROM users";
-$query = $db->query($sql);
+// $sql = "SELECT * FROM users";
+// $query = $db->query($sql);
 
-$subject = "SELECT * FROM enrollsubject";
-$data = $db->query($subject);
+// $subject = "SELECT * FROM enrollsubject";
+// $data = $db->query($subject);
 
 
 $subjectteacherid = $_SESSION['SubjectTeacherID'];
+$teacherid = $_SESSION['UserID'];
 $sgroup = $_SESSION['GP'];
 $syear = $_SESSION['Year'];
 
 $currentdate = date('Y-m-d');
 
-$ciList = "SELECT * FROM checkin_logs WHERE logs_subjectID = '$subjectteacherid' AND log_teacherID = '".$_SESSION['UserID']."'"; 
-$ciListData = $db->query($ciList);
-
+$lc = "SELECT * FROM checkin_logs WHERE logs_subjectID = '$subjectteacherid' AND log_teacherID = '".$_SESSION['UserID'].""; 
+$lcData = $db->query($lc);
 
 
 
@@ -48,16 +50,24 @@ $ciListData = $db->query($ciList);
 </div>
 <div  >
   <table class="w-full  border border-separate rounded border-slate-200  text-center" cellspacing="0">
+    <thead>
+    <tr class="bg-[#3b82f6]">
+      <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tl-lg ">วันที่จัดการสอน</th>
+        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tl-lg ">รายละเอียด</th>
+      </tr>
+    </thead>
     <tbody>
-      <tr class="bg-[#3b82f6]">
-        <th scope="col" class="h-12 px-6 text-sm font-medium border-l first:border-l-0 border-slate-200 stroke-slate-700 text-white rounded-tl-lg ">วันที่จัดการสอน</th>
 
-      </tr>
-      <?php while($row = mysqli_fetch_array($ciListData)){?>
+    <?php while($ls = mysqli_fetch_assoc($lcData)): ?>
       <tr class=" odd:bg-slate-100">
-        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $row['logs_date']; ?></td>
+        <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0  border-slate-200 stroke-slate-500 text-slate-500 "><?php echo $ls['logs_date']; ?></td>
+        <td class="h-12 px-1 text-sm transitions duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 "> 
+
+          <button class="btn btn-success" style="color:#fff">ดูรายละเอียดการเช็คชื่อ</button>  
+        
+        </td>
       </tr>
-      <?php } ?>
+      <?php endwhile; ?>
       
     </tbody>
   </table>

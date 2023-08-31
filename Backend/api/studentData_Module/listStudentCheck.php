@@ -37,7 +37,7 @@ while ($row = mysqli_fetch_assoc($result)){
     $_SESSION['SImg'] = $row['ref_stdImg'];
     // echo $_SESSION['SFirstname'];
 }
-header('location: ../../../Frontend/teacher/check_subject_date.php');
+header('location: ../../../Frontend/teacher/check_subject_date.php?='.$_SESSION['GP']);
 
 
 ?>

@@ -11,3 +11,31 @@ RewriteRule ^ %1 [R=302,L,NE]
 ## To internally redirect /dir/foo to /dir/foo.php
 RewriteCond %{REQUEST_FILENAME}.php -f [NC]
 RewriteRule ^ %{REQUEST_URI}.php [L]
+
+
+ <form action="../../Backend/functions/enrollsubject.php" method="post">
+                                    <input type="text" name="stdid" id="stdid" value="<?php echo $_SESSION['Student_ID']; ?>" hidden>
+                                    <input type="text" name="subjid" id="stdid" value="<?php echo $sbj['schedule_id']; ?>" hidden>
+                                    <input type="text" name="subjname" id="stdid" value="<?php echo $sbj['schedule_title']; ?>" hidden>
+                                    <input type="text" name="tcid" id="stdid" value="<?php echo $sbj['schedule_teacherID']; ?>" hidden>
+                                    <input type="text" name="fname" id="stdid" value="<?php echo $_SESSION['Student_FirstName']; ?>" hidden>
+                                    <input type="text" name="lname" id="stdid" value="<?php echo $_SESSION['Student_LastName']; ?>" hidden>
+                                    <input type="text" name="gps" id="stdid" value="<?php echo $_SESSION['Student_Groups']; ?>" hidden>
+                                    <input type="text" name="yr" id="stdid" value="<?php echo $_SESSION['Student_Year']; ?>" hidden>
+                                    <input class="btn btn-success" type="submit" style="background-color:#33E55C;color:#fff;" value="ลงทะเบียนวิชานี้">
+                                    <?php
+
+                                    // $getStatus = "SELECT * FROM enrollsubject WHERE ref_studenttbl = '".$_SESSION['Student_ID']. "'";
+                                    // $queryStatus = $db->query($getStatus);
+                                    // if($row = mysqli_fetch_array($queryStatus)){
+                                    //     if($row['ref_status'] == 1){
+                                    //         echo '<input class="btn btn-error" type="submit" disabled value="วิชานี้ลงทะเบียนไปแล้ว" style="background-color:red;color:#fff;">';
+                                    //     }
+
+                                    // }
+                                    // echo '';
+
+
+
+                                    ?>
+                                </form>
