@@ -212,7 +212,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
 
 
 
-         <!-- /* -------------------------------------------------------------------------- */
+         <!-- <!-- /* -------------------------------------------------------------------------- */
             /*                               เช็คชื่อโฮมรูม                               */
             /* -------------------------------------------------------------------------- */ -->
 
@@ -225,7 +225,7 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                <div class=" h-[220px] bg-white rounded-[20px]">
                   <div class="flex flex-col ml-3 gap-2 p-2 ">
                      <div>
-                        <span class="text-[25px] font-medium">คาบโฮมรูม : คาบ 1 </span>
+                        <span class="text-[25px] font-medium">ลงคะแนนในระบบ</span>
                      </div>
                      <?php 
                      
@@ -234,47 +234,26 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                      $sumG = mysqli_num_rows($queryGroup);
                      
                      ?>
-                     <span class="text-[16px]  tracking-wider text-[6b7280]">เทคโนโลยีสารสนเทศ</span>
+                     <span class="text-[16px]  tracking-wider text-[6b7280]">Progress Chart</span>
                   </div>
                   <div class="items-center justify-center flex">
 
                      <div class="stats shadow mt-2 ">
-                        <a href="" class="hover:bg-[AEE2FF] duration-300  ">
+                        <a href="data_management.php" class="hover:bg-[AEE2FF] duration-300  ">
                            <div class="stat ">
                               <div class="stat-figure text-seondary">
                                  <svg width="49" height="49" viewBox="0 0 49 49" class="inline-block w-8 h-8 " fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 24.5C0 10.9685 10.9685 0 24.5 0C38.0315 0 49 10.9685 49 24.5C49 38.0315 38.0315 49 24.5 49C10.9685 49 0 38.0315 0 24.5ZM33.5713 19.9417C33.722 19.7408 33.8311 19.5118 33.8921 19.2682C33.9531 19.0245 33.9648 18.7711 33.9265 18.5229C33.8881 18.2747 33.8006 18.0366 33.6689 17.8227C33.5373 17.6088 33.3642 17.4233 33.1598 17.2773C32.9555 17.1312 32.724 17.0275 32.479 16.9722C32.234 16.9168 31.9804 16.9111 31.7331 16.9552C31.4858 16.9993 31.2498 17.0923 31.0391 17.2289C30.8283 17.3655 30.6469 17.5429 30.5056 17.7506L22.3742 29.1336L18.2933 25.0528C17.9361 24.7199 17.4635 24.5387 16.9753 24.5473C16.4871 24.5559 16.0212 24.7537 15.6759 25.099C15.3306 25.4443 15.1328 25.9101 15.1242 26.3984C15.1156 26.8866 15.2968 27.3591 15.6297 27.7164L21.2836 33.303C21.4771 33.5636 21.7103 33.7125 21.967 33.8066C22.2238 33.9007 22.498 33.9378 22.706 33.9154C23.0431 33.8929 23.3076 33.8114 23.5455 33.6764C23.7833 33.5415 23.989 33.3564 24.1482 33.1341L33.5713 19.9417Z" fill="#18BD14" />
                                  </svg>
                               </div>
-                              <div class="text-[20px] font-medium">เช็คชื่อโฮมรูม</div>
-                              <div class="text-[14px] font-medium mt-4 text-[#36d399]">เช็คชื่อแล้ว </div>
+                              <div class="text-[20px] font-medium">เข้าสู่ระบบบันทึกคะแนน</div>
+                              <div class="text-[14px] font-medium mt-4 text-[#36d399]">Progress Chart </div>
                            </div>
                         </a>
 
-
-                        <a href="" class="border-gray-300 hover:bg-[AEE2FF] ">
-                           <div class="stat  ">
-                              <div class="stat-figure text-secondary">
-                                 <svg width="49" height="49" class="inline-block w-8 h-8 " fill="#FF0060" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 407.096 407.096" xml:space="preserve">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                       <g>
-                                          <g>
-                                             <path d="M402.115,84.008L323.088,4.981C319.899,1.792,315.574,0,311.063,0H17.005C7.613,0,0,7.614,0,17.005v373.086 c0,9.392,7.613,17.005,17.005,17.005h373.086c9.392,0,17.005-7.613,17.005-17.005V96.032 C407.096,91.523,405.305,87.197,402.115,84.008z M300.664,163.567H67.129V38.862h233.535V163.567z"></path>
-                                             <path d="M214.051,148.16h43.08c3.131,0,5.668-2.538,5.668-5.669V59.584c0-3.13-2.537-5.668-5.668-5.668h-43.08 c-3.131,0-5.668,2.538-5.668,5.668v82.907C208.383,145.622,210.92,148.16,214.051,148.16z"></path>
-                                          </g>
-                                       </g>
-                                    </g>
-                                 </svg>
-                              </div>
-                              <div class="text-[20px] font-medium">บันทึกโฮมรูม</div>
-                              <div class="text-[14px] font-medium mt-4 text-[red]">ยังไม่บันทึก </div>
-                           </div>
-                        </a>
                      </div>
                   </div>
-               </div>
+               </div> 
                <span class="p-[10px] flex text-[#817A7A] ml-[10px] font-medium">เช็คชื่อเข้าเรียน แผนกเทคโนโลยีสารสนเทศ</span>
 
                <!-- /* -------------------------------------------------------------------------- */
@@ -307,18 +286,12 @@ while ($f = mysqli_fetch_assoc($resultFile)) {
                      <div class="stat-figure text-secondary flex flex-col justify-center items-center ">
                         <div class="stat-desc text-neutral pb-1 ">ดำเนินการ</div>
                         <div class="radial-progress bg-base-200 text-accent-focus border-4 font-bold border-base-200" style="--size:6rem; --value:<?php                     
-                        
-                        if($sumG >= $sumg){
-                           echo 100;
-                        }
-   
+                       echo $sumG
                         ?>;"><?php                     
                         
-                        if($sumG >= $sumg){
-                           echo 100;
-                        } else {
+                     
                            echo $sumG;
-                        }
+                        
    ?>%</div>
                      </div>
                   </div>
