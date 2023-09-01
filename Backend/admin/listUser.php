@@ -57,7 +57,6 @@
 
                ?>
                   <tr>
-                     <form action="editUser.php" method="get">
                      <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
                         <span><?php echo $user['id_card']; ?></span>
                      </td>
@@ -98,10 +97,18 @@
                         <img src="../upload/<?php echo $user['img']; ?>" alt="" class="w-50 h-50" width="50">
                      </td> 
                      <td class="h-12 px-8 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">
+                     <form action="editUser.php" method="get">
                         <input type="text" value="<?php echo $user['u_id'];?>" name="userID" hidden>
                         <button type="submit" class="btn btn-warning w-full" style="color:#fff;"><i class="fa-regular fa-pen-to-square"  style="color:#fff;"></i>
+                        </form>
+
                      </td>
-                     </form>
+                     <td class="h-12 px-6 text-sm transition duration-300 border-t border-l first:border-l-0 border-slate-200 stroke-slate-500 text-slate-500 ">                               
+                                <form action="../functions/remove_user.php" method="post">
+                                    <input type="text" name="user_id" id="user_id" value="<?php echo $user['u_id']; ?>" hidden>
+                                <button type="submit" class="btn btn-error"><i class="fa-solid fa-user-minus"  style="color:#fff;"></i></button>
+                                </form>
+                            </td>
                   </tr>
                <?php endwhile; ?>
 
