@@ -39,5 +39,5 @@ EDS Project.
 # EDS - Education System
 
 ## Results 
-<img src="https://cdn.discordapp.com/attachments/960423388369813514/1160558266338783262/image.png?ex=6535191c&is=6522a41c&hm=7027007d3979ccbee2488118d6850a1d617cd5864ffd632edb00bd037ab9f488&">
+
 
